@@ -9,7 +9,7 @@
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
-    $('.field__input-wrapper')[4].innerHTML = `<select class=" field__input field__input -- select "
+    $('.field__input-wrapper')[8].innerHTML = `<select class=" field__input field__input -- select "
     placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" 
     size="30" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city"" >
     <option>Province</option>
@@ -32,8 +32,8 @@
 
   window.custard.init(jQuery || Checkout.jQuery, Shopify.Checkout.step || (Shopify.Checkout.OrderStatus ? 'order_status' : null),
   {    
-                                 html_templates: {
-                                          marketing_text: {{ labelMarketing | json }},
+                                   html_templates: {
+                                            marketing_text: {{ labelMarketing | json }},
   remove_existing: {{ removeExisting | json }},
   pickup_list: {{ pickUpList | json }},
   pickupReviewDetailsBlock: {{ ReviewDetailsBlock | json }},
