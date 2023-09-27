@@ -169,7 +169,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gis-utils@1.1.0/dist/index.min.js" defer="defer"></script>
     <link rel="stylesheet" href="{{ 'pickup-address.css' | asset_url }}">
     {%- render 'pickup-address' -%}
-  </head>
+  
+  {% render 'shogun-head' %}
+</head>
 
   <body
     class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}"
