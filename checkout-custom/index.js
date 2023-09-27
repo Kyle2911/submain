@@ -3,4 +3,5 @@ import { changeMarketingText } from './marketing';
 import { removeExisting } from './removeExistingLocaton';
 import { pickUpList } from './pickuplist';
 import { Payment } from './payment';
-window.custard = new Custard([changeMarketingText, removeExisting, pickUpList, Payment]);
+import { dropdownProvince } from './shipping_address';
+window.custard = new Custard([changeMarketingText, removeExisting, pickUpList, Payment,dropdownProvince]);
