@@ -1,7 +1,0 @@
-development:
-  password: shptka_7ecb92d7fe1566ad2e822028d5e90ba7
-  theme_id: 132075094206
-  store: penshoppe-uat.myshopify.com
-  ignore_files:
-    - '*.gif'
-    - '*.jpg'
