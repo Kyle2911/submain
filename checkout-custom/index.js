@@ -11,6 +11,7 @@ import { Confirmation } from "./confirmation";
 import { GABCNoteForEmployee } from './gabc-note';
 import { ValidateFLNames } from './validate-shipping-names';
 import { Theme } from "./theme-custom";
+
 Theme();
 window.custard = new Custard([
   PickupLogo,
