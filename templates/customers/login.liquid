@@ -1,0 +1,115 @@
+{% style %}
+.show-hide-password-container {
+  position: relative;
+}
+
+.show-hide-password {
+  position: absolute;
+  right: 15px;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+{% endstyle %}
+
+<div class="page-width page-content">
+  <div class="grid">
+
+    <div class="grid__item medium-up--one-third medium-up--push-one-third">
+
+      <header class="section-header rte">
+        <h1 class="section-header__title">{{ 'customer.login.title' | t }}</h1>
+      </header>
+
+      <div class="note note--success hide" id="ResetSuccess">
+        {{ 'customer.recover_password.success' | t }}
+      </div>
+
+      <div id="CustomerLoginForm" class="form-vertical">
+        {% form 'customer_login' %}
+
+          {{ form.errors | default_errors }}
+
+          <label for="CustomerEmail">{{ 'customer.login.email' | t }}</label>
+          <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" autocorrect="off" autocapitalize="off" autofocus>
+
+          {% if form.password_needed %}
+          <div class="grid">
+            <div class="grid__item one-half">
+              <label for="CustomerPassword">{{ 'customer.login.password' | t }}</label>
+            </div>
+            <div class="grid__item one-half text-right">
+              <small class="label-info">
+                <a href="#recover" id="RecoverPassword" class="js-no-transition">
+                  {{ 'customer.login.forgot_password' | t }}
+                </a>
+              </small>
+            </div>
+          </div>
+          <div class="show-hide-password-container">
+            <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}">
+            <i class="fa fa-eye show-hide-password pointer" aria-hidden="true"></i>
+          </div>
+          {% endif %}
+
+          <p>
+            <input type="submit" class="btn btn--full btn--no-animate btn--signin" value="{{ 'customer.login.sign_in' | t }}">
+          </p>
+          <p class="account-register__link">{{ 'layout.customer.create_account' | t | customer_register_link }}</p>
+        {% endform %}
+      </div>
+
+      <div id="RecoverPasswordForm" class="hide">
+
+        <h2>{{ 'customer.recover_password.title' | t }}</h2>
+        <p>{{ 'customer.recover_password.subtext' | t }}</p>
+
+
+        <div class="form-vertical">
+          {% form 'recover_customer_password' %}
+
+            {{ form.errors | default_errors }}
+
+            {% if form.posted_successfully? %}
+              <span class="hide reset-password-success"></span>
+            {% endif %}
+
+            <label for="RecoverEmail">{{ 'customer.recover_password.email' | t }}</label>
+            <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
+
+            <p>
+              <input type="submit" class="btn btn--no-animate btn--forget" value="{{ 'customer.recover_password.submit' | t }}">
+            </p>
+            <button type="button" id="HideRecoverPasswordLink">{{ 'customer.recover_password.cancel' | t }}</button>
+          {% endform %}
+        </div>
+
+      </div>
+
+      {% if shop.checkout.guest_login %}
+        <hr class="hr--clear">
+
+        <h1>{{ 'customer.login.guest_title' | t }}</h1>
+        <hr class="hr--small">
+
+        {% form 'guest_login' %}
+          <input type="submit" class="btn" value="{{ 'customer.login.guest_continue' | t }}">
+        {% endform %}
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="section--divider padding-top-34"></div>
+  <p class="text-center no-margin-bottom rte">{{ 'customer.account.trouble_html' | t }}</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let password = document.getElementById('CustomerPassword');
+  document.querySelector('.show-hide-password').addEventListener('click', function(e) {
+    let type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+
+    this.classList.toggle('fa-eye-slash');
+  });
+});  
+</script>

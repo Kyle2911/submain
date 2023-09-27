@@ -1,0 +1,642 @@
+{
+  "sections": {
+    "9e82b29a-4984-47bf-acb6-90fd58e20179": {
+      "type": "slideshow",
+      "blocks": {
+        "5d0904cf-c879-4e47-b880-46f77648887c": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-MIC_DROP_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-MIC_DROP_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "1306ced3-41e6-4297-974e-5ece89ec39c5": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-MIC_DROP_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-MIC_DROP_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "71aa828b-3982-4866-8f89-76aff2f1789e": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-ON_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-ON_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "75236d94-838f-443b-b197-094e69d42205": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-ON_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-ON_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "template--15982038614206__9e82b29a-4984-47bf-acb6-90fd58e20179-166688740682900dbb-0": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 40,
+            "subheading": "",
+            "link": "#CollectionAjaxResult",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-BUTTER_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-BUTTER_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "72bf4105-6d72-4ba8-8a4c-ae1c692fe63b": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-BUTTER_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-BUTTER_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "58864df2-59a0-424d-ae68-6105acabcd8b": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-PTD_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_MEN-PTD_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        },
+        "f1dfec03-67e9-4e9d-a138-425df96ea250": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-PTD_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_BTS_DOTCOM_HOMEPAGE_BANNERS_WOMEN-PTD_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "5d0904cf-c879-4e47-b880-46f77648887c",
+        "1306ced3-41e6-4297-974e-5ece89ec39c5",
+        "71aa828b-3982-4866-8f89-76aff2f1789e",
+        "75236d94-838f-443b-b197-094e69d42205",
+        "template--15982038614206__9e82b29a-4984-47bf-acb6-90fd58e20179-166688740682900dbb-0",
+        "72bf4105-6d72-4ba8-8a4c-ae1c692fe63b",
+        "58864df2-59a0-424d-ae68-6105acabcd8b",
+        "f1dfec03-67e9-4e9d-a138-425df96ea250"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "dots",
+        "loading_bar": false,
+        "autoplay": true,
+        "autoplay_speed": 10
+      }
+    },
+    "99bc71a4-6677-4ce2-972d-9ff9bbb5dac8": {
+      "type": "image-row",
+      "blocks": {
+        "c44eef50-e8f8-4e48-8946-4435b12c2a1a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_MICROSITE_STRIP-MIC_DROP.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-mic-drop",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "c44eef50-e8f8-4e48-8946-4435b12c2a1a"
+      ],
+      "custom_css": [
+        ".image-row {margin-top: 5px;}"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "385828df-3627-4bdc-a297-41ea35bd0fba": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "92a47714-d27e-4f83-af38-e6ab1800cfad": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-mic-drop",
+        "per_row": 2,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "79ba19db-197d-40cc-8bc7-253ab892c8e9": {
+      "type": "image-row",
+      "blocks": {
+        "2f9ad267-a52f-4002-b4ed-aacdbe33956b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_MICROSITE_STRIP-ON_DAY.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-on",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "2f9ad267-a52f-4002-b4ed-aacdbe33956b"
+      ],
+      "custom_css": [
+        ".image-row {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "a3a531fd-d6c2-4a56-8b59-ae81ae260520": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-on",
+        "per_row": 2,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "f6df0d56-1e13-4c92-b9f2-b522621ece34": {
+      "type": "image-row",
+      "blocks": {
+        "7876ae2c-e46b-43d0-92e8-30da1f660c4d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_MICROSITE_STRIP-BUTTER.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-butter",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "7876ae2c-e46b-43d0-92e8-30da1f660c4d"
+      ],
+      "custom_css": [
+        ".image-row {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "1acd941e-e213-4ba0-ab4d-90ff4e3566cc": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-butter",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "73701923-1e79-4623-8a05-726052a4efb1": {
+      "type": "image-row",
+      "blocks": {
+        "e8847ec8-8f68-4b47-a8b3-3b6d747e2a01": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_MICROSITE_STRIP-PTD.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-permission-to-dance",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "e8847ec8-8f68-4b47-a8b3-3b6d747e2a01"
+      ],
+      "custom_css": [
+        ".image-row {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "fa505d65-ba3f-4e09-bc54-79f0f19f3436": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-permission-to-dance",
+        "per_row": 2,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "fc81be59-5118-4d71-a085-543fb024bff5": {
+      "type": "image-row",
+      "blocks": {
+        "3887699b-b39d-4d31-916e-c9c9769ed948": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_X_BTS_STRIP_BANNERS-DNA.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-dna-collection",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "3887699b-b39d-4d31-916e-c9c9769ed948"
+      ],
+      "custom_css": [
+        ".image-row {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "66f67ca4-c527-41ba-8202-885a05a96151": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-dna-collection",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "b3270c7f-9967-440c-9a67-673623d63818": {
+      "type": "image-row",
+      "blocks": {
+        "208436c7-d95e-418d-834f-16e7b4fe3167": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_X_BTS_STRIP_BANNERS-IDOL.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-idol-collection",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "208436c7-d95e-418d-834f-16e7b4fe3167"
+      ],
+      "custom_css": [
+        ".image-row {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "0b1625c6-e4ed-491a-a840-daf6afa126a9": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-idol-collection",
+        "per_row": 1,
+        "rows": 1,
+        "view_all": true,
+        "divider": false,
+        "space_around": false,
+        "full_screen": false
+      }
+    },
+    "f5ddcb92-23c2-4daa-8323-ea32e4086abf": {
+      "type": "image-row",
+      "blocks": {
+        "3db7e194-651c-4c82-b150-a02659e86dc0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_X_BTS_STRIP_BANNERS-BWL.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-boy-with-luv-collection",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "3db7e194-651c-4c82-b150-a02659e86dc0"
+      ],
+      "custom_css": [
+        ".image-row {margin-bottom: 5px;}"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "3c378624-d3ec-44c0-a76f-84e51e427891": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-boy-with-luv-collection",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "4fbb88e0-04ab-44b0-9d2d-89e6f913feb6": {
+      "type": "image-row",
+      "blocks": {
+        "db18a519-febb-469a-8b57-5fb7ca83278e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_X_BTS_STRIP_BANNERS-DNMT.jpg",
+            "image_link": "shopify:\/\/collections\/penshoppe-bts-dynamite-collection",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "db18a519-febb-469a-8b57-5fb7ca83278e"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "96743ab7-ce96-4d1c-bd77-e4cf8b70f64d": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "6906fe82-edf2-4191-86d2-3d4d0d21cfba": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-bts-dynamite-collection",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1": {
+          "type": "breadcrumbs",
+          "settings": {
+          }
+        },
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9": {
+          "type": "collection-title",
+          "settings": {
+          }
+        },
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5": {
+          "type": "collection_description",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "collection_subnav_style": "none",
+            "per_row": 4,
+            "mobile_flush_grid": true
+          }
+        }
+      },
+      "block_order": [
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1",
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9",
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5",
+        "product_grid"
+      ],
+      "settings": {
+        "collection_image_enable": false,
+        "full_width": false,
+        "collection_image_height": 550,
+        "parallax": false,
+        "enable_bg_border": false,
+        "bg_color": "",
+        "border_color": "",
+        "enable_sidebar": true,
+        "collapsed": true,
+        "enable_color_swatches": false,
+        "enable_sort": true,
+        "exclusive_collection_tag": "exclusive-access"
+      }
+    },
+    "26160838-d4f4-4543-8079-37575477ab7f": {
+      "type": "image-scroll",
+      "disabled": true,
+      "blocks": {
+        "fde191c5-1948-488e-b59d-65c0adf11d71": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_STORE_LIST-NCR.jpg",
+            "url": "",
+            "button_text": ""
+          }
+        },
+        "54713486-96d3-4e2e-aff0-31e1ca232760": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_STORE_LIST-NORTH_LUZON.jpg",
+            "url": "",
+            "button_text": ""
+          }
+        },
+        "9866d4b0-2b9f-4173-a321-4ce23470b101": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_STORE_LIST-SOUTH_LUZON.jpg",
+            "url": "",
+            "button_text": ""
+          }
+        },
+        "00aa71b5-4e68-41c8-a70d-907b8bdabfce": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_STORE_LIST-VISAYAS.jpg",
+            "url": "",
+            "button_text": ""
+          }
+        },
+        "5a4a080e-366d-44cd-909b-4fe1001295a6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_BTS_STORE_LIST-MINDANAO.jpg",
+            "url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "fde191c5-1948-488e-b59d-65c0adf11d71",
+        "54713486-96d3-4e2e-aff0-31e1ca232760",
+        "9866d4b0-2b9f-4173-a321-4ce23470b101",
+        "00aa71b5-4e68-41c8-a70d-907b8bdabfce",
+        "5a4a080e-366d-44cd-909b-4fe1001295a6"
+      ],
+      "settings": {
+        "add_spacing_above": false,
+        "add_spacing_below": false,
+        "title": "",
+        "background": "",
+        "slide_view": "3",
+        "slide_view_mobile": "1.1",
+        "autoplay_speed": "5000"
+      }
+    }
+  },
+  "order": [
+    "9e82b29a-4984-47bf-acb6-90fd58e20179",
+    "99bc71a4-6677-4ce2-972d-9ff9bbb5dac8",
+    "385828df-3627-4bdc-a297-41ea35bd0fba",
+    "92a47714-d27e-4f83-af38-e6ab1800cfad",
+    "79ba19db-197d-40cc-8bc7-253ab892c8e9",
+    "a3a531fd-d6c2-4a56-8b59-ae81ae260520",
+    "f6df0d56-1e13-4c92-b9f2-b522621ece34",
+    "1acd941e-e213-4ba0-ab4d-90ff4e3566cc",
+    "73701923-1e79-4623-8a05-726052a4efb1",
+    "fa505d65-ba3f-4e09-bc54-79f0f19f3436",
+    "fc81be59-5118-4d71-a085-543fb024bff5",
+    "66f67ca4-c527-41ba-8202-885a05a96151",
+    "b3270c7f-9967-440c-9a67-673623d63818",
+    "0b1625c6-e4ed-491a-a840-daf6afa126a9",
+    "f5ddcb92-23c2-4daa-8323-ea32e4086abf",
+    "3c378624-d3ec-44c0-a76f-84e51e427891",
+    "4fbb88e0-04ab-44b0-9d2d-89e6f913feb6",
+    "96743ab7-ce96-4d1c-bd77-e4cf8b70f64d",
+    "6906fe82-edf2-4191-86d2-3d4d0d21cfba",
+    "main-collection",
+    "26160838-d4f4-4543-8079-37575477ab7f"
+  ]
+}

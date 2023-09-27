@@ -1,0 +1,67 @@
+<div class="penshoppe-svg__row svg-row">
+  <div class="page-width icons-feature huge-section">
+    <div class="svg-row__header text-center">
+      {%- if template.suffix == 'activation' -%}
+      <span class="svg-row__main-title h3 uppercase margin-bottom-5">{{ 'general.footer.join_activation' | t }}</span>
+      {%- else -%}
+      <span class="svg-row__main-title h3 uppercase margin-bottom-5">{{ 'general.footer.join' | t }}</span>
+      <span class="svg-row__sub-title h5 uppercase bold no-margin-bottom">{{ 'general.footer.perks' | t }}</span>
+      {%- endif -%}
+    </div>
+  	<div class="svg-row__wrapper text-center grid grid--uniform">
+            <div data-subsection class="grid__item aos-init aos-animate medium-up--one-sixth small--one-half">
+              <div class="svg-row__container" data-aos="row-of-6">
+                <div class="svg-row__icon">
+                  {{ 'PEN_FOOTER_WELCOME_OFFER.svg' | asset_url | img_tag }}
+                </div>
+                <strong class="svg-row__title">{{ 'general.footer.welcome' | t }}</strong>
+              </div>
+        	</div>
+            <div data-subsection class="grid__item aos-init aos-animate medium-up--one-sixth small--one-half">
+              <div class="svg-row__container" data-aos="row-of-6">
+                <div class="svg-row__icon">
+                  {{ 'PEN_FOOTER_EXCLUSIVE_DEALS.svg' | asset_url | img_tag }}
+                </div>
+                <strong class="svg-row__title">{{ 'general.footer.exclusive_deals' | t }}</strong>
+              </div>
+        	</div>
+            <div data-subsection class="grid__item aos-init aos-animate medium-up--one-sixth small--one-half">
+              <div class="svg-row__container" data-aos="row-of-6">
+                <div class="svg-row__icon">
+                  {{ 'PEN_FOOTER_FIRST_DIBS.svg' | asset_url | img_tag }}
+                </div>
+                <strong class="svg-row__title">{{ 'general.footer.first_dibs' | t }}</strong>
+              </div>
+        	</div>
+            <div data-subsection class="grid__item aos-init aos-animate medium-up--one-sixth small--one-half">
+              <div class="svg-row__container" data-aos="row-of-6">
+                <div class="svg-row__icon">
+                  {{ 'PEN_FOOTER_ORDER_TRACKING.svg' | asset_url | img_tag }}
+                </div>
+                <strong class="svg-row__title">{{ 'general.footer.order_tracking' | t }}</strong>
+              </div>
+        	</div>
+            <div data-subsection class="grid__item aos-init aos-animate medium-up--one-sixth small--one-half">
+              <div class="svg-row__container" data-aos="row-of-6">
+                <div class="svg-row__icon">
+                  {{ 'PEN_FOOTER_FASTER_CHECKOUT.svg' | asset_url | img_tag }}
+                </div>
+                <strong class="svg-row__title">{{ 'general.footer.faster_checkout' | t }}</strong>
+              </div>
+        	</div>
+            <div data-subsection class="grid__item aos-init aos-animate medium-up--one-sixth small--one-half">
+              <div class="svg-row__container" data-aos="row-of-6">
+                <div class="svg-row__icon">
+                  {{ 'PEN_FOOTER_30_DAYS.svg' | asset_url | img_tag }}
+                </div>
+                <strong class="svg-row__title">{{ 'general.footer.returns' | t }}</strong>
+              </div>
+        	</div>
+        </div>
+    {%- unless template contains 'customers' or template.suffix == 'activation' -%}
+    <a href="/account/register?utm_source=website&amp;utm_medium=social&amp;utm_campaign=pen-website-sign-up&amp;utm_content=paid" class="svg-row__btn btn btn--no-animate uppercase">{{ 'general.footer.signup' | t }}</a>
+    {%- endunless -%}
+  </div>
+  {%- render 'footer-social' -%}
+  {%- render 'footer-policies' -%}
+</div>

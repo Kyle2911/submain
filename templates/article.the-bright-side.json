@@ -1,0 +1,579 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "disabled": true,
+      "settings": {
+        "blog_show_image": true,
+        "blog_show_tags": true,
+        "blog_show_date": true,
+        "blog_show_comments": true,
+        "blog_show_author": false,
+        "social_sharing_blog": true
+      }
+    },
+    "3eff76a4-0574-410a-a161-34f599396de4": {
+      "type": "breadcrumbs",
+      "settings": {
+        "center": true
+      }
+    },
+    "691414a3-77b6-44c1-9db4-8f231e060aa6": {
+      "type": "article-details",
+      "settings": {
+      }
+    },
+    "299a883f-c3ac-47e5-8f69-5d2f394e334f": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16097642447038__299a883f-c3ac-47e5-8f69-5d2f394e334f-1678096205ab78b877-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Summer in full swing with vibrant PENSHOPPE pieces perfect for everyday summer living.<\/p><p>Live in a summer state of mind and take beach trips, city hanging, and everything in between with bright and summer-inspired pieces from the new collection.<\/p><p><\/p><p>Shop collection <a href=\"\/collections\/the-bright-side\" title=\"The Bright Side\">here.<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16097642447038__299a883f-c3ac-47e5-8f69-5d2f394e334f-1678096205ab78b877-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "93c54a5c-1759-48a1-9bb2-34bff6705d89": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "medium"
+      }
+    },
+    "1c383db8-5ac3-4512-b4c9-7ffe40aacc5f": {
+      "type": "image-row",
+      "blocks": {
+        "254e7141-0086-42d0-bd73-f019cd0dbdf1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0026_DSCF4295b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "a42e0033-3017-41db-a262-dab108c2f529": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0027_DSCF4260b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "1193da96-36c4-42ee-8cbe-81b2d25db620": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0025_DSCF4364b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "035dde23-6155-4e78-8394-1d45e28e1cfc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0024_DSCF4376b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "254e7141-0086-42d0-bd73-f019cd0dbdf1",
+        "a42e0033-3017-41db-a262-dab108c2f529",
+        "1193da96-36c4-42ee-8cbe-81b2d25db620",
+        "035dde23-6155-4e78-8394-1d45e28e1cfc"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": true,
+        "half": true,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "8e7cf50e-98b1-4828-92e0-ad91cfe2de21": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "08011247-a5e7-413c-9a3e-61d5f5ddab45": {
+      "type": "image-row",
+      "blocks": {
+        "6d3799ed-7b3f-47de-a46c-6da94582ab97": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0023_DSCF4422b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "c374bc1c-0684-46d1-8465-eb461eb92017": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0022_DSCF4503b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "b8f39ef7-3258-461a-bf4a-1516af6a5c70": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0021_DSCF4529b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "3fc2c3d1-f0e3-435e-9d69-58aaa3cc11fc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0020_DSCF4592b_c.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "6d3799ed-7b3f-47de-a46c-6da94582ab97",
+        "c374bc1c-0684-46d1-8465-eb461eb92017",
+        "b8f39ef7-3258-461a-bf4a-1516af6a5c70",
+        "3fc2c3d1-f0e3-435e-9d69-58aaa3cc11fc"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": true,
+        "half": true,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "6fcc69d3-1818-42e9-8121-6dd08fda8a84": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "455547cf-e212-4d09-b097-7ef180c396a4": {
+      "type": "image-row",
+      "blocks": {
+        "f4a9145f-d6ba-4fbe-837f-7182f398f18d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0019_CP1321.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "c983869e-1005-4657-a1a6-0f223eba4c4d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0017_CP1432.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "4b489aa5-5e8f-4558-834f-967290d4c3df": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0018_CP1410.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "9a944611-7883-489b-bba1-aa0dcf8de28a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0015_CP1581.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "f4a9145f-d6ba-4fbe-837f-7182f398f18d",
+        "c983869e-1005-4657-a1a6-0f223eba4c4d",
+        "4b489aa5-5e8f-4558-834f-967290d4c3df",
+        "9a944611-7883-489b-bba1-aa0dcf8de28a"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": true,
+        "half": true,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "e7cfca13-aea5-4292-bd1e-606781c44596": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "d835f3db-3be8-470f-8c52-0fe2382692f0": {
+      "type": "image-row",
+      "blocks": {
+        "8ed5307d-b0b2-4519-b486-a90be96522b9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0016_CP1541.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "1ef65f55-8b1a-403b-91f0-686b0ecb8d05": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0014_CP1630.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "979a286b-11fd-4876-b3a3-84b3d41bc44e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0013_CP1674.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "9b18f35c-4a2e-41c3-b8db-9224d7ff34bd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0011_CP1812.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "8ed5307d-b0b2-4519-b486-a90be96522b9",
+        "1ef65f55-8b1a-403b-91f0-686b0ecb8d05",
+        "979a286b-11fd-4876-b3a3-84b3d41bc44e",
+        "9b18f35c-4a2e-41c3-b8db-9224d7ff34bd"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": true,
+        "half": true,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "1394443a-56bf-49e0-9283-3606fdbab12b": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "105715f8-0fa6-44d9-a372-f82ab536fb77": {
+      "type": "image-row",
+      "blocks": {
+        "192aa102-3e47-404b-94d8-fd925702f0f9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0012_CP1714.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "131b79fc-e5c2-439a-a5b0-5bc33f6436a9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0010_CP1900.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "f210c25e-0c70-4617-8ed4-4cb5369e134a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0009_CP1918.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "54a1592a-10c0-491c-89b6-3136a350fde4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0008_CP1976.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "192aa102-3e47-404b-94d8-fd925702f0f9",
+        "131b79fc-e5c2-439a-a5b0-5bc33f6436a9",
+        "f210c25e-0c70-4617-8ed4-4cb5369e134a",
+        "54a1592a-10c0-491c-89b6-3136a350fde4"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": true,
+        "half": true,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "d32fb5a2-180d-4e2d-b9e6-a20537af2c45": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "f380fe7b-220a-4e42-9cf2-13a34a6e4e30": {
+      "type": "image-row",
+      "blocks": {
+        "1da04cbf-6b23-4644-a125-f7d18f620d00": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0006_CP2038.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "6baaf932-beb6-4c3e-b1d9-4fa61f956811": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0007_CP2003.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "f98bd044-40da-48e7-b0fd-9a29ee85e5a5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0005_CP2066.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "be5e7abc-657b-436f-a39f-71ca049b7cbe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0004_CP2084.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "1da04cbf-6b23-4644-a125-f7d18f620d00",
+        "6baaf932-beb6-4c3e-b1d9-4fa61f956811",
+        "f98bd044-40da-48e7-b0fd-9a29ee85e5a5",
+        "be5e7abc-657b-436f-a39f-71ca049b7cbe"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": true,
+        "half": true,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "2b633d98-6a9a-4e0a-ae7e-b48009a4f34b": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "27420ab9-dfd6-46ac-abb3-838adaa257ec": {
+      "type": "image-row",
+      "blocks": {
+        "11293234-a4b6-4951-83d6-2e1b617ce305": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0002_CP2183.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "a405ceac-9700-4db0-823d-2ebca771f167": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0003_CP2128.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "3e3a21cc-89bc-43a6-bbb5-8e9b8c4abd76": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0001_CP2377.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        },
+        "e05bd744-c9a4-4121-9a7b-5d57fc7bc37d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DOTCOM_PHOTO_1333x2000px_0000_CP2404.jpg",
+            "image_link": "",
+            "text": "",
+            "overlay": false,
+            "darken_overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "11293234-a4b6-4951-83d6-2e1b617ce305",
+        "a405ceac-9700-4db0-823d-2ebca771f167",
+        "3e3a21cc-89bc-43a6-bbb5-8e9b8c4abd76",
+        "e05bd744-c9a4-4121-9a7b-5d57fc7bc37d"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": true,
+        "half": true,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "36184fdb-4f0a-48e9-bc3e-6358d1bec842": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "small"
+      }
+    },
+    "5fa63f93-b8fe-48fb-b221-c9b01702f64a": {
+      "type": "social-share",
+      "settings": {
+        "space_around": false,
+        "link": "shopify:\/\/blogs\/news\/the-bright-side-lookbook"
+      }
+    },
+    "7faa70c5-bd36-45dc-b3ff-39b0044d547b": {
+      "type": "blog-back-button",
+      "settings": {
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "More on Penshoppe Archive",
+        "blog": "news",
+        "post_limit": 4,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "8d520181-ac12-48ee-b06d-f78485832368": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-small"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "3eff76a4-0574-410a-a161-34f599396de4",
+    "691414a3-77b6-44c1-9db4-8f231e060aa6",
+    "299a883f-c3ac-47e5-8f69-5d2f394e334f",
+    "93c54a5c-1759-48a1-9bb2-34bff6705d89",
+    "1c383db8-5ac3-4512-b4c9-7ffe40aacc5f",
+    "8e7cf50e-98b1-4828-92e0-ad91cfe2de21",
+    "08011247-a5e7-413c-9a3e-61d5f5ddab45",
+    "6fcc69d3-1818-42e9-8121-6dd08fda8a84",
+    "455547cf-e212-4d09-b097-7ef180c396a4",
+    "e7cfca13-aea5-4292-bd1e-606781c44596",
+    "d835f3db-3be8-470f-8c52-0fe2382692f0",
+    "1394443a-56bf-49e0-9283-3606fdbab12b",
+    "105715f8-0fa6-44d9-a372-f82ab536fb77",
+    "d32fb5a2-180d-4e2d-b9e6-a20537af2c45",
+    "f380fe7b-220a-4e42-9cf2-13a34a6e4e30",
+    "2b633d98-6a9a-4e0a-ae7e-b48009a4f34b",
+    "27420ab9-dfd6-46ac-abb3-838adaa257ec",
+    "36184fdb-4f0a-48e9-bc3e-6358d1bec842",
+    "5fa63f93-b8fe-48fb-b221-c9b01702f64a",
+    "7faa70c5-bd36-45dc-b3ff-39b0044d547b",
+    "blog-posts",
+    "8d520181-ac12-48ee-b06d-f78485832368"
+  ]
+}

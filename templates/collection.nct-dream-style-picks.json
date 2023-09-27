@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "65227b23-d8b8-4bc7-81aa-1b258762ba35": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16143775400126__65227b23-d8b8-4bc7-81aa-1b258762ba35-16833164133bb30142-1": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/MAIN_DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/MAIN_MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16143775400126__65227b23-d8b8-4bc7-81aa-1b258762ba35-16833164133bb30142-1"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "minimal",
+        "loading_bar": false,
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "25ec40d0-9174-4f85-aed1-301f86727d70": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "0160208b-3e2f-4af7-ba63-941a6a6e6d37": {
+      "type": "featured-collection-banner",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "img": "shopify:\/\/shop_images\/MARK.jpg",
+        "home_featured_products": "nct-dream-style-picks-mark",
+        "per_row": 5,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "5c4dbe1e-584b-48f5-92fb-2ec8082f73bb": {
+      "type": "featured-collection-banner",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "img": "shopify:\/\/shop_images\/RENJUN.jpg",
+        "home_featured_products": "nct-dream-style-picks-renjun",
+        "per_row": 5,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "c87606ba-2243-4681-8b17-223f4b47edcd": {
+      "type": "featured-collection-banner",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "img": "shopify:\/\/shop_images\/JENO.jpg",
+        "home_featured_products": "nct-dream-style-picks-jeno",
+        "per_row": 5,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "33a9dd7c-3cc9-4855-bb0e-d9859d84d8c4": {
+      "type": "featured-collection-banner",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "img": "shopify:\/\/shop_images\/HAECHAN.jpg",
+        "home_featured_products": "nct-dream-style-picks-haechan",
+        "per_row": 5,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "b6d7206e-01c7-40b6-a238-5d2855e97ed9": {
+      "type": "featured-collection-banner",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "img": "shopify:\/\/shop_images\/JAEMIN.jpg",
+        "home_featured_products": "nct-dream-style-picks-jaemin",
+        "per_row": 5,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "f6499b4a-9a21-422e-ad3b-72b1941bd115": {
+      "type": "featured-collection-banner",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "img": "shopify:\/\/shop_images\/CHENLE.jpg",
+        "home_featured_products": "nct-dream-style-picks-chenle",
+        "per_row": 5,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "0fdf7288-872f-4603-979d-7ee11f6f78ec": {
+      "type": "featured-collection-banner",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "img": "shopify:\/\/shop_images\/JISUNG.jpg",
+        "home_featured_products": "nct-dream-style-picks-jisung",
+        "per_row": 5,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "space_around": false,
+        "full_screen": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1": {
+          "type": "breadcrumbs",
+          "settings": {
+          }
+        },
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9": {
+          "type": "collection-title",
+          "settings": {
+          }
+        },
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5": {
+          "type": "collection_description",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "collection_subnav_style": "none",
+            "per_row": 4,
+            "mobile_flush_grid": true
+          }
+        }
+      },
+      "block_order": [
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1",
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9",
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5",
+        "product_grid"
+      ],
+      "settings": {
+        "collection_image_enable": false,
+        "full_width": false,
+        "collection_image_height": 550,
+        "parallax": false,
+        "enable_bg_border": false,
+        "bg_color": "",
+        "border_color": "",
+        "enable_sidebar": true,
+        "collapsed": true,
+        "enable_color_swatches": false,
+        "enable_sort": true,
+        "exclusive_collection_tag": "exclusive-access"
+      }
+    },
+    "16362863915aada704": {
+      "type": "social-share",
+      "disabled": true,
+      "settings": {
+        "space_around": true,
+        "link": "shopify:\/\/pages\/magazine"
+      }
+    }
+  },
+  "order": [
+    "65227b23-d8b8-4bc7-81aa-1b258762ba35",
+    "25ec40d0-9174-4f85-aed1-301f86727d70",
+    "0160208b-3e2f-4af7-ba63-941a6a6e6d37",
+    "5c4dbe1e-584b-48f5-92fb-2ec8082f73bb",
+    "c87606ba-2243-4681-8b17-223f4b47edcd",
+    "33a9dd7c-3cc9-4855-bb0e-d9859d84d8c4",
+    "b6d7206e-01c7-40b6-a238-5d2855e97ed9",
+    "f6499b4a-9a21-422e-ad3b-72b1941bd115",
+    "0fdf7288-872f-4603-979d-7ee11f6f78ec",
+    "main-collection",
+    "16362863915aada704"
+  ]
+}

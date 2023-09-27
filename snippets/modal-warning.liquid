@@ -1,0 +1,58 @@
+<div id="ModalWarning" class="ah-modal modal modal--square">
+  <div class="modal__inner">
+    <div class="modal__centered">
+      	<div class="modal__centered-content">
+          <div class="modal-content">
+            <div class="modal-inner">
+                <h3 class="text-center red modal-warning-header">{% render 'icon-warning' %} &nbsp; {{ 'cart.preorder.warning' | t }}</h3>
+                <div class="helper-message">
+                  <div>{{ 'cart.preorder.warning_message_html' | t: preorder_text: 'PRE-ORDERs', cancelled: 'CANCELLED' }}</div>
+                 	<div class="modal-buttons">
+                        <button class="btn cancel-btn-preorder margin-right-15" onclick="cancelWarning();">{{ 'cart.preorder.understand' | t }}</button>                 	
+                  	</div>
+                </div>
+            </div>
+  		  </div>
+  		</div>
+	</div>
+  </div>
+</div>
+
+<style>
+#modal-warning .modal__centered-content {
+  max-width: 700px;
+}
+  
+#modal-warning .modal-buttons {
+  margin-top: 25px;
+}
+  
+.modal-warning-header {
+ align-items: center;
+ display: flex;
+ justify-content: center; 
+}
+  
+.modal-warning-header svg {
+  width: 50px;
+  height: 50px;
+}  
+</style>
+
+<script>
+window.onload = function() {
+  var modal_warning = document.getElementById('ModalWarning');
+
+  modal_warning.querySelector('.modal-helper-close').addEventListener('click', closeWarning);
+  window.onclick = function(e) {
+      if (e.target == modal_warning) {
+          closeHelper();
+      }
+  }
+
+  function closeWarning() {
+	modal_warning.classList.remove('modal--is-active');
+    document.querySelector('body').classList.remove('modal-open');
+  }
+}
+</script>

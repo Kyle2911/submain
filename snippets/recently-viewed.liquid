@@ -1,0 +1,8 @@
+{{ 'jquery.tmpl.min.js' | asset_url | script_tag }}
+{{ 'jquery.products.min.js' | asset_url | script_tag }}
+
+{% if request.page_type contains 'product' %}
+<script>
+Shopify.Products.recordRecentlyViewed();
+</script>
+{% endif %}

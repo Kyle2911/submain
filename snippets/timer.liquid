@@ -1,0 +1,51 @@
+{% if section.settings.announcement_end_date != blank %}
+<div class="announcement-timer">
+ 	<div class="announcement-timer-block {% if section.settings.one_day_sale %} hide{% endif %}">
+      	<p class="announcement-timer--super">Days</p>
+      	<p class="announcement-timer--days"></p>
+  	</div>
+  	<div class="announcement-timer-block">
+       <p class="announcement-timer--super">Hrs</p>
+      	<p class="announcement-timer--hrs"></p>
+  	</div>
+  
+  	<div class="announcement-timer-block">
+      	<p class="announcement-timer--super">Mins</p>
+      	<p class="announcement-timer--mins"></p>
+  	</div>
+  
+  	<div class="announcement-timer-block">
+      	<p class="announcement-timer--super">Secs</p>
+      	<p class="announcement-timer--secs"></p>
+  	</div>
+</div>
+
+<script>
+  var countDownDate = {{ section.settings.announcement_end_date | date: "%s%L"}};
+
+  var x = setInterval(function() {
+  var now = new Date().getTime(),
+          distance = countDownDate - now,
+    	  days = addLeadingZero(Math.floor(distance / (1000 * 60 * 60 * 24))),
+    	  hours = addLeadingZero(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))),
+    	  minutes = addLeadingZero(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))),
+    	  seconds = addLeadingZero(Math.floor((distance % (1000 * 60)) / 1000));
+
+          document.querySelector('.announcement-timer--days').innerHTML = days;
+    	  document.querySelector('.announcement-timer--hrs').innerHTML = hours;
+    	  document.querySelector('.announcement-timer--mins').innerHTML = minutes;
+    	  document.querySelector('.announcement-timer--secs').innerHTML = seconds;
+
+          if (distance < 0) {
+              clearInterval(x);
+              document.querySelector('.scrolling-anouncement-container').style.display = 'none';
+          }
+}, 1000);
+  
+function addLeadingZero(x) {
+  if(x < 10)
+    return "0" + x;
+  	return x;
+}
+</script>
+{% endif %}

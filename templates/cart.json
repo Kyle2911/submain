@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+      }
+    },
+    "c54a599d-6643-4223-942e-ce298c3215cd": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Complete the look",
+        "subtitle": "",
+        "home_featured_products": "penshoppe-holiday-edit",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": true,
+        "divider": false,
+        "space_around": false,
+        "full_screen": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c54a599d-6643-4223-942e-ce298c3215cd"
+  ]
+}

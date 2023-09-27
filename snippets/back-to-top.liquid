@@ -1,0 +1,57 @@
+{%- assign vertical_offset_for_trigger = 1200 -%}
+
+<button title="Back to Top" class="back-to-top">
+  {%- render 'arrow-up-thin' -%} 
+</button>
+<script>
+window.addEventListener('DOMContentLoaded', (e) => {
+    var goTopBtn = document.querySelector('.back-to-top');
+  
+    window.addEventListener('scroll', trackScroll);
+    goTopBtn.addEventListener('click', backToTop);
+  
+  	function trackScroll() {
+        var scrolled = window.pageYOffset;
+        var coords = {{ vertical_offset_for_trigger }};
+
+        if (scrolled > coords) {            
+          goTopBtn.style.visibility = 'visible';
+        }
+
+        if (scrolled < coords) {
+          goTopBtn.style.visibility = 'hidden';        
+        }
+    }
+
+    function backToTop() {
+        if (window.pageYOffset > 0) {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        }        
+    }
+});
+</script>
+
+{% style %}
+.back-to-top {
+	visibility: hidden;
+    position: fixed;
+    bottom: 8em;
+    right: 0;
+    text-decoration: none;
+    font-size: 12px;
+    padding: .5em .5em .2em .5em;
+    z-index: 29;
+    width: 40px;
+    height: 40px;
+  	transition: all 0.3s ease;
+}
+    
+.back-to-top:hover {
+    background-color: var(--colorBtnPrimary);
+  	color: #FFF;
+}
+    
+.back-to-top:hover svg {
+ 	fill: #FFF; 
+}
+{% endstyle %}

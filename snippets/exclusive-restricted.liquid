@@ -1,0 +1,19 @@
+<div class="page-width page-content text-center">
+  {%- comment -%}
+  <header class="section-header section-header--404">
+    <div class="rte text-spacing">
+      {{ 'general.restricted.subtext_html' | t: login: '', sign_up: '' }}
+    </div>
+  </header>
+  {%- endcomment -%}
+  <div class="member-exclusive">
+  {%- assign img_url = settings.exclusive_collection_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  <img class="lazyload aos-animate" loading="lazy"
+    data-widths="[512]"
+    data-src="{{ img_url }}"
+    data-sizes="auto">
+  </div>
+  <p>{{ 'general.member_exclusive.restricted_html' | t }}</p>
+  <a href="{{ settings.exclusive_collection_register }}" class="btn">{{ 'general.member_exclusive.register' | t }}</a>
+  <a href="{{ settings.exclusive_collection_login }}" class="btn">{{ 'general.member_exclusive.login' | t }}</a>
+</div>

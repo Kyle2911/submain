@@ -1,0 +1,251 @@
+{% liquid
+  assign order_date = order.created_at | date: "%d-%m-%Y"
+  assign shipping_price = 0
+  assign payment_method = order.transactions | first 
+  assign line_item = order.line_items | first 
+  assign line_item_fulfillment = line_item.fulfillment
+  assign delivery_date = line_item_fulfillment.created_at | date: "%d-%m-%Y"
+  for shipping_method in order.shipping_methods
+    assign shipping_price = shipping_price | plus: shipping_method.price
+  endfor
+
+%}
+<div class="page-width page-content customers customer-order-detail">
+  <div class="grid">
+    <div class="grid__item medium-up--one-quarter">
+      {%- render 
+        'account-dashboard'
+      -%}
+    </div>
+    <div class="grid__item medium-up--three-quarters">
+      <header class="section-header">
+        {%- comment -%}shipping price: {{shipping_price | money}}{%- endcomment -%}
+        <h1 class="section-header__title">{{ 'customer.order.title' | t: name: order.name }}</h1>
+        <div class="section-header__sub-title">{{ customer.orders.dashboard | t }}</div>
+      </header>
+      <div class="order-summary">
+        <div class="inner">
+          <div class="order-summary__information grid">
+            <div class="grid__item medium-up--one-quarter one-half">
+              <div class="orders-summary__information__title">
+                Order Date
+              </div>
+              <div class="orders-summary__information__content">
+                {{order_date| date: "%B %d, %Y" }}
+              </div>
+            </div>
+            <div class="grid__item medium-up--one-quarter one-half">
+              <div class="orders-summary__information__title">
+                Order STATUS
+              </div>
+              <div class="orders-summary__information__content">
+                {% if order.cancelled %}
+                  <span class="cancelled tag">{{ 'customer.orders.cancelled' | t }}</span>
+                {% else %}
+                  {% if order.fulfillment_status != 'fulfilled' %}
+                    <span class="processing tag">{{ 'customer.orders.processing' | t }}</span>
+                  {% else %}
+                    <span class="complete tag">{{ 'customer.orders.complete' | t }}</span>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+            {%- if delivery_date != blank -%}
+            <div class="grid__item medium-up--one-quarter one-half">
+              <div class="orders-summary__information__title">
+                Date Shipped
+              </div>
+              <div class="orders-summary__information__content">
+                {{ delivery_date | date: "%B %d, %Y" }}
+              </div>
+            </div>
+            {%- endif -%}
+            <div class="grid__item medium-up--one-quarter one-half payment">
+              <div class="orders-summary__information__title">
+                Payment Method
+              </div>
+              <div class="orders-summary__information__content">
+                {% if payment_method.gateway_display_name == blank %}
+                {% assign mop = payment_method.gateway %}
+                {% else %}
+                {% assign mop = payment_method.gateway_display_name %}
+                {% endif %}
+                {{ mop }}
+              </div>
+            </div>
+          </div>
+          <div class="order-buttons">
+            <button type="button" class="btn btn--tertiary custom xs-width-auto" data-track-order-button>
+              Track Order</button>
+            
+            <a href="{{ shop.url }}/cart/{% for item in order.line_items %}{{ item.variant_id | url_encode }}:{{ item.quantity }},{% endfor %}?checkout[email]={{ subscriber.email }}&checkout[shipping_address][first_name]={{ order.shipping_address.first_name }}&checkout[shipping_address][last_name]={{ order.shipping_address.last_name }}&checkout[shipping_address][address1]={{ order.shipping_address.address_1 }}&checkout[shipping_address][address2]={{ order.shipping_address.address_2 }}&checkout[shipping_address][city]={{ order.shipping_address.city }}&checkout[shipping_address][zip]={{ order.shipping_address.zip }}" class="btn locate-button">Reorder</a>
+          </div>
+        </div>
+      </div>
+      <div class="address-section grid">
+        {%- if order.shipping_address != blank -%}
+          <div class="grid__item medium-up--one-half">
+            <div class="address-block">
+              <h4 class="h4-custom">{{ 'customer.account.shipping_address' | t }}</h4>
+              {{ order.shipping_address | format_address }}
+            </div> 
+          </div>
+        {%- endif -%}
+        {%- if order.billing_address != blank -%}
+          <div class="grid__item one-half">
+            <div class="address-block">
+              <h4 class="h4-custom">{{ 'customer.order.billing_address' | t }}</h4>
+              {{ order.billing_address | format_address }}
+            </div> 
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="order-table">
+        <table class="full table--responsive">
+          <thead>
+            <tr>
+              <th>{{ 'customer.order.product' | t }}</th>
+              <th class="text-center">{{ 'customer.order.quantity' | t }}</th>
+              <th>{{ 'customer.order.subtotal' | t }}</th>
+              <th>{{ 'customer.orders.reorder' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for line_item in order.line_items %}
+              {% liquid
+                assign product_image = line_item.product.images | first 
+                assign product_title = line_item.product.title
+                assign product_url = line_item.product.url
+                assign variant_title = line_item.variant.title
+              %}
+              <tr>
+                <td class="col-product">
+                  <div class="product_td_inner">
+                    <a href="{{ product_url }}" title="{{ product_title }}" class="product-image-wrapper">
+                      {{ product_image | img_url: '160x160' | img_tag }}
+                    </a>
+                    <div class="line_item_description">
+                      <div class="line product-title"><a href="{{ product_url }}">{{ product_title }}</a></div>
+                      <div class="line product-variant-title">{{ variant_title }}</div>
+                      <div class="line price hide-xs">
+                        {{ line_item.unit_price | money }}
+                      </div>
+                      <div class="options-list line">
+                        {% for option in line_item.options_with_values %}
+                          <div class="option">{{ option.name }}: {{ option.value }}</div>
+                        {% endfor %}
+                      </div>
+                      <div class="line col-bottom">
+                        {{ 'customer.order.qty_ordered' | t: quantity: line_item.quantity }}
+                        <div class="price">
+                          {%- if line_item.original_price != line_item.final_price -%}
+                            <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                            <span class="cart__price cart__price--strikethrough">{{ line_item.original_price | money }}</span>
+                            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+                            <span class="cart__discount">{{ line_item.final_price | money }}</span>
+                          {%- else -%}
+                            {{ line_item.original_price | money }}
+                          {%- endif -%}
+                        </div>
+                      </div>
+                      <div class="note hide" data-lineitem-note>
+                        {%- if line_item.fulfillment -%}
+                          {%- assign created_at = line_item.fulfillment.created_at | time_tag: format: 'date' -%}
+                          {{ 'customer.order.fulfilled_at_html' | t: date: created_at }}
+                          {% if line_item.fulfillment.tracking_number %}
+                            <a class="tracking-link" href="{{ line_item.fulfillment.tracking_url }}">{{ line_item.fulfillment.tracking_company }} #{{ line_item.fulfillment.tracking_number}}</a>
+                          {% endif %}
+                        {% else %}
+                          <span>{{ 'store_availability.general.processing' | t }}</span>
+                        {% endif %}
+                      </div>
+                      </div>
+                    </div>
+                  </div>  
+                </td>
+                <td class="hide-xs text-center">
+                  {% comment %}{{ 'customer.order.qty_ordered' | t: quantity: line_item.quantity }}{% endcomment %}
+                  {{ line_item.quantity }}
+                </td>
+                <td class="col-price hide-xs">
+                  <div class="line price">{%- if line_item.original_price != line_item.final_price -%}
+                    <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                    <span class="cart__price cart__price--strikethrough">{{ line_item.original_price | money }}</span>
+                    <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+                    <span class="cart__discount">{{ line_item.final_price | money }}</span>
+                  {%- else -%}
+                    {{ line_item.original_price | money }}
+                  {%- endif -%}</div>
+                </td>
+                <td class="col-actions"><a href="{{ shop.url }}/cart/{{ line_item.variant_id | url_encode }}:{{ line_item.quantity }}">{{ 'customer.order.reorder_item' | t }}</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="order-table__summary">
+          {% if order.total_discounts > 0 %}
+          <div class="order-table__summary__row">
+            <div class="order-table__summary__col">{{ 'customer.order.discount' | t }}:</div>
+            <div class="order-table__summary__col">{{ order.total_discounts | money }}</div>
+          </div>
+          {% endif %}
+          <div class="order-table__summary__row">
+            <div class="order-table__summary__col">{{ 'customer.order.subtotal_include_gst' | t }}:</div>
+            <div class="order-table__summary__col">{{ order.line_items_subtotal_price | money }}</div>
+          </div>
+          <div class="order-table__summary__row">
+            <div class="order-table__summary__col">{{ 'customer.order.shipping' | t }}:</div>
+            <div class="order-table__summary__col">{{ shipping_price | money }}</div>
+          </div>
+          <div class="order-table__summary__row">
+            <div class="order-table__summary__col">{{ 'customer.order.order_total' | t }}:</div>
+            <div class="order-table__summary__col">{{ order.total_price | money }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="return-section">
+        <div class="return-section__title">Need to return an item?</div>
+        <div class="return-section__content rte">
+          {{ 'customer.orders.return_html' | t }}
+        </div>
+        <button class="btn btn--tertiary custom width-auto">
+          <a href="https://help.penshoppe.com/support/solutions/articles/72000533791-online-store-returns-policy">Learn More</a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  /**
+   * On click track button handler
+   **/
+   function toggleFulfillment() {
+     console.log('asd');
+    const nodes = document.querySelectorAll('[data-lineitem-note]');
+    if(nodes) {
+      nodes.forEach( node => {
+        node.classList.remove('hide');
+      })
+      // scroll to line Items
+      const orderTableNode = document.querySelector('.order-table');
+      if(orderTableNode) {
+        const top = orderTableNode.getBoundingClientRect().top;
+        window.scrollTo({
+          top: top,
+          behavior: 'smooth',
+        })
+      }
+    }
+  }
+  const trackOrderButtonNode = document.querySelector('[data-track-order-button]');
+  if(trackOrderButtonNode) {
+    trackOrderButtonNode.addEventListener('click', toggleFulfillment)
+  }
+
+</script>
+<style>
+  .tracking-link {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+</style>

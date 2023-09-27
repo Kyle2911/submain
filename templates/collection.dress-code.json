@@ -1,0 +1,175 @@
+{
+  "sections": {
+    "16333307717be0d9c7": {
+      "type": "image-row",
+      "disabled": true,
+      "blocks": {
+        "b08c6baa-792a-441c-8764-e106cd2819b1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DressCode_COLLECTION_-_CEW.jpg",
+            "image_link": "\/collections\/dress-code#CollectionAjaxResult",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "b08c6baa-792a-441c-8764-e106cd2819b1"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "163333082140b59c55": {
+      "type": "image-row",
+      "disabled": true,
+      "blocks": {
+        "db74f9e4-672b-4e6c-a1c0-562c1c826d3c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/COLLECTION_-_DESC_1.png",
+            "image_link": "\/collections\/dress-code#CollectionAjaxResult",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "db74f9e4-672b-4e6c-a1c0-562c1c826d3c"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": false,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": true,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "16329963629ba0c861": {
+      "type": "image-row",
+      "disabled": true,
+      "blocks": {
+        "6085f4b4-c2af-44a2-b574-ae8f8725536e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_DC_PORTRAIT_SHOP_MENS.jpg",
+            "image_link": "\/collections\/dress-code-1\/men",
+            "text": "",
+            "overlay": false
+          }
+        },
+        "6578e099-0be4-4aed-a106-d8081022a943": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PEN_DC_PORTRAIT_SHOP_WOMEN_S.jpg",
+            "image_link": "\/collections\/dress-code-1\/women",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "6085f4b4-c2af-44a2-b574-ae8f8725536e",
+        "6578e099-0be4-4aed-a106-d8081022a943"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": true,
+        "space_around_block": true,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "1632995676cc274237": {
+      "type": "advanced-content",
+      "disabled": true,
+      "blocks": {
+        "1632995676cc274237-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<style>\n@media only screen and (max-width: 589px) {\n.custom-description {\npadding: 55px !important;\n}\n}\n<\/style>\n\n<div class=\"custom-description\" style=\"background:#969988; padding: 55px 10px; text-align: center;\">\n<div class=\"rte page-width--narrow\"><div class=\"enlarge-text\"><p style=\"color: #FFF;\">The <strong>Penshoppe Dress Code<\/strong> is our latest line of essential wear <br> that elevates your basics with relaxed fits, textures<br> and fabrics, for effortless style - every time, everywhere.<\/p>\n<\/div><\/div><\/div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "1632995676cc274237-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1": {
+          "type": "breadcrumbs",
+          "settings": {
+          }
+        },
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5": {
+          "type": "collection_description",
+          "settings": {
+          }
+        },
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9": {
+          "type": "collection-title",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "collection_subnav_style": "none",
+            "per_row": 4,
+            "mobile_flush_grid": false
+          }
+        }
+      },
+      "block_order": [
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1",
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5",
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9",
+        "product_grid"
+      ],
+      "settings": {
+        "collection_image_enable": false,
+        "full_width": false,
+        "collection_image_height": 550,
+        "parallax": false,
+        "enable_bg_border": false,
+        "bg_color": "",
+        "border_color": "",
+        "enable_sidebar": true,
+        "collapsed": true,
+        "enable_color_swatches": false,
+        "enable_sort": true,
+        "custom_badge_enabled": false,
+        "exclusive_collection_tag": "exclusive-access"
+      }
+    }
+  },
+  "order": [
+    "16333307717be0d9c7",
+    "163333082140b59c55",
+    "16329963629ba0c861",
+    "1632995676cc274237",
+    "main-collection"
+  ]
+}

@@ -1,0 +1,45 @@
+var soldier_array = [], soldier_products = [];
+
+{%- for item in cart.items -%}
+  {%- if item.product.tags contains '2021BT21' -%}
+  	soldier_array.push({{ item.product.id }});
+  {%- endif -%}	
+{%- endfor -%}
+
+soldier_array = soldier_array.filter(removeDuplicates);
+
+for (var key in soldier_array) {
+  var soldier_sum = 0, html1 = ''; html = '';
+  document.querySelectorAll('.cart__item[data-id="'+ soldier_array[key] +'"]').forEach(soldier => {
+  		soldier_sum += parseInt(soldier.querySelector('.js-qty__num').value);
+  });
+
+  if (soldier_sum > 3) {
+	soldier_products.push(document.querySelector('.cart__item[data-id="'+ soldier_array[key] +'"]').querySelector('.cart__item--details .cart__product-name').innerText);
+    document.querySelector('.cart__checkout.cart__checkout--page').style.display = 'none';
+    document.querySelector('.cart__checkout.cart__checkout--page').disabled = true;
+	document.querySelector('.modify-cart-items').style.display = 'block';
+	document.querySelector('.cart-warning').style.display = 'block';
+
+	document.getElementById('ModalHelper').classList.add('modal--is-active');
+	document.getElementById('ModalHelper').querySelector('h3').style.display = 'block';
+    document.getElementById('ModalHelper').querySelector('.helper-message').querySelector('span').innerHTML = "{{ 'cart.general.soldier_warning_html' | t }}";
+    document.querySelector('body').classList.add('modal-open');
+
+	for (var ctr in soldier_products) {
+		html1 += '<li>' + soldier_products[ctr] + '</li>';
+	}
+
+	html = '<ul class="no-bullets no-margin-bottom margin-top-15">'+  html1 +'</ul>';
+
+	document.getElementById('ModalHelper').querySelector('.helper-message').querySelector('span').insertAdjacentHTML('beforeend', html);
+  }
+}
+
+if (soldier_products.length > 0) {
+	document.querySelector('.cart-warning .soldier-list').innerHTML = html;
+}
+
+function removeDuplicates(value, index, self) {
+	return self.indexOf(value) === index;
+}

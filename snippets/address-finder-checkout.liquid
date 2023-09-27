@@ -1,0 +1,769 @@
+<div
+  id="AddressFinder"
+  class="modal modal--square address-finder-modal"
+  data-section-type="address-finder-popup"
+  data-test-mode="{{ settings.test_mode | json }}"
+>
+  <div class="modal__inner">
+    <div class="modal__centered medium-up--text-center">
+      <div class="modal__centered-content">
+        <p class="address-finder-heading">
+          {{ "cart.address_finder.label" | t }}
+        </p>
+        <div
+          class="tab-container d-flex justify-content-center align-items-center hidden"
+        >
+          <button
+            class="tab-item is-active tab-trigger"
+            aria-controls="tab-1"
+            data-id="address-lookup-tab"
+            type="button"
+            title="{{ 'cart.address_finder.tab_1' | t }}"
+          >
+            {{ "cart.address_finder.tab_1" | t }}
+          </button>
+          <button
+            class="tab-item tab-trigger"
+            aria-controls="tab-2"
+            data-id="address-lookup-tab"
+            type="button"
+            title="{{ 'cart.address_finder.tab_2' | t }}"
+          >
+            {{ "cart.address_finder.tab_2" | t }}
+          </button>
+        </div>
+        <div id="tab-1" class="tab-content ">
+          <div class="collapsible-content__inner">
+            <button
+              data-locate-button
+              class="btn locate-button justify-content-center align-items-center"
+              type="button"
+              title="{{ 'cart.address_finder.button_locate' | t }}"
+            >
+              <span class="button-locate-icon">
+                {%- render 'icon-locate' -%}
+              </span>
+              <span>
+                {{ "cart.address_finder.button_locate" | t }}
+              </span>
+
+              <svg
+                class="icon-svg icon-svg--size-18 btn__spinner icon-svg--spinner-button"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <use xlink:href="#spinner-button"></use>
+              </svg>
+            </button>
+            <div
+              class="address-wrapper d-flex align-items-center justify-content-center"
+            >
+              {%- render 'icon-map' -%} Current Address:
+              <span data-address-finder-text class="selected-address-text"
+                >No address selected.</span
+              >
+            </div>
+            <div
+              class="radius-container d-flex align-items-center justify-content-center"
+            >
+              <span class="d-inline-block">{{
+                "cart.address_finder.radius_1" | t
+              }}</span>
+              <select
+                id="radius-select"
+                placeholder="Select Radius"
+                class="radius-select"
+              >
+                <option value="2000">2km</option>
+                <option value="5000">5km</option>
+                <option value="10000">10km</option>
+                <option value="20000" selected>20km</option>
+              </select>
+              <span>{{ "cart.address_finder.radius_2" | t }}</span>
+            </div>
+            <div class="error-message"></div>
+            <div class="bottom-btn">
+              <button data-close-modal-btn class="btn save--btn disabled">
+                {{ "cart.address_finder.verify_address" | t }}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="tab-2" class="tab-content is-active">
+          <div class="collapsible-content__inner">
+            <div class="helper-message">
+              {%- if account -%}
+              <span>{{ "cart.address_finder.guide_html" | t }}</span>
+              {%- else -%}
+              <span>{{ "cart.address_finder.guide" | t }}</span>
+              {%- endif -%}
+            </div>
+            {%- if account -%}
+            <div
+              class="address-finder-inputs small--one-whole address-finder-half"
+            >
+              <input
+                type="text"
+                id="firstname"
+                class="input-full"
+                name="address[firstname]"
+                onkeypress="return /^[a-zA-Z\s]*$/.test(event.key)"
+                value=""
+                placeholder="First Name"
+                autocapitalize="characters"
+                onchange="Validate(this);"
+              />
+            </div>
+
+            <div
+              class="address-finder-inputs small--one-whole address-finder-half"
+            >
+              <input
+                type="text"
+                id="lastname"
+                class="input-full"
+                name="address[lastname]"
+                onkeypress="return /^[a-zA-Z\s]*$/.test(event.key)"
+                value=""
+                placeholder="Last Name"
+                onchange="Validate(this);"
+              />
+            </div>
+            {%- endif -%}
+            <div class="prov-container">
+              <select
+                id="province"
+                class="custom-select"
+                placeholder="Select Province"
+                onchange="GetList('city', this);"
+              >
+                {%- render 'province-list' -%}
+              </select>
+              <span class="chevron"></span>
+            </div>
+            <div class="city-container">
+              <select
+                id="city"
+                class="custom-select"
+                placeholder="Select Town or City"
+                onchange="GetList('brgy', this);"
+              >
+                <option value="" disabled selected>
+                  {{ "cart.address_finder.select_city" | t }}
+                </option>
+              </select>
+              <span class="chevron"></span>
+            </div>
+            <div class="brgy-container" class="custom-select">
+              <select
+                id="barangay"
+                class="custom-select"
+                placeholder="Select Barangay"
+                onchange="GetList('zip', this);"
+              >
+                <option value="" disabled selected>
+                  {{ "cart.address_finder.select_barangay" | t }}
+                </option>
+              </select>
+              <span class="chevron"></span>
+            </div>
+            <div class="zip-container" class="custom-select">
+              <input
+                id="zipcode"
+                placeholder="Select Zip Code"
+                onchange="Validate(this);"
+                disabled
+              />
+            </div>
+            <!-- <div class="house-container">
+                <input id="house-code" type="text" placeholder="House or Unit Number / Street Name / Landmark" value="" onchange='Validate(this); minimum_length(this, 10);'>
+                <small class="info-message">{{ 'cart.address_finder.warning' | t }}</small>
+              </div> -->
+
+            {%- if account -%}
+            <div class="phone-container margin-top-10">
+              <input
+                id="phone"
+                type="tel"
+                placeholder="Phone"
+                value=""
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                required
+                onchange="Validate(this); minimum_length(this, 11);"
+              />
+            </div>
+            {%- endif -%}
+          </div>
+          <div
+            class="radius-container d-flex align-items-center justify-content-center"
+          >
+            <span class="d-inline-block">{{
+              "cart.address_finder.radius_1" | t
+            }}</span>
+            <select
+              id="radius"
+              placeholder="Select Radius"
+              onchange="Validate(this);"
+              class="radius-select"
+            >
+              <option value="2000">2km</option>
+              <option value="5000" selected>5km</option>
+              <option value="10000">10km</option>
+              <option value="20000" selected>20km</option>
+            </select>
+            <span>{{ "cart.address_finder.radius_2" | t }}</span>
+          </div>
+          <div class="error-message"></div>
+          <div class="bottom-btn">
+            <button
+              type="button"
+              class="btn save--btn"
+              onclick="PopulateAddress();"
+            >
+              {{ "cart.address_finder.verify_address" | t }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="modal__close js-modal-close text-link">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          role="presentation"
+          class="icon icon-close"
+          viewBox="0 0 64 64"
+        >
+          <path d="M19 17.61l27.12 27.13m0-27.12L19 44.74" />
+        </svg>
+        <span class="icon__fallback-text">{{
+          "general.accessibility.close_modal" | t | json
+        }}</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  var jQuery = jQuery || window.Checkout.jQuery;
+  var addressFinder = jQuery('#AddressFinder');
+  var $prov = addressFinder.find('#province')[0], $city = addressFinder.find('#city')[0], $brgy = addressFinder.find("#barangay")[0], $zip = addressFinder.find('#zipcode')[0];
+
+  var all_inputs = document.getElementById('AddressFinder').querySelectorAll('input'), all_selects = document.getElementById('AddressFinder').querySelectorAll('select');
+  var form_action = document.getElementById('CartPageForm'), retrievedObject = JSON.parse(window.localStorage.getItem('address'));
+  const event_change = new Event('change');
+
+  function minimum_length(elem, len) {
+    if (elem.id = 'house-code') {
+      if (elem.value.length < len) {
+        elem.style.border = '1px solid #FF0000';
+        return false;
+      }
+    } else {
+      if (elem.value.length != len) {
+        elem.style.border = '1px solid #FF0000';
+        return false;
+      }
+    }
+  }
+
+  {%- unless account -%}var i = getStoredAddress(); {%- endunless -%}
+
+  function cancelBtn() {
+      document.getElementById('AddressFinder').querySelector('.modal__close').click();
+      document.getElementById('AddressFinder').classList.remove('modal--is-active');
+      document.getElementById('AddressFinder').classList.add('hide');
+  }
+
+  function Capitalize(str) {
+      new_str = str.toLowerCase().replace(/\b[a-z]/g, function(txtVal) {
+          return txtVal.toUpperCase();
+      });
+      return new_str;
+  }
+
+  function Validate(elem) {
+    if (elem != '') {
+      elem.style.border = '1px solid #d9d9d9';
+    }
+  }
+
+  function GetList(list, obj) {
+      var url = "";
+      var function_name = "";
+
+        switch (list) {
+          case "city":
+              $brgy.disabled = true;
+              $zip.disabled = true;
+              url = "https://tools.gabc.biz/address_finder.php?PROVINCE=" + $prov.options[$prov.selectedIndex].text
+              function_name = "PopulateCities";
+              jQuery.ajax({
+                url: url,
+                type: "GET",
+                dataType: "jsonp",
+                contentType: "application/json; charset=UTF-8",
+                jsonpCallback: function_name
+              });
+              break;
+          case "brgy":
+              $zip.disabled = true;
+              url = "https://tools.gabc.biz/address_finder.php?PROVINCE=" + $prov.options[$prov.selectedIndex].text
+              function_name = "PopulateBrgy";
+              jQuery.ajax({
+                url: url,
+                type: "GET",
+                dataType: "jsonp",
+                contentType: "application/json; charset=UTF-8",
+                jsonpCallback: function_name
+              });
+              break;
+          case "zip":
+            PopulateZip();
+            break;
+      }
+  }
+
+  const PopulateCities = function(json) {
+      $city.innerHTML = '<option value="" disabled selected>{{ 'cart.address_finder.select_city' | t }}</option>';
+      $city.classList.add('ui-loading');
+      if (!json.Error) {
+          json[0].CITY.forEach(x => {
+            if(x.CITY) {
+              const value = String(x.CITY);
+              var option = document.createElement('option');
+              option.text = value;
+              option.value = value;
+              $city.appendChild(option);
+            }
+        });
+      } else {
+          alert(json.Message);
+      }
+      setTimeout(function() {
+          $city.classList.remove("ui-loading");
+          $city.disabled = false;
+      }, 300);
+
+      if (window.localStorage.address) {
+          var retrievedObject = JSON.parse(window.localStorage.getItem('address')),
+              retrievedAddress = {
+                  "addBarangay": (retrievedObject.brgy_id !== "") ? retrievedObject.brgy_id : "",
+                  "addCity": (retrievedObject.city_id !== "") ? retrievedObject.city_id : "",
+                  "addProvince": (retrievedObject.prov_id !== "") ? retrievedObject.prov_id : "",
+                  "addZip": (retrievedObject.zip !== "") ? retrievedObject.zip : "",
+                  "province_name": retrievedObject.province,
+                  "city_name": retrievedObject.city
+              };
+          if (retrievedAddress['addProvince'] == $prov.value || $prov.options[$prov.selectedIndex].text.toLowerCase() === String(retrievedAddress.province_name).toLowerCase() ) {
+              $city.value = retrievedAddress['addCity'] ? String(retrievedAddress['addCity']) : String(retrievedAddress.city_name);
+              if($city.selectedIndex === -1) {
+                $city.selectedIndex = 0;
+              }
+              $city.dispatchEvent(event_change);
+          } else {
+              $city.selectedIndex = 0;
+              $city.dispatchEvent(event_change);
+
+          }
+
+          $city.style.border = '1px solid #d9d9d9';
+          $prov.style.border = '1px solid #d9d9d9';
+
+      } else {
+          $city.selectedIndex = 0;
+          $brgy.selectedIndex = 0;
+          $zip.value = '';
+
+          if ($city != '') { $city.style.border = '1px solid #d9d9d9'; }
+        if ($prov != '') { $prov.style.border = '1px solid #d9d9d9'; }
+      }
+  }
+
+  const PopulateBrgy = function(json) {
+      $brgy.innerHTML = '<option value="" disabled selected>{{ 'cart.address_finder.select_barangay' | t }}</option>';
+      $brgy.classList.add("ui-loading");
+      const city = $city.value;
+      if (!json.Error) {
+        if(json[0] && json[0].CITY && city) {
+          const { CITY } = json[0];
+          const selectedCity = CITY.find(item => item.CITY === city) || {};
+          selectedCity.BARANGAY.forEach(x => {
+            if(x.BARANGAY) {
+              const value = String(x.BARANGAY);
+              var option = document.createElement('option');
+              option.text = value;
+              option.value = value;
+              option.dataset.zip = x.ZIP;
+              $brgy.appendChild(option);
+            }
+            });
+        }
+      } else {
+          alert(json.Message);
+      }
+      setTimeout(function() {
+          $brgy.classList.remove("ui-loading");
+          $brgy.disabled = false;
+      }, 300);
+
+      if (window.localStorage.address) {
+          var retrievedObject = JSON.parse(window.localStorage.getItem('address')),
+          retrievedAddress = {
+                  "addBarangay": (retrievedObject.brgy_id !== "") ? retrievedObject.brgy_id : "",
+                  "addCity": (retrievedObject.city_id !== "") ? retrievedObject.city_id : "",
+                  "addProvince": (retrievedObject.prov_id !== "") ? retrievedObject.prov_id : "",
+                  "addZip": (retrievedObject.zip !== "") ? retrievedObject.zip : "",
+                  "province_name": retrievedObject.province,
+                  "city_name": retrievedObject.city,
+                  "bgry_name": retrievedObject.barangay
+              };
+
+          if (retrievedAddress['addCity'] == $city.value || String($city.value).toUpperCase() === String(retrievedAddress.city_name).toUpperCase()) {
+              $brgy.value = retrievedAddress['addBarangay'] ? String(retrievedAddress['addBarangay']): String(retrievedAddress.bgry_name);
+              if($brgy.selectedIndex === -1) {
+                $brgy.selectedIndex = 0;
+              }
+              $brgy.dispatchEvent(event_change);
+          } else {
+              $brgy.selectedIndex = 0;
+              $brgy.dispatchEvent(event_change);
+          }
+
+          $city.style.border = '1px solid #d9d9d9';
+          $prov.style.border = '1px solid #d9d9d9';
+          $brgy.style.border = '1px solid #d9d9d9';
+
+      } else {
+          $brgy.selectedIndex = 0;
+          $zip.value = '';
+
+          if ($brgy != '') { $brgy.style.border = '1px solid #d9d9d9'; }
+      }
+  }
+
+  const PopulateZip = function(json) {
+    if($brgy.options[$brgy.selectedIndex]) {
+      $zip.value = $brgy.options[$brgy.selectedIndex].getAttribute('data-zip');
+    } else {
+      $zip.value = "";
+    }
+  }
+  function check_liquids(overall) {
+      var $ncrluz = ['Metro Manila','Abra','Albay','Apayao','Aurora','Bataan','Batangas','Benguet','Bulacan','Cagayan','Camarines Norte','Camarines Sur','Cavite','Ifugao','Ilocos Norte','Ilocos Sur','Isabela','Kalinga','La Union','Laguna','Mountain Province','Nueva Ecija','Nueva Vizcaya','Pampanga','Pangasinan','Quezon','Quirino','Rizal','Sorsogon','Tarlac','Zambales','Outlying island provinces:','Batanes','Catanduanes','Marinduque','Masbate','Occidental Mindoro','Oriental Mindoro','Palawan','Romblon'].map(function(v) {
+        return v;
+      });
+      if (overall > 1000 && window.localStorage.address != undefined) {
+        var $province = JSON.parse(window.localStorage.address).province;
+        if ($ncrluz.indexOf($province) == -1) {
+          document.querySelector('.frag-notif').style.display = 'block';
+        } else {
+          document.querySelector('.frag-notif').style.display = 'none';
+        }
+     }
+  }
+
+  {%- if account -%}
+  function PopulateAddress() {
+      var is_valid = true;
+      all_inputs.forEach(addr_input => {
+        if (addr_input.id == 'house-code') {
+          if (addr_input.value.length < 10) {
+          addr_input.style.border = '1px solid #FF0000';
+              is_valid = false;
+          } else {
+              addr_input.style.border = '1px solid var(--colorDrawerBorder)';
+          }
+        } else if (addr_input.id == 'phone') {
+          if (addr_input.value.length < 11) {
+          addr_input.style.border = '1px solid #FF0000';
+              is_valid = false;
+          } else {
+              addr_input.style.border = '1px solid var(--colorDrawerBorder)';
+          }
+        } else {
+          if (addr_input.value == '') {
+            addr_input.style.border = '1px solid #FF0000';
+            is_valid = false;
+          } else {
+            addr_input.style.border = '1px solid var(--colorDrawerBorder)';
+          }
+        }
+      });
+
+      all_selects.forEach(addr_select => {
+        if (addr_select.value == '') {
+          addr_select.style.border = '1px solid #FF0000';
+          is_valid = false;
+        } else {
+          addr_select.style.border = '1px solid var(--colorDrawerBorder)';
+        }
+      });
+
+      var retrievedObject = window.localStorage.getItem('address');
+
+      if (is_valid) {
+          var $newAddressForm = document.getElementById('AddressNewForm');
+          $newAddressForm.querySelector('input[name="address[address1]"]').value = $brgy.options[$brgy.selectedIndex].text;
+          $newAddressForm.querySelector('input[name="address[address2]"]').value = $city.options[$city.selectedIndex].text;
+          $newAddressForm.querySelector('select[name="address[province]"]').value = Capitalize($prov.options[$prov.selectedIndex].text);
+          $newAddressForm.querySelector('input[name="address[city]"]').value = $prov.options[$prov.selectedIndex].text;
+          $newAddressForm.querySelector('input[name="address[zip]"]').value = $zip.options[$zip.selectedIndex].text;
+          $newAddressForm.querySelector('input[name="address[first_name]"]').value = document.getElementById('firstname').value;
+          $newAddressForm.querySelector('input[name="address[last_name]"]').value = document.getElementById('lastname').value;
+          $newAddressForm.querySelector('input[name="address[phone]"]').value = document.getElementById('phone').value;
+          $newAddressForm.querySelector('select[name="address[country]"]').value = 'Philippines';
+
+          $newAddressForm.classList.toggle('hide');
+          var newAddress = {};
+          newAddress['radias'] = document.getElementById('radius').value;
+          window.localStorage.setItem('address', JSON.stringify(newAddress));
+          jQuery('[data-location-list-display]').addClass('hidden')
+          jQuery('[data-pickup-options-none-found]').addClass('hidden')
+          jQuery('.step__footer').addClass('hidden')
+      }
+  }
+  {%- else -%}
+
+  function PopulateAddress() {
+
+    var is_valid = true;
+
+    all_inputs.forEach(addr_input => {
+       if (addr_input.id == 'house-code') {
+          if (addr_input.value.length < 10) {
+          addr_input.style.border = '1px solid #FF0000';
+              is_valid = false;
+          } else {
+              addr_input.style.border = '1px solid var(--colorDrawerBorder)';
+          }
+        } else {
+          if (addr_input.value == '') {
+            addr_input.style.border = '1px solid #FF0000';
+            is_valid = false;
+          } else {
+            addr_input.style.border = '1px solid var(--colorDrawerBorder)';
+          }
+       }
+    });
+
+    all_selects.forEach(addr_select => {
+      if (!addr_select.value) {
+        addr_select.style.border = '1px solid #FF0000';
+        is_valid = false;
+      } else {
+        addr_select.style.border = '1px solid var(--colorDrawerBorder)';
+      }
+    });
+
+    var retrievedObject = window.localStorage.getItem('address');
+    var i = getAddress();
+    if (is_valid) {
+      document.querySelector('.selected-address-text').innerHTML = $city.options[$city.selectedIndex].text + ", " + $prov.options[$prov.selectedIndex].text + ", " + $zip.value + '.';
+
+      storeData();
+      cancelBtn();
+      var checkoutLoadLocationbtn = document.querySelector('[data-load-location-btn]');
+      if(checkoutLoadLocationbtn) {
+        checkoutLoadLocationbtn.classList.remove('hidden');
+      }
+      jQuery('[data-location-list-display]').addClass('hidden')
+      jQuery('[data-pickup-options-none-found]').addClass('hidden')
+      jQuery('.step__footer').addClass('hidden')
+    } else {
+    }
+
+    {%- render 'soldier-rules' -%}
+  }
+  {%- endif -%}
+  function getAddress() {
+    return {
+      step: "contact_information",
+      method: "shipping",
+      "checkout[shipping_address][first_name]": "",
+      "checkout[shipping_address][last_name]": "",
+      "checkout[shipping_address][address1]": $brgy.options[$brgy.selectedIndex].text,
+      "checkout[shipping_address][address2]": $city.options[$city.selectedIndex].text,
+      "checkout[shipping_address][city]": $prov.options[$prov.selectedIndex].text,
+      "checkout[shipping_address][country]": "",
+      "checkout[shipping_address][zip]": $zip.value,
+      "checkout[shipping_address][province]": $prov.value !== '' ? $prov.options[$prov.selectedIndex].getAttribute('data-value') : "",
+      discount: " ",
+      locale: "en"
+    }
+  }
+
+  function getStoredAddress() {
+     var retrievedObject = JSON.parse(window.localStorage.getItem('address'));
+     if(window.localStorage.address) {
+        return {
+          step: "contact_information",
+          method: "shipping",
+          "checkout[shipping_address][first_name]": "",
+          "checkout[shipping_address][last_name]": "",
+          "checkout[shipping_address][address1]": retrievedObject.barangay,
+          "checkout[shipping_address][address2]": retrievedObject.city,
+          "checkout[shipping_address][city]": retrievedObject.province,
+          "checkout[shipping_address][country]": "",
+          "checkout[shipping_address][zip]": retrievedObject.zip,
+          "checkout[shipping_address][province]": retrievedObject.prov_chk,
+          discount: " ",
+          locale: "en"
+       }
+    }
+  }
+
+  function storeData() {
+      var t ="";
+      var newAddress = {};
+
+      newAddress['province'] = $prov.value !== '' ?  $prov.options[$prov.selectedIndex].text : '';
+      newAddress['city'] = $city.value !== ''? $city.options[$city.selectedIndex].text : '';
+      newAddress['barangay'] =  $brgy.value !== '' ? $brgy.options[$brgy.selectedIndex].text : '';
+      newAddress['zip'] = $zip.value
+
+      newAddress['city_id'] = $city.value !== '' ?  $city.value : '';
+      newAddress['prov_id'] = $prov.value !== '' ?  $prov.value : ''
+      newAddress['brgy_id'] = $brgy.value !== '' ?  $brgy.value : ''
+      newAddress['prov_chk'] = $prov.value !== '' ?  $prov.options[$prov.selectedIndex].getAttribute('data-value') : '';
+      newAddress['radias'] = document.getElementById('radius').value;
+
+      window.localStorage.setItem('address', JSON.stringify(newAddress));
+      updateHelperLinkText();
+  }
+
+  function updateHelperLinkText(text = 'Edit your location?') {
+    const helperLink = document.getElementById('helper-link')
+    if(helperLink) {
+      helperLink.innerHTML = text;
+    }
+  }
+
+  function check_session_address() {
+    var session_address = JSON.parse(window.localStorage.getItem('address'));
+
+    if (session_address && session_address.prov_id) {
+      $prov.value = session_address.prov_id;
+
+      $prov.dispatchEvent(event_change);
+    }
+  }
+
+  function check_terms(e) {
+    if (document.getElementById('CartTerms').checked) {
+       e.currentTarget.classList.add('btn--loading');
+       if (document.querySelector('.saso-summary').innerHTML != '') {
+       }
+    } else {
+      document.getElementById('ModalHelper').classList.add('modal--is-active');
+      document.getElementById('ModalHelper').querySelector('.helper-message').querySelector('span').innerHTML = "{{ 'cart.general.terms_confirm' | t }}";
+      document.querySelector('body').classList.add('modal-open');
+      return false;
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    window.addressFinderModal = new theme.Modals('AddressFinder', 'address-finder', {{ settings.test_mode | json }});
+    // retrievedObject = {
+    //   'city' : "{{customer.default_address.address2 }}",
+    //   'barangay' : " {{customer.default_address.address1 }}",
+    //   'province' : "{{customer.default_address.province}}",
+    //   'zip' : "{{customer.default_address.zip}}"
+    // }
+
+    // if (retrievedObject.barangay !== "" && retrievedObject.city !== "" && retrievedObject.province !== "" && retrievedObject.zip !== "") {
+    //   window.localStorage.setItem('address', JSON.stringify(retrievedObject));
+    // } else if (window.localStorage.address != undefined) {
+    //   retrievedObject = JSON.parse(window.localStorage.getItem('address'));
+    //   retrievedObject = {
+    //     'city' : retrievedObject.city,
+    //     'barangay' : retrievedObject.barangay,
+    //     'province' : retrievedObject.province,
+    //     'zip' : retrievedObject.zip
+    //   }
+    // } else {
+    //   retrievedObject = {
+    //     'city' : '',
+    //     'barangay' : '',
+    //     'province' : '',
+    //     'zip' : ''
+    //   }
+    // }
+    if (window.localStorage.address != undefined) {
+      const localAddress = JSON.parse(window.localStorage.getItem('address'));
+      retrievedObject = localAddress;
+
+      retrievedObject = {
+        'city' : retrievedObject.city,
+        'barangay' : retrievedObject.barangay,
+        'province' : retrievedObject.province,
+        'zip' : retrievedObject.zip
+      }
+      //Reflect province
+      const $province = document.getElementById('province');
+      const $options = $province.querySelectorAll('option');
+      const selectedOption = Array.from($options).find(opt => String(opt.text).toUpperCase() === String(localAddress.province).toUpperCase());
+      if($province) {
+        $province.value = localAddress.prov_id;
+        if($province.selectedIndex === -1) {
+          $province.value = selectedOption.value;
+        }
+        $province.dispatchEvent(new Event('change'));
+      }
+    } else if ('{{customer.default_address.address1}}' != "" && '{{customer.default_address.city }}' !== "" && '{{customer.default_address.address2 }}' !== "" && '{{customer.default_address.province}}' !== "" && '{{customer.default_address.zip}}' !== "") {
+        retrievedObject = {
+        'city' : "{{ customer.default_address.address2 }}",
+        'barangay' : "{{ customer.default_address.address1 }}",
+        'province' : "{{ customer.default_address.province }}",
+        'zip' : "{{ customer.default_address.zip }}"
+        }
+        window.localStorage.setItem('address', JSON.stringify(retrievedObject));
+        //Reflect province
+      const $province = document.getElementById('province');
+      const $options = $province.querySelectorAll('option');
+      const selectedOption = Array.from($options).find(opt => String(opt.text).toUpperCase() === String(retrievedObject.province).toUpperCase());
+      if($province) {
+        $province.value = retrievedObject.prov_id;
+        if($province.selectedIndex === -1) {
+          $province.value = selectedOption.value;
+        }
+        $province.dispatchEvent(new Event('change'));
+      }
+    }
+    else {
+      retrievedObject = {
+        'city' : '',
+        'barangay' : '',
+        'province' : '',
+        'zip' : ''
+      }
+    }
+    {%- unless cart.item_count == 0 -%}
+    var retrievedAddress = { "addBarangay": (retrievedObject.barangay !== "") ? retrievedObject.barangay + ", " : "", "addCity": (retrievedObject.city !== "") ? retrievedObject.city + ", " : "", "addProvince": (retrievedObject.province !== "") ? retrievedObject.province + ", " : "", "addZip": (retrievedObject.zip !== "") ? retrievedObject.zip : "" };
+    if(window.localStorage.address) {
+      var localAddress = JSON.parse(window.localStorage.address);
+      if (retrievedAddress['addBarangay'] !== "" && retrievedAddress['addCity'] !== "" &&retrievedAddress['addProvince'] !== "" && retrievedAddress['addZip'] !== "") {
+        const selectedAddress = document.querySelectorAll('.selected-address-text');
+        if(selectedAddress) {
+          selectedAddress.forEach(node => {
+            node.innerHTML = Capitalize( retrievedAddress['addBarangay'] + retrievedAddress['addCity'] + retrievedAddress['addProvince'] + retrievedAddress['addZip'] + '.');
+          })
+        }
+        updateHelperLinkText();
+      }
+      if(localAddress.radias) {
+        const radiasSelects = document.querySelectorAll('.radius-select');
+        if(radiasSelects) {
+          radiasSelects.forEach( node => node.value = localAddress.radias);
+        }
+      }
+      if(window.loadDefaultAddress) {
+        window.loadDefaultAddress();
+      }
+    }
+    {%- endunless -%}
+    {%- render 'soldier-rules' -%}
+  });
+
+  window.addressFinder = new theme.AddressFinder({}, 'AddressFinder', true);
+</script>

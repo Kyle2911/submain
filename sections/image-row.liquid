@@ -1,0 +1,205 @@
+{%- liquid
+assign images_width = 100.0 | minus: section.blocks.size
+assign block_size = section.blocks.size
+
+case block_size
+	when 1
+		assign grid_item_width = 'one-whole'
+
+    when 2
+      if section.settings.stack_mobile
+          assign grid_item_width = 'one-half small--one-whole'
+      else
+          assign grid_item_width = 'one-half'
+      endif
+        
+    when 3
+    	if section.settings.stack_mobile
+        	assign grid_item_width = 'one-third small--one-whole'
+        else
+        	assign grid_item_width = 'one-third'
+        endif
+        
+    when 4
+        assign grid_item_width = 'one-quarter'
+        
+    when 5
+        assign grid_item_width = 'one-fifth'
+endcase
+-%}
+
+{%- if block_size == 5 -%}
+{%- style -%}
+@media only screen and (max-width: 589px) {
+  .grid-overflow-wrapper.grid-overflow-wrapper--{{ section.id }} {
+    padding-bottom: 0;
+	margin-bottom: 25px;
+  }
+
+  .grid-overflow-wrapper.grid-overflow-wrapper--{{ section.id }} .skrim__item-content {
+	background: none;
+  }
+}
+{%- endstyle -%}
+<div class="grid-overflow-wrapper grid-overflow-wrapper--{{ section.id }}">
+{%- endif -%}
+{%- unless section.settings.full_width -%}<div class="page-width">{%- endunless -%}
+<div class="image-row image-row--{{ section.id }} grid{% unless section.settings.space_around_block %} grid--no-gutters{% endunless %} grid--small grid--uniform skrim-grid {% if section.settings.space_around %}image-row--adjust{% endif %}{% if section.settings.hide_desktop %} medium-up--hide{% endif %}{% if section.settings.hide_mobile %} small--hide{% endif %}">
+{%- for block in section.blocks -%}
+{%- if section.settings.space_around_mobile -%}
+{%- style -%}
+@media only screen and (max-width:589px) {
+	.image-row--{{ section.id }} .grid__item {
+		margin-bottom: 5px;
+	}
+  
+  	{%- comment -%}
+    {%- if section.settings.space_around -%}
+  	.image-row--{{ section.id }}.image-row--adjust {
+  		margin-bottom: 0;
+  	}
+  	{% endif %}
+  	{%- endcomment -%}
+}
+{%- endstyle -%}
+{%- endif -%}
+{%- if block_size == 4 and forloop.index == 3 or forloop.index == 4 -%}
+{%- style -%}
+@media only screen and (max-width:589px) {
+	 .image-row--{{ block.id }} {
+		margin-bottom: 0px !important;
+	}
+}
+{%- endstyle -%}
+{%- endif -%}
+<div class="grid__item image-row--{{ block.id }} skrim__item {{ grid_item_width }} {% if section.settings.half and block_size == 4 %} small--one-half{% endif %}" data-aos="skrim__animation">
+  {% if block.settings.image_link %}<a href="{{ block.settings.image_link }}" class="skrim__link skrim__item-content">{% endif %}
+      <div
+        class="{% if block.settings.overlay %}skrim__overlay{% endif %}{% if block.settings.darken_overlay %} darken__overlay{% endif %} grid__image">
+        {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img class="lazyload{% if section.settings.portrait %} grid__image-portrait{% endif %}" loading="lazy"
+          data-widths="[91, 123, 153, 240, 360, 385, 492, 630, 950, 1810, 1910]"
+          data-src="{{ img_url }}"
+          data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+          data-sizes="auto"
+          alt="{{ block.settings.image.alt | escape }}">
+
+        <noscript>
+          <img class="lazyloaded"
+            src="{{ block.settings.image | img_url: '1810x' }}"
+            alt="{{ block.settings.image.alt | escape }}">
+        </noscript>
+      </div>
+
+    {%- if block.settings.text != blank -%}
+    <div class="skrim__title">
+      <div class="skrim__underline-me">
+        {{ block.settings.text }}
+      </div>
+    </div>
+    {%- endif -%}
+  {% if block.settings.image_link %}</a>{% endif %}
+</div>
+{%- endfor -%}
+</div>
+{%- unless section.settings.full_width -%}</div>{%- endunless -%}
+{%- if block_size == 5 -%}</div>{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Image Row",
+	"max_blocks": 5,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "space_around",
+        "label": "Add spacing below",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full width",
+        "default": true
+      },
+	  {
+        "type": "checkbox",
+        "id": "space_around_block",
+        "label": "Add spacing around",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "space_around_mobile",
+        "label": "Add spacing below on mobile",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "half",
+        "label": "Half on Mobile",
+        "default": false,
+		"info": "Will work only for quarter grids."
+      },
+	  {
+        "type": "checkbox",
+        "id": "stack_mobile",
+        "label": "Stack on mobile",
+        "default": true
+      },
+	  {
+        "type": "checkbox",
+        "id": "hide_mobile",
+        "label": "Hide on Mobile",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "hide_desktop",
+        "label": "Hide on Desktop",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+		"name": "Image",
+		"type": "image",
+		"settings": [
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+		 },
+		 {
+           "type": "url",
+           "id": "image_link",
+           "label": "Link"
+          },
+		  {
+           "type": "text",
+           "id": "text",
+           "label": "Text",
+		   "info": "Would only apply if overlay is set to true."
+          },
+		  {
+            "type": "checkbox",
+            "id": "overlay",
+            "label": "Add overlay",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "darken_overlay",
+            "label": "Darken Overlay",
+            "default": false
+          }
+		]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Row"
+      }
+    ]
+  }
+{% endschema %}

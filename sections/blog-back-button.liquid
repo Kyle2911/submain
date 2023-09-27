@@ -1,0 +1,17 @@
+<div class="page-width page-width--narrow page-content">
+  <hr class="hr--large">
+  
+  <div class="text-center">
+    <a href="{{ blog.url }}" class="return-link"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></path></svg> {{ 'blogs.article.back_to_blog' | t: title: blog.title }}</a>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Blog Back Button",
+    "presets": [
+      {
+      "name": "Blog Back Button"
+      }
+    ]
+  }
+{% endschema %}

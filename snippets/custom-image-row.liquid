@@ -1,0 +1,192 @@
+{%- capture image_count %}
+  {%- if block.settings.image_1 %}+{%- endif %}
+  {%- if block.settings.image_2 %}+{%- endif %}
+  {%- if block.settings.image_3 %}+{%- endif %}
+  {%- if block.settings.image_4 %}+{%- endif -%}
+{%- endcapture -%}
+{%- liquid 
+  assign enable_zoom = block.settings.enable_zoom
+  assign block_size = image_count
+  case block_size
+    when 1
+      assign grid_item_width = 'one-whole'
+    when 2
+      assign grid_item_width = 'one-half'
+        
+    when 3
+      assign grid_item_width = 'one-third'
+        
+    when 4
+      assign grid_item_width = 'one-quarter'
+        
+    when 5
+      assign grid_item_width = 'one-fifth'
+  endcase
+-%}
+{%- comment- %}
+  If any image links are set, disable zoom
+{%- endcomment- %}
+{%- if block.settings.image_1_link != blank or block.settings.image_2_link != blank or block.settings.image_3_link != blank or block.settings.image_4_link != blank -%}
+  {%- assign enable_zoom = false -%}
+{%- endif- %}
+
+<div
+  data-subsection
+  data-section-id="{{ block.id }}"
+  class="{%- if block.settings.space_around %}index-section{%- endif -%}"
+  {%- if enable_zoom- %}
+    data-section-type="photoswipe"
+    data-zoom="true"
+  {%- endif -%}>
+
+  <div class="grid image-row{%- if block.settings.enable_gutter %} image-row-gutters{%- endif -%}">
+    {%- if block.settings.image_1 != blank -%}
+      {%- assign image_index = image_index | plus: 1 -%}
+      <div class="grid__item {{ grid_item_width }} aos-animate" data-aos="row-of-{{ image_count | size }}">
+        <div class="image-wrap">
+          {% if block.settings.image_1_link != blank %}
+          <a href="{{ block.settings.image_1_link }}">
+          {% endif %}
+          {%- assign img_url = block.settings.image_1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          {%- assign img_url_mobile = block.settings.image_1_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload {% if block.settings.image_1_mobile != blank %}small--hide{% endif %} photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif -%}"
+            data-index="{{ image_index }}"
+            data-photoswipe-src="{{ block.settings.image_1.src | img_url: '1775x776' }}"
+            data-photoswipe-width="{{ block.settings.image_1.width }}"
+            data-photoswipe-height="{{ block.settings.image_1.height }}"
+            data-src="{{ img_url }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+            data-aspectratio="{{ block.settings.image_1.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ block.settings.image_1.alt }}">
+          {%- if block.settings.image_1_mobile != blank -%}
+          <img class="lazyload medium-up--hide photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif -%}"
+            data-index="{{ image_index }}"
+            data-photoswipe-src="{{ block.settings.image_1_mobile.src | img_url: '1775x776' }}"
+            data-photoswipe-width="{{ block.settings.image_1_mobile.width }}"
+            data-photoswipe-height="{{ block.settings.image_1_mobile.height }}"
+            data-src="{{ img_url_mobile }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+            data-aspectratio="{{ block.settings.image_1_mobile.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ block.settings.image_1_mobile.alt }}">
+          {%- endif -%}
+          {%- if block.settings.image_1_link != blank- %}
+          </a>
+          {%- endif- %}
+        </div>
+      </div>
+    {%- endif- %}
+    {%- if block.settings.image_2 != blank -%}
+      {%- assign image_index = image_index | plus: 1 -%}
+      <div class="grid__item {{ grid_item_width }} aos-animate" data-aos="row-of-{{ image_count | size }}">
+        <div class="image-wrap">
+          {% if block.settings.image_2_link != blank %}
+            <a href="{{ block.settings.image_2_link }}">
+          {% endif %}
+          {%- assign img_url = block.settings.image_2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          {%- assign img_url_mobile = block.settings.image_2_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img class="lazyload {% if block.settings.image_2_mobile != blank %}small--hide{% endif %} photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif %}"
+          data-index="{{ image_index }}"
+          data-photoswipe-src="{{ block.settings.image_2.src | img_url: '1775x776' }}"
+          data-photoswipe-width="{{ block.settings.image_2.width }}"
+          data-photoswipe-height="{{ block.settings.image_2.height }}"
+          data-src="{{ img_url }}"
+          data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+          data-aspectratio="{{ block.settings.image_2.aspect_ratio }}"
+          data-sizes="auto"
+          alt="{{ block.settings.image_2.alt }}">
+        {%- if block.settings.image_2_mobile != blank -%}
+          <img class="lazyload medium-up--hide photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif -%}"
+            data-index="{{ image_index }}"
+            data-photoswipe-src="{{ block.settings.image_2_mobile.src | img_url: '1775x776' }}"
+            data-photoswipe-width="{{ block.settings.image_2_mobile.width }}"
+            data-photoswipe-height="{{ block.settings.image_2_mobile.height }}"
+            data-src="{{ img_url_mobile }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+            data-aspectratio="{{ block.settings.image_2_mobile.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ block.settings.image_2_mobile.alt }}">
+          {%- endif -%}
+        {%- if block.settings.image_2_link != blank %}
+          </a>
+        {%- endif %}
+      </div>
+    </div>
+    {%- endif- %}
+    {%- if block.settings.image_3 != blank -%}
+      {%- assign image_index = image_index | plus: 1 -%}
+      <div class="grid__item {{ grid_item_width }} aos-animate" data-aos="row-of-{{ image_count | size }}">
+        <div class="image-wrap">
+          {% if block.settings.image_3_link != blank %}
+            <a href="{{ block.settings.image_3_link }}">
+          {% endif %}
+          {%- assign img_url = block.settings.image_3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          {%- assign img_url_mobile = block.settings.image_3_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload {% if block.settings.image_3_mobile != blank %}small--hide{% endif %} photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif %}"
+            data-index="{{ image_index }}"
+            data-photoswipe-src="{{ block.settings.image_3.src | img_url: '1775x776' }}"
+            data-photoswipe-width="{{ block.settings.image_3.width }}"
+            data-photoswipe-height="{{ block.settings.image_3.height }}"
+            data-src="{{ img_url }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+            data-aspectratio="{{ block.settings.image_3.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ block.settings.image_3.alt }}">
+          {%- if block.settings.image_3_mobile != blank -%}
+          <img class="lazyload medium-up--hide photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif -%}"
+            data-index="{{ image_index }}"
+            data-photoswipe-src="{{ block.settings.image_3_mobile.src | img_url: '1775x776' }}"
+            data-photoswipe-width="{{ block.settings.image_3_mobile.width }}"
+            data-photoswipe-height="{{ block.settings.image_3_mobile.height }}"
+            data-src="{{ img_url_mobile }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+            data-aspectratio="{{ block.settings.image_3_mobile.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ block.settings.image_3_mobile.alt }}">
+          {%- endif -%}
+          {%- if block.settings.image_3_link != blank %}
+            </a>
+          {%- endif %}
+        </div>
+      </div>
+    {%- endif- %}
+    {%- if block.settings.image_4 != blank -%}
+      {%- assign image_index = image_index | plus: 1 -%}
+      <div class="grid__item {{ grid_item_width }} aos-animate" data-aos="row-of-{{ image_count | size }}">
+        <div class="image-wrap">
+          {% if block.settings.image_4_link != blank %}
+            <a href="{{ block.settings.image_4_link }}">
+          {% endif %}
+          {%- assign img_url = block.settings.image_4 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          {%- assign img_url_mobile = block.settings.image_4_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload {% if block.settings.image_4_mobile != blank %}small--hide{% endif %} photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif %}"
+            data-index="{{ image_index }}"
+            data-photoswipe-src="{{ block.settings.image_4.src | img_url: '1775x776' }}"
+            data-photoswipe-width="{{ block.settings.image_4.width }}"
+            data-photoswipe-height="{{ block.settings.image_4.height }}"
+            data-src="{{ img_url }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+            data-aspectratio="{{ block.settings.image_4.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ block.settings.image_4.alt }}">
+          {%- if block.settings.image_4_mobile != blank -%}
+          <img class="lazyload medium-up--hide photoswipe__image{%- if enable_zoom %} js-photoswipe__zoom{%- endif -%}"
+            data-index="{{ image_index }}"
+            data-photoswipe-src="{{ block.settings.image_4_mobile.src | img_url: '1775x776' }}"
+            data-photoswipe-width="{{ block.settings.image_4_mobile.width }}"
+            data-photoswipe-height="{{ block.settings.image_4_mobile.height }}"
+            data-src="{{ img_url_mobile }}"
+            data-widths="[180, 360, 540, 720, 900, 1080, 1775]"
+            data-aspectratio="{{ block.settings.image_4_mobile.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ block.settings.image_4_mobile.alt }}">
+          {%- endif -%}
+          {%- if block.settings.image_4_link != blank %}
+            </a>
+          {%- endif %}
+        </div>
+      </div>
+    {%- endif- %}
+  </div>
+</div>
