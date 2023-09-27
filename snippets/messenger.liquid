@@ -1,0 +1,57 @@
+{%- comment -%}
+<div class="messenger-box">
+  {%- render 'icon-messenger' -%}
+</div>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.messenger-box').addEventListener('click', render_messenger);
+  
+  function render_messenger() {
+    document.querySelector('.messenger-box').classList.add('btn--loading');
+    setTimeout(
+      function() {
+        document.querySelector('.messenger-box').classList.remove('btn--loading');
+    }, 5000);
+    
+    if (document.getElementById('fb-customer-chat') == null) {
+      document.querySelector('.messenger-box').insertAdjacentHTML('beforebegin', '<div id="fb-root"></div>');
+      document.querySelector('.messenger-box').insertAdjacentHTML('afterend', '<div id="fb-customer-chat" class="fb-customerchat"></div>');
+
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "135797313104160");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      chatbox.setAttribute("greeting_dialog_display", "show");
+
+      window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : false,
+        version          : 'v12.0'
+      });
+        
+      FB.XFBML.parse();
+
+      setTimeout(
+      function() {
+          document.querySelector('.fb_dialog_content iframe').style.height = '0px';
+      }, 10000);
+    };
+
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    }
+    else {
+      	document.querySelector('.messenger-box').classList.remove('btn--loading');
+    	FB.CustomerChat.showDialog();
+    }
+  }
+});
+</script>
+{%- endcomment -%}
+
+<script> (function (d, w, c) { if(!d.getElementById("spd-busns-spt")) { var n = d.getElementsByTagName('script')[0], s = d.createElement('script'); var loaded = false; s.id = "spd-busns-spt"; s.async = "async"; s.setAttribute("data-self-init", "false"); s.setAttribute("data-init-type", "opt"); s.src = 'https://cdn.freshbots.ai/assets/share/js/freshbots.min.js'; s.setAttribute("data-client", "92348fcb3b88ff9de7a62b97145ca96143172a69"); s.setAttribute("data-bot-hash", "79400fd0127ff5910f3d71a4709e1048771dbb71"); s.setAttribute("data-env", "prod"); s.setAttribute("data-region", "us"); if (c) { s.onreadystatechange = s.onload = function () { if (!loaded) { c(); } loaded = true; }; } n.parentNode.insertBefore(s, n); } }) (document, window, function () { Freshbots.initiateWidget({ autoInitChat: false, getClientParams: function () { return ; } }, function(successResponse) { }, function(errorResponse) { }); }); </script>

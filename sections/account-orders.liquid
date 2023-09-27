@@ -1,0 +1,107 @@
+{% liquid
+  assign current_total_item = paginate.current_page | times: 6
+%}
+{%- paginate customer.orders by 10 -%}
+<div class="page-width page-content customers">
+  <div class="grid">
+    <div class="grid__item medium-up--one-quarter">
+      {%- render 
+        'account-dashboard',
+        activeMenu: 1
+      -%}
+    </div>
+    <div class="grid__item medium-up--three-quarters">
+      <header class="section-header">
+        <h1 class="section-header__title">{{ 'customer.orders.title' | t }}</h1>
+        <div class="section-header__sub-title">{{ 'customer.orders.orders' | t }}</div>
+      </header>
+      {% if customer.orders_count > 0 %}
+      <div class="orders-filter">
+        <div class="select-wrapper">
+          <label for="orders-filter">{{ 'customer.orders.label' | t}}</label>
+          <select name="orders-filter" id="orders-filter" data-filer-orders>
+            <option value="">{{ 'customer.orders.placeholder' | t}}</option>
+            <option value="{{ 'customer.orders.processing' | t }}">{{ 'customer.orders.processing' | t }}</option>
+            <option value="{{ 'customer.orders.complete' | t }}">{{ 'customer.orders.complete' | t }}</option>
+            <option value="{{ 'customer.orders.cancelled' | t }}">{{ 'customer.orders.cancelled' | t }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="orders-table__wrapper">
+        <table class="full orders-table">
+          <thead>
+            <tr>
+              <th>{{ 'customer.orders.order_number' | t }}</th>
+              <th>{{ 'customer.orders.date' | t }}</th>
+              <th>{{ 'customer.orders.total' | t }}</th>
+              <th>{{ 'customer.orders.address' | t }}</th>
+              <th>{{ 'customer.orders.order_status' | t }}</th>
+              <th>{{ 'customer.orders.details' | t }}</th>
+              <th>{{ 'customer.orders.reorder' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for order in customer.orders -%}
+              <tr class="table__section" id="view_address_{{address.id}}">
+                <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name}}</td>
+                <td data-label="{{ 'customer.orders.date' | t }}" class="order-date">
+                  {% capture order_datetime %}{{ order.created_at | date: "%B %d, %Y" }}
+                  {{ order.created_at | date: "%I:%M %p "}}
+                  {% endcapture %}
+                  {{ order_datetime | newline_to_br  }}
+                </td>
+                <td data-label="{{ 'customer.orders.total' | t }}" class="col-price">{{ order.total_price | money }}</td>
+                <td data-label="{{ 'customer.orders.address' | t }}" class="order-address">
+                  {% if order.shipping_address %}
+                    {% capture final_address %}{{ order.shipping_address.company | append: ', ' | append: order.shipping_address.address1 | append: ', ' | append: order.shipping_address.address2 }}
+                    {{ order.shipping_address.city | append: ', ' | append: order.shipping_address.country }}
+                    {% endcapture %}
+                  {% else %}
+                    {% for attribute in order.attributes %}
+                    {% if order.attributes contains 'pickup_store_street' %}
+                      {% assign name =  attribute | first %}
+                      {% if name == 'pickup_store_street' %} {% assign final_address = attribute | last %} {% endif %}
+                    {% else %}
+                      {% assign final_address = 'customer.order.na' | t %}
+                    {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                  {{ final_address | newline_to_br }}
+                </td>
+                <td data-label="{{ 'customer.orders.fulfillment_status' | t }}" data-cancel="{{ order.cancelled }}">
+                {% if order.cancelled %}
+                    <span class="cancelled tag">{{ 'customer.orders.cancelled' | t }}</span>
+                {% else %}
+                  {% if order.fulfillment_status != 'fulfilled' %}
+                    <span class="processing tag">{{ 'customer.orders.processing' | t }}</span>
+                  {% else %}
+                    <span class="complete tag">{{ 'customer.orders.complete' | t }}</span>
+                  {% endif %}
+                {% endif %}
+                </td>
+                <td><a href="{{ order.customer_url }}">{{ 'customer.orders.view_detail' | t }}</a></td>
+                <td><a href="{{ shop.url }}/cart/{% for item in order.line_items %}{{ item.variant_id | url_encode }}:{{ item.quantity }},{% endfor %}?checkout[email]={{ subscriber.email }}&checkout[shipping_address][first_name]={{ order.shipping_address.first_name }}&checkout[shipping_address][last_name]={{ order.shipping_address.last_name }}&checkout[shipping_address][address1]={{ order.shipping_address.address_1 }}&checkout[shipping_address][address2]={{ order.shipping_address.address_2 }}&checkout[shipping_address][city]={{ order.shipping_address.city }}&checkout[shipping_address][zip]={{ order.shipping_address.zip }}">{{ 'customer.orders.reorder' | t }}</a></td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+
+      {% else %}
+
+        <p>{{ 'customer.orders.none' | t }}</p>
+
+      {% endif %}
+      {%- if paginate.pages > 1 -%}
+        <div class="pagination-wrapper">
+          <div class="pagination__summary">
+            {{ 'customer.account.orders_summary' | t : current: current_total_item, total: customer.orders_count }}
+          </div>
+          {%- render 'pagination', paginate: paginate -%}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+{%- endpaginate -%}

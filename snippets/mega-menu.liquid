@@ -1,0 +1,21 @@
+{{ 'mega-menu.css' | asset_url | stylesheet_tag }}
+{% for block in section.blocks %}
+{% if block.type == 'megamenu_column' %}
+{% assign menu_text = block.settings.megamenu_column_main | downcase %}
+<div class="mega-menu site-nav--has-dropdown medium-down--hide">
+<div class="mega-menu-dropdown mega-menu-item site-nav--is-megamenu">
+<button class="mega-menu-nav__link {% if menu_text contains 'sale' %}sale-link{% endif %}">{{ block.settings.megamenu_column_main }} {% render 'icon-chevron-down' %}</button>  
+    <div class="mega-menu-dropdown-content">  
+      <div class="row">    
+        {% render 'mega-menu-snippet', block: block %}
+      </div>
+    </div>
+  </div>
+</div>
+  {% elsif block.type == 'simple_menu' %}
+  {% assign menu_text = block.settings.simple_menu_name | downcase %}
+  <div class="simple-menu">
+    <a href=" {{ block.settings.simple_menu_link }}" class="simple-menu-link {% if menu_text contains 'sale' %}sale-link{% endif %}">{{ block.settings.simple_menu_name }}</a>
+  </div>
+  {% endif %}
+{% endfor %}

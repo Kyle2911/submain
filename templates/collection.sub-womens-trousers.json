@@ -1,0 +1,142 @@
+{
+  "sections": {
+    "16523508928453a388": {
+      "type": "guide-scroll",
+      "blocks": {
+        "291eea4b-a478-407f-b11a-d940f1f2da1e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/chic_fit_ladies-01.jpg",
+            "url": "shopify:\/\/collections\/womens-chic-trousers",
+            "text": "CHIC"
+          }
+        },
+        "e5be7452-fb50-4e6e-9125-3ff54042ff33": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Women_s_Trousers_-_2_Skinny.jpg",
+            "url": "shopify:\/\/collections\/womens-skinny-trousers",
+            "text": "SKINNY"
+          }
+        },
+        "a9674d6b-d686-4c1c-912d-3359e37260aa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/straight_leg_ladies-01.jpg",
+            "url": "shopify:\/\/collections\/womens-loose-jeans",
+            "text": "STRAIGHT"
+          }
+        },
+        "db77bf4f-fbaa-4337-a586-015a444185db": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/loose_fit_ladies-01.jpg",
+            "url": "shopify:\/\/collections\/womens-loose-trousers",
+            "text": "LOOSE"
+          }
+        },
+        "4a108aab-322e-4119-b20f-5ac48e0c69af": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/964234-Tan_1_1800x1800_1c6c8a8f-cfb8-4179-848d-abbb1714af42.webp",
+            "url": "shopify:\/\/collections\/womens-wide-leg-trousers",
+            "text": "WIDE LEG"
+          }
+        }
+      },
+      "block_order": [
+        "291eea4b-a478-407f-b11a-d940f1f2da1e",
+        "e5be7452-fb50-4e6e-9125-3ff54042ff33",
+        "a9674d6b-d686-4c1c-912d-3359e37260aa",
+        "db77bf4f-fbaa-4337-a586-015a444185db",
+        "4a108aab-322e-4119-b20f-5ac48e0c69af"
+      ],
+      "settings": {
+        "guide_title": "SHOP BY FIT",
+        "guide_image": "shopify:\/\/shop_images\/PEN_DENIMLAB_MICROSITE-FIT_GUIDE_1200x1800_e37ed374-6510-41e6-a944-0e90b3425e12.jpg",
+        "slide_view": "3",
+        "slide_view_mobile": "1",
+        "enable_scrollbar": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "b1e5d5c5-33a2-477d-9e50-7dd4b6ccc358": {
+          "type": "image-row",
+          "disabled": true,
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/DOTCOM_480x422px_WOMENS_TROUSERS.jpg",
+            "image_2": "shopify:\/\/shop_images\/DOTCOM_480x422px_WOMENS_TOUSERS-SLIM_FIT.jpg",
+            "image_3": "shopify:\/\/shop_images\/DOTCOM_480x422px_WOMENS_TROUSERS-TRACK_PANTS.jpg",
+            "image_1_link": "shopify:\/\/collections\/womens-trousers",
+            "image_2_link": "shopify:\/\/collections\/womens-chic-trousers",
+            "image_3_link": "shopify:\/\/collections\/womens-trackpants-trousers",
+            "image_4_link": "",
+            "image_5_link": "",
+            "enable_gutter": false,
+            "enable_zoom": false,
+            "space_around": false
+          }
+        },
+        "92a01f82-fe48-46ec-9f00-9cac82651bf2": {
+          "type": "spacing",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1": {
+          "type": "breadcrumbs",
+          "settings": {
+          }
+        },
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9": {
+          "type": "collection-title",
+          "settings": {
+          }
+        },
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5": {
+          "type": "collection_description",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "collection_subnav_style": "none",
+            "per_row": 4,
+            "mobile_flush_grid": false
+          }
+        }
+      },
+      "block_order": [
+        "b1e5d5c5-33a2-477d-9e50-7dd4b6ccc358",
+        "92a01f82-fe48-46ec-9f00-9cac82651bf2",
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1",
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9",
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5",
+        "product_grid"
+      ],
+      "settings": {
+        "collection_image_enable": false,
+        "full_width": false,
+        "collection_image_height": 550,
+        "parallax": false,
+        "enable_bg_border": false,
+        "bg_color": "",
+        "border_color": "",
+        "enable_sidebar": true,
+        "collapsed": true,
+        "enable_color_swatches": false,
+        "enable_sort": true,
+        "exclusive_collection_tag": "exclusive-access"
+      }
+    }
+  },
+  "order": [
+    "16523508928453a388",
+    "main-collection"
+  ]
+}

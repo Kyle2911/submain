@@ -1,0 +1,147 @@
+{%- liquid
+  assign per_row = section.settings.per_row
+  assign product_limit = per_row | times: section.settings.rows
+  assign collection = collections[section.settings.home_featured_products]
+
+  assign grid_item_width = 'small--one-half medium-up--one-third'
+
+  case per_row
+    when 1
+      assign grid_item_width = 'small--one-whole medium-up--one-third'
+    when 2
+      assign grid_item_width = 'small--one-half medium-up--one-third'
+    when 3
+      assign grid_item_width = 'small--one-half medium-up--one-third'
+    when 4
+      assign grid_item_width = 'small--one-half medium-up--one-quarter'
+    when 5
+      assign grid_item_width = 'small--one-half medium-up--one-fifth'
+  endcase
+-%}
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+{%- if section.settings.space_around -%}<div class="index-section">{%- endif -%}
+
+<script src="{{ 'address-finder-pdp.js' | asset_url }}" defer="defer"></script>
+<div id="CollectionSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="featured-collection">
+  {%- if section.settings.title != blank -%}
+    <div class="page-width">
+      <div class="section-header">
+        <h2 class="section-header__title">
+          {{ section.settings.title }}
+          {%- if section.settings.subtitle != blank -%}<small class="section-header__subtitle">{{ section.settings.subtitle }}</small>{%- endif -%}
+        </h2>
+        {% if section.settings.view_all and section.settings.rows == 1 %}
+        <a href="{{ collections[section.settings.home_featured_products].url }}" class="section-header__link">{{ 'collections.general.all_of_collection' | t }}</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% unless section.settings.home_featured_products == blank or collections[section.settings.home_featured_products].empty? or collections[section.settings.home_featured_products].products_count == 0 %}
+  <div class="{% unless section.settings.full_screen %}page-width{% endunless %} page-width--flush-small">
+    <div class="grid-overflow-wrapper">
+      <div class="grid grid--uniform{% if per_row < 3 %} grid--solo{% endif %}" data-aos="overflow__animation">
+          {%- for product in collections[section.settings.home_featured_products].products limit: product_limit -%}
+            {%- render 'product-grid-item', product: product, grid_item_width: grid_item_width, per_row: per_row -%}
+          {%- endfor -%}
+
+          {% if section.settings.view_all %}
+            {% if section.settings.rows > 1 %}
+              <div class="grid__item small--hide text-center">
+                <a href="{{ collections[section.settings.home_featured_products].url }}" class="btn">{{ 'collections.general.all_of_collection' | t }}</a>
+              </div>
+            {% endif %}
+
+            <div class="grid__item grid__item--view-all text-center {{ grid_item_width }} medium-up--hide">
+              <a href="{{ collections[section.settings.home_featured_products].url }}" class="grid-product__see-all">
+                {{ 'collections.general.view_all_products_html' | t: count: collection.products_count }}
+              </a>
+            </div>
+
+          {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endunless %}
+</div>
+
+{%- if settings.quick_shop_enable -%}
+  {%- for product in collections[section.settings.home_featured_products].products limit: product_limit -%}
+    {%- render 'quick-shop-modal', product: product -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if section.settings.space_around -%}</div>{%- endif -%}
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Featured collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+	  {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "collection",
+        "id": "home_featured_products",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": 4,
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "rows",
+        "label": "Rows of products",
+        "default": 1,
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "view_all",
+        "label": "Show 'View all' link",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "space_around",
+        "label": "Add spacing above and below",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "full_screen",
+        "label": "Full screen",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured collection"
+      }
+    ]
+  }
+{% endschema %}

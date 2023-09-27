@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "16547659312b242bc0": {
+      "type": "custom-slideshow",
+      "disabled": true,
+      "blocks": {
+        "1647a68c-b323-42f4-86c5-9a4a759512ca": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify:\/\/collections\/new-essentials-mens",
+            "link_text": "Men's",
+            "link1": "shopify:\/\/collections\/new-essentials-womens",
+            "link_text1": "Women's",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/PEN_Q4_FLATLAY_HP-MAIN.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_Q4_FLATLAY_HP-MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "1647a68c-b323-42f4-86c5-9a4a759512ca"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "minimal",
+        "loading_bar": false,
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1": {
+          "type": "breadcrumbs",
+          "settings": {
+          }
+        },
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9": {
+          "type": "collection-title",
+          "settings": {
+          }
+        },
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5": {
+          "type": "collection_description",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "collection_subnav_style": "none",
+            "per_row": 4,
+            "mobile_flush_grid": true
+          }
+        }
+      },
+      "block_order": [
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1",
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9",
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5",
+        "product_grid"
+      ],
+      "settings": {
+        "collection_image_enable": false,
+        "full_width": false,
+        "collection_image_height": 550,
+        "parallax": false,
+        "enable_bg_border": false,
+        "bg_color": "",
+        "border_color": "",
+        "enable_sidebar": true,
+        "collapsed": true,
+        "enable_color_swatches": false,
+        "enable_sort": true,
+        "exclusive_collection_tag": "exclusive-access"
+      }
+    }
+  },
+  "order": [
+    "16547659312b242bc0",
+    "main-collection"
+  ]
+}

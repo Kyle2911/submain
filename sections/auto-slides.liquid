@@ -1,0 +1,472 @@
+{%- style -%}
+.auto-slides__container--{{ section.id }} {	
+    height: 0;
+	padding-bottom: {{ 100 | divided_by: section.settings.background.aspect_ratio }}%; 
+}
+.auto-slides__wrapper-{{ auto-slides__wrapper }} {
+	position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.auto-slides__title--{{ section.id }},
+.auto-slides__links--{{ section.id }} li a {
+	color: {{ section.settings.font_color }};
+}
+
+.auto-slides--{{ section.id }} .auto-slides__image {
+	transition: opacity 0.5s ease-in-out;
+}
+
+@media only screen and (max-width:991px) {
+  .auto-slides__container--{{ section.id }} {	
+      height: 0;
+      padding-bottom: {{ 100 | divided_by: section.settings.background_mobile.aspect_ratio }}%;  
+  }
+}
+{%- endstyle -%}
+
+<div class="auto-slides__container auto-slides__container--{{ section.id }}">
+    {%- assign img_url = section.settings.background | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+    {%- assign img_url_mobile = section.settings.background_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+    <img class="auto-slides__background lazyload auto-slides__small--hide" loading="lazy"            
+         data-src="{{ img_url }}"
+         data-aspectratio="{{ section.settings.background.aspect_ratio }}"
+         data-widths="[360, 494, 540, 613, 720, 920, 1810]"
+         data-sizes="auto"
+         alt="{{ section.settings.background.alt | escape }}">
+  
+  	<img class="auto-slides__background lazyload auto-slides__medium-up--hide" loading="lazy"            
+         data-src="{{ img_url_mobile }}"
+         data-aspectratio="{{ section.settings.background_mobile.aspect_ratio }}"
+         data-widths="[360, 494, 540, 613, 720, 920, 1810]"
+         data-sizes="auto"
+         alt="{{ section.settings.background_mobile.alt | escape }}">
+  	<div class="auto-slides__wrapper auto-slides__wrapper--{{ section.id }}  page-content grid grid--uniform page-width">
+      <div class="auto-slides__item grid__item auto-slides__title--wrapper medium-up--one-third small--one-whole no-padding-left">
+        <h2 class="auto-slides__title auto-slides__title--{{ section.id }}">{{ section.settings.title }}</h2>
+      </div>
+  
+    <div class="auto-slides__flex grid__item no-padding-left medium-up--two-thirds">
+      {%- for block in section.blocks -%}
+      {%- if block.type == 'links' -%}
+      <div class="auto-slides__item grid__item medium-up--one-half small--one-half small--no-padding-left" {{ block.shopify_attributes }}>
+      {%- assign slides_link = block.settings.links_list | split: ',' -%}
+        <ul class="auto-slides__links auto-slides__links--{{ section.id }} no-bullets">
+          {%- if block.settings.link_text1  != blank -%}
+          <li data-id="1" onmouseover="display_image(this)"><a href="{{ block.settings.link1 }}">{{ block.settings.link_text1 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text2  != blank -%}
+          <li data-id="2"><a href="{{ block.settings.link2 }}">{{ block.settings.link_text2 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text3  != blank -%}
+          <li data-id="3"><a href="{{ block.settings.link3 }}">{{ block.settings.link_text3 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text4  != blank -%}
+          <li data-id="4"><a href="{{ block.settings.link4 }}">{{ block.settings.link_text4 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text5  != blank -%}
+          <li data-id="5"><a href="{{ block.settings.link5 }}">{{ block.settings.link_text5 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text6  != blank -%}
+          <li data-id="6"><a href="{{ block.settings.link6 }}">{{ block.settings.link_text6 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text7  != blank -%}
+          <li data-id="7"><a href="{{ block.settings.link7 }}">{{ block.settings.link_text7 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text8  != blank -%}
+          <li data-id="8"><a href="{{ block.settings.link8 }}">{{ block.settings.link_text8 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text9  != blank -%}
+          <li data-id="9"><a href="{{ block.settings.link9 }}">{{ block.settings.link_text9 }}</a></li>
+          {%- endif -%}
+
+          {%- if block.settings.link_text10  != blank -%}
+          <li data-id="10"><a href="{{ block.settings.link10 }}">{{ block.settings.link_text10 }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+      {%- endif -%}
+
+      {%- if block.type == 'images' -%}
+      <div class="auto-slides__item grid__item medium-up--one-half small--one-half" {{ block.shopify_attributes }}>
+        <div class="auto-slides__image--wrapper auto-slides--{{ section.id }}">
+          {%- if block.settings.image1  != blank -%}
+          {%- assign img_url = block.settings.image1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image1.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image1.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image2  != blank -%}
+          {%- assign img_url = block.settings.image2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image2.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image2.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image3  != blank -%}
+          {%- assign img_url = block.settings.image3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image3.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image3.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image4  != blank -%}
+          {%- assign img_url = block.settings.image4 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image4.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image4.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image5  != blank -%}
+          {%- assign img_url = block.settings.image5 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image5.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image5.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image6  != blank -%}
+          {%- assign img_url = block.settings.image6 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image6.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image6.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image7  != blank -%}
+          {%- assign img_url = block.settings.image7 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image7.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image7.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image8  != blank -%}
+          {%- assign img_url = block.settings.image8 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image8.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image9.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image9  != blank -%}
+          {%- assign img_url = block.settings.image9 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image9.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image9.alt | escape }}">
+          {%- endif -%}
+
+          {%- if block.settings.image10  != blank -%}
+          {%- assign img_url = block.settings.image10 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="auto-slides__image lazyload" loading="lazy"            
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ block.settings.image101.aspect_ratio }}"
+           data-widths="[360, 494, 540, 613]"
+           data-sizes="auto"
+           alt="{{ block.settings.image10.alt | escape }}">
+          {%- endif -%}
+        </div>
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('page:loaded', function() {
+  var carousel_index = 0;
+  carousel();
+  
+  var slide_nav = document.querySelectorAll(".auto-slides__links--{{ section.id }} li");
+
+  slide_nav.forEach(nav => {
+    nav.onmouseover = function() {
+    	var ctr = parseInt(nav.getAttribute('data-id')) - 1,
+              slide_images = document.querySelectorAll(".auto-slides--{{ section.id }} .auto-slides__image"),
+			  slide_nav = document.querySelectorAll(".auto-slides__links--{{ section.id }} li");
+
+		slide_nav.forEach(nav => {
+	  		nav.classList.remove('active');
+    	});
+
+        slide_images.forEach(slide_img => {
+           slide_img.style.opacity = 0;
+           slide_img.style.height = 0;
+           slide_img.style.visibility = 'hidden';
+        });
+
+      	slide_images[ctr].style.opacity = 1;
+      	slide_images[ctr].style.height = '100%';
+      	slide_images[ctr].style.visibility = 'visible';
+  
+  		nav.classList.add('active');
+  	}
+  });
+
+  function carousel() {
+    var slide_images = document.querySelectorAll(".auto-slides--{{ section.id }} .auto-slides__image"),
+		  slide_nav = document.querySelectorAll(".auto-slides__links--{{ section.id }} li");
+
+    slide_images.forEach(slide_img => {
+      slide_img.style.opacity = 0;
+      slide_img.style.height = 0;
+      slide_img.style.visibility = 'hidden';
+    });
+  
+  	slide_nav.forEach(nav => {
+	  nav.classList.remove('active');
+    });
+    
+   	carousel_index++;
+    
+    if (carousel_index > slide_images.length) {carousel_index = 1}    
+    slide_images[carousel_index-1].style.opacity = 1;
+    slide_images[carousel_index-1].style.height = '100%';
+    slide_images[carousel_index-1].style.visibility = 'visible';
+  
+  	slide_nav[carousel_index-1].classList.add('active');
+    setTimeout(carousel, {{ section.settings.speed }});
+  }
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Auto Slides",
+	"class": "auto-slides__main",
+	"max_blocks": 2,
+    "settings": [
+		{
+		  "type": "text",
+		  "id": "title",
+		  "label": "Title"
+		},
+		{
+          "type": "number",
+          "id": "speed",
+          "label": "Animation Speed",
+		  "default": 5000
+		},
+		{
+		  "type": "image_picker",
+		  "id": "background",
+		  "label": "Desktop Background"
+		},
+		{
+		  "type": "image_picker",
+		  "id": "background_mobile",
+		  "label": "Mobile Background"
+		},
+	    {
+		  "type": "color",
+		  "id": "font_color",
+		  "label": "Text Color"
+		}
+	],
+	"blocks": [
+		 {
+          "name": "Images",
+          "type": "images",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image1",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image2",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image3",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image4",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image5",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image6",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image7",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image8",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image9",
+              "label": "Image"
+           },
+           {
+              "type": "image_picker",
+              "id": "image10",
+              "label": "Image"
+           }
+		]
+      },
+	  {
+          "name": "Links",
+          "type": "links",
+          "settings": [
+		   {
+              "type": "text",
+              "id": "link_text1",
+              "label": "Link Text 1"
+           },
+		   {
+              "type": "url",
+              "id": "link1",
+              "label": "Link 1"
+           },
+           {
+              "type": "text",
+              "id": "link_text2",
+              "label": "Link Text 2"
+           },
+		   {
+              "type": "url",
+              "id": "link2",
+              "label": "Link 2"
+           },
+           {
+              "type": "text",
+              "id": "link_text3",
+              "label": "Link Text 3"
+           },
+		   {
+              "type": "url",
+              "id": "link3",
+              "label": "Link 3"
+           },
+           {
+              "type": "text",
+              "id": "link_text4",
+              "label": "Link Text 4"
+           },
+		   {
+              "type": "url",
+              "id": "link4",
+              "label": "Link 4"
+           },
+		   {
+              "type": "text",
+              "id": "link_text5",
+              "label": "Link Text 5"
+           },
+		   {
+              "type": "url",
+              "id": "link5",
+              "label": "Link 5"
+           },
+		   {
+              "type": "text",
+              "id": "link_text6",
+              "label": "Link Text 6"
+           },
+		   {
+              "type": "url",
+              "id": "link6",
+              "label": "Link 6"
+           },
+	       {
+              "type": "text",
+              "id": "link_text7",
+              "label": "Link Text 7"
+           },
+		   {
+              "type": "url",
+              "id": "link7",
+              "label": "Link 7"
+           },
+		   {
+              "type": "text",
+              "id": "link_text8",
+              "label": "Link Text 8"
+           },
+		   {
+              "type": "url",
+              "id": "link8",
+              "label": "Link 8"
+           },
+		   {
+              "type": "text",
+              "id": "link_text9",
+              "label": "Link Text 9"
+           },
+		   {
+              "type": "url",
+              "id": "link9",
+              "label": "Link 9"
+           },
+		   {
+              "type": "text",
+              "id": "link_text10",
+              "label": "Link Text 10"
+           },
+		   {
+              "type": "url",
+              "id": "link10",
+              "label": "Link 10"
+           }
+		]
+      }
+	],
+    "presets": [
+	   {
+     	 "name": "Auto Slides"
+       }
+	]
+  }
+{% endschema %}

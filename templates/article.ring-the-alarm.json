@@ -1,0 +1,234 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "disabled": true,
+      "settings": {
+        "blog_show_image": true,
+        "blog_show_tags": true,
+        "blog_show_date": true,
+        "blog_show_comments": true,
+        "blog_show_author": false,
+        "social_sharing_blog": true
+      }
+    },
+    "b476f747-a46c-4790-9922-f604730a3651": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "small"
+      }
+    },
+    "cf140125-6a8e-45d2-8266-9f42314a1e3d": {
+      "type": "breadcrumbs",
+      "settings": {
+        "center": true
+      }
+    },
+    "9ae40cfa-f278-4adb-b174-a5606bbbd1e8": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "small"
+      }
+    },
+    "44a9c582-636e-4564-8c51-e8fe15fe3306": {
+      "type": "article-details",
+      "settings": {
+      }
+    },
+    "db9b0e48-5a94-4439-8ef1-26256fc88278": {
+      "type": "rich-text",
+      "blocks": {
+        "66af78ca-e433-472f-b3f8-d15c8f3a1fb6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><em>New Ambassador CHANYEOL is wearing this year's cool boyfriend uniform.<\/em><\/p>"
+          }
+        },
+        "c148679a-bba2-4bfa-8037-36e07d2092a6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Since his debut, CHANYEOL has been a clear fan favorite. \"CHANYEOL's upbeat energy, unmatchable  creativity in both fashion and music and unique charm make him the perfect ambassador to represent  PENSHOPPE,\" says Brandon Liu, PENSHOPPE’s Brand Director.<\/p>"
+          }
+        },
+        "a8d07786-15ac-484b-bef4-4e91b688b6a3": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Below, we are sharing an exclusive first look at Prince CHANYEOL's favorite looks from PENSHOPPE’s newest collection, Easy Neutrals, as he leads his first campaign as PENSHOPPE’s new brand ambassador. <\/p>"
+          }
+        },
+        "a4e4594e-4bdd-49cb-b86d-4f40b5f39132": {
+          "type": "liquid",
+          "settings": {
+            "code": "<hr class=\"hr--clear hr--extra-extra-small\">"
+          }
+        }
+      },
+      "block_order": [
+        "66af78ca-e433-472f-b3f8-d15c8f3a1fb6",
+        "c148679a-bba2-4bfa-8037-36e07d2092a6",
+        "a8d07786-15ac-484b-bef4-4e91b688b6a3",
+        "a4e4594e-4bdd-49cb-b86d-4f40b5f39132"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "83d43fad-c8c2-4d06-93d8-798dcc65b9cb": {
+      "type": "text-columns",
+      "blocks": {
+        "template--16130549612734__83d43fad-c8c2-4d06-93d8-798dcc65b9cb-16818783622042af7d-1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/CHANYEOL_for_PENSHOPPE.jpg",
+            "image_width": 650,
+            "title": "",
+            "text": "<p><a href=\"\/products\/dress-code-relaxed-fit-linen-blazer\" title=\"Dress Code Relaxed Fit Linen Blazer\"><em>Relaxed Fit Linen Blazer - Php 1,899<\/em><\/a><em><br\/><\/em><a href=\"\/products\/dress-code-relaxed-fit-linen-shirt-with-long-sleeves\" title=\"Dress Code Relaxed Fit Linen Shirt with Long Sleeves\"><em>Long Sleeves Linen Shirt - Php 1,199<br\/><\/em><\/a><a href=\"\/products\/dress-code-dapper-fit-linen-trousers\" title=\"Dress Code Dapper Fit Linen Trousers\"><em>Dapper Fit Linen Trousers - Php 1,199<\/em><\/a><\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "template--16130549612734__83d43fad-c8c2-4d06-93d8-798dcc65b9cb-16818783622042af7d-2": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/CHANYEOL.jpg",
+            "image_width": 650,
+            "title": "",
+            "text": "<p><a href=\"\/products\/textured-knit-resort-shirt-973060-off-white\" title=\"Textured Knit Resort Shirt\">Textured Knit Resort Shirt<em>- Php 1,199<\/em><\/a><em><br\/><\/em><a href=\"\/products\/pull-on-linen-dapper-trousers-1\" title=\"Pull On Linen Dapper Trousers\"><em>Linen Dapper Trousers in Brown - Php 999<\/em><\/a><\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16130549612734__83d43fad-c8c2-4d06-93d8-798dcc65b9cb-16818783622042af7d-1",
+        "template--16130549612734__83d43fad-c8c2-4d06-93d8-798dcc65b9cb-16818783622042af7d-2"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false
+      }
+    },
+    "6b9bb6d1-a709-4ef4-aae5-b8accc460223": {
+      "type": "rich-text",
+      "blocks": {
+        "ce195304-b8c7-4548-899d-6146d56a0f2e": {
+          "type": "liquid",
+          "settings": {
+            "code": "<hr class=\"hr--clear hr--extra-extra-small\">"
+          }
+        },
+        "template--15994886586558__6b9bb6d1-a709-4ef4-aae5-b8accc460223-1667912798905a10da-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>For a dressier OOTD minus the fuss, an all-linen get-up is an easy choice. CHANYEOL elevates his style  by opting for a monochromatic look with a relaxed long-sleeve button-down, linen trousers, and a casual  blazer to seal a fashionable deal.<\/p>"
+          }
+        },
+        "ecc03fc2-233d-4d75-a4ce-290fba76fca7": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>When he's not busy, CHANYEOL opts for an easy and relaxed 'fit for his off-duty uniform. A textured resort  shirt and a pair of dapper khaki trousers are a no-brainer choice.<\/p>"
+          }
+        },
+        "5c648d7d-78cc-4414-a1fc-9b6d2a202a8a": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>It's rare to find anyone who can effortlessly pull off everything, and anything but CHANYEOL is one of the  few exceptions. \"It was a great shoot and all of PENSHOPPE’s pieces look good on him. That's why we're  very excited to have CHANYEOL as part of Team PENSHOPPE!\" Jeff Bascon, Golden ABC's Vice  President for Retail Brands, exclaims. \"We cannot wait to show everyone everything that PENSHOPPE has lined up with CHANYEOL,\" Bascon continued.<\/p>"
+          }
+        },
+        "2deb857f-175f-4fb4-ac20-2da0425428d1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><a href=\"https:\/\/www.instagram.com\/reel\/CqIJJwGjqbK\/\" title=\"https:\/\/www.instagram.com\/reel\/CqIJJwGjqbK\/\"><em>Link to Campaign Video<\/em><\/a><\/p>"
+          }
+        },
+        "8aec4c3d-88be-49b2-8a81-be63103d1979": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><em>More than just for the young, PENSHOPPE is an everyday-wear lifestyle brand perfect for all of your style  choices. Shop CHANYEOL's picks from the Easy Neutrals collection in PENSHOPPE stores nationwide,  <\/em><a href=\"\/\" title=\"\/\"><em>penshoppe.com<\/em><\/a><em>, and on PENSHOPPE’s official stores at Shopee, Lazada, and Zalora!<\/em><\/p>"
+          }
+        },
+        "ba01214c-a0b0-4674-b7ed-9bbf01d17220": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>#PENSHOPPE #PENSHOPPExCHANYEOL #CHANYEOLxPENSHOPPE <\/p>"
+          }
+        },
+        "afef397b-9704-4eff-b79c-407548fe06ce": {
+          "type": "liquid",
+          "settings": {
+            "code": "<hr class=\"hr--clear hr--extra-small\">"
+          }
+        }
+      },
+      "block_order": [
+        "ce195304-b8c7-4548-899d-6146d56a0f2e",
+        "template--15994886586558__6b9bb6d1-a709-4ef4-aae5-b8accc460223-1667912798905a10da-1",
+        "ecc03fc2-233d-4d75-a4ce-290fba76fca7",
+        "5c648d7d-78cc-4414-a1fc-9b6d2a202a8a",
+        "2deb857f-175f-4fb4-ac20-2da0425428d1",
+        "8aec4c3d-88be-49b2-8a81-be63103d1979",
+        "ba01214c-a0b0-4674-b7ed-9bbf01d17220",
+        "afef397b-9704-4eff-b79c-407548fe06ce"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "c082beec-48a7-4d49-81ec-8d2e479e9671": {
+      "type": "social-share",
+      "settings": {
+        "space_around": false,
+        "link": "shopify:\/\/blogs\/news\/make-every-day-a-self-care-day"
+      }
+    },
+    "8a4b1cfb-4e86-4450-8098-f2ab3742925d": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "medium"
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "More on Penshoppe Archive",
+        "blog": "news",
+        "post_limit": 4,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b476f747-a46c-4790-9922-f604730a3651",
+    "cf140125-6a8e-45d2-8266-9f42314a1e3d",
+    "9ae40cfa-f278-4adb-b174-a5606bbbd1e8",
+    "44a9c582-636e-4564-8c51-e8fe15fe3306",
+    "db9b0e48-5a94-4439-8ef1-26256fc88278",
+    "83d43fad-c8c2-4d06-93d8-798dcc65b9cb",
+    "6b9bb6d1-a709-4ef4-aae5-b8accc460223",
+    "c082beec-48a7-4d49-81ec-8d2e479e9671",
+    "8a4b1cfb-4e86-4450-8098-f2ab3742925d",
+    "blog-posts"
+  ]
+}

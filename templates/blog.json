@@ -1,0 +1,158 @@
+{
+  "sections": {
+    "167d1e62-335b-41e4-acb4-910cf68d1a9e": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15946352885950__167d1e62-335b-41e4-acb4-910cf68d1a9e-1667824862cdbe24ef-0": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/PEN_ARCHIVE_MAR_2023-DESKTOP.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PEN_ARCHIVE_MAR_2023-MOBILE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15946352885950__167d1e62-335b-41e4-acb4-910cf68d1a9e-1667824862cdbe24ef-0"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "minimal",
+        "loading_bar": false,
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "b9e20b2e-d6af-410b-932e-e4e04b43fe4d": {
+      "type": "spacer",
+      "disabled": true,
+      "settings": {
+        "spacer_size": "small"
+      }
+    },
+    "f193a066-9662-4cf5-907c-393842363cf9": {
+      "type": "campaign-tags",
+      "disabled": true,
+      "blocks": {
+        "92543c78-043a-4aaf-80ba-5c0e246d7f46": {
+          "type": "tag",
+          "settings": {
+            "tag": "Editorial",
+            "link": "\/blogs\/news\/tagged\/editorial"
+          }
+        },
+        "dbc2c8e0-b281-469b-b853-cd998a579900": {
+          "type": "tag",
+          "settings": {
+            "tag": "Lifestyle",
+            "link": "\/blogs\/news\/tagged\/lifestyle"
+          }
+        },
+        "7261424a-3ba2-4e32-88c2-8ff0ba4ad736": {
+          "type": "tag",
+          "settings": {
+            "tag": "News",
+            "link": "\/blogs\/news\/tagged\/news"
+          }
+        },
+        "923e5426-5921-4730-b0d7-54f41661f233": {
+          "type": "tag",
+          "settings": {
+            "tag": "Quiz",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "92543c78-043a-4aaf-80ba-5c0e246d7f46",
+        "dbc2c8e0-b281-469b-b853-cd998a579900",
+        "7261424a-3ba2-4e32-88c2-8ff0ba4ad736",
+        "923e5426-5921-4730-b0d7-54f41661f233"
+      ],
+      "settings": {
+        "space_around": false,
+        "bg_color": "#eadfde",
+        "text_color": "#000000"
+      }
+    },
+    "8821c129-61ca-4fa2-abe5-24e9082ed32d": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "main": {
+      "type": "blog-template",
+      "settings": {
+        "full_screen": true,
+        "blog_show_tag_filter": false,
+        "blog_show_rss": false,
+        "blog_show_title": false,
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false
+      }
+    },
+    "6a949b12-3261-4723-8b1a-8158beda1b73": {
+      "type": "blog-posts",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "blog": "news",
+        "post_limit": 8,
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": false,
+        "divider": false
+      }
+    },
+    "a22bd673-94af-4e6c-9110-39e1391465fc": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "small"
+      }
+    },
+    "d52cad45-f108-4d3b-8e07-58a6316dc784": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--15980697747646__d52cad45-f108-4d3b-8e07-58a6316dc784-1680676959bfb46ce0-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div class='snpt-wdgt--liveig'>\n        <script async src='https:\/\/app.addsauce.com\/widgets\/liveig\/ab031fab-6510-4b0e-87dd-80b4c65461dd' class='snapppt-widget'><\/script>\n      <\/div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15980697747646__d52cad45-f108-4d3b-8e07-58a6316dc784-1680676959bfb46ce0-1"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
+    }
+  },
+  "order": [
+    "167d1e62-335b-41e4-acb4-910cf68d1a9e",
+    "b9e20b2e-d6af-410b-932e-e4e04b43fe4d",
+    "f193a066-9662-4cf5-907c-393842363cf9",
+    "8821c129-61ca-4fa2-abe5-24e9082ed32d",
+    "main",
+    "6a949b12-3261-4723-8b1a-8158beda1b73",
+    "a22bd673-94af-4e6c-9110-39e1391465fc",
+    "d52cad45-f108-4d3b-8e07-58a6316dc784"
+  ]
+}

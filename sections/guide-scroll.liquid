@@ -1,0 +1,154 @@
+<div class="image-row grid grid--small grid--uniform page--full guide-scroll__wrapper guide-scroll__{{ section.id }}">
+  <div class="grid__item one-quarter guide-scroll__title">
+    {%- if section.settings.guide_title != blank -%}
+    {%- style -%}
+    .guide-scroll__{{ section.id }} .guide-scroll__title {
+    	justify-content: center;
+    	align-self: center;
+    }
+    {%- comment -%}
+    @media only screen and (max-width:589px) {
+      .guide-scroll__{{ section.id }}.guide-scroll__wrapper.grid--small .grid__item.guide-scroll__title {
+         padding-left: 10px;
+      }
+    }
+    {%- endcomment -%}
+    {%- endstyle -%}
+    <p class="no-margin h2">{{ section.settings.guide_title }}</p>
+    {%- else -%}
+    {% assign img_url = section.settings.guide_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+    <img class="lazyload guide-scroll--image"
+         data-src="{{ img_url }}"
+         data-widths="[167, 183, 260, 304, 311, 362, 456, 630]"
+         data-aspectratio="{{ section.settings.guide_image.aspect_ratio }}"
+         data-sizes="auto"
+         alt="{{ section.settings.guide_image.alt | escape }}">
+    {%- endif -%}
+  </div>
+  <div class="grid__item guide-scroll__container three-quarters">
+  	<div class="swiper guide-scroll__slider" id="guide-scroll__{{ section.id }}">
+      <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+          <div class="swiper-slide guide-scroll__slide" {{ block.shopify_attributes }}>
+              {% assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+              {%- if block.settings.url != blank -%}<a href="{{ block.settings.url }}">{%- endif -%}
+              <img class="lazyload guide-scroll--image"
+                   data-src="{{ img_url }}"
+                   data-widths="[167, 183, 260, 304, 311, 362, 456, 630]"
+                   data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ block.settings.image.alt | escape }}">
+            <span class="h3 grid-image__title">{{ block.settings.text }}</span>
+            {%- if block.settings.url != blank -%}</a>{%- endif -%}
+          </div>
+          {%- endfor -%}
+      </div>
+      {% if section.settings.enable_scrollbar -%}<div class="swiper-pagination"></div>{%- endif -%}
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('page:loaded', function() {
+  const guide_scroll = new Swiper('#guide-scroll__{{ section.id }}', {
+	pagination: {
+    	el: ".swiper-pagination",
+        type: "progressbar",
+        clickableClass: "swiper-pagination-clickable"
+    },
+    spaceBetween: 5,
+    slidesPerView: {{ section.settings.slide_view_mobile }},
+    centeredSlides: false,
+    centerInsufficientSlides: true,
+    breakpoints: {
+      768: {
+        spaceBetween: 10,
+        slidesPerView: {{ section.settings.slide_view }},
+        centeredSlides: false,
+        centerInsufficientSlides: true,
+          mousewheel: {
+            invert: false
+          }
+      }
+    }
+  });
+});
+
+</script>
+
+{% schema %}
+  {
+    "name": "Guide Scroll",
+	"max_blocks": 10,
+    "settings": [
+		{
+		  "type": "header",
+		  "content": "Guide Title"
+		},
+		{
+		  "type": "text",
+		  "id": "guide_title",
+		  "label": "Title",
+		  "info": "Leave empty if image should be used."
+		},
+		{
+		  "type": "image_picker",
+		  "id": "guide_image",
+		  "label": "Image"
+		},
+		{
+		  "type": "header",
+		  "content": "Guide Slider Settings"
+		},
+		{
+		  "type": "text",
+		  "id": "slide_view",
+		  "label": "Slide per View",
+		  "info": "Use decimal to show portion of next slide",
+		  "default": "5"
+		},
+		{
+		  "type": "text",
+		  "id": "slide_view_mobile",
+		  "label": "Slide per View on Mobile",
+		  "info": "Use decimal to show portion of next slide",
+		  "default": "2.2"
+		},
+		{
+		  "type": "checkbox",
+		  "id": "enable_scrollbar",
+		  "label": "Enable Scrollbar",
+		  "info": "Enable this if you have slides more than your slide per view above",
+		  "default": false
+		}
+	],
+	"blocks": [
+		 {
+          "name": "Image",
+          "type": "image",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+           },
+           {
+			  "type": "url",
+              "id": "url",
+              "label": "Link"
+		   },
+		   {
+			  "type": "text",
+              "id": "text",
+              "label": "Text"
+		   }
+		]
+      }
+	],
+    "presets": [
+        {
+          "name": "Guide Scroll"
+        }
+      ]
+  }
+{% endschema %}

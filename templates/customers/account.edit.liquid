@@ -1,0 +1,18 @@
+<div class="page-width page-content">
+  <div class="grid">
+
+    <div class="register-grid-item grid__item medium-up--one-third medium-up--push-one-third">
+
+      <header class="section-header">
+        <h1 class="section-header__title">Edit Account</h1>
+      </header>
+
+      <div class="form-vertical register-form">
+        {% render "customer-fields", form_id: "8bt0Nz" %}
+      </div>
+    </div>
+  </div>
+  <p class="account-login__link">{{ 'customer.account.with_account' | t | customer_login_link }}</p>
+  <div class="section--divider padding-top-34"></div>
+  <p class="text-center no-margin-bottom rte">{{ 'customer.account.trouble_html' | t }}</p>
+</div>

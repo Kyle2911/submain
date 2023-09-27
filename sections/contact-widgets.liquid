@@ -1,0 +1,191 @@
+{%- if section.settings.add_spacing_above -%}<hr class="hr--small hr--clear">{%- endif -%}
+<div class="contact-widgets">
+  <div class="contact-widgets__page-width{%- if section.settings.full_screen -%}page-width--narrow{%- endif -%}">
+    <div class="contact-widgets__header text-center">
+      <span class="h3 bold margin-bottom-5">{{ section.settings.main-title }}</span>
+      <span class="h5 no-margin-bottom">{{ section.settings.sub-title }}</span>
+    </div>
+    <div class="contact-widgets__wrapper text-center grid grid--uniform">
+      <div class="contact-widgets__item grid__item medium-up--one-third small--one-whole">
+        <div class="contact-widgets__container">
+          <div class="contact-widgets__icon">
+            {%- assign img_url = section.settings.icon1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                <img class="lazyload image-scroll--image"
+                     data-src="{{ img_url }}"
+                     data-widths="[167, 260, 304, 311, 362, 450, 630, 1139, 1220]"
+                     data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                     data-sizes="auto"
+                     alt="{{ section.settings.icon1.alt | escape }}">
+          </div>
+            <button type="button" onclick="Freshbots.showWidget(true);" class="contact-widgets__btn btn btn--tertiary">{{ section.settings.button_label1 }}</button>
+            <p class="contact-widgets__description">{{ section.settings.description_text1 }}</p>
+        </div>
+      </div>
+      <div class="contact-widgets__item grid__item medium-up--one-third small--one-whole">
+        <div class="contact-widgets__container">
+          <div class="contact-widgets__icon">
+            {%- assign img_url = section.settings.icon2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                <img class="lazyload image-scroll--image"
+                     data-src="{{ img_url }}"
+                     data-widths="[167, 260, 304, 311, 362, 450, 630, 1139, 1220]"
+                     data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                     data-sizes="auto"
+                     alt="{{ section.settings.icon2.alt | escape }}">
+          </div>
+            <button type="button" class="contact-widgets__btn btn btn--tertiary email-form__collapse">{{ section.settings.button_label2 }}</button>
+            <p class="contact-widgets__description">{{ section.settings.description_text2 }}</p>
+        </div>
+        <div class="index-section email-form__content medium-up--hide">
+          <div class="page-width--narrow">
+            <div class="form-vertical">
+              <span class="email-form__header text-center h3 bold margin-bottom-5">{{ 'general.contact_us.email_form.header' | t }}</span>
+              <p class="email-form__subheader text-center">{{ 'general.contact_us.email_form.subheader_html' | t }}</p>
+              {%- render 'email-form' -%}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-widgets__item grid__item medium-up--one-third small--one-whole">
+        <div class="contact-widgets__container">
+          <div class="contact-widgets__icon">
+            {%- assign img_url = section.settings.icon3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                <img class="lazyload image-scroll--image"
+                     data-src="{{ img_url }}"
+                     data-widths="[167, 260, 304, 311, 362, 450, 630, 1139, 1220]"
+                     data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                     data-sizes="auto"
+                     alt="{{ section.settings.icon3.alt | escape }}">
+          </div>
+            <a href="/pages/store-list" class="contact-widgets__btn btn btn--tertiary">{{ section.settings.button_label3 }}</a>
+            <p class="contact-widgets__description">{{ section.settings.description_text3 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- if section.settings.add_spacing_below -%}<hr class="hr--small hr--clear">{%- endif -%}
+<div class="index-section email-form__content small--hide">
+  <div class="page-width--narrow">
+    <div class="form-vertical">
+      <span class="email-form__header text-center h3 bold margin-bottom-5">{{ 'general.contact_us.email_form.header' | t }}</span>
+      <p class="email-form__subheader text-center">{{ 'general.contact_us.email_form.subheader_html' | t }}</p>
+      {%- render 'email-form' -%}
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('page:loaded', function() {
+  document.querySelector('.email-form__collapse').addEventListener('click', function() {
+    var email_contents = document.querySelectorAll('.email-form__content');
+    email_contents.forEach((content) => {
+      content.classList.toggle('active');
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+});
+</script>
+
+{%- schema -%}
+  {
+    "name": "Contact Widgets",
+    "settings": [
+        {
+		  "type": "checkbox",
+		  "id": "full_screen",
+		  "label": "Fullscreen",
+		  "default": false
+		},
+        {
+		  "type": "checkbox",
+		  "id": "add_spacing_above",
+		  "label": "Add spacing above",
+		  "default": true
+		},
+        {
+		  "type": "checkbox",
+		  "id": "add_spacing_below",
+		  "label": "Add spacing below",
+		  "default": true
+		},
+        {
+           "type": "text",
+           "id": "main-title",
+           "label": "Main title",
+		   "info": "Main title"
+        },
+        {
+           "type": "text",
+           "id": "sub-title",
+           "label": "Sub title",
+		   "info": "Sub title"
+        },
+        {
+          "type": "header",
+          "content": "First Block"
+        },
+        {
+              "type": "image_picker",
+              "id": "icon1",
+              "label": "Icon"
+        },
+        {
+			  "type": "text",
+              "id": "button_label1",
+              "label": "Button Label"
+        },
+        {
+			  "type": "text",
+              "id": "description_text1",
+              "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Second Block"
+        },
+        {
+              "type": "image_picker",
+              "id": "icon2",
+              "label": "Icon"
+        },
+        {
+			  "type": "text",
+              "id": "button_label2",
+              "label": "Button Label"
+        },
+        {
+			  "type": "text",
+              "id": "description_text2",
+              "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Third Block"
+        },
+        {
+              "type": "image_picker",
+              "id": "icon3",
+              "label": "Icon"
+        },
+        {
+			  "type": "text",
+              "id": "button_label3",
+              "label": "Button Label"
+        },
+        {
+			  "type": "text",
+              "id": "description_text3",
+              "label": "Description"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Contact Widgets"
+        }
+      ]
+  }
+{%- endschema -%}

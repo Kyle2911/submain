@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "disabled": true,
+      "settings": {
+        "blog_show_image": true,
+        "blog_show_tags": true,
+        "blog_show_date": true,
+        "blog_show_comments": true,
+        "blog_show_author": false,
+        "social_sharing_blog": true
+      }
+    },
+    "92ee79c4-a58d-44ee-81c9-fb26c5073456": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15994660323518__92ee79c4-a58d-44ee-81c9-fb26c5073456-166789039844e7418b-1": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/DOTCOM_DESKTOP_1910x835_px_MAIN_BANNER-SELF_CARE.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/DOTCOM_MOBILE_1025x1500px_SELF_CARE.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15994660323518__92ee79c4-a58d-44ee-81c9-fb26c5073456-166789039844e7418b-1"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "minimal",
+        "loading_bar": false,
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "ea092e95-e0fa-49e9-9ae2-4e209b54622a": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "small"
+      }
+    },
+    "5a7e3b3f-1f59-4669-9fe5-7194fa247352": {
+      "type": "breadcrumbs",
+      "settings": {
+        "center": true
+      }
+    },
+    "db9b0e48-5a94-4439-8ef1-26256fc88278": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15994660323518__db9b0e48-5a94-4439-8ef1-26256fc88278-1667889749cd20ab34-0": {
+          "type": "heading",
+          "settings": {
+            "title": "MAKE EVERYDAY A SELF-CARE DAY!",
+            "bold_header": true,
+            "use_header": true
+          }
+        },
+        "66af78ca-e433-472f-b3f8-d15c8f3a1fb6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>There’s no better way to start or end your day that prioritizing your personal needs. <br\/>Self-care need not be a major production, here are some 5-minute self-care ideas you can do today<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15994660323518__db9b0e48-5a94-4439-8ef1-26256fc88278-1667889749cd20ab34-0",
+        "66af78ca-e433-472f-b3f8-d15c8f3a1fb6"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "b476f747-a46c-4790-9922-f604730a3651": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "medium"
+      }
+    },
+    "cd29fd38-82b3-4551-a15a-414f4bc2b4bc": {
+      "type": "rich-text",
+      "blocks": {
+        "273442ff-6313-4ff8-83bc-ac604df62373": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><span style=\"text-decoration:underline\"><strong>Meditate<\/strong><\/span><br\/>Read words of affirmation.<br\/>Say a prayer. Zone in and find your inner peace. <\/p><p> <\/p><p><span style=\"text-decoration:underline\"><strong>Clean and Organize Your Room<\/strong><\/span><br\/>Do things around your room still spark joy? Nothing beats a clean space and refreshed visuals to help you attract good vibes. <\/p><p>Be sure to light that candle or spray your <a href=\"\/collections\/sanitizers\" title=\"Sanitizers & Disinfectants\">go-to scent.<\/a><\/p><p> <\/p><p><span style=\"text-decoration:underline\"><strong>Wear Your Fave Set of Loungewear<\/strong><\/span><br\/>Only cotton soft set would work! Shop <a href=\"\/collections\/core-loungewear\" title=\"Core Loungewear\">Penshoppe's Loungewear sets.<\/a><\/p><p> <\/p><p><span style=\"text-decoration:underline\"><strong>Set Out In The Sun<\/strong><\/span><br\/>Go meet Mr. Golden Sun.<br\/>Adequate sun exposure helps improve your sleep,<br\/>strengthens your immune system, and improves your sleep. <\/p><p> <\/p><p><span style=\"text-decoration:underline\"><strong>Write Down Things You Are Grateful For<\/strong><\/span><br\/>There is always something to be grateful for,<br\/>in big and small ways.<br\/><br\/>A grateful heart attracts more blessings! ✨<\/p><p> <\/p><p><span style=\"text-decoration:underline\"><strong>Try Aromatherapy<\/strong><\/span><br\/>Our scent of smells sends signal to our brain. Try our our <a href=\"\/products\/mood-balm-calming-7-5g\" title=\"Mood Balm Calming 7.5G\">selections<em> <\/em><\/a><em>- <\/em>Rub it on your temples, wrists, and side of your neck <em>- <\/em>it might just help bring that calm and zen feeling.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "273442ff-6313-4ff8-83bc-ac604df62373"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "c54af80b-c7fe-4a8f-abdf-c879e176d20c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15994886586558__c54af80b-c7fe-4a8f-abdf-c879e176d20c-1667912798905a10da-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Share with us your self care routine.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15994886586558__c54af80b-c7fe-4a8f-abdf-c879e176d20c-1667912798905a10da-1"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "6b9bb6d1-a709-4ef4-aae5-b8accc460223": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15994886586558__6b9bb6d1-a709-4ef4-aae5-b8accc460223-1667912798905a10da-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Follow us at @penshoppe in socials for the latest in fashion! <br\/><a href=\"https:\/\/fb.com\/Penshoppe\" title=\"https:\/\/fb.com\/Penshoppe\">fb.com\/Penshoppe<\/a><br\/><a href=\"https:\/\/instagram.com\/penshoppe\" title=\"https:\/\/instagram.com\/penshoppe\">instagram.com\/penshoppe<\/a><br\/><a href=\"https:\/\/instagram.com\/penshoppe\" title=\"https:\/\/instagram.com\/penshoppe\">twitter.com\/penshoppe<\/a><br\/><a href=\"https:\/\/tiktok.com\/penshoppe\" title=\"https:\/\/tiktok.com\/penshoppe\">tiktok.com\/penshoppe<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15994886586558__6b9bb6d1-a709-4ef4-aae5-b8accc460223-1667912798905a10da-1"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "c082beec-48a7-4d49-81ec-8d2e479e9671": {
+      "type": "social-share",
+      "settings": {
+        "space_around": true,
+        "link": "shopify:\/\/blogs\/news\/make-every-day-a-self-care-day"
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "More on Penshoppe Archive",
+        "blog": "news",
+        "post_limit": 4,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "92ee79c4-a58d-44ee-81c9-fb26c5073456",
+    "ea092e95-e0fa-49e9-9ae2-4e209b54622a",
+    "5a7e3b3f-1f59-4669-9fe5-7194fa247352",
+    "db9b0e48-5a94-4439-8ef1-26256fc88278",
+    "b476f747-a46c-4790-9922-f604730a3651",
+    "cd29fd38-82b3-4551-a15a-414f4bc2b4bc",
+    "c54af80b-c7fe-4a8f-abdf-c879e176d20c",
+    "6b9bb6d1-a709-4ef4-aae5-b8accc460223",
+    "c082beec-48a7-4d49-81ec-8d2e479e9671",
+    "blog-posts"
+  ]
+}

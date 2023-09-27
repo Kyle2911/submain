@@ -1,0 +1,86 @@
+{{ 'flash-sale.css' | asset_url | stylesheet_tag }}
+
+{%- assign date_now = "now" | date: "%s" -%}
+{%- assign date_end = section.settings.flash_sale_end_date | date: "%s" -%}
+
+{%- if date_now <= date_end -%}
+{%- render 'custom-flash-sale-countdown', area: section, class_name: 'page-width' -%}
+{%- render 'custom-flash-sale-slider', section: section -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Flash Sale",
+    "settings": [
+      {
+		"type": "text",
+		"id": "flash_id",
+		"label": "ID"
+	  },
+	  {
+		"type": "checkbox",
+		"id": "flash_space",
+		"label": "Add spacing above and below",
+		"default": false
+	  },
+      {
+		"type": "text",
+		"id": "flash_sale_end_date",
+		"label": "Flash Sale End",
+		"default": "Month Day, Year HH:MM:SS",
+		"info": "Time is in 24-H format"
+	  },
+  	  {
+		"type": "text",
+		"id": "flash_title",
+		"label": "Title"
+	  },
+	  {
+        "type": "checkbox",
+        "id": "view_all",
+        "label": "Show 'View all' link",
+        "default": true
+      },
+	  {
+        "type": "text",
+        "id": "progress_bar_text",
+        "label": "Progress Bar Text",
+        "default": "Sold"
+      },
+	  {
+        "type": "number",
+        "id": "inventory_count",
+        "label": "Total Inventory Count"
+      },
+	  {
+		"type": "header",
+	    "content": "Slider"
+	  },
+	  {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      },
+	  {
+        "type": "range",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": 4,
+        "min": 1,
+        "max": 5,
+        "step": 1
+      },
+	  {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+  ],
+  "presets": [
+      {
+        "name": "Flash Sale"
+      }
+    ]
+  }
+{% endschema %}

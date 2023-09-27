@@ -1,0 +1,31 @@
+<div class="text-center">
+<a href="{{ section.settings.link }}" class="btn btn--secondary{% if section.settings.big_button %} btn--custom{% endif %}">{{ section.settings.text }}</a>
+</div>
+{% schema %}
+  {
+    "name": "Button",
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "big_button",
+          "label": "Big Button",
+          "default": true
+        },
+		{
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+		{
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+	],
+    "presets": [
+      {
+      "name": "Button"
+      }
+    ]
+  }
+{% endschema %}
