@@ -25,8 +25,8 @@
 
   window.custard.init(jQuery || Checkout.jQuery, Shopify.Checkout.step || (Shopify.Checkout.OrderStatus ? 'order_status' : null),
   {    
-                   html_templates: {
-                            marketing_text: {{ labelMarketing | json }},
+                     html_templates: {
+                              marketing_text: {{ labelMarketing | json }},
   remove_existing: {{ removeExisting | json }},
   pickup_list: {{ pickUpList | json }},
   pickupReviewDetailsBlock: {{ ReviewDetailsBlock | json }},
