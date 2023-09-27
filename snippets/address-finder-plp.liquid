@@ -1,4 +1,4 @@
-{% comment %} <script>
+<script>
   window.collectionProducts = [
     {%- for product in products -%}
       {{ product.selected_or_first_available_variant.sku | json }},
@@ -40,4 +40,4 @@
     </div>
     
   </div>
-</div> {% endcomment %}
+</div>
