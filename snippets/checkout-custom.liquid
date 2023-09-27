@@ -9,11 +9,75 @@
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
-    $('.field__input-wrapper')[8].innerHTML = `<select class=" field__input field__input -- select "
-    placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city"" >
+
+      // This section is for Province
+
+       $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
+    <select class=" field__input field__input -- select "
+    placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
     <option>Province</option>
     </select>
     `;
+
+           // this section is for Street address
+       $('.field__input-wrapper')[8].innerHTML = `
+      <div class="field__input-wrapper">
+        <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
+        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
+      </div>
+    `;
+
+    //this section is for city
+          $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
+        <input placeholder="Town or City" autocomplete="shipping address-line2" autocorrect="off" data-backup="address2" class="field__input" aria-required="true" size="30" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2">
+    `;
+    
+ //this section is for barangay
+      $('.field__input-wrapper')[6].innerHTML = ` 
+      <label class="field__label field__label--visible" for="checkout_shipping_address_address1">Barangay</label>
+        <input placeholder="Barangay" autocomplete="shipping address-line1" autocorrect="off" data-backup="address1" class="field__input" aria-required="true" size="30" type="text"  name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1">
+
+      <p class="field__additional-info visually-hidden" data-address-civic-number-warning="">
+        <svg class="icon-svg icon-svg--size-16 field__message__icon" aria-hidden="true" focusable="false"> <use xlink:href="#info"></use> </svg>
+        Add a house number if you have one
+      </p>
+    `;
+
+    
+   var arr_shipping_address = JSON.parse(localStorage.getItem("arrProvince"));
+    if (arr_shipping_address != null) {
+   
+      province = [];
+      var data = JSON.parse(localStorage.arrProvince);
+      for (let i = 0; i < data.province.length; i++) {
+        const arrP = `${
+          data.province[i]
+        }`;
+        province.push(arrP);
+      }
+      $("#checkout_shipping_address_city").html(province.sort().join(""));
+    } else {
+
+      url = "https://tools.gabcgfs.com/address_finder_dev.php";
+      province = [];
+      province.push('<option value="" Selected>Province</option>');
+      jQuery.ajax({url: url, type: "GET", dataType: "jsonp", contentType: "application/json; charset=UTF-8"}).done(function(json) {
+        for (let i = 0; i < json.length; i++) {
+          const arrP = `<option value="${
+            json[i].PROVINCE
+          }">${
+            json[i].PROVINCE
+          }</option>`;
+          province.push(arrP);
+        }
+  
+        $("#checkout_shipping_address_city").html(province.join(""));
+        localStorage.setItem("arrProvince", JSON.stringify({province}));
+      });
+
+    }
+    
+ 
   </script>
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
