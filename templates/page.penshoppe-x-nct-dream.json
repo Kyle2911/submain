@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "e9dc771d-85df-4809-ac15-44cc395c2f87": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15980696731838__e9dc771d-85df-4809-ac15-44cc395c2f87-16812789076ef6b3c7-0": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify:\/\/shop_images\/NCTD_DOTCOM_BANNER_2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/NCTD_MOBILE_BANNER_12bd030b-979f-40b2-8541-4561980b88b8.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15980696731838__e9dc771d-85df-4809-ac15-44cc395c2f87-16812789076ef6b3c7-0"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "dots",
+        "loading_bar": false,
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "e9dc771d-85df-4809-ac15-44cc395c2f87",
+    "main"
+  ]
+}

@@ -1,0 +1,1443 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Motion",
+    "theme_author": "Archetype Themes",
+    "theme_version": "8.0.1",
+    "theme_documentation_url": "https:\/\/archetypethemes.co\/blogs\/motion",
+    "theme_support_url": "https:\/\/archetypethemes.co\/pages\/support#motion"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "color_body_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Lines and borders",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_button",
+        "label": "Buttons",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_button_text",
+        "label": "Button text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_sale_price",
+        "label": "Sale price",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_sale_tag",
+        "label": "Sale tag",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_sale_tag_text",
+        "label": "Sale tag text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_cart_dot",
+        "label": "Cart dot",
+        "default": "#ff4f33"
+      },
+      {
+        "type": "color",
+        "id": "color_promo_violator",
+        "label": "Promo Violator",
+        "default": "#E8E8E1"
+      },
+      {
+        "type": "color",
+        "id": "color_promo_violator_text",
+        "label": "Promo Violator Text",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_progress_bar",
+        "label": "Progress Bar Background",
+        "default": "#c1c1c1"
+      },
+      {
+        "type": "color",
+        "id": "color_progress_bar_percentage",
+        "label": "Progress Bar Percentage",
+        "default": "#f01737"
+      },
+      {
+        "type": "color",
+        "id": "color_progress_bar_text",
+        "label": "Progress Bar Percentage",
+        "default": "#FFF"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "color_header",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_header_text",
+        "label": "Text",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_announcement",
+        "label": "Announcement bar",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_announcement_text",
+        "label": "Announcement bar text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "color",
+        "id": "color_footer",
+        "label": "Background",
+        "default": "#111"
+      },
+      {
+        "type": "color",
+        "id": "color_footer_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Menu and cart drawers"
+      },
+      {
+        "type": "color",
+        "id": "color_drawer_background",
+        "label": "Background",
+        "default": "#1c1d1d"
+      },
+      {
+        "type": "color",
+        "id": "color_drawer_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_drawer_border",
+        "label": "Lines and borders",
+        "default": "#343535"
+      },
+      {
+        "type": "color",
+        "id": "color_drawer_button",
+        "label": "Buttons",
+        "default": "#a26b25"
+      },
+      {
+        "type": "color",
+        "id": "color_drawer_button_text",
+        "label": "Button text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_modal_overlays",
+        "label": "Overlays",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Image overlays"
+      },
+      {
+        "type": "paragraph",
+        "content": "Used on large images with overlaid text (heroes, featured collections)"
+      },
+      {
+        "type": "color",
+        "id": "color_image_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_image_2",
+        "label": "From",
+        "default": "#fffed9"
+      },
+      {
+        "type": "range",
+        "id": "color_image_2_opacity",
+        "label": "Opacity",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "%"
+      },
+      {
+        "type": "color",
+        "id": "color_image_1",
+        "label": "To",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "color_image_1_opacity",
+        "label": "Opacity",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "%"
+      },
+      {
+        "type": "header",
+        "content": "Animations"
+      },
+      {
+        "type": "color",
+        "id": "color_small_image_bg",
+        "label": "Image background",
+        "default": "#eee"
+      },
+      {
+        "type": "color",
+        "id": "color_large_image_bg",
+        "label": "Image section background",
+        "default": "#1c1d1d"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font_family",
+        "label": "Font",
+        "default": "poppins_n7"
+      },
+      {
+        "type": "select",
+        "id": "type_header_spacing",
+        "label": "Letter spacing",
+        "default": "25",
+        "options": [
+          {
+            "value": "-75",
+            "label": "-75"
+          },
+          {
+            "value": "-50",
+            "label": "-50"
+          },
+          {
+            "value": "-25",
+            "label": "-25"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "25",
+            "label": "25"
+          },
+          {
+            "value": "50",
+            "label": "50"
+          },
+          {
+            "value": "75",
+            "label": "75"
+          },
+          {
+            "value": "100",
+            "label": "100"
+          },
+          {
+            "value": "150",
+            "label": "150"
+          },
+          {
+            "value": "200",
+            "label": "200"
+          },
+          {
+            "value": "250",
+            "label": "250"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "type_header_base_size",
+        "label": "Base size",
+        "default": 32,
+        "min": 22,
+        "max": 60,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_header_line_height",
+        "label": "Line height",
+        "default": 1.4,
+        "min": 0.8,
+        "max": 2,
+        "step": 0.1
+      },
+      {
+        "type": "checkbox",
+        "id": "type_header_capitalize",
+        "label": "Capitalize headings"
+      },
+      {
+        "type": "checkbox",
+        "id": "type_header_accent_transform",
+        "label": "Capitalize labels, footer titles"
+      },
+      {
+        "type": "checkbox",
+        "id": "type_headers_align_text",
+        "label": "Center page and section titles",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Body text"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_base_font_family",
+        "label": "Font",
+        "default": "poppins_n5"
+      },
+      {
+        "type": "select",
+        "id": "type_base_spacing",
+        "label": "Letter spacing",
+        "default": "50",
+        "options": [
+          {
+            "value": "-75",
+            "label": "-75"
+          },
+          {
+            "value": "-50",
+            "label": "-50"
+          },
+          {
+            "value": "-25",
+            "label": "-25"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "25",
+            "label": "25"
+          },
+          {
+            "value": "50",
+            "label": "50"
+          },
+          {
+            "value": "75",
+            "label": "75"
+          },
+          {
+            "value": "100",
+            "label": "100"
+          },
+          {
+            "value": "150",
+            "label": "150"
+          },
+          {
+            "value": "200",
+            "label": "200"
+          },
+          {
+            "value": "250",
+            "label": "250"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "type_base_size",
+        "label": "Base size",
+        "default": 16,
+        "min": 12,
+        "max": 20,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "type_base_line_height",
+        "label": "Line height",
+        "default": 1.6,
+        "min": 1,
+        "max": 2,
+        "step": 0.1
+      },
+      {
+        "type": "checkbox",
+        "id": "type_base_accent_transform",
+        "label": "Capitalize hero subtitle, sale tags, vendor"
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "range",
+        "id": "type_navigation_size",
+        "label": "Text size",
+        "default": 18,
+        "min": 12,
+        "max": 40,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id": "type_navigation_style",
+        "label": "Use heading font"
+      }
+    ]
+  },
+  {
+    "name": "Icons",
+    "settings": [
+      {
+        "type": "select",
+        "id": "icon_weight",
+        "label": "Weight",
+        "default": "5px",
+        "options": [
+          {
+            "value": "2px",
+            "label": "Extra-light"
+          },
+          {
+            "value": "3px",
+            "label": "Light"
+          },
+          {
+            "value": "4px",
+            "label": "Regular"
+          },
+          {
+            "value": "5px",
+            "label": "Semi-bold"
+          },
+          {
+            "value": "6px",
+            "label": "Bold"
+          },
+          {
+            "value": "7px",
+            "label": "Extra-bold"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "icon_linecaps",
+        "label": "Edges",
+        "default": "miter",
+        "options": [
+          {
+            "value": "miter",
+            "label": "Sharp"
+          },
+          {
+            "value": "round",
+            "label": "Round"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Animations",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Pages"
+      },
+      {
+        "type": "checkbox",
+        "id": "animate_page_transitions",
+        "label": "Animate between pages",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "animate_page_transition_style",
+        "label": "Style",
+        "default": "page-fade-in-up",
+        "options": [
+          {
+            "value": "page-fade-in-up",
+            "label": "Fade"
+          },
+          {
+            "value": "page-slow-fade",
+            "label": "Slow fade"
+          },
+          {
+            "value": "page-slide-reveal-across",
+            "label": "Slide reveal across"
+          },
+          {
+            "value": "page-slide-reveal-down",
+            "label": "Slide reveal down"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Sections"
+      },
+      {
+        "type": "checkbox",
+        "id": "animate_sections",
+        "label": "Animate sections",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "animate_sections_background_style",
+        "label": "Background style",
+        "default": "zoom-fade",
+        "options": [
+          {
+            "value": "fade-in",
+            "label": "Fade in"
+          },
+          {
+            "value": "zoom-fade",
+            "label": "Zoom and fade in"
+          },
+          {
+            "value": "paint-across",
+            "label": "Slide reveal"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "animate_sections_text_style",
+        "label": "Text style",
+        "default": "rise-up",
+        "options": [
+          {
+            "value": "fade-in",
+            "label": "Fade in"
+          },
+          {
+            "value": "rise-up",
+            "label": "Rise up"
+          },
+          {
+            "value": "paint-across",
+            "label": "Slide reveal"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Images"
+      },
+      {
+        "type": "checkbox",
+        "id": "animate_images",
+        "label": "Animate images",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "animate_images_style",
+        "label": "Style",
+        "default": "zoom-fade",
+        "options": [
+          {
+            "value": "fade-in",
+            "label": "Fade in"
+          },
+          {
+            "value": "zoom-fade",
+            "label": "Zoom and fade in"
+          },
+          {
+            "value": "paint-across",
+            "label": "Slide reveal"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Other"
+      },
+      {
+        "type": "checkbox",
+        "id": "animate_buttons",
+        "label": "Animate buttons",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "animate_underlines",
+        "label": "Animate underlines",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Products",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "vendor_enable",
+        "label": "Show vendor"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_save_amount",
+        "label": "Show saved amount",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "product_save_type",
+        "label": "Savings display style",
+        "default": "dollar",
+        "options": [
+          {
+            "value": "dollar",
+            "label": "Dollar"
+          },
+          {
+            "value": "percent",
+            "label": "Percent"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Product tiles",
+    "settings": [
+      {
+        "type": "select",
+        "id": "product_grid_image_size",
+        "label": "Force image size",
+        "default": "natural",
+        "options": [
+          {
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "square",
+            "label": "Square (1:1)"
+          },
+          {
+            "value": "landscape",
+            "label": "Landscape (4:3)"
+          },
+          {
+            "value": "portrait",
+            "label": "Portrait (2:3)"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "product_grid_image_fill",
+        "label": "Zoom image to fill space",
+        "info": "No effect when grid image size set to 'Natural'"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_hover_image",
+        "label": "Hover to reveal second image",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "quick_shop_enable",
+        "label": "Enable quick shop feature"
+      },
+      {
+        "type": "text",
+        "id": "quick_shop_text",
+        "label": "Quick shop button text",
+        "default": "Quick view"
+      },
+      {
+        "type": "header",
+        "content": "Color swatches"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_swatches",
+        "label": "Enable color swatches"
+      },
+      {
+        "type": "header",
+        "content": "Product reviews"
+      },
+      {
+        "type": "paragraph",
+        "content": "Add reviews by enabling the setting below and installing the [Shopify Product Reviews app](https:\/\/apps.shopify.com\/product-reviews) and following our [setup guide](https:\/\/archetypethemes.co\/blogs\/support\/installing-shopifys-product-reviews-app)"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable product reviews",
+        "id": "enable_product_reviews"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Cart"
+      },
+      {
+        "type": "select",
+        "id": "cart_type",
+        "label": "Cart type",
+        "default": "drawer",
+        "options": [
+          {
+            "value": "page",
+            "label": "Page"
+          },
+          {
+            "value": "drawer",
+            "label": "Drawer"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "cart_icon",
+        "label": "Cart icon",
+        "default": "bag-minimal",
+        "options": [
+          {
+            "value": "bag",
+            "label": "Bag"
+          },
+          {
+            "value": "bag-minimal",
+            "label": "Minimal bag"
+          },
+          {
+            "value": "cart",
+            "label": "Cart"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_additional_buttons",
+        "label": "Enable additional checkout buttons",
+        "info": "The buttons can appear on either your cart page or your checkout page, but not both."
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable order notes"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_terms_conditions_enable",
+        "label": "Enable terms and conditions checkbox"
+      },
+      {
+        "type": "url",
+        "id": "cart_terms_conditions_link",
+        "label": "Terms and conditions page"
+      },
+      {
+        "type": "header",
+        "content": "Cart Drawer Notification"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_discount_enable",
+        "label": "Enable Cart Drawer Progress Bar"
+      },
+      {
+        "type": "text",
+        "id": "drawer_link1",
+        "label": "Drawer Link 1"
+      },
+      {
+        "type": "text",
+        "id": "drawer_text1",
+        "label": "Drawer Text 1"
+      },
+      {
+        "type": "text",
+        "id": "drawer_link2",
+        "label": "Drawer Link 2"
+      },
+      {
+        "type": "text",
+        "id": "drawer_text2",
+        "label": "Drawer Text 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "discount",
+        "label": "Enable Discount",
+        "default": false
+      },
+      {
+        "type": "number",
+        "id": "minimum_cartTotal",
+        "label": "Minimum cart total amount to get the discount",
+        "info": "Please remove the decimal point but keep the 00 if the store is using decimal."
+      },
+      {
+        "type": "number",
+        "id": "cartTotal_discount",
+        "label": "Cart Discount",
+        "info": "Cart discount once the minimum cart total reached. Please remove the decimal point but keep the 00 if the store is using decimal."
+      },
+      {
+        "type": "text",
+        "id": "discount_text",
+        "label": "Discount Text",
+        "info": "Text when discount (not free shipping) target amount is reached."
+      },
+      {
+        "type": "checkbox",
+        "id": "free_shipping",
+        "label": "Enable Free Shipping",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "progress_text",
+        "label": "Free Shipping Text",
+        "info": "Text when free shipping target amount is reached."
+      },
+      {
+        "type": "number",
+        "id": "minimum_cartTotalFreeSF",
+        "label": "Minimum cart total amount to get the free shipping",
+        "info": "Please remove the decimal point but keep the 00 if the store is using decimal."
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Accounts"
+      },
+      {
+        "type": "url",
+        "id": "about_us",
+        "label": "About Us"
+      },
+      {
+        "type": "url",
+        "id": "faqs",
+        "label": "FAQs"
+      },
+      {
+        "type": "url",
+        "id": "pickup_in_store",
+        "label": "Pick-up in Store"
+      },
+      {
+        "type": "url",
+        "id": "privacy_policy",
+        "label": "Privacy Policy"
+      },
+      {
+        "type": "url",
+        "id": "terms_of_service",
+        "label": "Terms of Service"
+      },
+      {
+        "type": "url",
+        "id": "stores_list",
+        "label": "Stores List"
+      },
+      {
+        "type": "url",
+        "id": "contact_us_link",
+        "label": "Contact",
+        "info": "https:\/\/www.penshoppe.com\/pages\/contact-us"
+      },
+      {
+        "type": "url",
+        "id": "blogs_link",
+        "label": "Blogs",
+        "info": "https:\/\/www.penshoppe.com\/blogs\/news"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "info": "https:\/\/www.facebook.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "info": "https:\/\/twitter.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "info": "https:\/\/www.pinterest.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat",
+        "info": "https:\/\/www.snapchat.com\/add\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok",
+        "info": "https:\/\/www.tiktok.com\/@shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr",
+        "info": "http:\/\/shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn",
+        "info": "https:\/\/www.linkedin.com\/in\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube",
+        "info": "https:\/\/www.youtube.com\/user\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "header",
+        "content": "Sharing options"
+      },
+      {
+        "type": "checkbox",
+        "id": "share_facebook",
+        "label": "Share on Facebook",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_twitter",
+        "label": "Tweet on Twitter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_pinterest",
+        "label": "Pin on Pinterest",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
+  },
+  {
+    "name": "Search",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "search_enable",
+        "label": "Enable search",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "search_type",
+        "label": "Search results",
+        "default": "product,article,page,collection",
+        "options": [
+          {
+            "value": "product",
+            "label": "Products only"
+          },
+          {
+            "value": "product,page",
+            "label": "Products and pages"
+          },
+          {
+            "value": "product,article",
+            "label": "Products and articles"
+          },
+          {
+            "value": "product,article,page",
+            "label": "Products, articles and pages"
+          },
+          {
+            "value": "product,article,page,collection",
+            "label": "All content"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_enabled",
+        "label": "Enable predictive search",
+        "default": true,
+        "info": "Live search results. Not available in all languages. [Learn more](https:\/\/help.shopify.com\/en\/themes\/development\/search\/predictive-search#general-requirements-and-limitations)"
+      }
+    ]
+  },
+  {
+    "name": "Extras",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumbs",
+        "label": "Show breadcrumbs"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumbs_collection_link",
+        "label": "Show collections page in breadcrumb list"
+      },
+      {
+        "type": "select",
+        "id": "text_direction",
+        "label": "Text direction",
+        "default": "ltr",
+        "options": [
+          {
+            "value": "ltr",
+            "label": "Left to right"
+          },
+          {
+            "value": "rtl",
+            "label": "Right to left"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pre-order",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "preorder_enable",
+        "label": "Cart Validation",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "preorder_limited",
+        "label": "Make Collection Exclusive",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "preorder_limited_tag",
+        "label": "Customer Tag",
+        "info": "Tags of Customers you want the collection to be available to. Will work only if the collection is made exclusive."
+      }
+    ]
+  },
+  {
+    "name": "Gift with Purchase (GWP)",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "gwp_enable",
+        "label": "Enable GWP",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gwp_progress_bar",
+        "label": "Enable GWP Progress Bar",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "disable_modal",
+        "label": "Disable Modal",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gwp_automatic",
+        "label": "Automatic Add",
+        "info": "Enable this if there's ONLY 1 GWP.",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gwp_multiple",
+        "label": "Multiple GWP",
+        "info": "Enable this if there's MORE than 1 GWP.",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "gwp_additional",
+        "label": "Additional GWP",
+        "info": "Enable this if there's a limited collection of GWP in addition to the usual ones.",
+        "default": false
+      },
+      {
+        "type": "range",
+        "label": "Limit of GWP Variants",
+        "id": "gwp_limit",
+        "info": "Limit of GWP customer can select.",
+        "min": 1,
+        "max": 6,
+        "default": 3
+      },
+      {
+        "type": "product",
+        "label": "Product",
+        "id": "gwp_product"
+      },
+      {
+        "type": "header",
+        "content": "Exclusivity"
+      },
+      {
+        "type": "text",
+        "id": "gwp_tag",
+        "label": "Tag of the GWP",
+        "default": "gwp"
+      },
+      {
+        "type": "text",
+        "id": "gwp_tag_exclusive",
+        "label": "Collection Tag",
+        "info": "Tag of the collection qualified for getting a GWP. Use 'ALL' if available for all products."
+      },
+      {
+        "type": "header",
+        "content": "Texts"
+      },
+      {
+        "type": "text",
+        "id": "gwp_title",
+        "label": "Title",
+        "default": "Choose your FREE item!"
+      },
+      {
+        "type": "text",
+        "id": "gwp_type",
+        "label": "Type",
+        "info": "To be displayed in the progress bar",
+        "default": "tote bag"
+      },
+      {
+        "type": "text",
+        "id": "gwp_success",
+        "label": "Success Message",
+        "default": "Yay! You're qualified for a FREE tote bag!"
+      },
+      {
+        "type": "text",
+        "id": "gwp_additional_note",
+        "label": "Qualified for Additional GWP",
+        "default": "Congratulations! You're qualified for an additional limited item. Claim the limited edition FREE item when you click the collect button."
+      },
+      {
+        "type": "text",
+        "id": "gwp_soldout",
+        "label": "Message when the free item's sold out."
+      },
+      {
+        "type": "header",
+        "content": "Variant IDs"
+      },
+      {
+        "type": "textarea",
+        "label": "Regular GWP(s)",
+        "id": "gwp_variant_id",
+        "info": "Comma and then space separated"
+      },
+      {
+        "type": "textarea",
+        "label": "Addtional GWP",
+        "id": "gwp_additional_variant_id",
+        "info": "Comma and then space separated"
+      },
+      {
+        "type": "header",
+        "content": "Requirements"
+      },
+      {
+        "type": "number",
+        "id": "gwp_min_count",
+        "label": "Minimum Items Count"
+      },
+      {
+        "type": "number",
+        "id": "gwp_minimum",
+        "label": "Minimum Purchase",
+        "info": "Please remove the decimal point but keep the 00 if the store is using decimal."
+      },
+      {
+        "type": "number",
+        "id": "minimum_additional_required",
+        "label": "Minimum Purchase to get the additional GWP",
+        "info": "Please remove the decimal point but keep the 00 if the store is using decimal."
+      }
+    ]
+  },
+  {
+    "name": "Global Violators",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_global_violators",
+        "label": "Enable Global Violators"
+      },
+      {
+        "type": "textarea",
+        "id": "global_violators_tag",
+        "label": "Product Tags",
+        "info": "Pipe Separated. Add spaces on sides."
+      },
+      {
+        "type": "textarea",
+        "id": "global_violators",
+        "label": "Global Violators",
+        "info": "Pipe Separated. Add spaces on sides."
+      }
+    ]
+  },
+  {
+    "name": "Promo Violators",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_promo_violators",
+        "label": "Enable Promo Violators"
+      },
+      {
+        "type": "textarea",
+        "id": "promo_violators_tag",
+        "label": "Product Tags",
+        "info": "Pipe Separated. Add spaces on sides."
+      },
+      {
+        "type": "textarea",
+        "id": "promo_violators",
+        "label": "Promo Violators",
+        "info": "Pipe Separated. Add spaces on sides."
+      }
+    ]
+  },
+  {
+    "name": "CRM Promotions",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_crm_promotions",
+        "label": "Enable CRM Promotions",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "crm_promotion",
+        "label": "Promotion"
+      },
+      {
+        "type": "text",
+        "id": "crm_tag",
+        "label": "Customer Tag",
+        "info": "Tag of the customers that can see the promotion"
+      },
+      {
+        "type": "color",
+        "id": "crm_background",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "crm_color",
+        "label": "Color"
+      }
+    ]
+  },
+  {
+    "name": "Click and Collect",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "test_mode",
+        "label": "Turn on test mode",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "store_sla_all_avaibility",
+        "label": "SLA",
+        "default": "Usually Ready in 24 hours"
+      },
+      {
+        "type": "text",
+        "id": "store_sla_some_avaibility",
+        "label": "SLA for some item avaibility",
+        "default": "Usually Ready in 48 hours"
+      },
+      {
+        "type": "richtext",
+        "id": "checkout_help_text",
+        "label": "Checkout Customer Message",
+        "default": "<p>Register your email to get exclusive perks and rewards<\/p>"
+      }
+    ]
+  },
+  {
+    "name": "Inventory Look PDP",
+    "settings": [
+      {
+        "type": "number",
+        "id": "default_quantity",
+        "label": "The number of products to categorize the store",
+        "default": 5
+      }
+    ]
+  },
+  {
+    "name": "Exclusive Collection",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "exclusive_collection_image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "exclusive_collection_tag",
+        "label": "Tag",
+        "info": "Customer tag that can view the collection.",
+        "default": "exclusive-access"
+      },
+      {
+        "type": "url",
+        "id": "exclusive_collection_login",
+        "label": "Login UTM Link"
+      },
+      {
+        "type": "url",
+        "id": "exclusive_collection_register",
+        "label": "Register UTM Link"
+      }
+    ]
+  },
+  {
+    "name": "Maintenance",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_maintenance",
+        "label": "Enable maintenance mode.",
+        "info": "This will disable OMNI functionalities in PDP, PLP, Checkout, and Store Locator.",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Custom API Information",
+    "settings": [
+      {
+        "type": "text",
+        "id": "affiliate_id",
+        "label": "AffiliateExternalID"
+      },
+      {
+        "type": "text",
+        "id": "supplier_fullname",
+        "label": "SupplierFullName"
+      }
+    ]
+  }
+]

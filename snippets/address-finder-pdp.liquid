@@ -1,0 +1,194 @@
+<style>
+  .loader {
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    padding: 0 48px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: currentColor;
+    position: absolute;
+    animation: load 0.7s infinite alternate ease-in-out;
+    top: 0;
+  }
+  .loader:after {
+    top: auto;
+    bottom: 0;
+  }
+  @keyframes load {
+    0% {
+      left: 0;
+      height: 43px;
+      width: 15px;
+      transform: translateX(0);
+    }
+    50% {
+      height: 10px;
+      width: 40px;
+    }
+    100% {
+      left: 100%;
+      height: 43px;
+      width: 15px;
+      transform: translateX(-100%);
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    border: 1px solid;
+    padding: 12px;
+    margin: 2px 0;
+  }
+  /* Add Style in Scrollbar */
+  .nearBy::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  .nearBy::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  /* Handle */
+  .nearBy::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  .nearBy::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>
+{%- capture LOCATION_ITEM -%}
+  <div class="location-item %display%" data-supplier-item>
+    <span class="%available%">
+      {% render 'ico-tick-success' %}
+    </span>
+    <span class="%warning%">
+      {% render 'ico-location-item-warning' %}
+    </span>
+    <span class="%unavailable%">
+      {% render 'ico-tick-error' %}
+    </span>
+    %title%
+    <span class="distance">%distance%</span>
+  </div>
+{%- endcapture -%}
+{%- capture VIEWMORE_BUTTON -%}
+  <div class="viewmore %display%" data-viewmore-button="true">
+    {{ 'address_finder.view_more' | t }}
+  </div>
+{%- endcapture -%}
+<div
+  class="address-finder-pdp"
+  data-html='{"location_item": {{ LOCATION_ITEM | json }}, "viewmore_btn": {{ VIEWMORE_BUTTON | json }}}'
+  data-default-qty="{{ settings.default_quantity }}">
+  <div
+    class="text-warning option-none-found hide"
+    data-variant-none-found
+    data-banner="true"
+    role="alert"
+    tabindex="-1"
+    aria-atomic="true"
+    aria-live="polite"
+    style="margin-bottom: 10px;">
+    {%- render 'ico-alert' -%}
+    <div class="notice__content">
+      <p class="notice__text">{{ 'shopify.checkout.custom.variant_none_found' | t }}</p>
+    </div>
+  </div>
+ 
+<!-- <button type="submit" name="add" data-add-to-cart="" class="btn btn--full add-to-cart">
+      <span data-add-to-cart-text="" data-default-text="Add to cart">
+        Add to cart
+      </span>
+    </button> -->
+  
+<!-- Trigger/Open The Modal -->
+<button class="myBtn" style="background-color: #000; width: 100%; padding: 12px; color: white; display: block;" data-check-in-store-button>ENTER YOUR LOCATION</button>
+  <div style="padding: 8px;"> <span style="font-size:21px;">🛈</span> <span style="position: absolute; margin: 5px 0 0 7px;">Please verify your location first in order to add items to your cart.</span></div>
+  
+<div class="resultList">
+  <div style="border: 1px solid #000;">
+  <p style="display: flex; justify-content: center; border-bottom:1px solid #000;  padding: 8px; font-size: 25px; font-weight: 800;">STORE LOCATOR</p>
+  <div class="listStore" style="display: grid; overflow:scroll; max-height:300px; overflow-x:hidden;"></div>
+      <p style="display: flex; justify-content: center; border-top:1px solid #000;  padding: 8px; font-size: 25px; font-weight: 500; margin:0;">
+     <div class="purchaseButton" style="display:none;">
+       <!-- <span style="font-size:16px; font-weight:800;">Current Address:</span> <span id="getAddress"> NO ADDRESS SELECTED.</span> -->
+       <button class="findlocationbtn" style="font-weight:bold; font-size:16px; border: none; background: none; cursor:pointer;  text-decoration: underline !important;">Update your location.</button>
+     </div>
+      </p>
+  </div>
+</div>
+
+</div>
+
+<script>
+
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+  var btn = document.querySelector(".myBtn");
+  var findlocationbtn = document.querySelector(".findlocationbtn");
+
+// Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+// When the user clicks the button, open the modal 
+  findlocationbtn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+// When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+// When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  let arrCustomerAddress = JSON.parse(localStorage.getItem("customer_address"));
+  if (arrCustomerAddress != null) {
+    document.querySelector(".purchaseButton").style.display = "grid";
+    document.querySelector(".myBtn").style.display = "none";
+    fullAddress = `${
+      arrCustomerAddress.street_address
+    }, ${
+      arrCustomerAddress.barangay
+    }, ${
+      arrCustomerAddress.city
+    }, ${
+      arrCustomerAddress.province
+    }, ${
+      arrCustomerAddress.zip
+    }`;
+    document.querySelector("#getAddress").innerHTML = fullAddress;
+  } else {
+   
+     document.querySelector(".add-to-cart").style.display = "none";
+    document.querySelector(".purchaseButton").style.display = "none";
+    document.querySelector(".myBtn").style.display = "block";
+
+  }
+</script>
+<script src="{{ 'pickup-storelist.js' | asset_url }}" defer="defer"></script>

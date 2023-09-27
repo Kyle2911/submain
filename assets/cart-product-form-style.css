@@ -1,0 +1,97 @@
+#modal-gwp .modal__centered-content {
+ 	max-width: 500px; 
+}
+
+.gwp-field {
+ 	pointer-events: none;
+}
+
+.gwp-flex {
+ 	display: flex; 
+}
+
+.gwp-close {
+ 	position: absolute;
+    right: 15px;
+    top: 5px; 
+}
+
+.gwp-title {
+ 	margin-bottom: 0; 
+}
+
+.gwp-subtitle {
+	font-size: .8rem;
+    width: 80%;
+    margin: 25px auto 0;
+    text-align: center;
+}
+
+.selected-gwp-data {
+ 	font-size: 1rem;
+  	margin-bottom: 0;
+}
+
+.collect-button {
+ 	margin-top: 25px; 
+}
+
+.hidden-gwp {
+ 	display: none; 
+}
+
+.close {
+ 	cursor: pointer; 
+}
+
+.bold {
+ 	font-weight: 700; 
+}
+.width-100p {
+ 	width: 100%;
+}
+
+.margin-top-15 {
+ 	margin-top: 15px; 
+}
+  
+.gwp-image {
+ 	margin: 0 auto;
+  	padding: 30px 0;
+  	max-width: 260px;
+}
+  
+.choose-gwp {
+ 	width: 70%; 
+}
+  
+.select-gwp {
+    background: #000000;
+    color: #fff;
+    width: 30%;
+  	margin: 5px 0;
+    border-bottom: none;
+}
+  
+.select-gwp:disabled {
+    background: gray;
+    color: #fff;
+    width: 30%;
+    border-bottom: none;
+  	pointer-events: none;
+}
+  
+.variant-container:not(:first-child):not(:last-child) {
+ 	padding: 10px 20px; 
+}
+  
+.collect-button:hover {
+ 	background: transparent;
+  	color: #000
+}
+  
+.delete-gwp {
+ 	color: red;
+    margin-left: 10px; 
+    cursor: pointer;
+}

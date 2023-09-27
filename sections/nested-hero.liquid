@@ -1,0 +1,356 @@
+<div class="swiper nested-hero nested-hero__{{ section.id }} swiper-h">
+  <div class="swiper-wrapper">
+    {%- for block in section.blocks -%}
+    <div class="swiper-slide nested-hero__{{ block.id }}" data-color="{{ block.settings.image1_color }}" {{ block.shopify_attributes }}>
+      <div class="swiper nested-herov__{{ section.id }} swiper-v">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-color="{{ block.settings.image1_color }}">
+            {% assign img_url = block.settings.image1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            {% assign img_url_mobile = block.settings.image1_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <img class="lazyload medium-down--hide"
+                 data-src="{{ img_url }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image.alt | escape }}">
+            <img class="lazyload medium-up--hide"
+                 data-src="{{ img_url_mobile }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image.alt | escape }}">
+            <a class="btn btn-nested__hero" href="{{ block.settings.image1_link }}" 
+               style="background-color:{{ block.settings.image1_color | color_modify: 'alpha', 0.5 }}; color: {{ block.settings.image1_text_color }}; border-color: {{ block.settings.image1_color | color_modify: 'alpha', 0.2 }}">{{ block.settings.image1_text }}</a>
+          </div>
+          <div class="swiper-slide" data-color="{{ block.settings.image2_color }}">
+            {% assign img_url = block.settings.image2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            {% assign img_url_mobile = block.settings.image2_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <img class="lazyload medium-down--hide"
+                 data-src="{{ img_url }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image.alt | escape }}">
+            <img class="lazyload medium-up--hide"
+                 data-src="{{ img_url_mobile }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image2.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image2.alt | escape }}">
+            <a class="btn btn-nested__hero" href="{{ block.settings.image2_link }}" 
+               style="background-color:{{ block.settings.image2_color | color_modify: 'alpha', 0.5 }}; color: {{ block.settings.image2_text_color }}; border-color: {{ block.settings.image2_color | color_modify: 'alpha', 0.2 }}">{{ block.settings.image2_text }}</a>
+          </div>
+          <div class="swiper-slide" data-color="{{ block.settings.image3_color }}">
+            {% assign img_url = block.settings.image3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            {% assign img_url_mobile = block.settings.image3_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <img class="lazyload medium-down--hide"
+                 data-src="{{ img_url }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image3.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image3.alt | escape }}">
+            <img class="lazyload medium-up--hide"
+                 data-src="{{ img_url_mobile }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image3.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image3.alt | escape }}">
+            <a class="btn btn-nested__hero" href="{{ block.settings.image3_link }}" 
+               style="background-color:{{ block.settings.image3_color | color_modify: 'alpha', 0.5 }}; color: {{ block.settings.image3_text_color }}; border-color: {{ block.settings.image3_color | color_modify: 'alpha', 0.2 }}">{{ block.settings.image3_text }}</a>
+          </div>
+          <div class="swiper-slide" data-color="{{ block.settings.image4_color }}">
+            {% assign img_url = block.settings.image4 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            {% assign img_url_mobile = block.settings.image4_mobile | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <img class="lazyload medium-down--hide"
+                 data-src="{{ img_url }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image4.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image4.alt | escape }}">
+            <img class="lazyload medium-up--hide"
+                 data-src="{{ img_url_mobile }}"
+                 data-widths="[1910]"
+                 data-aspectratio="{{ block.settings.image4.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.image4.alt | escape }}">
+            <a class="btn btn-nested__hero" href="{{ block.settings.image4_link }}" 
+               style="background-color:{{ block.settings.image4_color | color_modify: 'alpha', 0.5 }}; color: {{ block.settings.image4_text_color }}; border-color: {{ block.settings.image4_color | color_modify: 'alpha', 0.2 }}">{{ block.settings.image4_text }}</a>
+          </div>
+          {%- unless customer -%}
+          <div class="swiper-slide pen-svg__container" data-color="#000">
+          {%- render 'svg-row' -%}
+          </div>
+          {%- endunless -%}
+        </div>
+        <div class="swiper-pagination nested-hero__pagination"></div>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+  <div class="swiper-button-prev"><span class="swiper-button__swap">{{ 'general.menu.women' | t }}</span></div>
+  <div class="swiper-button-next">{{ 'general.menu.men' | t }}</div>
+</div>
+<script>
+const menu = [];
+{%- assign menu = section.settings.slide_navigation | split: ',' -%}
+{%- for item in menu -%}
+menu.push("{{ item }}");
+{%- endfor -%}
+var nested_heroh__{{ section.settings.id }} = new Swiper(".nested-hero__{{ section.id }}", {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  on: {
+    init: function () {
+      var color = document.querySelector('.nested-hero__{{ section.id }} .swiper-slide.swiper-slide-active').getAttribute('data-color');
+      document.querySelector('.nested-hero__{{ section.id }} .swiper-button-prev').style.setProperty('--nestedHeroColor', color);
+      document.querySelector('.nested-hero__{{ section.id }} .swiper-button-next').style.setProperty('--nestedHeroColor', color);
+    },
+    activeIndexChange: function () {
+      var index_currentSlide = nested_heroh__home.realIndex;
+      var currentSlide = nested_herov__home[index_currentSlide];
+      var currentSlideIndex = currentSlide.realIndex;
+      var color = currentSlide.slides[currentSlideIndex].getAttribute('data-color');
+      nested_heroh__home.el.querySelector('.swiper-button-prev').style.setProperty('--nestedHeroColor', color);
+      nested_heroh__home.el.querySelector('.swiper-button-next').style.setProperty('--nestedHeroColor', color);
+
+      nested_herov__home[index_currentSlide].el.querySelectorAll('.swiper-pagination-bullet').forEach(bullet => {
+        bullet.style.setProperty('--nestedHeroColor', color);
+        bullet.querySelector('.nested-hero__label').style.color = color;
+      });
+      if (currentSlideIndex == (currentSlide.slides.length - 1)) {
+        document.querySelector('.swiper-button-next').classList.add('hide');
+        document.querySelector('.swiper-button-prev').classList.add('hide');
+        document.querySelectorAll('.swiper-pagination').forEach(pagination => {
+          pagination.classList.add('hide');
+        });
+      } else {
+        document.querySelector('.swiper-button-next').classList.remove('hide');
+        document.querySelector('.swiper-button-prev').classList.remove('hide');
+        document.querySelectorAll('.swiper-pagination').forEach(pagination => {
+          pagination.classList.remove('hide');
+        });
+      }
+    }
+  }
+});
+var nested_herov__{{ section.settings.id }} = new Swiper(".nested-herov__{{ section.id }}", {
+  grabCursor: true,
+  mousewheel: true,
+  direction: "vertical",
+  autoHeight: true,
+  parallax: true,
+  speed: 800,
+  allowSlidePrev: true,
+  allowSlideNext: true,
+  allowTouchMove: true,
+  autoHeight: true,
+  noSwiping: false,
+  autoplay: {
+   delay: 15000
+ },
+  pagination: {
+    clickable: true,
+    el: '.swiper-pagination',
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '"><small class="nested-hero__label">' + (menu[index]) + '</small></span>';
+    }
+  },
+  on: {
+    activeIndexChange: function () {
+      var index_currentSlide = nested_heroh__home.realIndex;
+      var currentSlide = nested_herov__home[index_currentSlide];
+      var currentSlideIndex = currentSlide.realIndex;
+      var color = currentSlide.slides[currentSlideIndex].getAttribute('data-color');
+      nested_heroh__home.el.querySelector('.swiper-button-next').style.setProperty('--nestedHeroColor', color);
+      nested_heroh__home.el.querySelector('.swiper-button-prev').style.setProperty('--nestedHeroColor', color);
+
+      currentSlide.el.querySelectorAll('.swiper-pagination-bullet').forEach(bullet => {
+        bullet.style.setProperty('--nestedHeroColor', color);
+        bullet.querySelector('.nested-hero__label').style.color = color;
+      });
+      if (currentSlideIndex == (currentSlide.slides.length - 1)) {
+        document.querySelector('.swiper-button-next').classList.add('hide');
+        document.querySelector('.swiper-button-prev').classList.add('hide');
+        document.querySelectorAll('.swiper-pagination').forEach(pagination => {
+          pagination.classList.add('hide');
+        });
+      } else {
+        document.querySelector('.swiper-button-next').classList.remove('hide');
+        document.querySelector('.swiper-button-prev').classList.remove('hide');
+        document.querySelectorAll('.swiper-pagination').forEach(pagination => {
+          pagination.classList.remove('hide');
+        });
+      }
+    },
+  }
+});
+</script>
+{% schema %}
+{
+  "name": "Nested Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "ID"
+    },
+    {
+      "type": "textarea",
+      "id": "slide_navigation",
+      "label": "Navigation",
+      "info": "Comma-separated"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "First Slide"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1_mobile",
+          "label": "Mobile"
+        },
+        {
+          "type": "url",
+          "id": "image1_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "image1_text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "image1_color",
+          "label": "Color"
+        },
+        {
+          "type": "color",
+          "id": "image1_text_color",
+          "label": "Text Color"
+        },
+        {
+          "type": "header",
+          "content": "Second Slide"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2_mobile",
+          "label": "Mobile"
+        },
+        {
+          "type": "url",
+          "id": "image2_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "image2_text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "image2_color",
+          "label": "Color"
+        },
+        {
+          "type": "color",
+          "id": "image2_text_color",
+          "label": "Text Color"
+        },
+        {
+          "type": "header",
+          "content": "Third Slide"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3_mobile",
+          "label": "Mobile"
+        },
+        {
+          "type": "url",
+          "id": "image3_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "image3_text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "image3_color",
+          "label": "Color"
+        },
+        {
+          "type": "color",
+          "id": "image3_text_color",
+          "label": "Text Color"
+        },
+        {
+          "type": "header",
+          "content": "Fourth Slide"
+        },
+        {
+          "type": "image_picker",
+          "id": "image4",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image4_mobile",
+          "label": "Mobile"
+        },
+        {
+          "type": "url",
+          "id": "image4_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "image4_text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "image4_color",
+          "label": "Color"
+        },
+        {
+          "type": "color",
+          "id": "image4_text_color",
+          "label": "Text Color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nested Hero"
+    }
+  ]
+}
+{% endschema %}

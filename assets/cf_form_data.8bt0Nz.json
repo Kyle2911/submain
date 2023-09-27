@@ -1,0 +1,897 @@
+{
+  "form": {
+    "id": "8bt0Nz",
+    "name": "Registration",
+    "handle": "registration-5028",
+    "theme_id": "132075094206",
+    "settings": {
+      "locales": {
+        "back": "Back",
+        "next": "Next",
+        "cancel": "Cancel",
+        "edit_link": "Edit account",
+        "fix_errors": "Please fix errors before continuing",
+        "is_invalid": "{{label}} is invalid",
+        "email_taken": "Email has already been taken",
+        "phone_taken": "Phone number has already been taken",
+        "server_error": "Could not save form, please try again later",
+        "step_counter": "Step {{current}} of {{total}}",
+        "verify_email": "Check your email for a verification link to activate your account.",
+        "not_available": "An error occurred while saving your account, please try again in a few minutes.",
+        "create_account": "Create account",
+        "update_account": "Update account",
+        "recaptcha_error": "Challenge verification failed, please try again",
+        "creating_account": "Creating account...",
+        "updating_account": "Updating account...",
+        "reset_password_link": "Reset your password",
+        "invalid_email_domain": "Email contains an invalid domain name",
+        "reset_password_email_sent": "Check your inbox for a link to reset your password.",
+        "reset_password_too_many_attempts": "You tried to reset your password too many times. Please wait and try again later."
+      },
+      "whitelistedTags": "",
+      "markRequiredFields": true,
+      "displayCancelButton": true,
+      "goBackAfterSubmission": false,
+      "accountApprovalRequired": false,
+      "cancelButtonRedirectUrl": "\/account\/login",
+      "emailVerificationRequired": true,
+      "postSubmissionRedirectUrl": "\/account",
+      "goBackAfterCancelButtonClick": false
+    },
+    "install_locations": [
+      "register",
+      "account_edit"
+    ],
+    "created_at": "2022-03-11T07:59:51Z",
+    "updated_at": "2022-11-04T03:39:16Z",
+    "revision_ids": [
+      "B5TvnAb",
+      "mLTgX4R",
+      "9pTGKem",
+      "VNTzExy",
+      "OzT2zX2",
+      "VNTzR7d",
+      "wDTKXgn",
+      "VNTzK3p",
+      "OzT25Dd",
+      "8oT5pow",
+      "kdT2geR",
+      "9pTGvpd",
+      "wDT5nmg",
+      "6XTgRLw",
+      "ErTAwEB",
+      "xMTLMVA",
+      "xMTLMKx",
+      "Z6Tr7Pk",
+      "X1TKXNr",
+      "ErTa11R",
+      "58TLvx0",
+      "8oT5qZO",
+      "akT2kN8",
+      "yzTgd1Y",
+      "wDTKw8A",
+      "RxTo4qX"
+    ]
+  },
+  "revision": {
+    "id": "B5TvnAb",
+    "created_at": "2022-11-04T03:42:18Z",
+    "updated_at": "2022-11-04T03:42:20Z",
+    "embed_version": "4.11.4",
+    "published_at": "2022-11-04T03:42:20Z",
+    "fields": [
+      {
+        "id": 532201,
+        "dataColumn": {
+          "key": "first_name",
+          "label": "First name",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 0,
+        "type": "text",
+        "stepId": 949435,
+        "default": "",
+        "label": "First Name",
+        "placeholder": "John",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+        },
+        "validations": [
+          {
+            "metadata": {
+              "hiddenInApp": true
+            },
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank"
+          }
+        ],
+        "sensitive": null,
+        "preset": "first_name",
+        "autotag": null
+      },
+      {
+        "id": 790077,
+        "dataColumn": {
+          "key": "last_name",
+          "label": "Last name",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 1,
+        "type": "text",
+        "stepId": 949435,
+        "default": "",
+        "label": "Last Name",
+        "placeholder": "Doe",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 6
+        },
+        "settings": {
+          "hideLabel": false
+        },
+        "validations": [
+          {
+            "metadata": {
+              "hiddenInApp": true
+            },
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank"
+          }
+        ],
+        "sensitive": null,
+        "preset": "last_name",
+        "autotag": null
+      },
+      {
+        "id": 126920,
+        "dataColumn": {
+          "key": "email",
+          "label": "Email address",
+          "dataType": "email"
+        },
+        "parentId": null,
+        "position": 2,
+        "type": "email",
+        "stepId": 949435,
+        "default": "",
+        "label": "Email",
+        "placeholder": "email@domain.com",
+        "description": null,
+        "enum": null,
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+        },
+        "validations": [
+          {
+            "operator": "is_valid_email",
+            "comparand": null,
+            "errorMessage": "Please provide a valid email address"
+          },
+          {
+            "metadata": {
+              "hiddenInApp": true
+            },
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank"
+          }
+        ],
+        "sensitive": null,
+        "preset": "email_address",
+        "autotag": null
+      },
+      {
+        "id": 350743,
+        "dataColumn": {
+          "key": "phone",
+          "label": "Phone number",
+          "dataType": "phone"
+        },
+        "parentId": null,
+        "position": 3,
+        "type": "phone",
+        "stepId": 949435,
+        "default": "",
+        "label": "Mobile",
+        "placeholder": "+639001234567",
+        "description": "",
+        "enum": [
+
+        ],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "defaultCountryCode": "PH"
+        },
+        "validations": [
+          {
+            "operator": "is_valid",
+            "comparand": null,
+            "errorMessage": "Please provide a valid phone number"
+          },
+          {
+            "metadata": {
+              "hiddenInApp": true
+            },
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank"
+          }
+        ],
+        "sensitive": null,
+        "preset": "phone_number",
+        "autotag": null
+      },
+      {
+        "id": 200680,
+        "dataColumn": {
+          "key": "birthday",
+          "label": "Birthday",
+          "dataType": "date"
+        },
+        "parentId": null,
+        "position": 4,
+        "type": "date",
+        "stepId": 949435,
+        "default": "",
+        "label": "Birthday",
+        "placeholder": "",
+        "description": "",
+        "enum": [
+
+        ],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "dateInput": "picker",
+          "yearsBack": 100,
+          "dateFormat": "MM-DD-YYYY",
+          "yearsForward": 0
+        },
+        "validations": [
+          {
+            "metadata": {
+              "mandatory": true,
+              "staticOperator": true
+            },
+            "operator": "is_valid",
+            "comparand": null,
+            "errorMessage": "Please specify a valid date"
+          },
+          {
+            "metadata": {
+              "hiddenInApp": true
+            },
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank"
+          }
+        ],
+        "sensitive": null,
+        "preset": null,
+        "autotag": null
+      },
+      {
+        "id": 561108,
+        "dataColumn": {
+          "key": "gender",
+          "label": "Gender",
+          "dataType": "text"
+        },
+        "parentId": null,
+        "position": 5,
+        "type": "radio",
+        "stepId": 949435,
+        "default": "",
+        "label": "Gender",
+        "placeholder": "",
+        "description": "",
+        "enum": [
+          {
+            "label": "Male",
+            "value": "Male"
+          },
+          {
+            "label": "Female",
+            "value": "Female"
+          },
+          {
+            "label": "Prefer not to say",
+            "value": "Prefer not to say"
+          }
+        ],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+          "end": 10,
+          "start": 1,
+          "enumType": "list",
+          "direction": "row",
+          "separateValues": false
+        },
+        "validations": [
+          {
+            "metadata": {
+              "hiddenInApp": true
+            },
+            "operator": "not_blank",
+            "comparand": "",
+            "errorMessage": "Must not be blank"
+          }
+        ],
+        "sensitive": null,
+        "preset": null,
+        "autotag": true
+      },
+      {
+        "id": 441898,
+        "dataColumn": {
+          "key": "accepts_marketing",
+          "label": "Accepts marketing",
+          "dataType": "boolean"
+        },
+        "parentId": null,
+        "position": 6,
+        "type": "checkbox",
+        "stepId": 949435,
+        "default": true,
+        "label": "Email me with news and offers",
+        "placeholder": "",
+        "description": "",
+        "enum": [
+
+        ],
+        "appearance": {
+          "width": 12
+        },
+        "settings": {
+        },
+        "validations": [
+
+        ],
+        "sensitive": null,
+        "preset": "accepts_marketing",
+        "autotag": null
+      }
+    ],
+    "steps": [
+      {
+        "id": 949435,
+        "title": "Step 1",
+        "description": ""
+      }
+    ],
+    "rules": [
+      {
+        "id": 492791,
+        "title": "Disable E-mail",
+        "actions": [
+          {
+            "id": 179421,
+            "effect": "disable_field",
+            "metadata": {
+              "fieldId": 126920
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": "customer",
+            "metadata": {
+              "column": {
+                "key": "id",
+                "label": "Customer ID",
+                "dataType": "integer"
+              },
+              "preset": "preset:customer_is_logged_in"
+            },
+            "operator": "not_blank"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 637364,
+        "title": "Tag with Birthday",
+        "actions": [
+          {
+            "id": 161091,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "has_birthday"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              }
+            },
+            "operator": "is_valid"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 186273,
+        "title": "Tag with Gender",
+        "actions": [
+          {
+            "id": 826455,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "has_gender"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "kEFyX5",
+                "key": "gender",
+                "label": "Gender",
+                "dataType": "text",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.213Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Gender"
+              }
+            },
+            "operator": "not_blank"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 125734,
+        "title": "January",
+        "actions": [
+          {
+            "id": 838844,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "January"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "1"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 159500,
+        "title": "February",
+        "actions": [
+          {
+            "id": 823288,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "February"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "2"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 157449,
+        "title": "March",
+        "actions": [
+          {
+            "id": 990567,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "March"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "3"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 681449,
+        "title": "April",
+        "actions": [
+          {
+            "id": 206385,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "April"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "4"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 593859,
+        "title": "May",
+        "actions": [
+          {
+            "id": 125219,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "May"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "5"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 101265,
+        "title": "June",
+        "actions": [
+          {
+            "id": 979371,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "June"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "6"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 797662,
+        "title": "July",
+        "actions": [
+          {
+            "id": 376396,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "July"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "7"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 189725,
+        "title": "August",
+        "actions": [
+          {
+            "id": 286220,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "August"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "8"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 109795,
+        "title": "September",
+        "actions": [
+          {
+            "id": 591874,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "September"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "9"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 268317,
+        "title": "October",
+        "actions": [
+          {
+            "id": 944881,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "October"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "10"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 195281,
+        "title": "November",
+        "actions": [
+          {
+            "id": 665952,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "November"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "11"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      },
+      {
+        "id": 199798,
+        "title": "December",
+        "actions": [
+          {
+            "id": 910298,
+            "effect": "tag_customer",
+            "metadata": {
+              "value": "December"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "operand": null,
+            "metadata": {
+              "column": {
+                "id": "nlFnYp",
+                "key": "birthday",
+                "label": "Birthday",
+                "dataType": "date",
+                "favorite": false,
+                "readOnly": false,
+                "createdAt": "2022-03-11T08:21:07.199Z",
+                "dedicated": false,
+                "archivedAt": null,
+                "expandedLabel": "Birthday"
+              },
+              "comparand": "12"
+            },
+            "operator": "on_month"
+          }
+        ],
+        "conditionChaining": "all"
+      }
+    ]
+  }
+}

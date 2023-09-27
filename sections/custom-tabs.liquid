@@ -1,0 +1,83 @@
+<div class="page-width">
+ 	<div class="text-center {% if section.settings.custom_font and section.settings.enlarge_text %}soldier-font{% elsif section.settings.custom_font %}custom-font{% endif %}">{{ section.settings.title }}</div>
+    {%- for block in section.blocks -%}
+    <div class="custom-collapsible-block custom-collapsible-block--tab " {{ block.shopify_attributes }}>
+      {%- render 'custom-tab', block: block -%}
+    </div>
+    {%- endfor -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Store Availability",
+	"class": "index-section",
+    "settings": [
+	  {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+	  {
+        "type": "checkbox",
+        "id": "custom_font",
+        "label": "Custom font",
+        "default": false
+      },
+	  {
+        "type": "checkbox",
+        "id": "enlarge_text",
+        "label": "Enlarge text",
+        "default": false
+      }
+	],
+	"blocks": [
+		{
+		  "type": "store_availability",
+		  "name": "Store Availability",
+		  "limit": 4,
+		  "settings": [
+			{
+              "type": "text",
+              "id": "title",
+              "label": "Area"
+            },
+            {
+              "type": "textarea",
+              "id": "stores_list_left",
+              "label": "Stores List (Left)",
+              "info": "Comma then space separated"
+            },
+            {
+              "type": "textarea",
+              "id": "stores_list_right",
+              "label": "Stores List (Right)",
+              "info": "Comma then space separated"
+            },
+			{
+              "type": "checkbox",
+              "id": "space_around",
+              "label": "Add spacing above and below",
+              "default": true
+            },
+			{
+              "type": "checkbox",
+              "id": "enlarge_text",
+              "label": "Enlarge text",
+              "default": false
+            }
+		  ]
+	   }
+	],
+	"presets": [
+      {
+        "name": "Store Availability"
+	  }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,163 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "17fc734f-0abf-4fa9-9437-00b18b301342": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "checkmark",
+            "text": "Premium Quality"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 2,
+            "inventory_transfers_enable": false
+          }
+        },
+        "8c0d3e89-dc32-4e84-beb6-fb284fed241a": {
+          "type": "shopify:\/\/apps\/hulk-advanced-wishlist\/blocks\/wishlist-btn\/330d9272-08ea-4193-b3e0-475a69fa65fa",
+          "settings": {
+            "is_new_icon_settings": true,
+            "theme_color": "#ffffff",
+            "button_style": "style_4",
+            "button_border": 1,
+            "button_font_size": 14,
+            "button_font_weight": "400",
+            "button_border_radius": 35,
+            "button_vertical_space": 9,
+            "button_horizontal_space": 12,
+            "button_text_color": "#000000",
+            "button_background": "#ffffff",
+            "border_color": "#000000",
+            "hover_button_text_color": "#ffffff",
+            "hover_button_background_color": "#000000",
+            "hover_button_border_color": "#fdfdfd",
+            "icon_type": "both",
+            "icon_size": 14,
+            "icon_background_type": "icon_no_background",
+            "icon_background_color": "#ffffff",
+            "icon_fill_color": "#ffffff",
+            "icon_border_color": "#000000",
+            "icon_hover_color": "#ffffff",
+            "selected_icon_fill_color": "#000000",
+            "selected_icon_border_color": "#ffffff"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "8f16a337-5cd8-43a0-b5c5-d929295f2734": {
+          "type": "size_guide",
+          "settings": {
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Shipping Information",
+            "content": "",
+            "page": "shipping-delivery"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "price",
+        "separator",
+        "variant_picker",
+        "17fc734f-0abf-4fa9-9437-00b18b301342",
+        "sales_point",
+        "inventory_status",
+        "8c0d3e89-dc32-4e84-beb6-fb284fed241a",
+        "buy_buttons",
+        "description",
+        "8f16a337-5cd8-43a0-b5c5-d929295f2734",
+        "tab",
+        "share"
+      ],
+      "custom_css": [
+        "#shopify-block-8c0d3e89-dc32-4e84-beb6-fb284fed241a .wishlist-btn.style_4 {margin: -5px 0 5px 0 !important;}",
+        ".hulk-wishlist-btn-title {margin-left: 10px; margin-top: 2px;}",
+        "#shopify-block-8c0d3e89-dc32-4e84-beb6-fb284fed241a .wishlist-btn.style_4:not([data-gridhulklist]) [hulk-wl-custom-style]:hover {color: #fff;}",
+        ".wishlist-btn.style_4:hover .icon-wishlist-heart-empty {-webkit-text-stroke-width: 0; -webkit-text-stoke-color: #fff;}"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_size": "large",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like",
+        "related_count": 4,
+        "stl_enable": true,
+        "product_stl_heading": "Complete The Look"
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "product-recommendations",
+    "collection-return"
+  ]
+}

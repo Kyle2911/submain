@@ -1,0 +1,2019 @@
+{%- liquid
+  assign main_menu = linklists[section.settings.main_menu_link_list]
+  assign main_menu_women = linklists[section.settings.main_menu_link_list_women]
+
+  assign logo_alignment = 'left'
+  if section.settings.main_menu_alignment == 'center-left' or section.settings.main_menu_alignment == 'center-split' or section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-drawer'
+    assign logo_alignment = 'center'
+  endif
+
+  assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle
+  assign date_now = "now" | date: "%s"
+  assign date_end = section.settings.announcement_end_date | date: "%s"
+
+  assign sticky_header = false
+  assign overlay_header = false
+
+  if section.settings.header_sticky
+    assign sticky_header = true
+  endif
+
+  if template_name == 'index' and section.settings.sticky_index
+    assign overlay_header = true
+  endif
+  if template_name == 'collection' and collection.image and section.settings.sticky_collection
+    assign overlay_header = true
+  endif
+-%}
+
+{%- render 'drawer-menu', section: section, main_menu: main_menu, main_menu_women: main_menu_women, logo_alignment: logo_alignment -%}
+{%- render 'cart-drawer' -%}
+
+{%- style -%}
+  .site-nav__link,
+  .site-nav__dropdown-link {
+    font-size: {{ settings.type_navigation_size }}px;
+  }
+
+  {%- if settings.type_navigation_size < 18 -%}
+    .site-nav__link {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  {%- endif -%}
+
+  {%- if settings.color_header == settings.color_body_bg or settings.color_body_bg contains settings.color_header -%}
+    .site-header {
+      border-bottom: 1px solid;
+      border-bottom-color: {{ settings.color_borders }};
+    }
+  {%- endif -%}
+{%- endstyle -%}
+
+<div data-section-id="{{ section.id }}" data-section-type="header">
+  <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %}">    
+    <div id="saso-notifications" style="padding-top: 0px; "></div>
+    {% comment %}{%- render 'address-finder-header' -%}{% endcomment %}
+    <header
+      id="SiteHeader"
+      class="site-header{% if settings.type_navigation_style %} site-header--heading-style{% endif %}"
+      data-sticky="{{ sticky_header }}"
+      data-overlay="{{ overlay_header }}">
+      {%- if section.settings.show_announcement and section.settings.show_scrolling_announcement == false -%}
+        {%- if template == 'index' -%}
+        {%- style -%}
+        .nested-hero .swiper-pagination-vertical.swiper-pagination-bullets,
+        .nested-hero .swiper-vertical>.swiper-pagination-bullets {
+          bottom: 6rem;
+        }
+        @media only screen and (max-width:589px) {
+          .btn-nested__hero {
+            bottom: 25%;
+          }
+          .nested-hero .swiper-pagination-vertical.swiper-pagination-bullets,
+          .nested-hero .swiper-vertical>.swiper-pagination-bullets {
+            bottom: 16.2rem;
+          }
+        }
+        {%- endstyle -%}
+        {%- endif -%}
+        {%- render 'announcement-bar', section: section -%}
+      {%- elsif section.settings.show_announcement == false and section.settings.show_scrolling_announcement -%}
+        {%- if template == 'index' -%}
+        {%- style -%}
+        .nested-hero .swiper-pagination-vertical.swiper-pagination-bullets,
+        .nested-hero .swiper-vertical>.swiper-pagination-bullets {
+          bottom: 6rem;
+        }
+        @media only screen and (max-width:589px) {
+          .btn-nested__hero {
+            bottom: 25%;
+          }
+          .nested-hero .swiper-pagination-vertical.swiper-pagination-bullets,
+          .nested-hero .swiper-vertical>.swiper-pagination-bullets {
+            bottom: 16.2rem;
+          }
+        }
+        {%- endstyle -%}
+        {%- endif -%}
+        {%- render 'scrolling-announcement' -%}
+      {%- endif -%}
+
+      {%- if section.settings.scrolling_text_enable -%}
+      	{%- if section.settings.display_on_all or template.suffix == 'promo-page' -%}
+    	{%- render 'scrolling-text', section: section -%}    
+        {%- style -%}
+          .site-header, .site-header--stuck { padding: 0 0 5px 0; }  
+        {%- endstyle -%}
+      	{%- endif -%}
+      {%-endif -%}
+      <div class="page-width">
+        <div
+          class="header-layout header-layout--{{ section.settings.main_menu_alignment }}"
+          data-logo-align="{{ logo_alignment }}">
+
+          {%- if logo_alignment == 'left' -%}
+            <div class="header-item header-item--logo">
+               <button
+                type="button"
+                class="site-nav__link site-nav__link--icon js-drawer-open-nav"
+                aria-controls="NavDrawer">
+                <svg class="icon icon-menu" width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="43" height="20"><path fill="#D9D9D9" d="M0 0h43v20H0z"/></mask><path d="M1.612 19.287h.814l1.914 4.675h.066l1.913-4.675h.814v5.632h-.638v-4.278h-.056l-1.758 4.278h-.617l-1.759-4.278H2.25v4.278h-.638v-5.632ZM8.5 24.919v-5.632h3.398v.605H9.182v1.904h2.542v.605H9.182v1.911h2.762v.607H8.5Zm9.091-5.632v5.632h-.659l-3.069-4.421h-.054v4.421h-.683v-5.632h.661l3.08 4.432h.054v-4.432h.67Zm5.059 0h.683v3.73c0 .385-.091.727-.273 1.029a1.896 1.896 0 0 1-.762.713c-.327.173-.712.258-1.154.258-.44 0-.825-.085-1.154-.258a1.914 1.914 0 0 1-.764-.713 1.968 1.968 0 0 1-.27-1.029v-3.73h.682v3.675c0 .273.06.518.181.734.121.211.294.38.516.502.226.121.495.182.809.182.313 0 .583-.061.807-.182.227-.122.4-.291.519-.502.12-.216.18-.461.18-.734v-3.675Z" fill="#000"/><g mask="url(#a)" transform="translate(-4.066 2.2) scale(.77417)"><path d="M6.27 19.34v-1.255h16.484v1.255H6.27Zm0-8.421V9.665h7.526v1.254H6.27Zm0-8.421V1.244h7.526v1.254H6.27Zm29.563 16.931-6.808-6.808a7.16 7.16 0 0 1-1.971 1.12 6.327 6.327 0 0 1-2.24.403c-1.851 0-3.419-.642-4.703-1.926-1.284-1.284-1.926-2.852-1.926-4.703 0-1.852.642-3.42 1.926-4.704C21.395 1.527 22.963.885 24.814.885c1.852 0 3.42.642 4.703 1.926 1.284 1.284 1.926 2.852 1.926 4.704a6.33 6.33 0 0 1-.403 2.24 7.159 7.159 0 0 1-1.12 1.97l6.809 6.808-.896.896Zm-11.019-6.54c1.493 0 2.762-.522 3.808-1.567 1.045-1.045 1.567-2.314 1.567-3.807 0-1.494-.522-2.763-1.567-3.808-1.046-1.045-2.315-1.567-3.808-1.567-1.493 0-2.762.522-3.807 1.567s-1.568 2.314-1.568 3.808c0 1.493.523 2.762 1.568 3.807s2.314 1.568 3.807 1.568Z" fill="#1C1B1F"/></g></svg>
+                <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+              </button>
+              {%- render 'header-logo-block', section: section -%}
+            </div>
+          {%- endif -%}
+
+          {%- if logo_alignment == 'left' and section.settings.main_menu_alignment != 'left-drawer' -%}
+          	{%- if section.settings.enable_megamenu -%}
+          	<div class="header-item header-item--navigation mega-header-item medium-down--hide{% if section.settings.main_menu_alignment == 'left-center' %} text-center{% endif %}">
+          	{%- render 'mega-menu', section: section -%}
+          	</div>
+          	{% else %}
+            <div class="header-item header-item--navigation{% if section.settings.main_menu_alignment == 'left-center' %} text-center{% endif %}">
+              {%- render 'header-desktop-nav', section: section, main_menu: main_menu -%}
+            </div>
+         	{%- endif -%}
+          {%- endif -%}
+
+          {%- if logo_alignment == 'center' -%}
+            <div class="header-item header-item--left header-item--navigation medium-down--hide">
+              <button
+                type="button"
+                class="site-nav__link site-nav__link--icon js-drawer-open-nav medium-down--hide"
+                aria-controls="NavDrawer">
+                <svg class="icon icon-menu" width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="43" height="20"><path fill="#D9D9D9" d="M0 0h43v20H0z"/></mask><path d="M1.612 19.287h.814l1.914 4.675h.066l1.913-4.675h.814v5.632h-.638v-4.278h-.056l-1.758 4.278h-.617l-1.759-4.278H2.25v4.278h-.638v-5.632ZM8.5 24.919v-5.632h3.398v.605H9.182v1.904h2.542v.605H9.182v1.911h2.762v.607H8.5Zm9.091-5.632v5.632h-.659l-3.069-4.421h-.054v4.421h-.683v-5.632h.661l3.08 4.432h.054v-4.432h.67Zm5.059 0h.683v3.73c0 .385-.091.727-.273 1.029a1.896 1.896 0 0 1-.762.713c-.327.173-.712.258-1.154.258-.44 0-.825-.085-1.154-.258a1.914 1.914 0 0 1-.764-.713 1.968 1.968 0 0 1-.27-1.029v-3.73h.682v3.675c0 .273.06.518.181.734.121.211.294.38.516.502.226.121.495.182.809.182.313 0 .583-.061.807-.182.227-.122.4-.291.519-.502.12-.216.18-.461.18-.734v-3.675Z" fill="#000"/><g mask="url(#a)" transform="translate(-4.066 2.2) scale(.77417)"><path d="M6.27 19.34v-1.255h16.484v1.255H6.27Zm0-8.421V9.665h7.526v1.254H6.27Zm0-8.421V1.244h7.526v1.254H6.27Zm29.563 16.931-6.808-6.808a7.16 7.16 0 0 1-1.971 1.12 6.327 6.327 0 0 1-2.24.403c-1.851 0-3.419-.642-4.703-1.926-1.284-1.284-1.926-2.852-1.926-4.703 0-1.852.642-3.42 1.926-4.704C21.395 1.527 22.963.885 24.814.885c1.852 0 3.42.642 4.703 1.926 1.284 1.284 1.926 2.852 1.926 4.704a6.33 6.33 0 0 1-.403 2.24 7.159 7.159 0 0 1-1.12 1.97l6.809 6.808-.896.896Zm-11.019-6.54c1.493 0 2.762-.522 3.808-1.567 1.045-1.045 1.567-2.314 1.567-3.807 0-1.494-.522-2.763-1.567-3.808-1.046-1.045-2.315-1.567-3.808-1.567-1.493 0-2.762.522-3.807 1.567s-1.568 2.314-1.568 3.808c0 1.493.523 2.762 1.568 3.807s2.314 1.568 3.807 1.568Z" fill="#1C1B1F"/></g></svg>
+                <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+              </button>
+              {%- if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' -%}
+                {%- if settings.search_enable -%}
+                  <div class="site-nav medium-down--hide">
+                    <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header js-no-transition">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+                      <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+                    </a>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- if section.settings.main_menu_alignment == 'center-left' -%}
+              	{%- if section.settings.enable_megamenu -%}
+              	{% render 'mega-menu', section: section %}
+              	{% else %}
+                {%- render 'header-desktop-nav', section: section, main_menu: main_menu -%}
+              	{%- endif -%}
+              {%- endif -%}
+            </div>
+
+            {%- if section.settings.main_menu_alignment == 'center-split' -%}
+              {%- render 'header-split-nav', main_menu: main_menu, section: section -%}
+            {%- endif -%}
+
+            {%- if section.settings.main_menu_alignment != 'center-split' -%}
+              <div class="header-item header-item--logo">
+                {%- render 'header-logo-block', section: section -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+          <div class="header-item header-item--icons medium-down--hide">
+            {%- render 'header-icons', section: section -%}
+          </div>
+        </div>
+
+        {%- if section.settings.main_menu_alignment == 'center' -%}
+          <div class="text-center">
+            {%- render 'header-desktop-nav', section: section, main_menu: main_menu -%}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="site-header__search-container">
+        <div class="site-header__search">
+          <div class="page-width">
+            <form action="{{ routes.search_url }}" method="get" id="HeaderSearchForm" class="site-header__search-form" role="search">
+              <input type="hidden" name="type" value="{{ settings.search_type }}">
+              <button type="submit" class="text-link site-header__search-btn">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/></svg>
+                <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+              </button>
+              <input type="search" name="q" value="{{ search.terms | escape | replace: '*', '' }}" placeholder="{{ 'general.search.placeholder' | t }}" class="site-header__search-input" aria-label="{{ 'general.search.placeholder' | t }}">
+            </form>
+            <button type="button" id="SearchClose" class="text-link site-header__search-btn">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+              <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
+            </button>
+          </div>
+        </div>
+        {%- if settings.predictive_search_enabled -%}
+          <div id="PredictiveWrapper" class="predictive-results hide">
+            <div class="page-width">
+              <div id="PredictiveResults" class="predictive-result__layout"></div>
+              <div class="text-center predictive-results__footer">
+                <button type="button" class="btn" data-predictive-search-button>
+                  <small>
+                    {{ 'general.search.view_more' | t }}
+                  </small>
+                </button>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </header>
+  </div>
+</div>
+
+{%- if template_name == 'index' and section.settings.sticky_index -%}
+  {%- style -%}
+    /* Offset first hero's text to make room for overlaid navigation */
+    .shopify-section:first-child .hero__text-content.vertical-center {
+      padding-top: 110px;
+    }
+    @media screen and (max-width: 768px) {
+      .shopify-section:first-child .hero__text-content.vertical-center {
+        padding-top: 70px;
+      }
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+{%- if template == 'index' -%}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	adjust_height();
+});
+  
+window.addEventListener('resize', function(event) {
+    adjust_height();
+});
+{% comment %}
+function adjust_height() {
+  var adjust_height;
+  {%- if section.settings.show_announcement or section.settings.show_scrolling_announcement -%}
+  adjust_height = document.querySelector('.scrolling-anouncement-container') != null ? document.querySelector('.scrolling-anouncement-container') : document.querySelector('.announcement');
+  adjust_height = adjust_height.offsetHeight + document.querySelector('.address-finder-header').offsetHeight;
+  {% else %}
+  adjust_height = document.querySelector('.address-finder-header');
+  adjust_height = adjust_height.offsetHeight;
+  {% endif %}
+  
+  {%- if section.settings.display_on_all or template.suffix == 'promo-page' -%}
+  adjust_height = adjust_height + document.querySelector('.scrolling-text').offsetHeight;
+  {%- endif -%}
+
+  document.getElementById('MainContent').style.paddingTop = adjust_height + 'px';   
+}
+{% endcomment %}
+function adjust_height() {
+  var adjust_height;
+  {%- if section.settings.show_announcement or section.settings.show_scrolling_announcement -%}
+  adjust_height = document.querySelector('.scrolling-anouncement-container') != null ? document.querySelector('.scrolling-anouncement-container') : document.querySelector('.announcement');
+  adjust_height = adjust_height.offsetHeight;
+  {% endif %}
+  
+  {%- if section.settings.display_on_all or template.suffix == 'promo-page' -%}
+  adjust_height = adjust_height + document.querySelector('.scrolling-text').offsetHeight;
+  {%- endif -%}
+
+  document.getElementById('MainContent').style.paddingTop = adjust_height + 'px';   
+}
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Header and menus",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo-inverted",
+      "label": "White logo",
+      "info": "Used when on top of an image"
+    },
+    {
+      "type": "range",
+      "id": "desktop_logo_width",
+      "label": "Desktop logo width",
+      "default": 200,
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_width",
+      "label": "Mobile logo width",
+      "default": 140,
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "info": "Set as a max-width, may appear smaller"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu_link_list",
+      "label": "Men Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu_link_list_women",
+      "label": "Women Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "main_menu_alignment",
+      "label": "Layout",
+      "default": "left-center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Logo left, menu left"
+        },
+        {
+          "value": "left-center",
+          "label": "Logo left, menu center"
+        },
+        {
+          "value": "left-drawer",
+          "label": "Logo left, menu drawer"
+        },
+        {
+          "value": "center-left",
+          "label": "Logo center, menu left"
+        },
+        {
+          "value": "center-split",
+          "label": "Logo center, menu split"
+        },
+        {
+          "value": "center",
+          "label": "Logo center, menu below"
+        },
+        {
+          "value": "center-drawer",
+          "label": "Logo center, menu drawer"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "header_sticky",
+      "label": "Enable sticky header",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_index",
+      "label": "Overlay header over homepage",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_collection",
+      "label": "Overlay header over collection",
+      "info": "(if collection image is enabled)",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Scrolling Text"
+    },
+	{
+      "type": "checkbox",
+      "id": "scrolling_text_enable",
+      "label": "Enable scrolling text",
+      "default": false
+    },
+	{
+      "type": "checkbox",
+      "id": "display_on_all",
+      "label": "Display on all pages",
+	  "default": false
+    },
+	{
+      "type": "range",
+      "id": "number_of_promotions",
+      "label": "Number of Promotions",
+      "default": 3,
+      "min": 1,
+      "max": 3,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#F01737"
+    },
+    {
+      "type": "number",
+      "id": "speed",
+      "label": "Scroll Speed",
+      "default": 50
+    },
+    {
+      "type": "html",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show an announcement"
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "Free shipping and returns",
+      "info": "When closed, the announcement will remain closed until the next visit. Change the text to see it again."
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Announcement link"
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_closable",
+      "label": "Allow users to close announcement"
+    },
+    {
+      "type": "header",
+      "content": "Multiple Announcements Bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scrolling_announcement",
+      "label": "Enable Multiple Announcement Bar?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "one_day_sale",
+      "label": "One Day Sale",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "announcement_end_date",
+      "label": "Timer End",
+      "default": "Month Day, Year HH:MM:SS",
+      "info": "Time is in 24-H format"
+    },
+    {
+      "type": "color",
+      "id": "scrolling_announcement_bg",
+      "label": "Background Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "scrolling_announcement_text_color",
+      "label": "Text Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "number",
+      "id": "announcement_speed",
+      "label": "Autoplay Speed",
+      "default": 2000
+    },
+    {
+      "type": "text",
+      "id": "slide1_text",
+      "label": "Slide 1 Text"
+    },
+    {
+      "type": "text",
+      "id": "slide2_text",
+      "label": "Slide 2 Text"
+    },
+    {
+      "type": "text",
+      "id": "slide3_text",
+      "label": "Slide 3 Text"
+    },
+    {
+      "type": "text",
+      "id": "slide1_link",
+      "label": "Slide 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "slide2_link",
+      "label": "Slide 2 Link"
+    },
+    {
+      "type": "text",
+      "id": "slide3_link",
+      "label": "Slide 3 Link"
+    },
+    {
+      "type": "header",
+      "content": "Mega Menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_megamenu",
+      "label": "Enable Mega Menu?",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "simple_menu",
+      "name": "Simple Menu",
+      "settings": [
+        {
+          "type": "url",
+          "id": "simple_menu_link",
+          "label": "Simple Menu Link"
+        },
+        {
+          "type": "text",
+          "id": "simple_menu_name",
+          "label": "Simple Menu Name"
+        }
+      ]
+    },
+    {
+      "type": "megamenu_column",
+      "name": "Mega Menu Column",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "text",
+          "id": "megamenu_column_main",
+          "label": "Menu Title"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 1"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-1"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu_img_r3_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 2"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column2",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title2",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class2",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-2"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width2",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows2",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu2_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list2",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu2_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu2_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu2_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu2_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu2_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu2_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu2_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu2_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu2_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu2_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu2_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu2_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu2_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu2_img_r3_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 3"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column3",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title3",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class3",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-3"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width3",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows3",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu3_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list3",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu3_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu3_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu3_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu3_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu3_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu3_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu3_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu3_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu3_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu3_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu3_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu3_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu3_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu3_img_r3_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 4"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column4",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title4",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class4",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-4"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width4",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows4",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu4_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list4",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu4_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu4_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu4_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu4_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu4_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu4_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu4_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu4_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu4_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu4_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu4_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu4_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu4_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu4_img_r3_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 5"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column5",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title5",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class5",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-5"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width5",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows5",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu5_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list5",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu5_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu5_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu5_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu5_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu5_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu5_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu5_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu5_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu5_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu5_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu5_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu5_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu5_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu5_img_r3_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 6"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column6",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title6",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class6",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-6"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width6",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows6",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu6_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list6",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu6_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu6_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu6_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu6_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu6_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu6_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu6_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu6_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu6_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu6_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "HTML"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu6_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu6_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu6_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu6_img_r3_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 7"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column7",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "html"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title7",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class7",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-7"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width7",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows7",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu7_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list7",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu7_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu7_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu7_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu7_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "html"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu7_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu7_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu7_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu7_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu7_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu7_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "html"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu7_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu7_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu7_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu7_img_r3_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "header",
+          "content": "COLUMN 8"
+        },
+        {
+          "type": "select",
+          "id": "megamenu_column8",
+          "label": "Column Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "html"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_title8",
+          "label": "Column Title"
+        },
+        {
+          "type": "text",
+          "id": "megamenu_column_class8",
+          "label": "Column Class Name",
+		  "default": "appear-animation appear-delay-8"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_width8",
+          "label": "Column Width",
+          "default": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "megamenu_column_rows8",
+          "label": "Column No. of Rows",
+          "default": 1,
+          "min": 1,
+          "max": 3,
+          "step": 1
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu8_html_r1",
+          "label": "Row HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu_link_list8",
+          "label": "Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu8_img_r1",
+          "label": "Image",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu8_img_r1_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu8_row_title2",
+          "label": "Row 2 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu8_row2_type",
+          "label": "Row 2 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "html"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu8_html_r2",
+          "label": "Row 2 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu8_row_link_list2",
+          "label": "Row 2 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu8_img_r2",
+          "label": "Image for Row 2",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu8_img_r2_link",
+          "label": "Image Link"
+        },
+        {
+          "type": "text",
+          "id": "basic_menu8_row_title3",
+          "label": "Row 3 Title"
+        },
+        {
+          "type": "select",
+          "id": "megamenu8_row3_type",
+          "label": "Row 3 Type",
+          "default": "simple",
+          "options": [
+            {
+              "value": "basic",
+              "label": "Basic"
+            },
+            {
+              "value": "simple",
+              "label": "Simple"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "html",
+              "label": "html"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "mega_menu8_html_r3",
+          "label": "Row 3 HTML"
+        },
+        {
+          "type": "link_list",
+          "id": "basic_menu8_row_link_list3",
+          "label": "Row 3 Links"
+        },
+        {
+          "type": "image_picker",
+          "id": "mega_menu8_img_r3",
+          "label": "Image for Row 3",
+          "info": "Used if type is Image"
+        },
+        {
+          "type": "text",
+          "id": "mega_menu8_img_r3_link",
+          "label": "Image Link"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {}
+  }
+}
+{% endschema %}

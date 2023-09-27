@@ -1,0 +1,101 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "b1fe8b17-f17d-45c8-afdf-0cd62fc7f328": {
+      "type": "custom-title",
+      "settings": {
+        "space_around": true,
+        "title": "CLAIM YOUR VOUCHERS!",
+        "subtitle": "",
+        "help_text": "",
+        "view_all": "",
+        "link": "",
+        "color_border": "#000000"
+      }
+    },
+    "8af2dd62-e5af-4508-aded-40b86a927791": {
+      "type": "image-row",
+      "blocks": {
+        "88bf9248-e744-4ed1-86c8-acf8a8193ac3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HIGH_SPENDER_-_20_OFF_cd411250-7e5c-4e81-8200-22d8d7841a97.jpg",
+            "image_link": "https:\/\/www.penshoppe.com\/discount\/MISSEDUGIFT7?redirect=%2Fcollections%2Fall-items",
+            "text": "",
+            "overlay": false
+          }
+        },
+        "b1a79648-134c-4d8e-a846-46ffe1ded112": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HIGH_SPENDER_-_FREE_SHIPPING_06780d62-f250-4517-9c5c-26efac39487c.jpg",
+            "image_link": "https:\/\/www.penshoppe.com\/discount\/MISSEDUGIFT7?redirect=%2Fcollections%2Fall-items",
+            "text": "",
+            "overlay": false
+          }
+        }
+      },
+      "block_order": [
+        "88bf9248-e744-4ed1-86c8-acf8a8193ac3",
+        "b1a79648-134c-4d8e-a846-46ffe1ded112"
+      ],
+      "settings": {
+        "space_around": false,
+        "full_width": false,
+        "space_around_block": true,
+        "space_around_mobile": false,
+        "half": false,
+        "stack_mobile": false,
+        "hide_mobile": false,
+        "hide_desktop": false
+      }
+    },
+    "bc7f7f6d-47b6-467a-acf9-3de75fd3a8c3": {
+      "type": "spacer",
+      "settings": {
+        "spacer_size": "small"
+      }
+    },
+    "35a7eb69-4db4-43f7-a588-609c84789a16": {
+      "type": "button",
+      "settings": {
+        "big_button": false,
+        "text": "CLAIM ALL",
+        "link": "https:\/\/www.penshoppe.com\/discount\/MISSEDUGIFT7?redirect=%2Fcollections%2Fall-items"
+      }
+    },
+    "fd548723-a500-4105-89e1-165a95508409": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--16006519587006__fd548723-a500-4105-89e1-165a95508409-1668753617cd333c2b-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<style>\n@media screen and (min-width: 750px) {\n.grid--small {\n    margin-left: 30%;\n    margin-right: 30%;\nbackground-color: white;\n    padding: 20px;\n}\n}\n.grid--small {\n    margin-top: 50px;\n}\nbody {\n  background-image: url(https:\/\/cdn.shopify.com\/s\/files\/1\/2282\/7539\/files\/winbackBG.jpg?v=1671175697);\n  background-color: #ffffff;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n<\/style>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--16006519587006__fd548723-a500-4105-89e1-165a95508409-1668753617cd333c2b-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b1fe8b17-f17d-45c8-afdf-0cd62fc7f328",
+    "8af2dd62-e5af-4508-aded-40b86a927791",
+    "bc7f7f6d-47b6-467a-acf9-3de75fd3a8c3",
+    "35a7eb69-4db4-43f7-a588-609c84789a16",
+    "fd548723-a500-4105-89e1-165a95508409"
+  ]
+}

@@ -1,0 +1,60 @@
+{%- liquid
+  assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first 
+  assign orders_url = routes.account_url | append: '?view=orders'
+  assign edit_url = routes.account_url | append: '?view=edit'
+  assign product_url = routes.account_url | append: '?view=products'
+-%}
+
+  <sidebar class="account-sidebar">
+  <div class="hide-xs">
+    <a href="{{ routes.account_url }}" class="account-sidebar__link {% if activeMenu == 0 %} is-active {%- endif -%} ">
+      My Dashboard
+    </a>
+    <a href="{{ orders_url }}" class="account-sidebar__link {% if activeMenu == 1%} is-active {% endif %}">
+      My Orders <span class="order-count">{{ customer.orders_count }}</span>
+    </a>
+    <a href="/apps/advanced-wishlist" class="account-sidebar__link">
+      My Wishlist
+    </a>
+    <a href="{{ edit_url }}" class="account-sidebar__link {% if activeMenu == 2 %} is-active {% endif %}">
+      Edit Account
+    </a>
+    <a href="{{ routes.account_addresses_url }}" class="account-sidebar__link {% if activeMenu == 3%} is-active {%- endif -%}">
+      My Addresses
+    </a>
+    {% comment %}
+    <a href="#" class="account-sidebar__link">
+      My Loyalty 
+    </a>
+    {% endcomment %}
+    <a href="{{ product_url }}" class="account-sidebar__link {% if activeMenu == 4%} is-active {% endif %}">
+      My Recently Viewed
+    </a>
+    <a href="{{ shop.url }}/pages/contact-us" class="account-sidebar__link">
+      {{ 'general.menu.contact' | t }}
+    </a>
+    {{ 'layout.customer.log_out'| t | customer_logout_link }}
+  </div>
+  <select name="account-sidebar" id="account-sidebar" class="hide-medium-up account-sidebar__select">
+    <option {% if activeMenu == 0%} selected {%- endif -%} value="{{ routes.account_url }}">My Account: Dashboard</option>
+    <option {% if activeMenu == 1%} selected {% endif %} value="{{ orders_url }}">My Account: Orders</option>
+    {% comment %}<option   value="#">My Account: Wishlist</option>{% endcomment %}
+    <option {% if activeMenu == 2%} selected {% endif %} value="{{ edit_url }}">My Account: Edit Account</option>
+    <option {% if activeMenu == 3%} selected {%- endif -%} value="{{ routes.account_addresses_url }}">My Account: Addresses</option>
+    {% comment %}<option value="#">My Account: Loyalty</option>{% endcomment %}
+    <option {% if activeMenu == 4%} selected {% endif %} value="{{ product_url }}">My Account: Recently Viewed</option>
+    <option value="{{ shop.url }}/pages/contact-us">{{ 'general.menu.contact' | t }}</option>
+    <option value="/account/logout">Logout</option>
+  </select>
+</sidebar>
+
+<script>
+  var onChangeAccountSidebar = function(evt) {
+    var target = evt.currentTarget;
+    window.location.href = target.value;
+  };
+  var node = document.getElementById('account-sidebar');
+  if(node) {
+    node.addEventListener('change', onChangeAccountSidebar)
+  }
+</script>

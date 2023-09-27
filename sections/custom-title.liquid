@@ -1,0 +1,66 @@
+{% if section.settings.space_around %}<hr class="hr--small hr--clear">{% endif %}
+<div class="custom-title--wrapper page-width">
+  <header class="section-header custom-title">
+    <small>{{ section.settings.subtitle }}</small>
+    <h1 class="section-header__title collection-title margin-top-15">{{ section.settings.title }}</h1>
+    <div class="help-text">{{ section.settings.help_text }}</div>
+  </header>
+  
+  {% if section.settings.view_all %}
+  <div class="page-width text-center">
+  	<a href="{{ section.settings.link }}" class="custom-title__link">{{ section.settings.view_all }}</a>
+  </div>
+  {% endif %}
+</div>
+{% if section.settings.space_around %}<hr class="hr--small hr--clear">{% endif %}
+{% schema %}
+  {
+    "name": "Custom Title",
+    "settings": [
+		{
+          "type": "checkbox",
+          "id": "space_around",
+          "label": "Add spacing above and below",
+          "default": true
+        },
+		{
+          "type": "liquid",
+          "id": "title",
+          "label": "Title",
+		  "default": "{{ collection.title }}"
+        },
+	    {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+	    {
+          "type": "text",
+          "id": "help_text",
+          "label": "Help Text"
+        },
+		{
+          "type": "text",
+          "id": "view_all",
+          "label": "View All Text",
+		  "default": "View All"
+        },
+		{
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+		{
+          "type": "color",
+          "id": "color_border",
+          "label": "Border  Color",
+          "default": "#000"
+        }
+	],
+    "presets": [
+	  {
+      	"name": "Custom Title"
+      }
+	]
+  }
+{% endschema %}

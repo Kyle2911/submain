@@ -1,0 +1,98 @@
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1651654095cacc4a82": {
+      "type": "spacer",
+      "disabled": true,
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "16511120837f5ecf25": {
+      "type": "spacer",
+      "disabled": true,
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "1651654062410cd6eb": {
+      "type": "spacer",
+      "disabled": true,
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "1651078608d63fecf9": {
+      "type": "blog-posts",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "blog": "news",
+        "post_limit": 4,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "16510786453e262950": {
+      "type": "spacer",
+      "disabled": true,
+      "settings": {
+        "spacer_size": "extra-extra-small"
+      }
+    },
+    "16511642230957695b": {
+      "type": "rich-text",
+      "blocks": {
+        "165116422307234150-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Stay Tuned.",
+            "bold_header": false,
+            "use_header": false
+          }
+        },
+        "165116422307234150-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>No other promos at the moment. <br\/>Stay tuned to this page for upcoming and on-going promos for <strong>Penshoppe<\/strong>!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "165116422307234150-0",
+        "165116422307234150-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "main",
+    "1651654095cacc4a82",
+    "16511120837f5ecf25",
+    "1651654062410cd6eb",
+    "1651078608d63fecf9",
+    "16510786453e262950",
+    "16511642230957695b"
+  ]
+}

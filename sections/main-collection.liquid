@@ -1,0 +1,870 @@
+<div
+  id="CollectionSection"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-template"
+  {% if section.settings.parallax %}data-parallax="true"{% endif %}>
+
+  {%- if section.settings.collection_image_enable and collection.image -%}
+
+    {%- style -%}
+    .collection-hero {
+      height: {{ section.settings.collection_image_height }}px;
+    }
+    @media screen and (max-width: 768px) {
+      .collection-hero {
+        height: {{ section.settings.collection_image_height | times: 0.6 }}px;
+      }
+    }
+    {%- endstyle -%}
+
+    <div class="collection-hero">
+
+      {%- if section.settings.parallax -%}
+        <div class="parallax-container">
+          <div class="parallax-image">
+      {%- endif -%}
+
+        {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img class="collection-hero__image image-fit lazyload"
+          src=""
+          data-src="{{ img_url }}"
+          data-aspectratio="{{ collection.image.aspect_ratio }}"
+          data-widths="[720, 900, 1080, 1800, 2400]"
+          data-sizes="auto"
+          alt="{{ collection.image.alt | escape }}">
+
+      {%- if section.settings.parallax -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      <div class="collection-hero__content">
+        <div class="page-width">
+          <header class="section-header section-header--hero">
+            <h1 class="section-header__title section-header__title--medium">
+              <div class="animation-cropper">
+                <div class="animation-contents collection-title">
+                  {{ collection.title }}
+                </div>
+              </div>
+            </h1>
+          </header>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+  
+  {%- style -%}
+  .collection-custom__style {
+    border: solid {{ section.settings.border_size }}px {{ section.settings.border_color }};
+    background-color: {{ section.settings.bg_color }};
+    border-radius: 30px;
+  }
+  
+  {%- endstyle -%}
+  
+	<div class="{% unless section.settings.full_width %}page-width {% endunless %}page-content{% if section.settings.enable_bg_border %} collection-custom__style{% endif %}">
+    {%- render 'collection-sidebar', section: section -%}    
+
+    {%- for block in section.blocks -%}
+      {%- assign block_index = forloop.index -%}
+
+      {%- case block.type -%}
+      {%- when 'collection_description' -%}
+        {%- if collection.description != blank -%}
+          {%- unless forloop.first -%}
+            <hr class="hr--clear hr--small">
+          {%- endunless -%}
+          <div class="collection-description rte" {{ block.shopify_attributes }}>
+              {{ collection.description }}
+          </div>
+          {%- unless forloop.last -%}
+            <hr class="hr--clear hr--small">
+          {%- endunless -%}
+        {%- endif -%}
+      {%- when 'product_grid' -%}
+        {%- liquid
+          assign per_row = block.settings.per_row
+          assign paginate_by = per_row | times: 10
+          if block.settings.collection_subnav_style == 'inline'
+            assign paginate_by = paginate_by | minus: 1
+          endif
+        -%}
+
+        {%- paginate collection.products by paginate_by -%}
+        {%- unless settings.enable_maintenance -%}{%- render 'address-finder-plp' -%}{%- endunless -%}
+    	<div class="collection-filter">
+          <div class="grid grid--uniform">
+            <div class="grid__item small--one-half medium-up--one-half">
+              {%- liquid
+                assign current_filter_size = 0
+
+                for filter in collection.filters
+                  assign current_filter_size = current_filter_size | plus: filter.active_values.size
+                endfor
+              -%}
+              <button
+                id="FilterDrawerTrigger"
+                type="button"
+                class="collection-filter__item--drawer js-drawer-open-collection-filters btn btn--tertiary{% unless current_filter_size == 0 %} btn--tertiary-active{% endunless %}"
+                aria-controls="FilterDrawer">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" viewBox="0 0 64 64"><path d="M48 42h10M48 42a5 5 0 1 1-5-5 5 5 0 0 1 5 5zM7 42h31M16 22H6M16 22a5 5 0 1 1 5 5 5 5 0 0 1-5-5zM57 22H26"/></svg>
+                {{ 'collections.filters.title_tags' | t }}
+                {%- if current_filter_size > 0 -%}
+                  ({{ current_filter_size }})
+                {%- endif -%}
+              </button>
+            </div>
+
+            {%- if section.settings.enable_sort -%}
+              <div class="grid__item small--one-half medium-up--one-half text-right{% if section.settings.collection_tags_style == 'dropdown' %} small--one-half medium-up--one-half{% endif %} collection-filter__item--sort">
+                {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                <label for="SortBy" class="hidden-label">{{ 'collections.sorting.title' | t }}</label>
+                <select name="SortBy" id="SortBy" data-default-sortby="{{ collection.default_sort_by }}">
+                  <option value="title-ascending"{% if sort_by == collection.default_sort_by %} selected="selected"{% endif %}>{{ 'collections.sorting.title' | t }}</option>
+                  {%- for option in collection.sort_options -%}
+                    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>{{ option.name }}</option>
+                  {%- endfor -%}
+                </select>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div id="CollectionAjaxResult" {{ block.shopify_attributes }}>
+          <div id="CollectionAjaxContent">
+            <div class="grid grid--uniform{% if block.settings.mobile_flush_grid %} small--grid--flush{% endif %}">
+              {%- liquid
+                assign grid_item_width = 'small--one-half medium-up--one-third'
+
+                case per_row
+                  when 1
+                    assign grid_item_width = ''
+                  when 2
+                    assign grid_item_width = 'medium-up--one-half'
+                  when 3
+                    assign grid_item_width = 'small--one-half medium-up--one-third'
+                  when 4
+                    assign grid_item_width = 'small--one-half medium-up--one-quarter'
+                  when 5
+                    assign grid_item_width = 'small--one-half medium-up--one-fifth'
+                endcase
+
+                assign have_sidebar = false
+                assign tag_count = 0
+                assign tag_limit = 7
+                assign have_extra_tags = false
+              -%}
+
+              {%- if section.settings.collection_subnav_style == 'inline' -%}
+                {%- liquid
+                  if linklists.main-menu.levels > 0
+                    for link in linklists.main-menu.links
+                      if link.active
+                        if link.links.size > 0
+                          assign have_sidebar = true
+                        endif
+                      elsif link.child_active
+                        assign have_sidebar = true
+                      endif
+                    endfor
+                  endif
+                -%}
+
+                {%- if have_sidebar -%}
+                  <div class="grid__item {{ grid_item_width }} grid__item--{{ section.id }}">
+                    <ul class="tags tags--vertical">
+                      {%- if linklists.main-menu.levels > 0 -%}
+                        {%- for link in linklists.main-menu.links -%}
+                          {%- if link.active -%}
+                            {%- render 'subcollection-list', links: link.links -%}
+                          {%- elsif link.child_active -%}
+                            {%- for sub_link in link.links -%}
+                              {%- if sub_link.active or sub_link.child_active -%}
+                                {%- if sub_link.levels > 0 -%}
+                                  {%- render 'subcollection-list', links: sub_link.links -%}
+                                {%- else -%}
+                                  {%- render 'subcollection-list', links: link.links -%}
+                                {%- endif -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          {%- endif -%}
+                        {%- endfor -%}
+
+                        {%- if have_extra_tags -%}
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
+                    </ul>
+
+                    {%- assign show_button_limit = tag_limit | minus: 1 -%}
+                    {%- if tag_count > show_button_limit -%}
+                      <p>
+                        <button type="button" class="collapsible-trigger collapsible--auto-height collapsible-trigger-btn btn btn--tertiary tags-toggle" aria-controls="TagList-{{ section.id }}">
+                          <span class="collapsible-label__closed">{{ 'collections.general.see_more' | t }}</span>
+                          <span class="collapsible-label__open">{{ 'collections.general.see_less' | t }}</span>
+                        </button>
+                      </p>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- for product in collection.products -%}
+                {%- render 'product-grid-item'
+                  product: product,
+                  grid_item_width: grid_item_width,
+                  per_row: per_row
+                -%}
+              {%- else -%}
+                <div class="grid__item">
+                  <p>{{ 'collections.general.no_matches' | t }}</p>
+                </div>
+              {%- endfor -%}
+            </div>
+
+            {%- if paginate.pages > 1 -%}
+              {%- render 'pagination', paginate: paginate -%}
+            {%- endif -%}
+
+            {%- if settings.quick_shop_enable -%}
+              {%- for product in collection.products -%}
+                {%- render 'quick-shop-modal', product: product -%}
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- endpaginate -%}
+  	  	{%- when 'store_availability' -%}
+      	<div class="custom-collapsible-block custom-collapsible-block--tab {% if block.settings.space_around %}index-section{% endif %}" {{ block.shopify_attributes }}>
+        {%- render 'custom-tab', block: block -%}
+      	</div>
+  		{%- when 'custom-html' -%}
+        {%- render 'custom-html', block: block -%}
+  		{%- when 'rich-text' -%}
+        {%- render 'custom-rich-text', block: block -%}
+  		{%- when 'image-row' -%}
+        {%- render 'custom-image-row', block: block -%}
+  		{%- when 'hero' -%}
+        {%- render 'custom-hero', block: block -%}
+  		{%- when 'flash-sale' -%}
+  		<div {{ block.shopify_attributes }}>
+        {%- render 'custom-flash-sale-countdown', area: block -%}
+        </div>
+  		{%- when 'breadcrumbs' -%}
+  		<div {{ block.shopify_attributes }}>
+  		{%- render 'breadcrumbs' -%}
+        </div>
+  		{%- when 'spacing' -%}
+  		<hr class="hr--small hr--clear" {{ block.shopify_attributes }}>
+  		{%- when 'collection-title' -%}
+  		<header class="section-header no-margin-bottom" {{ block.shopify_attributes }}>
+        <h1 class="section-header__title collection-title">
+          {{ collection.title }}
+        </h1>
+      </header>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- style -%}
+#pre-order-policy {
+	transition: all 0.3s ease-in-out;
+}
+
+#pre-order-policy.is-active {
+	height: 100% !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+{%- endstyle -%}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "CollectionPage",
+    {% if collection.description != blank %}
+      "description": {{ collection.description | strip_html | json }},
+    {% endif %}
+    {% if page_image %}
+      {% assign image_size = page_image.width | append: 'x' %}
+      "image": {
+        "@type": "ImageObject",
+        "height": {{ page_image.height | json }},
+        "url": {{ page_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ page_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ collection.title | json }}
+  }
+</script>
+
+<script>
+if (document.querySelector('.btn-toggle-preorder') != null) { document.querySelector('.btn-toggle-preorder').addEventListener('click', toggle_preorder); }
+  
+function toggle_preorder(e) {
+  e.preventDefault();
+  var elem = document.querySelector('#pre-order-policy');
+   
+  if (elem.classList.contains('is-active')) { elem.classList.remove('is-active'); } else { elem.classList.add('is-active'); }
+}
+</script>
+
+{% schema %}
+  {
+    "name": "Collection Page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_image_enable",
+        "label": "Show collection image",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full width",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "collection_image_height",
+        "label": "Image height",
+        "default": 550,
+        "min": 350,
+        "max": 750,
+        "step": 100,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id": "parallax",
+        "label": "Parallax image",
+        "default": true
+      },
+		{
+		"type": "header",
+		"content": "Backgrounds and Borders"
+	  },
+	  {
+        "type": "checkbox",
+        "id": "enable_bg_border",
+        "label": "Enable Background and Borders",
+        "default": false
+      },
+	  {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background"
+      },
+	  {
+        "type": "color",
+        "id": "border_color",
+        "label": "Border"
+      },
+	  {
+        "type": "number",
+        "id": "border_size",
+        "label": "Border Size"
+      },
+      {
+        "type": "header",
+        "content": "Filtering and sorting"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sidebar",
+        "label": "Enable filter",
+        "default": true,
+        "info": "Allow your customers to filter collections and search results by product availability, price, color, and more. [Customize filters](/admin/menus)"
+      },
+      {
+        "type": "checkbox",
+        "id": "collapsed",
+        "label": "Collapse filters",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_color_swatches",
+        "label": "Enable color swatches",
+        "info": "[View setup instructions](https://archetypethemes.co/blogs/impulse/how-do-i-set-up-color-swatches)"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sort",
+        "label": "Show sort options",
+        "default": true
+      },
+	  {
+        "type": "header",
+        "content": "Exclusive Collection"
+      },
+	  {
+        "type": "text",
+        "id": "exclusive_collection_tag",
+        "label": "Tag",
+        "info": "Customer tag that can view the collection",
+		"default": "exclusive-access"
+      }
+    ],
+    "blocks": [
+	  {
+		"type" :"breadcrumbs",
+		"name": "Breadcrumbs",
+		"limit": 1
+	  },
+	  {
+		"type" :"collection-title",
+		"name": "Collection Title",
+		"limit": 1
+	  },
+      {
+        "type": "collection_description",
+        "name": "Collection description",
+        "limit": 1
+      },
+	  {
+		"type" :"spacing",
+		"name": "Space"
+	  },
+      {
+        "type": "product_grid",
+        "name": "Products",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "select",
+            "id": "collection_subnav_style",
+            "label": "Subnavigation style",
+            "default": "inline",
+            "options": [
+              {
+                "value": "none",
+                "label": "None"
+              },
+              {
+                "value": "inline",
+                "label": "Inline"
+              }
+            ]
+          },
+          {
+            "type": "range",
+            "id": "per_row",
+            "label": "Products per row",
+            "default": 3,
+            "min": 1,
+            "max": 5,
+            "step": 1
+          },
+          {
+            "type": "checkbox",
+            "id": "mobile_flush_grid",
+            "label": "Flush grid on mobile",
+            "default": false
+          }
+        ]
+      },
+	   {
+		  "type": "store_availability",
+		  "name": "Store Availability",
+		  "limit": 4,
+		  "settings": [
+			{
+              "type": "text",
+              "id": "title",
+              "label": "Area"
+            },
+            {
+              "type": "textarea",
+              "id": "stores_list_left",
+              "label": "Stores List (Left)",
+              "info": "Comma then space separated"
+            },
+            {
+              "type": "textarea",
+              "id": "stores_list_right",
+              "label": "Stores List (Right)",
+              "info": "Comma then space separated"
+            },
+			{
+              "type": "checkbox",
+              "id": "space_around",
+              "label": "Add spacing above and below",
+              "default": true
+            }
+		  ]
+	   },
+	   {
+        "type": "custom-html",
+        "name": "Custom HTML",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "full_width",
+            "label": "Full page width",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "space_around",
+            "label": "Add spacing above and below",
+            "default": true
+          },
+          {
+            "type": "textarea",
+            "id": "code",
+            "label": "HTML",
+            "default": "<h2>Custom HTML</h2><p>Use this advanced section to build your own layouts or to add custom HTML or scripts.</p>"
+          }
+        ]
+      },
+	  {
+        "type": "rich-text",
+        "name": "Rich text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Rich text block"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.</p>"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Button link"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Button text"
+          },
+          {
+            "type": "select",
+            "id": "align_text",
+            "label": "Text alignment",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Centered"
+              }
+            ]
+          },
+          {
+            "type": "checkbox",
+            "id": "narrow_column",
+            "label": "Narrow column",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "enlarge_text",
+            "label": "Enlarge text"
+          },
+		  {
+            "type": "checkbox",
+            "id": "space_around",
+            "label": "Add spacing above and below",
+            "default": true
+          }
+        ]
+      },
+	  {
+        "type": "image-row",
+        "name": "Row of Images",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Image 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_2",
+            "label": "Image 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_3",
+            "label": "Image 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_4",
+            "label": "Image 4"
+          },
+		  {
+            "type": "image_picker",
+            "id": "image_5",
+            "label": "Image 5"
+          },
+		  {
+            "type": "url",
+            "id": "image_1_link",
+            "label": "Link 1"
+          },
+		  {
+            "type": "url",
+            "id": "image_2_link",
+            "label": "Link 2"
+          },
+		  {
+            "type": "url",
+            "id": "image_3_link",
+            "label": "Link 3",
+            "info": "Optional"
+          },
+          {
+            "type": "url",
+            "id": "image_4_link",
+            "label": "Link 4",
+            "info": "Optional"
+          },
+		  {
+            "type": "url",
+            "id": "image_5_link",
+            "label": "Link 5",
+            "info": "Optional"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_gutter",
+            "label": "Add spacing between",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_zoom",
+            "label": "Enable image zoom",
+            "info": "Not active if any image links set",
+            "default": false
+          },
+		  {
+            "type": "checkbox",
+            "id": "space_around",
+            "label": "Add spacing above and below",
+            "default": true
+          }
+        ]
+      },
+	  {
+        "type": "hero",
+        "name": "Hero",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "space_around",
+            "label": "Add spacing above and below",
+            "default": false
+          },
+		  {
+            "type": "checkbox",
+            "id": "autoplay",
+            "label": "Autoplay"
+          },
+          {
+            "type": "range",
+            "id": "slide_size",
+            "label": "Number of Slides",
+            "default": 1,
+            "min": 1,
+            "max": 6,
+            "step": 1
+          },
+          {
+            "type": "range",
+            "id": "overlay_opacity",
+            "label": "Overlay",
+            "default": 0,
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "%"
+          },
+          {
+            "type": "range",
+            "id": "autoplay_speed",
+            "label": "Change images every",
+            "default": 7,
+            "min": 5,
+            "max": 10,
+            "step": 1,
+            "unit": "s"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_img",
+            "label": "Slide 1 Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_img1",
+            "label": "Slide 2 Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_img2",
+            "label": "Slide 3 Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_img3",
+            "label": "Slide 4 Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_img4",
+            "label": "Slide 5 Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_img5",
+            "label": "Slide 6 Image"
+          },
+          {
+            "type": "text",
+            "id": "slide_img_link",
+            "label": "Slide 1 Link"
+          },
+          {
+            "type": "text",
+            "id": "slide_img_link1",
+            "label": "Slide 2 Link"
+          },
+          {
+            "type": "text",
+            "id": "slide_img_link2",
+            "label": "Slide 3 Link"
+          },
+          {
+            "type": "text",
+            "id": "slide_img_link3",
+            "label": "Slide 4 Link"
+          },
+          {
+            "type": "text",
+            "id": "slide_img_link4",
+            "label": "Slide 5 Link"
+          },
+          {
+            "type": "text",
+            "id": "slide_img_link5",
+            "label": "Slide 6 Link"
+          },
+          {
+            "type": "select",
+            "id": "style",
+            "label": "Slide navigation style",
+            "default": "arrows",
+            "options": [
+              {
+                "value": "minimal",
+                "label": "Minimal"
+              },
+              {
+                "value": "arrows",
+                "label": "Arrows"
+              },
+              {
+                "value": "dots",
+                "label": "Dots"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "mobile_height",
+            "label": "Mobile height",
+            "default": "auto",
+            "options": [
+              {
+                "label": "Auto",
+                "value": "auto"
+              },
+			  {
+                "label": "143px",
+                "value": "143px"
+              },
+              {
+                "label": "250px",
+                "value": "250px"
+              },
+              {
+                "label": "300px",
+                "value": "300px"
+              },
+              {
+                "label": "350px",
+                "value": "350px"
+              },
+              {
+                "label": "400px",
+                "value": "400px"
+              },
+              {
+                "label": "500px",
+                "value": "500px"
+              },
+              {
+                "label": "Full screen",
+                "value": "100vh"
+              }
+            ]
+          }
+        ]
+      },
+	  {
+		"type": "flash-sale",
+        "name": "Flash Sale Timer",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "flash_space",
+            "label": "Add spacing above and below",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "flash_sale_end_date",
+            "label": "Flash Sale End",
+            "default": "Month Day, Year HH:MM:SS",
+            "info": "Time is in 24-H format"
+          },
+          {
+            "type": "text",
+            "id": "flash_title",
+            "label": "Title"
+          },
+          {
+            "type": "header",
+            "content": "Slider"
+          },
+          {
+            "type": "checkbox",
+            "id": "divider",
+            "label": "Show section divider",
+            "default": false
+          }
+        ]
+	  }
+    ]
+  }
+{% endschema %}

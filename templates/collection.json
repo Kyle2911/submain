@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1": {
+          "type": "breadcrumbs",
+          "settings": {
+          }
+        },
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9": {
+          "type": "collection-title",
+          "settings": {
+          }
+        },
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5": {
+          "type": "collection_description",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "collection_subnav_style": "none",
+            "per_row": 4,
+            "mobile_flush_grid": true
+          }
+        }
+      },
+      "block_order": [
+        "b7d495f6-5b37-419d-a867-de6bfee3b4a1",
+        "fe31274a-db1d-48db-951a-4eb0c709d7e9",
+        "8036bcf2-505b-4ce8-8801-93aa256a27b5",
+        "product_grid"
+      ],
+      "settings": {
+        "collection_image_enable": false,
+        "full_width": false,
+        "collection_image_height": 550,
+        "parallax": false,
+        "enable_bg_border": false,
+        "bg_color": "",
+        "border_color": "",
+        "enable_sidebar": true,
+        "collapsed": true,
+        "enable_color_swatches": false,
+        "enable_sort": true,
+        "exclusive_collection_tag": "exclusive-access"
+      }
+    },
+    "16362863915aada704": {
+      "type": "social-share",
+      "disabled": true,
+      "settings": {
+        "space_around": true,
+        "link": "shopify:\/\/pages\/magazine"
+      }
+    }
+  },
+  "order": [
+    "main-collection",
+    "16362863915aada704"
+  ]
+}

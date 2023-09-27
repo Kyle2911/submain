@@ -1,0 +1,44 @@
+<div class="grid grid--uniform">
+  <div class="grid__item medium-up--one-half small-one-whole">
+      {%- assign img_url = section.settings.asset | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <img class="lazyload" loading="lazy"            
+                   data-src="{{ img_url }}"
+                   data-aspectratio="{{ section.settings.asset.aspect_ratio }}"
+                   data-widths="[189, 198, 580, 1190]"
+                   data-sizes="auto"
+                   alt="{{ section.settings.asset.alt | escape }}">
+  </div>
+  <div class="grid__item medium-up--one-half small-one-whole">
+    <h2 class="text-center">{{ section.settings.title }}</h2>
+    <p>{{ section.settings.description }}</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Dual Section",
+	"class": "index-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "asset",
+        "label": "Asset"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+	  {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }
+    ],
+    "presets": [
+	  {
+      	"name": "Dual Section"
+      }
+	]
+  }
+{% endschema %}

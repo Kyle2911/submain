@@ -1,0 +1,25 @@
+{%- liquid
+	assign colored = false
+	if block.settings.colored
+    	assign colored = true
+		assign words = block.settings.custom_text | split: ' '
+        
+        assign words[0] = '#198560'
+        assign words[1] = '#AF021E'
+        assign words[2] = '#EDBD0F'
+    endif
+-%}
+
+<div class="section-header text-center">
+  <div class="larger-text">
+    {%- if colored -%}
+    hjsakdh
+    {%- for word in words -%}
+    <span style="color: {{ words[forloop.index] }};">{{ word }}</span>
+    {%- endfor -%}
+    {%- else -%}
+    asd {{block.block.settings.colored }}
+    {{ block.settings.custom_text }}
+    {%- endif -%}
+  </div>
+</div>

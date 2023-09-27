@@ -1,0 +1,40 @@
+{%- liquid
+	assign stores_left = block.settings.stores_list_left | split: ', '
+    assign stores_right = block.settings.stores_list_right | split: ', '
+-%}
+
+<div class="collapsibles-wrapper collapsibles-wrapper--border-bottom">
+  <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Custom-content-{{ block.id }}">
+    {{ block.settings.title }}
+    {%- render 'collapsible-icons' -%}
+  </button>
+  <div id="Custom-content-{{ block.id }}" class="collapsible-content collapsible-content--all custom-block--full">
+    <div class="collapsible-content__inner rte">
+      {%- for store in stores_left -%}
+      <p>{{ store }}</p>
+      {%- endfor -%}
+    </div>
+    
+    {%- if block.settings.stores_list_right != blank -%}
+    <div class="collapsible-content__inner rte">
+      {%- for store in stores_right -%}
+      <p>{{ store }}</p>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- style -%}
+.custom-collapsible-block .rte p {
+	margin-bottom: 15px;
+}
+
+#Custom-content-{{ block.id }}.is-open {
+	display: flex;
+}
+
+#Custom-content-{{ block.id }} .collapsible-content__inner {
+	flex-basis: 50%;
+}
+{%- endstyle -%}
