@@ -6,6 +6,10 @@ import { ShippingAddress } from "./shipping-address";
 import { BillingAddress } from "./billing-address";
 import { ShippingInformation } from "./shipping-information";
 import { Payment } from "./payment";
+import { changeMarketingText } from './marketing';
+import { removeExisting } from './removeExistingLocaton';
+import { pickUpList } from './pickuplist';
+import { Payments } from './payments';
 window.custard = new Custard([
   PickupLogo,
   ContactInformationInit,
@@ -13,4 +17,8 @@ window.custard = new Custard([
   ShippingInformation,
   Payment,
   BillingAddress,
+  changeMarketingText, 
+  removeExisting, 
+  pickUpList, 
+  Payments
 ]);
