@@ -33,7 +33,7 @@
       </p>
     `;
 
-    
+
    var arr_shipping_address = JSON.parse(localStorage.getItem("arrProvince"));
     if (arr_shipping_address != null) {
    
@@ -67,9 +67,7 @@
 
     }
 
-  
-  
-    function getProvince() {
+ document.getElementById('checkout_shipping_address_company').addEventListener("click",function getProvince() {
     $("#zip").val("");
     $("#barangay").html('<option value="" Selected>Select Barangay</option>');
     let province = $("#checkout_shipping_address_city").val();
@@ -95,7 +93,9 @@
 
         $("#city").html(City.join(""));
       });
-  }
+  });
+
+    
     
  
   </script>
