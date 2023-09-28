@@ -240,20 +240,14 @@ $('.active-radio').click();
         const Latitude = arr[i].Latitude;
         const Longitude = arr[i].Longitude;
         const listStore = nearbydata(lat1, lon1, Latitude, Longitude);
-        const listaddress = `${
-          arr[i].Street
-        } ${
-          arr[i].City
-        } ${
-          arr[i].Country
-        }`;
+        const listaddress = `${arr[i].Street.trim()} ${arr[i].City.trim()} ${arr[i].Country.trim()}`;
 
         if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
           if (listStore <= 10) {
             html = `<div>
              <div class="radio__input">
       <input
-        class="input-radio" onclick="getStoreListData('${Title.trim()}','${listaddress.trim()}','${City.trim()}','${Province.trim()}','${Zipcode}','${Longitude}','${Latitude}')"
+        class="input-radio" onclick="getStoreListData('${Title.trim()}','${listaddress}','${City}','${Province}','${Zipcode}','${Longitude}','${Latitude}')"
         type="radio"
         value="${i}"
         name="checkout[attributes][id]"
