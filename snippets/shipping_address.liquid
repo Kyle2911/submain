@@ -13,7 +13,7 @@
        $('.field__input-wrapper')[8].innerHTML = `
       <div class="field__input-wrapper">
         <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
-        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
+        <select placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class=" field__input field__input -- select " aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
       </div>
     `;
 
@@ -67,10 +67,10 @@
 
     }
 
- document.getElementById('checkout_shipping_address_city').addEventListener("change",function getProvince() {
+ document.getElementById('checkout_shipping_address_city').addEventListener("change", ()=> {
     $("#zip").val("");
     $("#barangay").html('<option value="" Selected>Select Barangay</option>');
-    let province = $("#checkout_shipping_address_city").val();
+    let province = $("#checkout_shipping_address_address2").val();
     url = `https://tools.gabcgfs.com/address_finder.php?PROVINCE=${province}`;
     City = [];
     City.push('<option value="" Selected>Select Town / City</option>');
@@ -91,7 +91,7 @@
           City.push();
         }
 
-        $("#city").html(City.join(""));
+        $("#checkout_shipping_address_address2").html(City.join(""));
       });
   });
 
