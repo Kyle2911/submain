@@ -67,7 +67,7 @@
 
     }
 
- document.getElementById('checkout_shipping_address_company').addEventListener("click",function getProvince() {
+ document.getElementById('checkout_shipping_address_city').addEventListener("change",function getProvince() {
     $("#zip").val("");
     $("#barangay").html('<option value="" Selected>Select Barangay</option>');
     let province = $("#checkout_shipping_address_city").val();
