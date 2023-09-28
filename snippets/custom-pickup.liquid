@@ -242,7 +242,24 @@ $('.active-radio').click();
         const listStore = nearbydata(lat1, lon1, Latitude, Longitude);
         const listaddress = `${arr[i].Street.trim()} ${arr[i].City.trim()} ${arr[i].Country.trim()}`;
 
-        if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
+            fetch('https://tools.gabcgfs.com/shoplocation.php').then(response => response.json()).then(data => {
+      const jsonData = data;
+
+// Get the value of the 'name' parameter from the URL
+      const nameParam = Title;
+
+// Filter the data based on the 'name' parameter
+      const filteredData = jsonData.filter(item => {
+        if (nameParam) {
+          return item.name.toLowerCase().includes(nameParam.toLowerCase());
+        } else {
+          return true; // If 'name' parameter is not provided, return all items
+        }
+      });
+
+// Log the filtered data
+      if (filteredData[0].id != '') {
+       if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
           if (listStore <= 10) {
             html = `<div>
              <div class="radio__input">
@@ -276,6 +293,11 @@ $('.active-radio').click();
             arr_data.push(html);
           }
         }
+
+      }
+    })
+
+    
       }
 
       const locationData = arr_data.map((htmlString) => {
