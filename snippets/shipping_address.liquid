@@ -4,24 +4,16 @@
 
        $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
-    placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
+    placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
     <option>Province</option>
     </select>
     `;
 
-           // this section is for Street address
-       $('.field__input-wrapper')[8].innerHTML = `
-      <div class="field__input-wrapper">
-        <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
-        <select placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class=" field__input field__input -- select " aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
-      </div>
-    `;
+
 
     //this section is for city
           $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
-        <select placeholder="Town or City" autocomplete="shipping address-line2" autocorrect="off" data-backup="address2" class=" field__input field__input -- select " aria-required="true" size="30" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2">
-      <option>City</option>
-   </select>
+        <input placeholder="Town or City" autocomplete="shipping address-line2" autocorrect="off" data-backup="address2" class="field__input" aria-required="true" size="30" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2">
     `;
     
  //this section is for barangay
@@ -34,8 +26,14 @@
         Add a house number if you have one
       </p>
     `;
-
-
+           // this section is for Street address
+       $('.field__input-wrapper')[8].innerHTML = `
+      <div class="field__input-wrapper">
+        <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
+        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
+      </div>
+    `;
+    
    var arr_shipping_address = JSON.parse(localStorage.getItem("arrProvince"));
     if (arr_shipping_address != null) {
    
@@ -68,8 +66,8 @@
       });
 
     }
-
- document.getElementById('checkout_shipping_address_city').addEventListener("change", ()=> {
+    
+  document.getElementById('checkout_shipping_address_city').addEventListener("change", ()=> {
     $("#zip").val("");
     $("#barangay").html('<option value="" Selected>Select Barangay</option>');
     let province = $("#checkout_shipping_address_address2").val();
@@ -96,8 +94,4 @@
         $("#checkout_shipping_address_address2").html(City.join(""));
       });
   });
-
-    
-    
- 
   </script>
