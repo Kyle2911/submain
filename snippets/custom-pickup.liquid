@@ -293,14 +293,7 @@ $('.active-radio').click();
             arr_data.push(html);
           }
         }
-
-      }
-    })
-
-    
-      }
-
-      const locationData = arr_data.map((htmlString) => {
+    const locationData = arr_data.map((htmlString) => {
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = htmlString;
         const distanceText = tempDiv.querySelector("span:last-child").textContent;
@@ -327,6 +320,13 @@ $('.active-radio').click();
       } else {
         document.querySelector(".nearBy").innerHTML = sortedLocationElements.join('');
       }
+      }
+    })
+
+    
+      }
+
+  
     }
   }
 </script>
