@@ -359,7 +359,7 @@
               
                     {%- unless settings.enable_maintenance -%}
                      {% for address in customer.addresses %}
-                       {% assign address = address.address1.last %}
+                       {% assign address = address.address1.desc %}
                     
                     {% endfor %}
                        {{ address }}
