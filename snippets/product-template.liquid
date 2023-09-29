@@ -358,7 +358,7 @@
                     {%- endunless -%}
               
                     {%- unless settings.enable_maintenance -%}
-                          awdawd
+                         {{ customer.addresses }}
                       {%- render 'address-finder-pdp'
                         , product: product,
                         current_variant: current_variant -%}
