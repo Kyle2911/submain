@@ -1,4 +1,4 @@
-{%- capture PICKUP_LOGO -%} {% render 'ico-pickup' %} {%- endcapture -%}
+{% comment %} {%- capture PICKUP_LOGO -%} {% render 'ico-pickup' %} {%- endcapture -%}
 <script type="text/javascript">
   window.CartItems = [];
   {% for line_item in checkout.line_items %}
@@ -401,3 +401,4 @@
     },
   });
 </script>
+ {% endcomment %}
