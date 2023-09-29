@@ -358,7 +358,9 @@
                     {%- endunless -%}
               
                     {%- unless settings.enable_maintenance -%}
-                      {{ customer.addresses.address.address2 }}
+                     {% if address in customer.addresses %}
+                      {{ address.address1 }}
+                    {% endif %}
                      
                       {%- render 'address-finder-pdp'
                         , product: product,
