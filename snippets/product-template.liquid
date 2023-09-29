@@ -360,6 +360,7 @@
                     {%- unless settings.enable_maintenance -%}
                       {% for address in customer.addresses %}
                          {{ address.address1 }}
+                          {{ address.address2 }}
                         {% endfor %}
                       {%- render 'address-finder-pdp'
                         , product: product,
