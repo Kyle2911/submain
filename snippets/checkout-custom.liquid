@@ -7,6 +7,40 @@
 {% capture pickUpList %}
   {% render 'custom-pickup' %}
    <div class="findlocationbtn" style="font-weight:bold; font-size:16px; border: none; background: none; cursor:pointer;  text-decoration: underline !important;">Update your location.</div>
+   <script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+  var btn = document.querySelector(".myBtn");
+  var findlocationbtn = document.querySelector(".findlocationbtn");
+
+// Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+// When the user clicks the button, open the modal 
+  findlocationbtn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+// When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+// When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+     
+   </script>
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
