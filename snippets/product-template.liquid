@@ -358,10 +358,8 @@
                     {%- endunless -%}
               
                     {%- unless settings.enable_maintenance -%}
-                      {% for address in customer.addresses %}
-                         {{ address.address1[0] }}
-                          {{ address.address2[0] }}
-                        {% endfor %}
+                      {{ customer.addresses.address.address1 }}
+                     
                       {%- render 'address-finder-pdp'
                         , product: product,
                         current_variant: current_variant -%}
