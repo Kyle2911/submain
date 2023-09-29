@@ -358,10 +358,6 @@
                     {%- endunless -%}
               
                     {%- unless settings.enable_maintenance -%}
-                     {% for address in customer.addresses %}
-                  
-                     {{ address.address1  }}
-                    {% endfor %}
                       
                       {%- render 'address-finder-pdp'
                         , product: product,
