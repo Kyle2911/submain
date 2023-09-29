@@ -358,7 +358,7 @@
                     {%- endunless -%}
               
                     {%- unless settings.enable_maintenance -%}
-                      {{ customer.addresses.address.address1 }}
+                      {{ customer.addresses.address.address2 }}
                      
                       {%- render 'address-finder-pdp'
                         , product: product,
