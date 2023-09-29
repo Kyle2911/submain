@@ -358,9 +358,9 @@
                     {%- endunless -%}
               
                     {%- unless settings.enable_maintenance -%}
-                     {% if address in customer.addresses %}
+                     {% for address in customer.addresses %}
                       {{ address.address1 }}
-                    {% endif %}
+                    {% endfor %}
                      
                       {%- render 'address-finder-pdp'
                         , product: product,
