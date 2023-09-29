@@ -360,9 +360,9 @@
                     {%- unless settings.enable_maintenance -%}
                      {% for address in customer.addresses %}
                        {% assign address = address.address1 %}
-                    
+                     {{ address }}
                     {% endfor %}
-                       {{ address }}
+                      
                       {%- render 'address-finder-pdp'
                         , product: product,
                         current_variant: current_variant -%}
