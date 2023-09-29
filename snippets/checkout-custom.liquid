@@ -7,6 +7,7 @@
 {% capture pickUpList %}
   {% render 'custom-pickup' %}
     <button class="findlocationbtn" style="font-weight:bold; font-size:16px; border: none; background: none; cursor:pointer;  text-decoration: underline !important;">Update your location.</button>
+    <script src="{{ 'pickup-storelist.js' | asset_url }}" defer="defer"></script>
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
