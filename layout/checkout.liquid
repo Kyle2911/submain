@@ -89,7 +89,8 @@
     </div>
 
     {{ tracking_code }}
-    {% render 'address-finder-checkout' %}
+ {% comment %}   {% render 'address-finder-checkout' %}
     {% render 'checkout-custom-scripts' %}
+       {%- endcomment -%}
   </body>
 </html>
