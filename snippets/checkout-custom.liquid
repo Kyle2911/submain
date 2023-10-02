@@ -116,10 +116,10 @@
       });
   });   
 
-     document.querySelector('#checkout_shipping_address_city').addEventListener("change",() => {
+     document.querySelector('#checkout_shipping_address_address2').addEventListener("change",() => {
  
     $("#zip").val("");
-    let city = $("#city").val();
+    let city = $("#checkout_shipping_address_city").val();
     url = `https://tools.gabcgfs.com/address_finder.php?CITY=${city}`;
     Brgy = [];
 
@@ -142,7 +142,7 @@
           ZipBarangay.push(arrZ);
         }
 
-        $("#barangay").html(Brgy.join(""));
+        $("#checkout_shipping_address_address1").html(Brgy.join(""));
       });
   });   
  
