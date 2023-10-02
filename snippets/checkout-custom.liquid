@@ -120,10 +120,10 @@
  
     $("#zip").val("");
     let city = $("#checkout_shipping_address_city").val();
-    url = `https://tools.gabcgfs.com/address_finder.php?CITY=${city}`;
+    url = `https://tools.gabcgfs.com/address_finder_dev.php?CITY=${city}`;
     Brgy = [];
 
-    Brgy.push('<option value="" Selected>Select Barangay</option>');
+    Brgy.push('<option value="" Selected>Barangay</option>');
     jQuery
       .ajax({
         url: url,
