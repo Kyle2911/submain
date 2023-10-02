@@ -130,7 +130,7 @@
         contentType: "application/json; charset=UTF-8",
       })
       .done(function (json) {
-        console.log(json[0])
+        console.log(json[0].BARANGAY)
         for (let i = 0; i < json[0].CITY[0].BARANGAY.length; i++) {
           const arrC = `<option value="${json[0].CITY[0].BARANGAY[i].BARANGAY}">${json[0].CITY[0].BARANGAY[i].BARANGAY}</option>`;
           const arrZ = [
