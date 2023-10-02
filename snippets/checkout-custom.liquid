@@ -47,14 +47,14 @@
        $('.field__input-wrapper')[7].innerHTML = `
       <div class="field__input-wrapper">
         <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
-        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" value="data" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
+        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
       </div>
     `;
 
                // this section is for Zip code
        $('.field__input-wrapper')[9].innerHTML = `
    <label class="field__label field__label--visible" for="checkout_shipping_address_zip">Postal code</label>
-        <input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" data-backup="zip" class="field__input field__input--zip" aria-required="true" type="text" value="1105" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" readonly>
+        <input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" data-backup="zip" class="field__input field__input--zip" aria-required="true" type="text" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" readonly>
     `;
     
    var arr_shipping_address = JSON.parse(localStorage.getItem("arrProvince"));
