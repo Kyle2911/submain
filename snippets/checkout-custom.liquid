@@ -19,13 +19,7 @@
     </select>
     `;
 
-           // this section is for Street address
-       $('.field__input-wrapper')[8].innerHTML = `
-      <div class="field__input-wrapper">
-        <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
-        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" value="data"type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
-      </div>
-    `;
+    
 
     //this section is for city
           $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
@@ -43,6 +37,13 @@
       </p>
     `;
 
+           // this section is for Street address
+       $('.field__input-wrapper')[8].innerHTML = `
+      <div class="field__input-wrapper">
+        <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
+        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" value="data"type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
+      </div>
+    `;
     
    var arr_shipping_address = JSON.parse(localStorage.getItem("arrProvince"));
     if (arr_shipping_address != null) {
