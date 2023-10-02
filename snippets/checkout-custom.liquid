@@ -144,8 +144,8 @@
       });
   }); 
 
-    document.querySelector('#checkout_shipping_address_address2').addEventListener("change",() => {
-    let barangay = $("#barangay").val();
+    document.querySelector('#checkout_shipping_address_address1').addEventListener("change",() => {
+    let barangay = $("#checkout_shipping_address_address1").val();
     // Function to find the value for a given location
     function findValueForLocation(locationName) {
       for (let i = 0; i < ZipBarangay.length; i++) {
@@ -155,10 +155,8 @@
       }
       return null; // Return null if location is not found
     }
-    customer_address= `{"province":"${$('#province').val()}","city":"${$('#city').val()}","barangay":"${$('#barangay').val()}","zip":"${$('#zip').val()}"}`;
-  localStorage.setItem('customer_address',customer_address);
     const value = findValueForLocation(barangay);
-    $("#zip").val(value);
+    $("#checkout_shipping_address_zip").val(value);
   });
  
   </script>
