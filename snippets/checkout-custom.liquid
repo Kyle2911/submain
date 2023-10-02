@@ -116,13 +116,21 @@
       });
   });   
 
-     document.querySelector('#checkout_shipping_address_address2').addEventListener("change",() => {
-    let city = $("#checkout_shipping_address_city").val();
+ document.querySelector('#checkout_shipping_address_address2').addEventListener("change",()=> {
+    $("#zip").val("");
+    let city = $("#city").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?CITY=${city}`;
     Brgy = [];
 
-    Brgy.push('<option value="" Selected>Barangay</option>');
- jQuery.ajax({url: url, type: "GET", dataType: "jsonp", contentType: "application/json; charset=UTF-8"}).done(function(json) {
+    Brgy.push('<option value="" Selected>Select Barangay</option>');
+    jQuery
+      .ajax({
+        url: url,
+        type: "GET",
+        dataType: "jsonp",
+        contentType: "application/json; charset=UTF-8",
+      })
+      .done(function (json) {
         for (let i = 0; i < json[0].CITY[0].BARANGAY.length; i++) {
           const arrC = `<option value="${json[0].CITY[0].BARANGAY[i].BARANGAY}">${json[0].CITY[0].BARANGAY[i].BARANGAY}</option>`;
           const arrZ = [
@@ -132,11 +140,10 @@
           Brgy.push(arrC);
           ZipBarangay.push(arrZ);
         }
-        
 
-        $("#checkout_shipping_address_address1").html(Brgy.join(""));
+        $("#barangay").html(Brgy.join(""));
       });
-  });   
+  }); 
  
   </script>
 {% endcapture %}
