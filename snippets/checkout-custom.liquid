@@ -81,9 +81,7 @@
 
     }
 
-  $("#checkout_shipping_address_city").addEventListener('change',function getProvince() {
-    // $("#zip").val("");
-    // $("#barangay").html('<option value="">Town or City</option>');
+  $("#checkout_shipping_address_city").addEventListener('change',()=> {
     let province = $("#checkout_shipping_address_city").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
     City = [];
