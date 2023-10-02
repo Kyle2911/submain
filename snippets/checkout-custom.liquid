@@ -15,7 +15,7 @@
        $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
     placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
-    <option>Province</option>
+    <option value="">Province</option>
     </select>
     `;
 
@@ -25,7 +25,7 @@
           $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
               <select class=" field__input field__input -- select "
     placeholder="Town or City" autocomplete="shipping address-line2"  autocorrect="off" data-backup="address2" aria-required="true" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" >
-    <option>Town or City</option>
+  <option value="">Town or City</option>
     </select>
     `;
     
@@ -83,7 +83,7 @@
 
      function getProvince() {
     $("#zip").val("");
-    $("#barangay").html('<option value="" Selected>Select Barangay</option>');
+    $("#barangay").html('<option value="">Town or City</option>');
     let province = $("#province").val();
     url = `https://tools.gabcgfs.com/address_finder.php?PROVINCE=${province}`;
     City = [];
