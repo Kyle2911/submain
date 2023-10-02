@@ -81,7 +81,7 @@
 
     }
 
- document.querySelector('#checkout_shipping_address_city').addEventListener('change',()=> {
+ document.querySelector('#checkout_shipping_address_city').addEventListener("change",() => {
     let province = $("#checkout_shipping_address_city").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
     City = [];
