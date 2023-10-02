@@ -81,7 +81,7 @@
 
     }
 
-     function getProvince() {
+  window.addeventlistener('change',function getProvince() {
     // $("#zip").val("");
     // $("#barangay").html('<option value="">Town or City</option>');
     let province = $("#checkout_shipping_address_city").val();
@@ -107,7 +107,7 @@
 
         $("#checkout_shipping_address_address2").html(City.join(""));
       });
-  }
+  });   
     
  
   </script>
