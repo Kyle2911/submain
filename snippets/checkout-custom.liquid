@@ -17,6 +17,7 @@
      $('#checkout_shipping_address_address1').val(addressGathering.barangay);
     document.querySelector('#checkout_shipping_address_company').value=addressGathering.street_address;
     document.querySelector('#checkout_shipping_address_zip').value=addressGathering.zip;
+    console.log(addressGathering.zip)
   }
        $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
