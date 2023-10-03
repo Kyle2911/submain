@@ -162,9 +162,9 @@
 
 
         const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
-    
+    AutoGetCity();
   if(addressGathering != null){
-AutoGetCity()
+
    function AutoGetCity() {
     let province = $("#checkout_shipping_address_city").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
