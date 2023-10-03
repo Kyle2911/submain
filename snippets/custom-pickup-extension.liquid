@@ -1,5 +1,81 @@
 <link rel="stylesheet" href="{{ 'pickup-address.css' | asset_url }}">
-    {%- render 'pickup-address' -%}
- 
+
+<style>
+  @media only screen and (min-width: 200px) {
+    .modal-body{
+      padding:50px 0;
+    }
+    .select-address{
+      font-size: 16px;
+       width: 80%;
+    margin: 7px 11%;
+    padding: 12px;
+    border: 2px solid gray;
+    border-radius: 5px;
+  color:#000;
+    } 
+
+         .msgPanel{
+    color:red;
+    margin-left: 35%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+    .modal-body{
+      padding:50px 0;
+    }
+    .select-address{
+      font-size: 16px;
+     width: 80%;
+    margin: 7px 11%;
+    padding: 12px;
+    border: 2px solid gray;
+    border-radius: 5px;
+color:#000;
+    }
+
+       .msgPanel{
+    color:red;
+    margin-left: 40%;
+  }
+}
+
+  .title-address{
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+  }
+
+  
+
+</style>
+<!-- The Modal -->
+<div id="myModal" class="modal" style="z-index:100;">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+
+  <div class="modal-body" id="replace_img">
+    <h2 class="title-address" style="margin-bottom:12px; color:#000;">Enter Your Location</h2>
+    <div class="msgPanel" id="msgError"></div>
+      <select class="select-address" id="province">
+        <option>Province</option>
+      </select>
+        <select class="select-address" id="city">
+        <option>City</option>
+      </select>
+        <select class="select-address" id="barangay">
+        <option>Barangay</option>
+           </select>
+    <input type="text" class="select-address" placeholder="Zip Code" id="zip" disabled>
+     <input type="text" class="select-address" placeholder="House or Unit Number / Street Name / Landmark" id="street_address">
+   <button id="gatherAddressbtn" style="color: white; background-color: #000; padding: 9px; width: 26%; margin: 1% 0% 0% 38%; font-size: 16px;">Verify Location</button>
+     <div class="close">Cancel</div>
+  </div>
+  </div>
+
+</div>
+
  <a class="findlocationbtn" style="font-weight:bold; font-size:16px; border: none; background: none; cursor:pointer;  text-decoration: underline !important;">Update your location.</a>
 
