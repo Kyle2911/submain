@@ -193,7 +193,12 @@
       });
   }
     
-   
+   setTimeout(()=>{
+     $('#checkout_shipping_address_address2').val(addressGathering.city);
+     $('#checkout_shipping_address_address1').val(addressGathering.barangay);
+     $('#checkout_shipping_address_company').val(addressGathering.street_address);
+     $('#checkout_shipping_address_zip').val(addressGathering.zip);
+              },500);
   }
   </script>
 {% endcapture %}
