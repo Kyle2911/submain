@@ -9,7 +9,8 @@
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
-
+    const addressGathering = localStorage.getItem('customer_address');
+    console.log(addressGathering);
       // This section is for Province
 
        $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
