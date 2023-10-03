@@ -164,6 +164,7 @@
         const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
   
   if(addressGathering != null){
+    $('#checkout_shipping_address_city').val(addressGathering.province);
       AutoGetCity();
 
    function AutoGetCity() {
@@ -192,7 +193,7 @@
       });
   }
     
- 
+   
   }
   </script>
 {% endcapture %}
