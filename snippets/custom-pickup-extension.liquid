@@ -1,3 +1,4 @@
+  <link rel="stylesheet" href="{{ 'pickup-address.css' | asset_url }}">
  <a class="findlocationbtn" style="font-weight:bold; font-size:16px; border: none; background: none; cursor:pointer;  text-decoration: underline !important;">Update your location.</a>
 
  <script>
@@ -8,6 +9,13 @@
   var btn = document.querySelector(".myBtn");
   var findlocationbtn = document.querySelector(".findlocationbtn");
 
+// Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
 
 // When the user clicks the button, open the modal 
   findlocationbtn.onclick = function() {
@@ -21,3 +29,5 @@
     }
   }   
  </script>
+ 
+    {%- render 'pickup-address' -%}
