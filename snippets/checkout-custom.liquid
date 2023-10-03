@@ -164,8 +164,8 @@
         const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
     
   if(addressGathering != null){
-
-    ()=> {
+autoGetCity()
+    function autoGetCity(){
     let city = $("#checkout_shipping_address_address2").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?CITY=${city}`;
     Brgy = [];
