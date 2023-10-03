@@ -9,7 +9,7 @@
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
-      document.querySelector('#checkout_shipping_address_province').display.style="none";
+     document.querySelector('#checkout_shipping_address_province').style.display = 'none';
   </script>
   {% render 'shipping_address' %}
 {% endcapture %}
