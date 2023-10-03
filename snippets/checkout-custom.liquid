@@ -8,8 +8,54 @@
   {% render 'custom-pickup' %}
 {% endcapture %}
 {% capture dropdownProvince %}
+
+    <script>
+
+     // This section is for Province
+    $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
+    <select class=" field__input field__input -- select "
+    placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
+    <option value="">Province</option>
+    </select>
+    `;
+
+    //this section is for city
+    $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
+    <select class=" field__input field__input -- select "
+    placeholder="Town or City" autocomplete="shipping address-line2"  autocorrect="off" data-backup="address2" aria-required="true" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" >
+    <option value="">Town or City</option>
+    </select>
+    `;
     
-{% render 'shipping_address' %}
+     //this section is for barangay
+     $('.field__input-wrapper')[6].innerHTML = ` 
+     <label class="field__label field__label--visible" for="checkout_shipping_address_address1">Barangay</label>
+     <select class=" field__input field__input -- select "
+     placeholder="Barangay" autocomplete="shipping address-line1"  autocorrect="off" data-backup="address1" aria-required="true" type="text" name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1" >
+     <option value="">Barangay</option>
+     </select>
+
+      <p class="field__additional-info visually-hidden" data-address-civic-number-warning="">
+      <svg class="icon-svg icon-svg--size-16 field__message__icon" aria-hidden="true" focusable="false"> <use xlink:href="#info"></use> </svg>
+      Add a house number if you have one
+      </p>
+      `;
+
+           // this section is for Street address
+       $('.field__input-wrapper')[7].innerHTML = `
+      <div class="field__input-wrapper">
+        <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
+        <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
+      </div>
+    `;
+
+               // this section is for Zip code
+       $('.field__input-wrapper')[9].innerHTML = `
+       <label class="field__label field__label--visible" for="checkout_shipping_address_zip">Postal code</label>
+        <input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" data-backup="zip" class="field__input field__input--zip" aria-required="true" type="text" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" readonly>
+    `;
+  </script>
+  
   {{ 'shipping_address.js' | asset_url | script_tag }}
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
