@@ -113,7 +113,7 @@ color:#000;
 
     }
 
-    GetProvince.addEventListener("change",function getProvince() {
+    GetProvince.addEventListener("change",function get_Province() {
       $("#zip").val("");
       $("#barangay").html('<option value="" Selected>Barangay</option>');
       let province = $("#province").val();
@@ -139,7 +139,7 @@ color:#000;
     });
 
     ZipBarangay = [];
-   GetCity.addEventListener("change", function getCity() {
+   GetCity.addEventListener("change", function get_City() {
       $("#zip").val("");
       let city = $("#city").val();
       url = `https://tools.gabcgfs.com/address_finder_dev.php?CITY=${city}`;
@@ -165,7 +165,7 @@ color:#000;
       });
     });
 
-   GetBarangay.addEventListener("change",function getBarangay() {
+   GetBarangay.addEventListener("change",function get_Barangay() {
     let barangay = $("#barangay").val();
     // Function to find the value for a given location
     function findValueForLocation(locationName) {
