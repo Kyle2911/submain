@@ -5,8 +5,7 @@
   <small>For quicker pickup address entry, find your area from the drop down fields.</small>
 {% endcapture %}
 {% capture pickUpList %}
-          <link rel="stylesheet" href="{{ 'pickup-address.css' | asset_url }}">
-    {%- render 'pickup-address' -%}
+  {% render 'custom-pickup' %}
 {% endcapture %}
 {% capture dropdownProvince %}
   {% render 'shipping_address' %}
