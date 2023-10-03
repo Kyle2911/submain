@@ -1,6 +1,6 @@
 <script>
     function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
-  var selectElement = document.getElementById('checkout_shipping_address_province'); // Change this ID to match your select element ID
+  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
   
   for (var i = 0; i < selectElement.options.length; i++) {
     var option = selectElement.options[i];
