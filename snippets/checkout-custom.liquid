@@ -9,8 +9,9 @@
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
-    const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
+    var addressGathering = JSON.parse(localStorage.getItem('customer_address'));
       // This section is for Province
+
   if(addressGathering != null){
     $('#checkout_shipping_address_city').val(addressGathering.province);
      $('#checkout_shipping_address_address2').val(addressGathering.city);
