@@ -1,4 +1,6 @@
 <script>
+
+    
     // This section is for Province
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
@@ -68,7 +70,7 @@
           }</option>`;
           province.push(arrP);
         }
-  
+          province.sort();
         $("#checkout_shipping_address_city").html(province.join(""));
         localStorage.setItem("arrProvince", JSON.stringify({province}));
       });
