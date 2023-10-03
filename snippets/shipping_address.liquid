@@ -78,6 +78,23 @@
     }
 
  document.querySelector('#checkout_shipping_address_city').addEventListener("change",() => {
+       const AutoRegionData=`["${$('#checkout_shipping_address_city').val()}"]`;
+   selectOptionByDataAttributeValue('data-alternate-values', AutoRegionData);
+
+     function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
+  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
+  
+  for (var i = 0; i < selectElement.options.length; i++) {
+    var option = selectElement.options[i];
+    var dataValue = option.getAttribute(dataAttribute);
+    
+    if (dataValue === valueToSelect) {
+      option.selected = true;
+      break; // Exit the loop once the option is found and selected
+    }
+  }
+}
+   
     let province = $("#checkout_shipping_address_city").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
     City = [];
@@ -206,9 +223,4 @@
          $('#checkout_shipping_address_company').val(addressGathering.street_address);
          $('#checkout_shipping_address_zip').val(addressGathering.zip);
       }
-
-
- 
-
- 
 </script>
