@@ -8,6 +8,9 @@
   {% render 'custom-pickup' %}
 {% endcapture %}
 {% capture dropdownProvince %}
+  <script>
+      document.querySelector('#checkout_shipping_address_province').display.style="none";
+  </script>
   {% render 'shipping_address' %}
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
