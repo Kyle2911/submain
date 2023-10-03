@@ -204,13 +204,13 @@
       if(addressGathering != null){
         $('#checkout_shipping_address_city').val(addressGathering.province);
           AutoGetCity();
-          AutoGetBarangay();
        
       setTimeout(()=>{
         document.querySelector('#checkout_shipping_address_address2').value=addressGathering.city;
-        document.querySelector('#checkout_shipping_address_address1').value=addressGathering.barangay;
-      },500);
        
+        AutoGetBarangay()
+      },500);
+        
          $('#checkout_shipping_address_company').val(addressGathering.street_address);
          $('#checkout_shipping_address_zip').val(addressGathering.zip);
       }
