@@ -157,6 +157,9 @@
     }
     const value = findValueForLocation(barangay);
     $("#checkout_shipping_address_zip").val(value);
+
+       customer_address= `{"province":"${$('#checkout_shipping_address_city').val()}","city":"${$('#checkout_shipping_address_address2').val()}","barangay":"${$('#checkout_shipping_address_address1').val()}","zip":"${$('#checkout_shipping_address_zip').val()}","street_address":"${$('#checkout_shipping_address_company').val()}"}`;
+         localStorage.setItem('customer_address',customer_address);
   });
  
   </script>
