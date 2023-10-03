@@ -202,27 +202,25 @@
           Brgy.push(arrC);
           ZipBarangay.push(arrZ);
         }
-        $("#barangay").html(Brgy.join(""));
+        $("#checkout_shipping_address_address1").html(Brgy.join(""));
       });
     }
 
-
+        // Get a existing customer address
         const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
-
-    
-  if(addressGathering != null){
-    $('#checkout_shipping_address_city').val(addressGathering.province);
-      AutoGetCity();
-      AutoGetBarangay();
-   
-    
-    
-  setTimeout(()=>{document.querySelector('#checkout_shipping_address_address2').value=addressGathering.city;},500)
-   
-    $('#checkout_shipping_address_address1').val(addressGathering.barangay);
-     $('#checkout_shipping_address_company').val(addressGathering.street_address);
-     $('#checkout_shipping_address_zip').val(addressGathering.zip);
-  }
+      if(addressGathering != null){
+        $('#checkout_shipping_address_city').val(addressGathering.province);
+          AutoGetCity();
+          AutoGetBarangay();
+       
+      setTimeout(()=>{
+        document.querySelector('#checkout_shipping_address_address2').value=addressGathering.city;
+        document.querySelector('#checkout_shipping_address_address1').value=addressGathering.barangay;
+      },500);
+       
+         $('#checkout_shipping_address_company').val(addressGathering.street_address);
+         $('#checkout_shipping_address_zip').val(addressGathering.zip);
+      }
   </script>
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
