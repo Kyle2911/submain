@@ -11,7 +11,13 @@
   <script>
     const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
       // This section is for Province
-
+  if(!addressGathering){
+    $('#checkout_shipping_address_city').val(addressGathering.province);
+     $('#checkout_shipping_address_city').val(addressGathering.city);
+     $('#checkout_shipping_address_city').val(addressGathering.barangay);
+     $('#checkout_shipping_address_city').val(addressGathering.street_address);
+    $('#checkout_shipping_address_city').val(addressGathering.zip);
+  }
        $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
     placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
