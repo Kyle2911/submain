@@ -1,8 +1,19 @@
 <script>
-        const dataOption = document.querySelector('#checkout_shipping_address_province').options;
-      for (let i = 0; i < dataOption.length; i++) {
-              console.log(dataOption[2].getAttribute('data-alternate-values').selectIndex);
-        }
+    function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
+  var selectElement = document.getElementById('checkout_shipping_address_province'); // Change this ID to match your select element ID
+  
+  for (var i = 0; i < selectElement.options.length; i++) {
+    var option = selectElement.options[i];
+    var dataValue = option.getAttribute(dataAttribute);
+    
+    if (dataValue === valueToSelect) {
+      option.selected = true;
+      break; // Exit the loop once the option is found and selected
+    }
+  }
+}
+
+  selectOptionByDataAttributeValue('data-alternate-values', 'Abra');
   
     // This section is for Province
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
