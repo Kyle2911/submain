@@ -55,7 +55,8 @@
        <label class="field__label field__label--visible" for="checkout_shipping_address_zip">Postal code</label>
        <input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" data-backup="zip" class="field__input field__input--zip" aria-required="true" type="text" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" readonly>
       `;
-  
+
+        // remove display in Region
        $('.field__input-wrapper')[9].style.display='none';
   
    var arr_shipping_address = JSON.parse(localStorage.getItem("arrProvince"));
