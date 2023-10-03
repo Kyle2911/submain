@@ -56,7 +56,7 @@
       `;
   </script>
   
-  {{ 'shipping_address.js' | asset_url | script_tag }}
+  {% render 'shipping_address' %}
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
 
