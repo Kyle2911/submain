@@ -9,7 +9,7 @@
 {% endcapture %}
 {% capture dropdownProvince %}
   <script>
-    const addressGathering = json.parse(localStorage.getItem('customer_address'));
+    const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
     console.log(addressGathering.province);
       // This section is for Province
 
