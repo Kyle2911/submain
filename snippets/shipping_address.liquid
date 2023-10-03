@@ -1,5 +1,17 @@
 <script>
- 
+      function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
+  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
+  
+  for (var i = 0; i < selectElement.options.length; i++) {
+    var option = selectElement.options[i];
+    var dataValue = option.getAttribute(dataAttribute);
+    
+    if (dataValue === valueToSelect) {
+      option.selected = true;
+      break; // Exit the loop once the option is found and selected
+    }
+  }
+}
   
     // This section is for Province
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
@@ -81,19 +93,7 @@
        const AutoRegionData=`["${$('#checkout_shipping_address_city').val()}"]`;
    selectOptionByDataAttributeValue('data-alternate-values', AutoRegionData);
 
-     function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
-  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
-  
-  for (var i = 0; i < selectElement.options.length; i++) {
-    var option = selectElement.options[i];
-    var dataValue = option.getAttribute(dataAttribute);
-    
-    if (dataValue === valueToSelect) {
-      option.selected = true;
-      break; // Exit the loop once the option is found and selected
-    }
-  }
-}
+
    
     let province = $("#checkout_shipping_address_city").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
