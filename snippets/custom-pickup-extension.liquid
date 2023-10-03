@@ -5,6 +5,7 @@
   var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
+  var btn = document.querySelector(".myBtn");
   var findlocationbtn = document.querySelector(".findlocationbtn");
 
 
@@ -12,7 +13,6 @@
   findlocationbtn.onclick = function() {
     modal.style.display = "block";
   }
-
 
 // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
