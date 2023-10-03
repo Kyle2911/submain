@@ -207,8 +207,8 @@
        
       setTimeout(()=>{
         document.querySelector('#checkout_shipping_address_address2').value=addressGathering.city;
-       
-        AutoGetBarangay()
+        AutoGetBarangay();
+        document.querySelector('#checkout_shipping_address_address1').value=addressGathering.barangay;
       },500);
         
          $('#checkout_shipping_address_company').val(addressGathering.street_address);
