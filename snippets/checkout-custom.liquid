@@ -206,7 +206,7 @@
       });
     }
 
-        // Get a existing customer address
+        // Get a customer address if there is a existing data
         const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
       if(addressGathering != null){
         $('#checkout_shipping_address_city').val(addressGathering.province);
