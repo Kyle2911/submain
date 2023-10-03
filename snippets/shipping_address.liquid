@@ -98,7 +98,7 @@
         } else {
           City.push();
         }
-
+        City.sort();
         $("#checkout_shipping_address_address2").html(City.join(""));
       });
   });   
@@ -126,7 +126,7 @@
           Brgy.push(arrC);
           ZipBarangay.push(arrZ);
         }
-
+          Brgy.sort();
         $("#checkout_shipping_address_address1").html(Brgy.join(""));
       });
   }); 
