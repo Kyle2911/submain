@@ -8,8 +8,9 @@
   {% render 'custom-pickup' %}
 {% endcapture %}
 {% capture dropdownProvince %}
-    {{ 'shipping_address.js' | asset_url | script_tag }}
+    
 {% render 'shipping_address' %}
+  {{ 'shipping_address.js' | asset_url | script_tag }}
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
 
