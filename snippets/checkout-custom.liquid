@@ -164,7 +164,14 @@
         const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
   
   if(addressGathering != null){
-setTimeout(()=>{AutoGetCity();},500);
+setTimeout(()=>{
+     AutoGetCity();
+     $('#checkout_shipping_address_city').val(addressGathering.province);
+     $('#checkout_shipping_address_address2').val(addressGathering.city);
+     $('#checkout_shipping_address_address1').val(addressGathering.barangay);
+     $('#checkout_shipping_address_company').val(addressGathering.street_address);
+     $('#checkout_shipping_address_zip').val(addressGathering.zip);
+              },500);
    function AutoGetCity() {
     let province = $("#checkout_shipping_address_city").val();
     url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
@@ -191,11 +198,7 @@ setTimeout(()=>{AutoGetCity();},500);
       });
   }
     
-    $('#checkout_shipping_address_city').val(addressGathering.province);
-     $('#checkout_shipping_address_address2').val(addressGathering.city);
-     $('#checkout_shipping_address_address1').val(addressGathering.barangay);
-    document.querySelector('#checkout_shipping_address_company').value=addressGathering.street_address;
-    document.querySelector('#checkout_shipping_address_zip').value=addressGathering.zip;
+   
   }
   </script>
 {% endcapture %}
