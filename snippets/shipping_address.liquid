@@ -1,6 +1,9 @@
 <script>
-
-    
+        const dataOption = document.querySelector('#checkout_shipping_address_province').options;
+      for (let i = 0; i < dataOption.length; i++) {
+              console.log(dataOption[i]);
+        }
+  
     // This section is for Province
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
