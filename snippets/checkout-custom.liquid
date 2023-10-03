@@ -11,11 +11,11 @@
   <script>
     const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
       // This section is for Province
-  if(!addressGathering){
+  if(addressGathering != null){
     $('#checkout_shipping_address_city').val(addressGathering.province);
      $('#checkout_shipping_address_address2').val(addressGathering.city);
      $('#checkout_shipping_address_address1').val(addressGathering.barangay);
-     $('#checkout_shipping_address_company').val(addressGathering.street_address);
+    document.querySelector('#checkout_shipping_address_company').value=addressGathering.street_address;
     document.querySelector('#checkout_shipping_address_zip').value=addressGathering.zip;
   }
        $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
