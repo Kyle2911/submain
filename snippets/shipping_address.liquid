@@ -1,19 +1,5 @@
 <script>
-    function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
-  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
-  
-  for (var i = 0; i < selectElement.options.length; i++) {
-    var option = selectElement.options[i];
-    var dataValue = option.getAttribute(dataAttribute);
-    
-    if (dataValue === valueToSelect) {
-      option.selected = true;
-      break; // Exit the loop once the option is found and selected
-    }
-  }
-}
-
-  selectOptionByDataAttributeValue('data-alternate-values', 'Abra');
+ 
   
     // This section is for Province
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
@@ -220,4 +206,23 @@
          $('#checkout_shipping_address_company').val(addressGathering.street_address);
          $('#checkout_shipping_address_zip').val(addressGathering.zip);
       }
+
+
+
+
+     function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
+  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
+  
+  for (var i = 0; i < selectElement.options.length; i++) {
+    var option = selectElement.options[i];
+    var dataValue = option.getAttribute(dataAttribute);
+    
+    if (dataValue === valueToSelect) {
+      option.selected = true;
+      break; // Exit the loop once the option is found and selected
+    }
+  }
+}
+
+  selectOptionByDataAttributeValue('data-alternate-values', 'Abra');
 </script>
