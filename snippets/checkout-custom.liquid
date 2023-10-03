@@ -204,7 +204,8 @@
       if(addressGathering != null){
         $('#checkout_shipping_address_city').val(addressGathering.province);
           AutoGetCity();
-       
+
+        // delay a output
       setTimeout(()=>{
         document.querySelector('#checkout_shipping_address_address2').value=addressGathering.city;
         AutoGetBarangay();
