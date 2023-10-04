@@ -1,6 +1,7 @@
 
 function giveMsgError(){
-    return `Please select store location`;
+    htmlError= `Please select store location`;
+    document.querySelector("#MsgErrorFunction").innerHTML=htmlError;
 }
 
 
