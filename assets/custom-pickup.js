@@ -181,7 +181,7 @@ $('.active-radio').click();
     display: flex;
 "
       ><div class="radio__label__primary">
-        <div>${Title}</div>
+        <div class="locationName">${Title}</div>
         <div class="small-text">${listaddress}</div>
         <div class="small-text pickup-instructions show-on-mobile">
           Usually ready in 24 hours
