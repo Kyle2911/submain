@@ -148,7 +148,7 @@ $('.active-radio').click();
       const jsonData = data;
 
 // Get the value of the 'name' parameter from the URL
-      const nameParam = Title;
+      const nameParam = Title.trim();
 
 // Filter the data based on the 'name' parameter
       const filteredData = jsonData.filter(item => {
