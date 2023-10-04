@@ -153,10 +153,13 @@
           if (locationName.includes(query)) {
             // Show the matching location
             label.style.display = "flex";
+           
           } else {
             // Hide the non-matching location
             label.style.display = "none";
           }
+
+           getTotalResult('lastOutputTotal');
         });
       }
 
