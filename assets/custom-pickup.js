@@ -163,7 +163,9 @@ $('.active-radio').click();
       if (filteredData[0].id != '') {
        if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
          
-            html = `<div>
+            html = `<div style="
+    display: flex;
+">
              <div class="radio__input">
       <input
         class="input-radio" onclick="getStoreListData('${Title.trim()}','${listaddress}','${City}','${Province}','${Zipcode}','${Longitude}','${Latitude}')"
@@ -175,7 +177,9 @@ $('.active-radio').click();
         data-checkout-total-shipping-cents="0"
       />
     </div>
-    <label class="radio__label" for="checkout_delivery_option_id_${i}"
+    <label class="radio__label" for="checkout_delivery_option_id_${i}" style="
+    display: flex;
+"
       ><div class="radio__label__primary">
         <div>${Title}</div>
         <div class="small-text">${listaddress}</div>
