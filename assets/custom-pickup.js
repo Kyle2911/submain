@@ -226,7 +226,8 @@ $('.active-radio').click();
       } else {
         document.querySelector(".nearBy").innerHTML = sortedLocationElements.join('');
         if(sortedLocationElements.join('') == true){
-          document.querySelectorAll(".filterData").length
+        let totalResult= document.querySelectorAll(".filterData").length
+          document.querySelector('#totalResult').innerHTML=totalResult;
         }
       }
       }
