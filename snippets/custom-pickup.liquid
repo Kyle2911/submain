@@ -117,7 +117,10 @@
 <script type="text/javascript" src="{{ 'custom-pickup.js' | asset_url }}" defer="defer"></script>
 
 <script>
-  
+    function getTotalResult(){
+       let totalResult= document.querySelectorAll(".filterData").length
+          document.querySelector('#totalResult').innerHTML=totalResult;
+  }
         // Get a reference to the input field
       const searchInput = document.getElementById("locationSearch");
 
@@ -147,4 +150,6 @@
           }
         });
       }
+
+
 </script>
