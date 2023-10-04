@@ -161,7 +161,6 @@ $('.active-radio').click();
 
 // Log the filtered data
       if (filteredData[0].id != '') {
-       if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
          
             html = `<div class="filterData" style="
     display: flex;
@@ -198,7 +197,6 @@ $('.active-radio').click();
                 `;
             arr_data.push(html);
      
-        }
     const locationData = arr_data.map((htmlString) => {
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = htmlString;
@@ -226,7 +224,7 @@ $('.active-radio').click();
             ">There is no store near you</h1></div>`;
       } else {
         document.querySelector(".nearBy").innerHTML = sortedLocationElements.join('');
-      getTotalResult('outputTotal');
+      getTotalResult('firstOutputTotal');
       }
       }
     })
