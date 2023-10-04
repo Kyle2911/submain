@@ -226,7 +226,7 @@ $('.active-radio').click();
             ">There is no store near you</h1></div>`;
       } else {
         document.querySelector(".nearBy").innerHTML = sortedLocationElements.join('');
-      getTotalResult();
+      getTotalResult('outputTotal');
       }
       }
     })
