@@ -154,7 +154,7 @@ $('.active-radio').click();
 
 // Log the filtered data
       if (filteredData[0].id != '') {
-       if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
+      
          
             html = `<div>
              <div class="radio__input">
@@ -186,8 +186,7 @@ $('.active-radio').click();
     ></div>
                 `;
             arr_data.push(html);
-       
-        }
+      
     const locationData = arr_data.map((htmlString) => {
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = htmlString;
