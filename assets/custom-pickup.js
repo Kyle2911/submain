@@ -205,7 +205,7 @@ $('.active-radio').click();
         const distanceText = tempDiv.querySelector("span:last-child").textContent;
         const distanceKm = parseFloat(distanceText.replace(" Km", ""));
         return {html: htmlString, distance: distanceKm};
-        getTotalResult();
+     
       });
 
 // Sort the location data by distance
@@ -226,7 +226,7 @@ $('.active-radio').click();
             ">There is no store near you</h1></div>`;
       } else {
         document.querySelector(".nearBy").innerHTML = sortedLocationElements.join('');
-   
+      getTotalResult();
       }
       }
     })
