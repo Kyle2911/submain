@@ -120,7 +120,7 @@ $('.active-radio').click();
 
     const lat1 = lat;
     const lon1 = long;
-    let url = "https://omnistorelocations-dev.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe";
+    let url = "https://omnistorelocations.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe";
     fetch(url).then((response) => response.json()).then((json) => getlocation(json));
 
     function getlocation(data) {
@@ -154,7 +154,7 @@ $('.active-radio').click();
 
 // Log the filtered data
       if (filteredData[0].id != '') {
-      
+       if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
          
             html = `<div>
              <div class="radio__input">
@@ -186,7 +186,8 @@ $('.active-radio').click();
     ></div>
                 `;
             arr_data.push(html);
-      
+       
+        }
     const locationData = arr_data.map((htmlString) => {
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = htmlString;
