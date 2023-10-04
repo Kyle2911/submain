@@ -197,7 +197,7 @@ $('.active-radio').click();
     ></div>
                 `;
             arr_data.push(html);
-       getTotalResult();
+     
         }
     const locationData = arr_data.map((htmlString) => {
         const tempDiv = document.createElement("div");
