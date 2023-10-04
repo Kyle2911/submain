@@ -205,6 +205,7 @@ $('.active-radio').click();
         const distanceText = tempDiv.querySelector("span:last-child").textContent;
         const distanceKm = parseFloat(distanceText.replace(" Km", ""));
         return {html: htmlString, distance: distanceKm};
+        getTotalResult();
       });
 
 // Sort the location data by distance
