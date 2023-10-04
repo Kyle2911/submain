@@ -1,4 +1,10 @@
- ZipBarangay = [];
+
+function giveMsgError(){
+    return `Please select store location`;
+}
+
+
+ZipBarangay = [];
   const customer_address = JSON.parse(localStorage.getItem("customer_address"));
   getCity(customer_address.city);
   function getStoreListData(Title, listaddress, City, Province, Zipcode, Longitude, Latitude) {
