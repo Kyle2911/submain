@@ -163,7 +163,7 @@ $('.active-radio').click();
       if (filteredData[0].id != '') {
        if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
          
-            html = `<div style="
+            html = `<div class="filterData" style="
     display: flex;
 ">
              <div class="radio__input">
