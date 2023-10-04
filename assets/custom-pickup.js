@@ -108,6 +108,16 @@ $('.active-radio').click();
     html_loading = `<div style="display: flex; justify-content: center;"><span class="loader">Loading</span></div>`;
     document.querySelector(".nearBy").innerHTML = html_loading;
 
+    function nearbydata(lat1, lon1, lat2, lon2) {
+      const R = 6371; // Radius of the earth in km
+      const dLat = deg2rad(lat2 - lat1);
+      const dLon = deg2rad(lon2 - lon1);
+      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = R * c; // Distance in km
+      return distance.toFixed(2);
+    }
+
     const lat1 = lat;
     const lon1 = long;
     let url = "https://omnistorelocations-dev.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe";
@@ -124,6 +134,7 @@ $('.active-radio').click();
         const Zipcode = arr[i].Zipcode;
         const Latitude = arr[i].Latitude;
         const Longitude = arr[i].Longitude;
+        const listStore = nearbydata(lat1, lon1, Latitude, Longitude);
         const listaddress = `${arr[i].Street.trim()} ${arr[i].City.trim()} ${arr[i].Country.trim()}`;
 
             fetch('https://tools.gabcgfs.com/shoplocation.php').then(response => response.json()).then(data => {
@@ -144,7 +155,7 @@ $('.active-radio').click();
 // Log the filtered data
       if (filteredData[0].id != '') {
        if (Longitude != null && Latitude != null && Title != "" && Title != "null") {
-     
+         
             html = `<div>
              <div class="radio__input">
       <input
@@ -175,7 +186,7 @@ $('.active-radio').click();
     ></div>
                 `;
             arr_data.push(html);
-          
+       
         }
     const locationData = arr_data.map((htmlString) => {
         const tempDiv = document.createElement("div");
