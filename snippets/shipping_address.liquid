@@ -196,38 +196,4 @@
     }
 
 
-        function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
-  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
-  
-  for (var i = 0; i < selectElement.options.length; i++) {
-    var option = selectElement.options[i];
-    var dataValue = option.getAttribute(dataAttribute);
-    
-    if (dataValue === valueToSelect) {
-      option.selected = true;
-      break; // Exit the loop once the option is found and selected
-    }
-  }
-}
-
-  
-        // Get a customer address if there is a existing data
-        const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
-      if(addressGathering != null){
-        $('#checkout_shipping_address_city').val(addressGathering.province);
-          AutoGetCity();
-       const AutoGetRegionData=`["${$('#checkout_shipping_address_city').val()}"]`;
-       selectOptionByDataAttributeValue('data-alternate-values', AutoGetRegionData);
-        // delay a output
-      setTimeout(()=>{
-        document.querySelector('#checkout_shipping_address_address2').value=addressGathering.city;
-        AutoGetBarangay();
-         setTimeout(()=>{
-        document.querySelector('#checkout_shipping_address_address1').value=addressGathering.barangay;
-      },1000);
-      },800);
-
-         $('#checkout_shipping_address_company').val(addressGathering.street_address);
-         $('#checkout_shipping_address_zip').val(addressGathering.zip);
-      }
 </script>
