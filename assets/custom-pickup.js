@@ -17,7 +17,17 @@
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
         const searchText = searchInput.value.trim().toLowerCase();
-        searchLocations(searchText);
+        searchLocations("store name",searchText);
+      });
+
+  searchInputProvince.addEventListener("change", function () {
+        const searchText = searchInput.value.trim().toLowerCase();
+        searchLocations("province",searchText);
+      });
+
+  searchInputCity.addEventListener("change", function () {
+        const searchText = searchInput.value.trim().toLowerCase();
+        searchLocations("city",searchText);
       });
 
       function searchLocations(query) {
