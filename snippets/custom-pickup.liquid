@@ -105,11 +105,11 @@
 <i class="fa fa-search icon-search"></i>
     <input type="text" id="locationSearch" class="searchInputText" placeholder="Search by location name" />
     <div class="panel-view">
-      <select class="searchInputText input-space">
+      <select class="searchInputText input-space" id="provinceSearch">
           <option value="">Select by Region / Province</option>
       </select>
       
-      <select class="searchInputText">
+      <select class="searchInputText" id="citySearch">
           <option value="">Select by City / Municipality</option>
       </select>
     </div>
@@ -275,7 +275,7 @@ $('.active-radio').click();
               <div style="font-size: 13px; margin: 7px 0 0 19px; font-weight: 600; color: red;">Ready for pick up in 2-3 days</div>
               </div>
                
-                <div class="small-text" style="font-size: 14px; padding: 5px 0;">${mergedArray[i].Street.trim()}, <span class="">${City}</span>, <span>${Province}</span>, ${mergedArray[i].Country.trim()}</div>
+                <div class="small-text" style="font-size: 14px; padding: 5px 0;">${mergedArray[i].Street.trim()}, <span class="city">${City}</span>, <span class="province">${Province}</span>, ${mergedArray[i].Country.trim()}</div>
                    <div class="small-text pickup-instructions show-on-mobile" style="margin: 5px 0;">
                      <span style="font-size: 14px;">Open • Closes 10 PM</span>
                   </div>
