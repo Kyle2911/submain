@@ -11,6 +11,8 @@
 
         // Get a reference to the input field
       const searchInput = document.getElementById("locationSearch");
+ const searchInputProvince = document.getElementById("provinceSearch");
+ const searchInputCity = document.getElementById("citySearch");
 
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
