@@ -117,9 +117,6 @@
 
 <script>
 
-ZipBarangay = [];
-  const customer_address = JSON.parse(localStorage.getItem("customer_address"));
-  getCity(customer_address.city);
   function getStoreListData(Title, listaddress, City, Province, Zipcode, Longitude, Latitude) {
 $('.active-radio').click();
     fetch('https://tools.gabcgfs.com/shoplocation.php').then(response => response.json()).then(data => {
@@ -163,63 +160,6 @@ $('.active-radio').click();
   }
 
 
-  function getCity(city) {
-
-    url = `https://tools.gabcgfs.com/address_finder_dev.php?CITY=${city}`;
-    jQuery.ajax({url: url, type: "GET", dataType: "jsonp", contentType: "application/json; charset=UTF-8"}).done(function(json) {
-
-      for (let i = 0; i < json[0].CITY[0].BARANGAY.length; i++) {
-        const arrZ = [
-          json[0].CITY[0].BARANGAY[i].BARANGAY,
-          json[0].CITY[0].BARANGAY[i].ZIP,
-          json[0].CITY[0].BARANGAY[i].latitude,
-          json[0].CITY[0].BARANGAY[i].longitude
-        ];
-
-        ZipBarangay.push(arrZ);
-      }
-
-      getBarangay(customer_address.barangay);
-
-      function getBarangay(barangay) {
-
-// Function to find the value for a given location
-        function findValueForLocation(locationName) {
-          for (let i = 0; i < ZipBarangay.length; i++) {
-
-            if (ZipBarangay[i][0] === locationName) {
-              return ZipBarangay[i][1];
-            }
-          }
-          return null; // Return null if location is not found
-        }
-        function findValueForlat(locationName) {
-          for (let i = 0; i < ZipBarangay.length; i++) {
-            if (ZipBarangay[i][0] === locationName) {
-              return ZipBarangay[i][2];
-            }
-          }
-          return null; // Return null if location is not found
-        }
-        function findValueForlong(locationName) {
-          for (let i = 0; i < ZipBarangay.length; i++) {
-            if (ZipBarangay[i][0] === locationName) {
-              return ZipBarangay[i][3];
-            }
-          }
-          return null; // Return null if location is not found
-        }
-
-        const getZip = findValueForLocation(barangay);
-        const getlat = findValueForlat(barangay);
-        const getlong = findValueForlong(barangay);
-        $("#zip").val(getZip);
-        getListStore(getlat, getlong);
-      }
-
-    });
-
-  }
 
   fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
     .then((response) => response.json())
