@@ -19,9 +19,9 @@
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
         if(searchInput.val() === ''){
-            const searchTextprovince = searchInputProvince.value.trim().toLowerCase();
+            const searchTextprovince = document.querySelector(".provinceSearch").value.trim().toLowerCase();
         searchLocations("province",searchTextprovince);
-           const searchTextcity = searchInputCity.value.trim().toLowerCase();
+           const searchTextcity = document.querySelector(".citySearch").value.trim().toLowerCase();
         searchLocations("city",searchTextcity);
         }
       });
