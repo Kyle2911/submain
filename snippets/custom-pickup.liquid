@@ -4,6 +4,12 @@
     .panel-view{
       display: block;
     }
+     .provinceSearch{
+    width: 347px;
+  }
+     .citySearch{
+    width: 347px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -13,6 +19,12 @@
   }
   .input-space{
      margin-right: 16px;
+  }
+  .provinceSearch{
+    width: 280px;
+  }
+  .citySearch{
+    width: 280px;
   }
 }
   
@@ -107,7 +119,7 @@
     <input type="text" id="locationSearch" class="searchInputText" placeholder="Search by location name" />
     <div class="panel-view">
       <div class="field__input-wrapper">
-      <select class="searchInputText input-space provinceSearch" id="provinceSearch" style="width: 280px;">
+      <select class="searchInputText input-space provinceSearch" id="provinceSearch">
           <option value="">Select by Region / Province</option>
       </select>
       <div class="field__caret">
@@ -116,7 +128,7 @@
         </div>
       
        <div class="field__input-wrapper">
-      <select class="searchInputText citySearch" id="citySearch" style="width: 280px;">
+      <select class="searchInputText citySearch" id="citySearch">
           <option value="">Select by City / Municipality</option>
       </select>
           <div class="field__caret">
