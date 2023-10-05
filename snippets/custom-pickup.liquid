@@ -1,4 +1,17 @@
 <style>
+
+  @media only screen and (min-width: 200px) {
+.panel-view{
+    style="display: none;"
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .panel-view{
+    style="display: flex;"
+  }
+}
+  
   /* css on filter input Text */
   .searchInputText{
     border-bottom: 3px solid lightgray;
@@ -80,10 +93,11 @@
   }
 </style>
     <input type="text" id="locationSearch" class="searchInputText" placeholder="Search by location name" />
-    <div style="display: flex;">
+    <div class="panel-view">
       <select class="searchInputText" style="margin-right: 16px;">
           <option value="">Select by Region / Province</option>
       </select>
+      
       <select class="searchInputText" style="margin-right: 16px;">
           <option value="">Select by City / Municipality</option>
       </select>
