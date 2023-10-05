@@ -1,18 +1,5 @@
 <script>
-      function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
-  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
-  
-  for (var i = 0; i < selectElement.options.length; i++) {
-    var option = selectElement.options[i];
-    var dataValue = option.getAttribute(dataAttribute);
-    
-    if (dataValue === valueToSelect) {
-      option.selected = true;
-      break; // Exit the loop once the option is found and selected
-    }
-  }
-}
-  
+
     // This section is for Province
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
@@ -208,6 +195,22 @@
       });
     }
 
+
+        function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
+  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
+  
+  for (var i = 0; i < selectElement.options.length; i++) {
+    var option = selectElement.options[i];
+    var dataValue = option.getAttribute(dataAttribute);
+    
+    if (dataValue === valueToSelect) {
+      option.selected = true;
+      break; // Exit the loop once the option is found and selected
+    }
+  }
+}
+
+  
         // Get a customer address if there is a existing data
         const addressGathering = JSON.parse(localStorage.getItem('customer_address'));
       if(addressGathering != null){
