@@ -212,9 +212,7 @@ $('.active-radio').click();
       });
     }
 
-    fetch(
-        "https://omnistorelocations.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe"
-      )
+    fetch("https://omnistorelocations.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe")
       .then((response) => response.json())
       .then((jsonData) => {
         data1 = arr;
