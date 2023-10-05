@@ -16,14 +16,14 @@
     // This section is for Province
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
-    placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
+    placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" autocomplete="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
     </select>
     `;
 
     //this section is for city
     $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
     <select class=" field__input field__input -- select "
-    placeholder="Town or City" autocomplete="shipping address-line2"  autocorrect="off" data-backup="address2" aria-required="true" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" >
+    placeholder="Town or City" autocomplete="shipping address-line2"  autocorrect="off" autocomplete="off" data-backup="address2" aria-required="true" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" >
     <option value="">Town or City</option>
     </select>
     `;
@@ -32,7 +32,7 @@
      $('.field__input-wrapper')[6].innerHTML = ` 
      <label class="field__label field__label--visible" for="checkout_shipping_address_address1">Barangay</label>
      <select class=" field__input field__input -- select "
-     placeholder="Barangay" autocomplete="shipping address-line1"  autocorrect="off" data-backup="address1" aria-required="true" type="text" name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1" >
+     placeholder="Barangay" autocomplete="shipping address-line1"  autocorrect="off" autocomplete="off" data-backup="address1" aria-required="true" type="text" name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1" >
      <option value="">Barangay</option>
      </select>
 
@@ -46,14 +46,14 @@
        $('.field__input-wrapper')[7].innerHTML = `
      
       <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
-      <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
+      <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" autocomplete="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
       
       `;
 
        // this section is for Zip code
        $('.field__input-wrapper')[8].innerHTML = `
        <label class="field__label field__label--visible" for="checkout_shipping_address_zip">Postal code</label>
-       <input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" data-backup="zip" class="field__input field__input--zip" aria-required="true" type="text" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" readonly>
+       <input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" autocomplete="off" data-backup="zip" class="field__input field__input--zip" aria-required="true" type="text" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" readonly>
       `;
 
         // remove display in Region
