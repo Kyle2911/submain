@@ -30,11 +30,12 @@
         searchLocations("city",searchText);
       });
 
-      function searchLocations(query) {
-        // Get all the location labels
-        const locationLabels = document.querySelectorAll(".filterData");
+      function searchLocations(condition,query) {
 
-        // Loop through each location label
+         // Get all the location labels
+        const locationLabels = document.querySelectorAll(".filterData");
+        if(condition === 'store name'){
+           // Loop through each location label
         locationLabels.forEach((label) => {
           const locationName = label
             .querySelector(".locationName")
@@ -52,4 +53,5 @@
 
            getTotalResult('lastOutputTotal');
         });
+        }
       }
