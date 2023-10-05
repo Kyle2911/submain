@@ -155,7 +155,7 @@
 <script type="text/javascript" src="{{ 'custom-pickup.js' | asset_url }}" defer="defer"></script>
 <script>
 
-   var arr = JSON.parse(localStorage.getItem("arrProvince"));
+   var arr = JSON.parse(sessionStorage.getItem("arrProvince"));
     if (arr != null) {
    
       province = [];
