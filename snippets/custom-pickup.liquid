@@ -159,7 +159,7 @@
     if (arr != null) {
    
       province = [];
-      var data = JSON.parse(localStorage.arrProvince);
+      var data = JSON.parse(sessionStorage.arrProvince);
       for (let i = 0; i < data.province.length; i++) {
         const arrP = `${
           data.province[i]
@@ -183,7 +183,7 @@
         }
   
         $(".provinceSearch").html(province.join(""));
-        localStorage.setItem("arrProvince", JSON.stringify({province}));
+        sessionStorage.setItem("arrProvince", JSON.stringify({province}));
       });
 
     }
