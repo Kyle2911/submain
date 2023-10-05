@@ -17,15 +17,14 @@
     $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
     placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" autocomplete="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
-    <option value="" selected>Province</option>
     </select>
     `;
 
     //this section is for city
     $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
     <select class=" field__input field__input -- select "
-    placeholder="Town or City" autocomplete="shipping address-line2"  autocorrect="off" autocomplete="off" data-backup="address2" aria-required="true" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" >
-    <option value="" selected>Town or City</option>
+    placeholder="Town or City" autocomplete="shipping address-line2"  autocorrect="off" autocomplete="off" data-backup="address2" aria-required="true" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" >
+    <option value="">Town or City</option>
     </select>
     `;
     
@@ -34,7 +33,7 @@
      <label class="field__label field__label--visible" for="checkout_shipping_address_address1">Barangay</label>
      <select class=" field__input field__input -- select "
      placeholder="Barangay" autocomplete="shipping address-line1"  autocorrect="off" autocomplete="off" data-backup="address1" aria-required="true" type="text" name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1" >
-     <option value="" selected>Barangay</option>
+     <option value="">Barangay</option>
      </select>
 
       <p class="field__additional-info visually-hidden" data-address-civic-number-warning="">
