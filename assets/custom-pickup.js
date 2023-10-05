@@ -18,8 +18,6 @@
       searchInput.addEventListener("input", function () {
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
- searchLocations("province",searchText);
-      searchLocations("city",searchText);
       });
 
      searchInputProvince.addEventListener("change", function () {
