@@ -21,12 +21,12 @@
       });
 
   searchInputProvince.addEventListener("change", function () {
-        const searchText = searchInput.value.trim().toLowerCase();
+        const searchText = searchInputProvince.value.trim().toLowerCase();
         searchLocations("province",searchText);
       });
 
   searchInputCity.addEventListener("change", function () {
-        const searchText = searchInput.value.trim().toLowerCase();
+        const searchText = searchInputCity.value.trim().toLowerCase();
         searchLocations("city",searchText);
       });
 
