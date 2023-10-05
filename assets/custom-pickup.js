@@ -53,7 +53,7 @@
 
            getTotalResult('lastOutputTotal');
         });
-        }if else(condition === 'province'){
+        }else if(condition === 'province'){
            // Loop through each location label
         locationLabels.forEach((label) => {
           const locationName = label
@@ -72,7 +72,7 @@
 
            getTotalResult('lastOutputTotal');
         });
-        }if else(condition === 'city'){
+        }else if(condition === 'city'){
            // Loop through each location label
         locationLabels.forEach((label) => {
           const locationName = label
