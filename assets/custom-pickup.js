@@ -19,10 +19,10 @@
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
         
-         const province = document.querySelector("#provinceSearch").value.trim().toLowerCase();
- searchLocations("province",province);
-           const city = document.querySelector("#citySearch").value.trim().toLowerCase();
-      searchLocations("city",city);
+         const provinceDatas = document.querySelector("#provinceSearch").value.trim().toLowerCase();
+ searchLocations("province",provinceDatas);
+           const cityDatas = document.querySelector("#citySearch").value.trim().toLowerCase();
+      searchLocations("city",cityDatas);
       });
 
      searchInputProvince.addEventListener("change", function () {
