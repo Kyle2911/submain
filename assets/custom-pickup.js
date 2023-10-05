@@ -109,97 +109,103 @@ $('.active-radio').click();
 
   }
 
+  fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
+    .then((response) => response.json())
+    .then((data) => fetchData(data));
 
-  function getListStore(lat, long) {
+  function fetchData(json) {
+    arr = [];
+    arr_data = [];
+    let getList = json.data.locations.edges;
 
-    html_loading = `<div style="display: flex; justify-content: center;"><span class="loader">Loading</span></div>`;
-    document.querySelector(".nearBy").innerHTML = html_loading;
+    for (let i = 0; i < getList.length; i++) {
+      pizza = getList[i].node.id.split("/");
+      const id = pizza[4];
+      const storeName = getList[i].node.name;
 
-    function nearbydata(lat1, lon1, lat2, lon2) {
-      const R = 6371; // Radius of the earth in km
-      const dLat = deg2rad(lat2 - lat1);
-      const dLon = deg2rad(lon2 - lon1);
-      const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-      const distance = R * c; // Distance in km
-      return distance.toFixed(2);
+      arr.push({
+        id: id,
+        Title: storeName
+      });
     }
 
-    const lat1 = lat;
-    const lon1 = long;
-    let url = "https://omnistorelocations.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe";
-    fetch(url).then((response) => response.json()).then((json) => getlocation(json));
+    fetch(
+        "https://omnistorelocations.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe"
+      )
+      .then((response) => response.json())
+      .then((jsonData) => {
+        data1 = arr;
+        data2 = jsonData;
+        // Parse the JSON strings into JavaScript objects
+        const array1 = data1;
+        const array2 = data2.message;
 
-    function getlocation(data) {
-      let arr_data = [];
-      let arr = data.message;
+        // Create an empty result array
+        const mergedArray = [];
+        // Iterate through array1
+        for (const obj1 of array1) {
+          // Find a matching object in array2 based on the "name" property
+          const obj2 = array2.find((item) => item.Title === obj1.Title);
 
-      for (let i = 0; i < arr.length; i++) {
-        const Title = arr[i].Title;
-        const City = arr[i].City;
-        const Province = arr[i].Province;
-        const Zipcode = arr[i].Zipcode;
-        const Latitude = arr[i].Latitude;
-        const Longitude = arr[i].Longitude;
-        const listStore = nearbydata(lat1, lon1, Latitude, Longitude);
-        const listaddress = `${arr[i].Street.trim()} ${arr[i].City.trim()} ${arr[i].Country.trim()}`;
-
-            fetch('https://tools.gabcgfs.com/shoplocation.php').then(response => response.json()).then(data => {
-      const jsonData = data;
-
-// Get the value of the 'name' parameter from the URL
-      const nameParam = Title.trim();
-
-// Filter the data based on the 'name' parameter
-      const filteredData = jsonData.filter(item => {
-        if (nameParam) {
-          return item.name.toLowerCase().includes(nameParam.toLowerCase());
-        } else {
-          return true; // If 'name' parameter is not provided, return all items
+          // If a match is found, merge the properties into a new object
+          if (obj2) {
+            const mergedObject = {
+              ...obj1,
+              ...obj2
+            };
+            mergedArray.push(mergedObject);
+          }
         }
-      });
 
-// Log the filtered data
-      if (filteredData[0].id != '') {
-         
-            html = `<div class="filterData" style="
-    display: flex;
-">
+        for (let i = 0; i < mergedArray.length; i++) {
+          const Title = mergedArray[i].Title;
+          const City = mergedArray[i].City;
+          const Province = mergedArray[i].Province;
+          const Zipcode = mergedArray[i].Zipcode;
+          const Latitude = mergedArray[i].Latitude;
+          const Longitude = mergedArray[i].Longitude;
+          const listaddress = `${mergedArray[i].Street.trim()} ${mergedArray[i].City.trim()} ${mergedArray[i].Country.trim()}`;
+          html = `
+          <div class="filterData" style="display: flex;">
+
              <div class="radio__input">
-      <input
-        class="input-radio" onclick="getStoreListData('${Title.trim()}','${listaddress}','${City}','${Province}','${Zipcode}','${Longitude}','${Latitude}')"
-        type="radio"
-        value="${i}"
-        name="checkout[attributes][id]"
-        id="checkout_delivery_option_id_${i}"
-        data-checkout-total-shipping="Free"
-        data-checkout-total-shipping-cents="0"
-      />
-    </div>
-    <label class="radio__label" for="checkout_delivery_option_id_${i}" style="
-    display: flex;
-"
-      ><div class="radio__label__primary">
-        <div class="locationName">${Title}</div>
-        <div class="small-text">${listaddress}</div>
-        <div class="small-text pickup-instructions show-on-mobile">
-          Usually ready in 24 hours
-        </div>
-      </div>
-      <div class="radio__label__accessory">
-        <div class="content-box__emphasis">Free</div>
-        <div class="small-text pickup-instructions hide-on-mobile">
-          Usually ready in 24 hours
-        </div>
-        <span style="font-size: small; width: 10%">${listStore} Km</span>
-      </div></label
-    ></div>
-                `;
-            arr_data.push(html);
+                <input
+                  class="input-radio" onclick="getStoreListData('${Title.trim()}','${listaddress}','${City}','${Province}','${Zipcode}','${Longitude}','${Latitude}')"
+                  type="radio"
+                  value="${i}"
+                  name="checkout[attributes][id]"
+                  id="checkout_delivery_option_id_${i}"
+                  data-checkout-total-shipping="Free"
+                  data-checkout-total-shipping-cents="0"
+                />
+             </div>
+   
+             <label class="radio__label" for="checkout_delivery_option_id_${i}" style="display: flex;">
+              <div class="radio__label__primary">
+               <div class="locationName">${Title}</div>
+                <div class="small-text">${listaddress}</div>
+                   <div class="small-text pickup-instructions show-on-mobile">
+                     Usually ready in 24 hours
+                  </div>
+                </div>
 
-        
-      if (arr_data.join("") == "") {
-        document.querySelector(".nearBy").innerHTML = `<div style="display: flex; justify-content: center;"><h1 style="
+              <div class="radio__label__accessory">
+                <div class="content-box__emphasis">Free</div>
+                  <div class="small-text pickup-instructions hide-on-mobile">
+                  Usually ready in 24 hours
+                  </div>
+              </div>
+             </label>
+
+          </div>
+                `;
+
+          arr_data.push(html);
+
+        }
+
+        if (arr_data.join("") == "") {
+          document.querySelector(".nearBy").innerHTML = `<div style="display: flex; justify-content: center;"><h1 style="
             padding: 0 12px;
             background-color: red;
             color: white;
@@ -207,16 +213,9 @@ $('.active-radio').click();
             width: 100%;
             text-align: -webkit-center;
             ">There is no store near you</h1></div>`;
-      } else {
-        document.querySelector(".nearBy").innerHTML = arr_data.join('');
-      getTotalResult('firstOutputTotal');
-      }
-      }
-    })
-
-    
-      }
-
-  
-    }
+        } else {
+          document.querySelector(".nearBy").innerHTML = arr_data.join('');
+          getTotalResult('firstOutputTotal');
+        }
+      });
   }
