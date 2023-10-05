@@ -7,10 +7,8 @@
             let totalResult= document.querySelectorAll('.filterData[style*="display: flex;"]').length;
           document.querySelector('#totalResult').innerHTML=totalResult;
       }
-   
       }
 
-  
         // Get a reference to the input field
       const searchInput = document.getElementById("locationSearch");
 
