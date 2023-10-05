@@ -171,7 +171,7 @@
 
       url = "https://tools.gabcgfs.com/address_finder_dev.php";
       province = [];
-      province.push('<option value="" Selected>Province</option>');
+      province.push('<option value="" Selected>Select by Region / Province</option>');
       jQuery.ajax({url: url, type: "GET", dataType: "jsonp", contentType: "application/json; charset=UTF-8"}).done(function(json) {
         for (let i = 0; i < json.length; i++) {
           const arrP = `<option value="${
