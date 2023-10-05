@@ -4,13 +4,12 @@
 {% capture removeExisting %}
   <small>For quicker pickup address entry, find your area from the drop down fields.</small>
 {% endcapture %}
-{% capture dropdownProvince %}
-  {% render 'shipping_address' %}
-{% endcapture %}
 {% capture pickUpList %}
   {% render 'custom-pickup' %}
 {% endcapture %}
-
+{% capture dropdownProvince %}
+  {% render 'shipping_address' %}
+{% endcapture %}
 {% capture ReviewDetailsBlock %}
 
   <script>
