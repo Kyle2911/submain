@@ -189,7 +189,7 @@
 
     }
 
-      GetProvince.addEventListener("change",function SearchProvince() {
+      document.querySelector('.provinceSearch').addEventListener("change",function SearchProvince() {
       let province = $(".provinceSearch").val();
       url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
       CitySearch = [];
