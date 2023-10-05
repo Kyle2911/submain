@@ -117,12 +117,6 @@
 
 <script>
 
-function giveMsgError(){
-    htmlError= `Please select store location`;
-    document.querySelector("#MsgErrorFunction").innerHTML=htmlError;
-}
-
-
 ZipBarangay = [];
   const customer_address = JSON.parse(localStorage.getItem("customer_address"));
   getCity(customer_address.city);
