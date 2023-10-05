@@ -247,7 +247,7 @@ $('.active-radio').click();
           const Longitude = mergedArray[i].Longitude;
           const listaddress = `${mergedArray[i].Street.trim()} ${mergedArray[i].City.trim()} ${mergedArray[i].Country.trim()}`;
           html = `
-          <div class="filterData" style="display: flex;">
+          <div class="filterData" style="display: flex; margin-bottom: 12px;">
 
              <div class="radio__input" style="margin-top:15px;">
                 <input
@@ -261,7 +261,7 @@ $('.active-radio').click();
                 />
              </div>
    
-             <label class="radio__label" for="checkout_delivery_option_id_${i}" style="margin-bottom: 12px;">
+             <label class="radio__label" for="checkout_delivery_option_id_${i}">
               <div class="radio__label__primary">
                <div class="locationName" style="font-size: 17px; font-weight: bold; margin: 5px 0;">${Title}</div>
                 <div class="small-text" style="font-size: 14px;">${listaddress}</div>
