@@ -105,11 +105,14 @@
 <i class="fa fa-search icon-search"></i>
     <input type="text" id="locationSearch" class="searchInputText" placeholder="Search by location name" />
     <div class="panel-view">
+      <div class="field__input-wrapper">
       <select class="searchInputText input-space provinceSearch" id="provinceSearch">
           <option value="">Select by Region / Province</option>
       </select>
-   
-      
+      <div class="field__caret">
+        <svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-10 field__caret-svg" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#caret-down"></use> </svg>
+      </div>
+        </div>
       <select class="searchInputText citySearch" id="citySearch">
           <option value="">Select by City / Municipality</option>
       </select>
