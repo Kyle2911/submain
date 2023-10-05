@@ -181,7 +181,7 @@
           }</option>`;
           provinceSearch.push(arrP);
         }
-  
+        provinceSearch.sort();
         $(".provinceSearch").html(provinceSearch.join(""));
         sessionStorage.setItem("arrProvince", JSON.stringify({provinceSearch}));
       });
