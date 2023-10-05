@@ -105,11 +105,11 @@
 <i class="fa fa-search icon-search"></i>
     <input type="text" id="locationSearch" class="searchInputText" placeholder="Search by location name" />
     <div class="panel-view">
-      <select class="searchInputText input-space" id="provinceSearch">
+      <select class="searchInputText input-space provinceSearch" id="provinceSearch">
           <option value="">Select by Region / Province</option>
       </select>
       
-      <select class="searchInputText" id="citySearch">
+      <select class="searchInputText citySearch" id="citySearch">
           <option value="">Select by City / Municipality</option>
       </select>
     </div>
@@ -155,6 +155,39 @@
 <script type="text/javascript" src="{{ 'custom-pickup.js' | asset_url }}" defer="defer"></script>
 <script>
 
+   var arr = JSON.parse(localStorage.getItem("arrProvince"));
+    if (arr != null) {
+   
+      province = [];
+      var data = JSON.parse(localStorage.arrProvince);
+      for (let i = 0; i < data.province.length; i++) {
+        const arrP = `${
+          data.province[i]
+        }`;
+        province.push(arrP);
+      }
+      $("#province").html(province.join(""));
+    } else {
+
+      url = "https://tools.gabcgfs.com/address_finder_dev.php";
+      province = [];
+      province.push('<option value="" Selected>Province</option>');
+      jQuery.ajax({url: url, type: "GET", dataType: "jsonp", contentType: "application/json; charset=UTF-8"}).done(function(json) {
+        for (let i = 0; i < json.length; i++) {
+          const arrP = `<option value="${
+            json[i].PROVINCE
+          }">${
+            json[i].PROVINCE
+          }</option>`;
+          province.push(arrP);
+        }
+  
+        $("#province").html(province.join(""));
+        localStorage.setItem("arrProvince", JSON.stringify({province}));
+      });
+
+    }
+  
   function getStoreListData(Title, listaddress, City, Province, Zipcode, Longitude, Latitude) {
 $('.active-radio').click();
     fetch('https://tools.gabcgfs.com/shoplocation.php').then(response => response.json()).then(data => {
