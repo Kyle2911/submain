@@ -18,9 +18,9 @@
       searchInput.addEventListener("input", function () {
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
-         const province = searchInputProvince.value.trim().toLowerCase();
+         const province = document.getElementById("provinceSearch").value.trim().toLowerCase();
  searchLocations("province",province);
-           const city = searchInputCity.value.trim().toLowerCase();
+           const city = document.getElementById("citySearch").value.trim().toLowerCase();
       searchLocations("city",city);
       });
 
