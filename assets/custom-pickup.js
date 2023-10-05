@@ -18,9 +18,8 @@
       searchInput.addEventListener("input", function () {
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
-      });
 
-  searchInputProvince.addEventListener("change", function () {
+          searchInputProvince.addEventListener("change", function () {
         const searchText = searchInputProvince.value.trim().toLowerCase();
         searchLocations("province",searchText);
       });
@@ -29,6 +28,9 @@
         const searchText = searchInputCity.value.trim().toLowerCase();
         searchLocations("city",searchText);
       });
+      });
+
+
 
       function searchLocations(condition,query) {
 
