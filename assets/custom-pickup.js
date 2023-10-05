@@ -196,24 +196,9 @@ $('.active-radio').click();
     ></div>
                 `;
             arr_data.push(html);
-     
-    const locationData = arr_data.map((htmlString) => {
-        const tempDiv = document.createElement("div");
-        tempDiv.innerHTML = htmlString;
-        const distanceText = tempDiv.querySelector("span:last-child").textContent;
-        const distanceKm = parseFloat(distanceText.replace(" Km", ""));
-        return {html: htmlString, distance: distanceKm};
-     
-      });
 
-// Sort the location data by distance
-      locationData.sort((a, b) => a.distance - b.distance);
-
-// Rebuild the sorted HTML elements
-      const sortedLocationElements = locationData.map((data) => data.html);
-
-// Now you can use sortedLocationElements to update your HTML container
-      if (sortedLocationElements.join("") == "") {
+        
+      if (arr_data.join("") == "") {
         document.querySelector(".nearBy").innerHTML = `<div style="display: flex; justify-content: center;"><h1 style="
             padding: 0 12px;
             background-color: red;
@@ -223,7 +208,7 @@ $('.active-radio').click();
             text-align: -webkit-center;
             ">There is no store near you</h1></div>`;
       } else {
-        document.querySelector(".nearBy").innerHTML = sortedLocationElements.join('');
+        document.querySelector(".nearBy").innerHTML = arr_data.join('');
       getTotalResult('firstOutputTotal');
       }
       }
