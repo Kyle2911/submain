@@ -54,4 +54,46 @@
            getTotalResult('lastOutputTotal');
         });
         }
+
+          if(condition === 'province'){
+           // Loop through each location label
+        locationLabels.forEach((label) => {
+          const locationName = label
+            .querySelector(".province")
+            .textContent.toLowerCase();
+
+          // Check if the locationName contains the search query
+          if (locationName.includes(query)) {
+            // Show the matching location
+            label.style.display = "flex";
+           
+          } else {
+            // Hide the non-matching location
+            label.style.display = "none";
+          }
+
+           getTotalResult('lastOutputTotal');
+        });
+        }
+
+          if(condition === 'city'){
+           // Loop through each location label
+        locationLabels.forEach((label) => {
+          const locationName = label
+            .querySelector(".city")
+            .textContent.toLowerCase();
+
+          // Check if the locationName contains the search query
+          if (locationName.includes(query)) {
+            // Show the matching location
+            label.style.display = "flex";
+           
+          } else {
+            // Hide the non-matching location
+            label.style.display = "none";
+          }
+
+           getTotalResult('lastOutputTotal');
+        });
+        }
       }
