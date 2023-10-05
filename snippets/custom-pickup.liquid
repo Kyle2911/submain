@@ -271,7 +271,7 @@ $('.active-radio').click();
              <label class="radio__label" for="checkout_delivery_option_id_${i}">
               <div class="radio__label__primary" style="padding-left: 14px;">
                <div class="locationName" style="font-size: 17px; font-weight: bold; margin: 5px 0;">${Title}</div>
-                <div class="small-text" style="font-size: 14px; padding: 5px 0;">${mergedArray[i].Street.trim().charAt(0).toUpperCase() + str.slice(1)}, <span>${City.toLowerCase()}</span>, <span>${Province.toLowerCase()}</span>, ${mergedArray[i].Country.trim().toLowerCase()}</div>
+                <div class="small-text" style="font-size: 14px; padding: 5px 0;">${mergedArray[i].Street.trim().charAt(0).toUpperCase().slice(1)}, <span>${City.toLowerCase()}</span>, <span>${Province.toLowerCase()}</span>, ${mergedArray[i].Country.trim().toLowerCase()}</div>
                    <div class="small-text pickup-instructions show-on-mobile">
                      <span style="font-size: 14px;">Open • Closes 10 PM</span>
                   </div>
