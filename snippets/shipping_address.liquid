@@ -246,7 +246,7 @@
          $('#checkout_shipping_address_zip').val(addressGathering.zip);
       }
 
-
+function googlePinMaps(){
     fetch("https://tools.gabcgfs.com/Maps/data.php")
       .then((response) => response.json())
       .then((json) => GetData(json));
@@ -320,4 +320,5 @@
 
 
     }
+  }
 </script>
