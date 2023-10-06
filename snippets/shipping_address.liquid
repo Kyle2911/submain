@@ -1,4 +1,7 @@
 <style>
+  .hoverDatabtn{
+    cursor: pointer;
+  }
   .hoverDatabtn:hover{
     border: 1px solid black;
     padding: 10px;
@@ -6,7 +9,7 @@
 </style>
 <script>
 
-  const currentLocation=`<div>Shipping address</div><div onclick="googlePinMaps()" class="hoverDatabtn" style="cursor: pointer;"><i class="fa-solid fa-map-location-dot"></i></div>`;
+  const currentLocation=`<div>Shipping address</div><div onclick="googlePinMaps()" class="hoverDatabtn"><i class="fa-solid fa-map-location-dot"></i></div>`;
   window.find($('.dropdown-province .section__header .section__title').html(currentLocation));
         document.querySelector('.dropdown-province .section__header .section__title').style.display='flex';
       document.querySelector('.dropdown-province .section__header .section__title').style.justifyContent='space-between';
