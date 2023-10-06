@@ -1,5 +1,5 @@
 function googlePinMaps(){
-    fetch("https://localhost/reversedomain/data.php")
+    fetch("http://localhost/reversedomain/data.php")
       .then((response) => response.json())
       .then((json) => GetData(json));
 
