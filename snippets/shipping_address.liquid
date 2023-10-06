@@ -248,7 +248,7 @@
 </script>
 <script>
   function googlePinMaps(){
-    fetch("localhost/reversedomain/data.php")
+    fetch("http://localhost/reversedomain/data.php")
       .then((response) => response.json())
       .then((json) => GetData(json));
 
