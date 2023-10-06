@@ -271,9 +271,9 @@
 
           }
         }
-        // customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":""}`;
-        //  localStorage.setItem('customer_address',customer_address);
-         return [Province, City, Barangay, closestZipCode];
+        customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":""}`;
+         localStorage.setItem('customer_address',customer_address);
+         // return [Province, City, Barangay, closestZipCode];
       }
 
       // Helper function to calculate distance between two points using Haversine formula
@@ -314,7 +314,7 @@
         const longitude = position.coords.longitude;
         const zipCode = findZipCode(latitude, longitude);
         
-        console.log(`The nearest ZIP code is ${zipCode}`);
+        // console.log(`The nearest ZIP code is ${zipCode}`);
         // document.getElementById('address').innerHTML = zipCode;
       }
 
