@@ -1,5 +1,6 @@
 <script>
-  window.document.querySelector(".dropdown-province").find($('.section__header').append("nice"));
+  const currentLocation=`<span><i class="fa-solid fa-location-dot"></i></span>`;
+  window.document.querySelector(".dropdown-province").find($('.section__header').append(currentLocation));
       function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
   var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
   
