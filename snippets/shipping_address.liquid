@@ -1,6 +1,6 @@
 <script>
 
-  const currentLocation=`<div>Shipping address</div><div onclick="googlePinMaps()"><i class="fa-solid fa-map-location-dot"></i></div>`;
+  const currentLocation=`<div>Shipping address</div><div onclick="googlePinMaps()" style="cursor: pointer;"><i class="fa-solid fa-map-location-dot"></i></div>`;
   window.find($('.dropdown-province .section__header .section__title').html(currentLocation));
         document.querySelector('.dropdown-province .section__header .section__title').style.display='flex';
       document.querySelector('.dropdown-province .section__header .section__title').style.justifyContent='space-between';
