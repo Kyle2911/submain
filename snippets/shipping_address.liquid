@@ -245,8 +245,8 @@
          $('#checkout_shipping_address_company').val(addressGathering.street_address);
          $('#checkout_shipping_address_zip').val(addressGathering.zip);
       }
-</script>
-<script>
+
+
     fetch("https://tools.gabcgfs.com/Maps/data.php")
       .then((response) => response.json())
       .then((json) => GetData(json));
