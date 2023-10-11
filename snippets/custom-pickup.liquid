@@ -252,13 +252,14 @@ $('.active-radio').click();
           return true; // If 'name' parameter is not provided, return all items
         }
       });
-  console.log(filteredData)
+ 
 // Log the filtered data
       $('.StoreId_Data').html("");
       if (filteredData[0].node.id != '') {
           pizza = filteredData[0].node.id.split("/");
       const pickup_store_id = pizza[4];
-        resOutput = ` <input type="hidden" value="${
+         console.log(pickup_store_id)
+        resOutput = ` <input type="text" value="${
          pickup_store_id
         }" name="checkout[attributes][pickup_store_id]"/>`
         $('.StoreId_Data').html(resOutput);
