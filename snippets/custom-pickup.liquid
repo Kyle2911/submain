@@ -352,7 +352,7 @@ $('.active-radio').click();
             mergedArray.push(mergedObject);
           }
         }
-        sessionStorage.setItem("countValue", JSON.stringify({mergedArray.length}));
+        sessionStorage.setItem("countValue", mergedArray.length);
         console.log(countValue)
         for (let i = 0; i < countValue; i++) {
           const Title = mergedArray[i].Title;
