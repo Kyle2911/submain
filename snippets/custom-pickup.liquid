@@ -300,14 +300,16 @@ $('.active-radio').click();
     localStorage.setItem('ShippingMethod', setShippingMethod)
   }
 
-         var filterResultDefault=12;
-          fetchListStore()
+        
+          fetchListStore('12')
           document.getElementById('showAllStores').addEventListener('click',()=>{
-            filterResultDefault=mergedArray.length;
-            fetchListStore()
+           
+            fetchListStore('mergedArray.length')
           })
 
-  function fetchListStore(){
+  
+
+  function fetchListStore(countValue){
   fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
     .then((response) => response.json())
     .then((data) => fetchData(data));
@@ -354,8 +356,8 @@ $('.active-radio').click();
           }
         }
 
-        console.log(filterResultDefault)
-        for (let i = 0; i < filterResultDefault; i++) {
+        
+        for (let i = 0; i < countValue; i++) {
           const Title = mergedArray[i].Title;
           const City = mergedArray[i].City;
           const Province = mergedArray[i].Province;
