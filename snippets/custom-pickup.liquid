@@ -228,15 +228,12 @@
 
    //  }
 
-
-            fetchListStore('12') //this is a default value in result list in store
-            // This section is to show a all List in Store
+            fetchListStore('12')
           document.getElementById('showAllStores').addEventListener('click',()=>{
-           var countValue=sessionStorage.getItem("countValue");
-            fetchListStore(countValue)
+           
+            fetchListStore('mergedArray.length')
           })
 
-      // This section is to fetch all City we have in Address Finder
       document.querySelector('.provinceSearch').addEventListener("change",function SearchProvince() {
       let province = $(".provinceSearch").val();
       url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
@@ -309,7 +306,7 @@ $('.active-radio').click();
     localStorage.setItem('ShippingMethod', setShippingMethod)
   }
 
-  function fetchListStore(countValue){
+
   fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
     .then((response) => response.json())
     .then((data) => fetchData(data));
@@ -355,11 +352,8 @@ $('.active-radio').click();
             mergedArray.push(mergedObject);
           }
         }
-        
-        // insert in to sessionStorage a Total List in Store
-        sessionStorage.setItem("countValue", mergedArray.length);
-        
-        for (let i = 0; i < countValue; i++) {
+
+        for (let i = 0; i < mergedArray.length; i++) {
           const Title = mergedArray[i].Title;
           const City = mergedArray[i].City;
           const Province = mergedArray[i].Province;
@@ -421,6 +415,5 @@ $('.active-radio').click();
           getTotalResult('firstOutputTotal');
         }
       });
-  }
   }
 </script>
