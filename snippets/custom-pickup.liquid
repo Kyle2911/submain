@@ -228,10 +228,10 @@
 
    //  }
 
-            fetchListStore('12')
+            fetchListStore('12') //this is a default value in result list in store
+            // This section is to show a all List in Store
           document.getElementById('showAllStores').addEventListener('click',()=>{
            var countValue=sessionStorage.getItem("countValue");
-            console.log(countValue)
             fetchListStore(countValue)
           })
 
