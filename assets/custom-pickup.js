@@ -7,7 +7,6 @@
       }else{
             let totalResult= document.querySelectorAll('.filterData[style*="display: flex;"]').length;
             document.querySelector('#totalResult').innerHTML=totalResult;
-      
       }
       }
 
