@@ -174,6 +174,25 @@
 <script type="text/javascript" src="{{ 'custom-pickup-extension.js' | asset_url }}" defer="defer"></script>
 <script>
 
+    function capitalizeEveryWord(inputString) {
+  // Split the input string into an array of words
+  const words = inputString.split(' ');
+
+  // Use the map function to capitalize the first letter of each word
+  const capitalizedWords = words.map(word => {
+    // Check if the word is not empty
+    if (word.length > 0) {
+      // Capitalize the first letter and make the rest of the word lowercase
+      return word[0].toUpperCase() + word.slice(1).toLowerCase();
+    }
+    // Return empty words as they are
+    return word;
+  });
+
+  // Join the capitalized words back into a string
+  return capitalizedWords.join(' ');
+}
+
    var arr = JSON.parse(sessionStorage.getItem("arrProvince"));
    //  if (arr != null) {
    
