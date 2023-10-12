@@ -228,6 +228,12 @@
 
    //  }
 
+            fetchListStore('12')
+          document.getElementById('showAllStores').addEventListener('click',()=>{
+           
+            fetchListStore('mergedArray.length')
+          })
+
       document.querySelector('.provinceSearch').addEventListener("change",function SearchProvince() {
       let province = $(".provinceSearch").val();
       url = `https://tools.gabcgfs.com/address_finder_dev.php?PROVINCE=${province}`;
@@ -300,14 +306,8 @@ $('.active-radio').click();
     localStorage.setItem('ShippingMethod', setShippingMethod)
   }
 
-        
-          fetchListStore('12')
-          document.getElementById('showAllStores').addEventListener('click',()=>{
-           
-            fetchListStore('mergedArray.length')
-          })
-
-    fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
+  function fetchListStore(countValue){
+  fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
     .then((response) => response.json())
     .then((data) => fetchData(data));
 
@@ -352,11 +352,7 @@ $('.active-radio').click();
             mergedArray.push(mergedObject);
           }
         }
-
-  
-
-  function fetchListStore(countValue){
-
+        sessionStorage.setItem("countValue", JSON.stringify({mergedArray.length}));
         console.log(countValue)
         for (let i = 0; i < countValue; i++) {
           const Title = mergedArray[i].Title;
