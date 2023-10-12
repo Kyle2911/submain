@@ -18,6 +18,7 @@
  const searchInputCity = document.getElementById("citySearch");
 
   if(searchInput != '' || searchInputProvince != '' || searchInputCity != ''){
+    console.log("true")
            var countValue=sessionStorage.getItem("countValue");
             fetchListStore(countValue)
     
