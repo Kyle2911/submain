@@ -348,6 +348,12 @@ $('.active-radio').click();
           }
         }
 
+
+          var filterResultDefault=12;
+          document.getElementById('showAllStores').addListener('click',()=>{
+            filterResultDefault=mergedArray.length;
+          })
+        
         for (let i = 0; i < filterResultDefault; i++) {
           const Title = mergedArray[i].Title;
           const City = mergedArray[i].City;
