@@ -291,7 +291,7 @@ $('.active-radio').click();
              <input type="hidden" value="{{ checkout.id }}" name="checkout[attributes][Checkout_#]"/>
               <input type="hidden" value="${Longitude}" name="checkout[attributes][Longitude]"/>
                <input type="hidden" value="${Latitude}" name="checkout[attributes][Latitude]"/>
-                <input type="text" value="${pickUpDate}" name="checkout[attributes][estimated_date]"/>
+                <input type="hidden" value="${pickUpDate}" name="checkout[attributes][estimated_date]"/>
 
        `;
     $('.attr_data').html(resOutput)
