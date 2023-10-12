@@ -40,6 +40,7 @@
       });
 
       function searchLocations(condition,query) {
+        document.querySelectorAll(".filterData").style.display="flex";
          // Get all the location labels
         const locationLabels = document.querySelectorAll(".filterData");
         if(condition === 'store name'){
