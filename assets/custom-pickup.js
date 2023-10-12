@@ -7,6 +7,8 @@
       }else{
             let totalResult= document.querySelectorAll('.filterData[style*="display: flex;"]').length;
           document.querySelector('#totalResult').innerHTML=totalResult;
+         var countValue=sessionStorage.getItem("countValue");
+     fetchListStore(countValue)
       }
       }
 
