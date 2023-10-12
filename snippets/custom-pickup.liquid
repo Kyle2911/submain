@@ -244,7 +244,7 @@ $('.active-radio').click();
       if (filteredData[0].node.id != '') {
           pizza = filteredData[0].node.id.split("/");
       const pickup_store_id = pizza[4];
-        resOutput = ` <input type="hidden" value="${
+        resOutput = ` <input type="text" value="${
          pickup_store_id
         }" name="checkout[attributes][pickup_store_id]"/>`
         $('.StoreId_Data').html(resOutput);
