@@ -233,7 +233,7 @@
       });
     });
   
-  function getStoreListData(Title, listaddress, City, Province, Zipcode, Longitude, Latitude) {
+  function getStoreListData(Title, listaddress, City, Province, Zipcode, Longitude, Latitude, pickUpDate) {
 $('.active-radio').click();
     fetch('https://tools.gabcgfs.com/graphql/getStoreLocation.php').then(response => response.json()).then(json => {
       
@@ -272,7 +272,7 @@ $('.active-radio').click();
              <input type="hidden" value="{{ checkout.id }}" name="checkout[attributes][Checkout_#]"/>
               <input type="hidden" value="${Longitude}" name="checkout[attributes][Longitude]"/>
                <input type="hidden" value="${Latitude}" name="checkout[attributes][Latitude]"/>
-                <input type="text" value="{{ order_status_url }}" name="checkout[attributes][statusUrl]"/>
+                <input type="text" value="${pickUpDate}" name="checkout[attributes][estimated_date]"/>
 
        `;
     $('.attr_data').html(resOutput)
@@ -342,7 +342,7 @@ $('.active-radio').click();
 
              <div class="radio__input" style="margin-top: 42px;">
                 <input
-                  class="input-radio" onclick="getStoreListData('${Title.trim()}','${listaddress}','${City}','${Province}','${Zipcode}','${Longitude}','${Latitude}')"
+                  class="input-radio" onclick="getStoreListData('${Title.trim()}','${listaddress}','${City}','${Province}','${Zipcode}','${Longitude}','${Latitude}','${pickUpDate}')"
                   type="radio"
                   value="${i}"
                   name="checkout[attributes][id]"
