@@ -31,13 +31,13 @@
       });
 
      searchInputProvince.addEventListener("change", function () {
+       
          document.querySelectorAll(".filterData").style.display="flex";
         const searchText = searchInputProvince.value.trim().toLowerCase();
         searchLocations("province",searchText);
       });
 
   searchInputCity.addEventListener("change", function () {
-      document.querySelectorAll(".filterData").style.display="flex";
         const searchText = searchInputCity.value.trim().toLowerCase();
         searchLocations("city",searchText);
       });
