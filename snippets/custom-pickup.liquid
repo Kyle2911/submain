@@ -378,7 +378,7 @@ $('.active-radio').click();
               <div style="font-size: 13px; margin: 7px 0 0 19px; font-weight: 600; color: red;">Ready for pick up in ${pickUpDate}</div>
               </div>
                
-                <div class="small-text" style="font-size: 14px; padding: 5px 0;">${mergedArray[i].Street.trim()}, <span class="city">${City}</span>, <span class="province">${Province}</span>, ${mergedArray[i].Country.trim()}</div>
+                <div class="small-text" style="font-size: 14px; padding: 5px 0;">${mergedArray[i].Street.trim()}, <span class="city">${capitalizeEveryWord(City)}</span>, <span class="province">${capitalizeEveryWord(Province)}</span>, ${mergedArray[i].Country.trim()}</div>
                    <div class="small-text pickup-instructions show-on-mobile" style="margin: 5px 0;">
                      <span style="font-size: 14px;">Open • Closes 10 PM</span>
                   </div>
