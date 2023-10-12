@@ -230,7 +230,7 @@
 
             fetchListStore('12')
           document.getElementById('showAllStores').addEventListener('click',()=>{
-           var countValue=localStorage.getItem("countValue");
+           var countValue=sessionStorage.getItem("countValue");
             console.log(countValue)
             fetchListStore(countValue)
           })
