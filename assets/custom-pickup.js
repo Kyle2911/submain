@@ -17,12 +17,10 @@
  const searchInputProvince = document.getElementById("provinceSearch");
  const searchInputCity = document.getElementById("citySearch");
 
-  if(searchInput != '' && searchInputProvince != '' && searchInputCity != ''){
-    console.log("true")
+  if(searchInput ! = '' || searchInputProvince != '' || searchInputCity != ''){
            var countValue=sessionStorage.getItem("countValue");
             fetchListStore(countValue)
-    
- 
+  }
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
          
@@ -110,6 +108,3 @@
         });
         }
       }
- }else{
-    fetchListStore('12')
- }
