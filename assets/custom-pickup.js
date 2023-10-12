@@ -16,7 +16,7 @@
  const searchInputProvince = document.getElementById("provinceSearch");
  const searchInputCity = document.getElementById("citySearch");
 
-if(document.getElementById("locationSearch") !=''){
+if(document.querySelector("#locationSearch") !=''){
          var countValue=sessionStorage.getItem("countValue");
             fetchListStore(countValue)
 }
