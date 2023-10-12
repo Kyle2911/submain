@@ -230,8 +230,8 @@
 
             fetchListStore('12')
           document.getElementById('showAllStores').addEventListener('click',()=>{
-           
-            fetchListStore('mergedArray.length')
+           var countValue=localStorage.getItem("countValue")
+            fetchListStore(countValue)
           })
 
       document.querySelector('.provinceSearch').addEventListener("change",function SearchProvince() {
