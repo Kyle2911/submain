@@ -1,5 +1,5 @@
 {% capture labelMarketing %}
-  <small>Sample Marketing Text123</small>
+  <div>Email me with news and offers</div>
 {% endcapture %}
 {% capture removeExisting %}
   <small>For quicker pickup address entry, find your area from the drop down fields.</small>
@@ -8,9 +8,7 @@
   {% render 'custom-pickup' %}
 {% endcapture %}
 {% capture dropdownProvince %}
-
   {% render 'shipping_address' %}
-  
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
 
@@ -27,12 +25,12 @@
 
   window.custard.init(jQuery || Checkout.jQuery, Shopify.Checkout.step || (Shopify.Checkout.OrderStatus ? 'order_status' : null),
   {    
-                                       html_templates: {
-                                                marketing_text: {{ labelMarketing | json }},
-  remove_existing: {{ removeExisting | json }},
-  pickup_list: {{ pickUpList | json }},
-  pickupReviewDetailsBlock: {{ ReviewDetailsBlock | json }},
-  dropdown_province: {{ dropdownProvince | json }}
+   html_templates: {
+                marketing_text: {{ labelMarketing | json }},
+                remove_existing: {{ removeExisting | json }},
+                pickup_list: {{ pickUpList | json }},
+                pickupReviewDetailsBlock: {{ ReviewDetailsBlock | json }},
+                dropdown_province: {{ dropdownProvince | json }}
 
   }  
   });
