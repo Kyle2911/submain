@@ -16,6 +16,7 @@
 
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
+         fetchListStore(countValue)
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
         if(searchInput.value == ''){
@@ -27,11 +28,13 @@
       });
 
      searchInputProvince.addEventListener("change", function () {
+        fetchListStore(countValue)
         const searchText = searchInputProvince.value.trim().toLowerCase();
         searchLocations("province",searchText);
       });
 
   searchInputCity.addEventListener("change", function () {
+     fetchListStore(countValue)
         const searchText = searchInputCity.value.trim().toLowerCase();
         searchLocations("city",searchText);
       });
