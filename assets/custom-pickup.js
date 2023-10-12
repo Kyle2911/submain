@@ -19,6 +19,7 @@
 
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
+          document.querySelectorAll(".filterData").style.display="flex";
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
         if(searchInput.value == ''){
@@ -30,11 +31,13 @@
       });
 
      searchInputProvince.addEventListener("change", function () {
+         document.querySelectorAll(".filterData").style.display="flex";
         const searchText = searchInputProvince.value.trim().toLowerCase();
         searchLocations("province",searchText);
       });
 
   searchInputCity.addEventListener("change", function () {
+      document.querySelectorAll(".filterData").style.display="flex";
         const searchText = searchInputCity.value.trim().toLowerCase();
         searchLocations("city",searchText);
       });
