@@ -26,9 +26,6 @@
         searchLocations("province",searchTextprovince);
            const searchTextcity = document.querySelector(".citySearch").value.trim().toLowerCase();
         searchLocations("city",searchTextcity);
-        }else{
-            var countValue=sessionStorage.getItem("countValue");
-            fetchListStore(countValue)
         }
       });
 
