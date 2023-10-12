@@ -300,7 +300,10 @@ $('.active-radio').click();
     localStorage.setItem('ShippingMethod', setShippingMethod)
   }
 
-
+         var filterResultDefault=12;
+          document.getElementById('showAllStores').addEventListener('click',()=>{
+            filterResultDefault=mergedArray.length;
+          })
 
   fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
     .then((response) => response.json())
