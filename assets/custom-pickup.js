@@ -16,13 +16,7 @@
  const searchInputProvince = document.getElementById("provinceSearch");
  const searchInputCity = document.getElementById("citySearch");
 
-if(document.querySelector("#locationSearch").value != ''){
-      var countValue=sessionStorage.getItem("countValue");
-            fetchListStore(countValue)
-}else{
-    
-         fetchListStore('12')
-}
+
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
         const searchText = searchInput.value.trim().toLowerCase();
