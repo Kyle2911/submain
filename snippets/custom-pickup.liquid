@@ -1,4 +1,32 @@
+
+   
    <link rel="stylesheet" href="{{ 'custom-pickup.css' | asset_url | split: '?' | first }}">
+
+   <style>
+     @media only screen and (min-width: 200px) {
+    .panel-view{
+      display: block;
+    }
+  
+     .icon-style{
+    width: 382px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .panel-view{
+    display: flex;
+    margin: 16px 0 0 0;
+  }
+  .input-space{
+     margin-right: 16px;
+  }
+ 
+  .icon-style{
+    width: 280px;
+  }
+}
+</style>
 
 <i class="fa fa-search icon-search"></i>
     <input type="text" id="locationSearch" class="searchInputText" placeholder="Search by location name" />
@@ -63,6 +91,8 @@
 <script type="text/javascript" src="{{ 'custom-pickup.js' | asset_url }}" defer="defer"></script>
 <script type="text/javascript" src="{{ 'custom-pickup-extension.js' | asset_url }}" defer="defer"></script>
 <script>
+
+  
     function capitalizeEveryWord(inputString) {
   // Split the input string into an array of words
   const words = inputString.split(' ');
@@ -246,7 +276,9 @@ $('.active-radio').click();
              </label>
           </div>
                 `;
+
           arr_data.push(html);
+
         }
 
         if (arr_data.join("") == "") {
