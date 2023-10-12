@@ -5,7 +5,6 @@
             let totalResult= document.querySelectorAll(".filterData").length
           document.querySelector('#totalResult').innerHTML=totalResult;
       }else{
-     
             let totalResult= document.querySelectorAll('.filterData[style*="display: flex;"]').length;
           document.querySelector('#totalResult').innerHTML=totalResult;
       
@@ -17,17 +16,11 @@
  const searchInputProvince = document.getElementById("provinceSearch");
  const searchInputCity = document.getElementById("citySearch");
 
-  if(searchInput != ''){
-           var countValue=sessionStorage.getItem("countValue");
-            fetchListStore(countValue)
-  }
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
-         
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
         if(searchInput.value == ''){
-     
             const searchTextprovince = document.querySelector(".provinceSearch").value.trim().toLowerCase();
         searchLocations("province",searchTextprovince);
            const searchTextcity = document.querySelector(".citySearch").value.trim().toLowerCase();
@@ -46,7 +39,6 @@
       });
 
       function searchLocations(condition,query) {
-      
          // Get all the location labels
         const locationLabels = document.querySelectorAll(".filterData");
         if(condition === 'store name'){
