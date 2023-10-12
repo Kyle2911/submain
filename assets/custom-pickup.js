@@ -1,7 +1,6 @@
      // Get a total count on result
     function getTotalResult(valueName){
-          var countValue=sessionStorage.getItem("countValue");
-     fetchListStore(countValue)
+         
       if(valueName === 'firstOutputTotal'){
             let totalResult= document.querySelectorAll(".filterData").length
           document.querySelector('#totalResult').innerHTML=totalResult;
