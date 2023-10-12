@@ -1,6 +1,6 @@
  function getReadyPickUp(orderDate,deliveryWeekName){
       const deliveryDateStore = deliveryWeekName;
-      const baseDate = new Date(orderDate);
+      const baseDate =orderDate;
 
       const getBaseWeek = baseDate.getDay() - 1;
       const getBaseMonth = baseDate.getMonth();
