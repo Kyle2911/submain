@@ -100,7 +100,4 @@
            getTotalResult('lastOutputTotal');
         });
         }
-
-              var countValue=sessionStorage.getItem("countValue");
-     fetchListStore(countValue)
       }
