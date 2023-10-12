@@ -3,30 +3,30 @@
          
       if(valueName === 'firstOutputTotal'){
             let totalResult= document.querySelectorAll(".filterData").length
-          document.querySelector('#totalResult').innerHTML=totalResult;
+            document.querySelector('#totalResult').innerHTML=totalResult;
       }else{
             let totalResult= document.querySelectorAll('.filterData[style*="display: flex;"]').length;
-          document.querySelector('#totalResult').innerHTML=totalResult;
+            document.querySelector('#totalResult').innerHTML=totalResult;
       
       }
       }
 
         // Get a reference to the input field
-      const searchInput = document.getElementById("locationSearch");
- const searchInputProvince = document.getElementById("provinceSearch");
- const searchInputCity = document.getElementById("citySearch");
+       const searchInput = document.getElementById("locationSearch");
+       const searchInputProvince = document.getElementById("provinceSearch");
+       const searchInputCity = document.getElementById("citySearch");
 
 
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
-        const searchText = searchInput.value.trim().toLowerCase();
-        searchLocations("store name",searchText);
-        if(searchInput.value == ''){
-            const searchTextprovince = document.querySelector(".provinceSearch").value.trim().toLowerCase();
-        searchLocations("province",searchTextprovince);
-           const searchTextcity = document.querySelector(".citySearch").value.trim().toLowerCase();
-        searchLocations("city",searchTextcity);
-        }
+          const searchText = searchInput.value.trim().toLowerCase();
+          searchLocations("store name",searchText);
+          if(searchInput.value == ''){
+              const searchTextprovince = document.querySelector(".provinceSearch").value.trim().toLowerCase();
+              searchLocations("province",searchTextprovince);
+              const searchTextcity = document.querySelector(".citySearch").value.trim().toLowerCase();
+              searchLocations("city",searchTextcity);
+          }
       });
 
      searchInputProvince.addEventListener("change", function () {
@@ -34,7 +34,7 @@
         searchLocations("province",searchText);
       });
 
-  searchInputCity.addEventListener("change", function () {
+     searchInputCity.addEventListener("change", function () {
         const searchText = searchInputCity.value.trim().toLowerCase();
         searchLocations("city",searchText);
       });
