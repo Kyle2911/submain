@@ -315,7 +315,7 @@ $('.active-radio').click();
         // Iterate through array1
         for (const obj1 of array1) {
           // Find a matching object in array2 based on the "name" property
-          const obj2 = array2.find((item) => item.Title === obj1.Title);
+          const obj2 = array2.trim().toLowerCase().find((item) => item.Title === obj1.Title);
 
           // If a match is found, merge the properties into a new object
           if (obj2) {
