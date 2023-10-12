@@ -5,10 +5,11 @@
             let totalResult= document.querySelectorAll(".filterData").length
           document.querySelector('#totalResult').innerHTML=totalResult;
       }else{
+           var countValue=sessionStorage.getItem("countValue");
+     fetchListStore(countValue)
             let totalResult= document.querySelectorAll('.filterData[style*="display: flex;"]').length;
           document.querySelector('#totalResult').innerHTML=totalResult;
-         var countValue=sessionStorage.getItem("countValue");
-     fetchListStore(countValue)
+      
       }
       }
 
