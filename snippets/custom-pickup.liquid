@@ -307,10 +307,7 @@ $('.active-radio').click();
             fetchListStore('mergedArray.length')
           })
 
-  
-
-  function fetchListStore(countValue){
-  fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
+    fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
     .then((response) => response.json())
     .then((data) => fetchData(data));
 
@@ -355,6 +352,10 @@ $('.active-radio').click();
             mergedArray.push(mergedObject);
           }
         }
+
+  
+
+  function fetchListStore(countValue){
 
         console.log(countValue)
         for (let i = 0; i < countValue; i++) {
