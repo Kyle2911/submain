@@ -1,5 +1,23 @@
 {
   "sections": {
+    "99521bf2-5567-4014-82c8-d96f24b83e22": {
+      "type": "hero-video",
+      "settings": {
+        "title": "",
+        "title_size": 80,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=AHuFjoQJbZY`",
+        "overlay_opacity": 0,
+        "section_height": "650px",
+        "mobile_height": "auto",
+        "hide_on_desktop": false,
+        "hide_on_mobile": false,
+        "enable_overlay": false
+      }
+    },
     "main-collection": {
       "type": "main-collection",
       "blocks": {
@@ -58,6 +76,7 @@
     }
   },
   "order": [
+    "99521bf2-5567-4014-82c8-d96f24b83e22",
     "main-collection",
     "16362863915aada704"
   ]
