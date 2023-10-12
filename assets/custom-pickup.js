@@ -1,5 +1,7 @@
      // Get a total count on result
     function getTotalResult(valueName){
+          var countValue=sessionStorage.getItem("countValue");
+     fetchListStore(countValue)
       if(valueName === 'firstOutputTotal'){
             let totalResult= document.querySelectorAll(".filterData").length
           document.querySelector('#totalResult').innerHTML=totalResult;
@@ -37,9 +39,6 @@
       });
 
       function searchLocations(condition,query) {
-
-    var countValue=sessionStorage.getItem("countValue");
-     fetchListStore(countValue)
          // Get all the location labels
         const locationLabels = document.querySelectorAll(".filterData");
         if(condition === 'store name'){
