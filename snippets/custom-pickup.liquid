@@ -308,7 +308,7 @@ $('.active-radio').click();
         data2 = jsonData;
         // Parse the JSON strings into JavaScript objects
         const array1 = data1;
-        const array2 = data2.message;
+        const array2 = data2.message.trim().toLowerCase();
 
         // Create an empty result array
         const mergedArray = [];
