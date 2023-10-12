@@ -16,8 +16,6 @@
 
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
-        var countValue=sessionStorage.getItem("countValue");
-         fetchListStore(countValue)
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
         if(searchInput.value == ''){
@@ -29,21 +27,19 @@
       });
 
      searchInputProvince.addEventListener("change", function () {
-       var countValue=sessionStorage.getItem("countValue");
-        fetchListStore(countValue)
         const searchText = searchInputProvince.value.trim().toLowerCase();
         searchLocations("province",searchText);
       });
 
   searchInputCity.addEventListener("change", function () {
-    var countValue=sessionStorage.getItem("countValue");
-     fetchListStore(countValue)
         const searchText = searchInputCity.value.trim().toLowerCase();
         searchLocations("city",searchText);
       });
 
       function searchLocations(condition,query) {
 
+    var countValue=sessionStorage.getItem("countValue");
+     fetchListStore(countValue)
          // Get all the location labels
         const locationLabels = document.querySelectorAll(".filterData");
         if(condition === 'store name'){
