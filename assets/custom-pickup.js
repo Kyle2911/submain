@@ -17,7 +17,7 @@
  const searchInputProvince = document.getElementById("provinceSearch");
  const searchInputCity = document.getElementById("citySearch");
 
-  if(searchInput != '' || searchInputProvince != '' || searchInputCity != ''){
+  if(searchInput != ''){
            var countValue=sessionStorage.getItem("countValue");
             fetchListStore(countValue)
   }
