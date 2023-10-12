@@ -134,7 +134,7 @@
 
      <div style="display: flex; justify-content:space-between; border-bottom:2px solid lightgray;">
    <p style="margin: 19px 0;">Showing <span id="totalResult">0</span> result(s)</p>
-   <div style="border: 1px solid black;border-radius: 14px; padding: 8px; margin: 11px 0; cursor: pointer;">Show all Stores</div>
+   <div style="border: 1px solid black;border-radius: 14px; padding: 8px; margin: 11px 0; cursor: pointer;" id="showAllStores">Show all Stores</div>
          </div>
          
   <span id="MsgErrorFunction"></span>
@@ -173,6 +173,10 @@
 <script type="text/javascript" src="{{ 'custom-pickup.js' | asset_url }}" defer="defer"></script>
 <script type="text/javascript" src="{{ 'custom-pickup-extension.js' | asset_url }}" defer="defer"></script>
 <script>
+  var filterResultDefault=12;
+  document.getElementById('showAllStores').addListener('click',()=>{
+    filterResultDefault=mergedArray.length;
+  })
   
     function capitalizeEveryWord(inputString) {
   // Split the input string into an array of words
@@ -347,7 +351,7 @@ $('.active-radio').click();
           }
         }
 
-        for (let i = 0; i < mergedArray.length; i++) {
+        for (let i = 0; i < filterResultDefault; i++) {
           const Title = mergedArray[i].Title;
           const City = mergedArray[i].City;
           const Province = mergedArray[i].Province;
