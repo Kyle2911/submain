@@ -301,10 +301,13 @@ $('.active-radio').click();
   }
 
          var filterResultDefault=12;
+          fetchListStore()
           document.getElementById('showAllStores').addEventListener('click',()=>{
             filterResultDefault=mergedArray.length;
+            fetchListStore()
           })
 
+  function fetchListStore(){
   fetch("https://tools.gabcgfs.com/graphql/getStoreLocation.php")
     .then((response) => response.json())
     .then((data) => fetchData(data));
@@ -415,5 +418,5 @@ $('.active-radio').click();
         }
       });
   }
-  
+  }
 </script>
