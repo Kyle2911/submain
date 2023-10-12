@@ -19,13 +19,11 @@
 
       // Add an event listener to the input field
       searchInput.addEventListener("input", function () {
-         var countValue=sessionStorage.getItem("countValue");
-     fetchListStore(countValue)
+         
         const searchText = searchInput.value.trim().toLowerCase();
         searchLocations("store name",searchText);
         if(searchInput.value == ''){
-                var countValue=sessionStorage.getItem("countValue");
-     fetchListStore(countValue)
+     
             const searchTextprovince = document.querySelector(".provinceSearch").value.trim().toLowerCase();
         searchLocations("province",searchTextprovince);
            const searchTextcity = document.querySelector(".citySearch").value.trim().toLowerCase();
