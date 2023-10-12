@@ -17,7 +17,9 @@
  const searchInputCity = document.getElementById("citySearch");
 
 if(document.querySelector("#locationSearch").value != ''){
-         var countValue=sessionStorage.getItem("countValue");
+            fetchListStore('12')
+}else{
+     var countValue=sessionStorage.getItem("countValue");
             fetchListStore(countValue)
 }
       // Add an event listener to the input field
