@@ -148,7 +148,7 @@
         id="checkout_delivery_option_id_65625203dc4bf25a47865adc66f3892b"
   
         data-checkout-total-shipping="Free"
-        data-checkout-total-shipping-cents="0" />
+        data-checkout-total-shipping-cents="0" aria-required="true"/>
     </div>
     <label class="radio__label" for="checkout_delivery_option_id_65625203dc4bf25a47865adc66f3892b">
       <div class="radio__label__primary">
@@ -173,19 +173,8 @@
 <script type="text/javascript" src="{{ 'custom-pickup.js' | asset_url }}" defer="defer"></script>
 <script type="text/javascript" src="{{ 'custom-pickup-extension.js' | asset_url }}" defer="defer"></script>
 <script>
-  stepFooter=`<button name="button" type="submit" id="continue_button" class="step__footer__continue-btn btn" aria-busy="false">
-  <span class="btn__content" data-continue-button-content="true">Continue to paymentry</span>
-  <svg class="icon-svg icon-svg--size-18 btn__spinner icon-svg--spinner-button" aria-hidden="true" focusable="false"> 
-  <use xlink:href="#spinner-button"></use> 
-  </svg>
-  </button>
   
-  <a class="step__footer__previous-link" href="https://penshoppe-test-store.myshopify.com/cart">
-  <svg focusable="false" aria-hidden="true" class="icon-svg icon-svg--color-accent icon-svg--size-10 previous-link__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-  <path d="M8 1L7 0 3 4 2 5l1 1 4 4 1-1-4-4"></path>
-  </svg>
-  <span class="step__footer__previous-link-content">Return to cart</span></a>`;
-  document.querySelector('.step__footer').innerHTML(stepFooter);
+  document.querySelector('.step__footer').innerHTML();
     function capitalizeEveryWord(inputString) {
   // Split the input string into an array of words
   const words = inputString.split(' ');
