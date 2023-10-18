@@ -13,6 +13,9 @@
 {% capture ReviewDetailsBlock %}
 
   <script>
+
+    console.log(window.location.href)
+    
     if ($('.review-block__label')[1].innerText != 'Ship to') {
       shippingValue = localStorage.getItem('ShippingMethod');
       $('.review-block__content')[1].innerHTML = shippingValue;
