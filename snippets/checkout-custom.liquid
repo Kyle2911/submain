@@ -11,7 +11,7 @@
   {% render 'shipping_address' %}
 {% endcapture %}
 {% capture ReviewDetailsBlock %}
-
+  <input type="text" id='linkThankyouPage' name="checkout[attributes][thankyouPage_Link]"/>
   <script>
         const pizza =window.location.href.split('/');
     const https=pizza[0];
@@ -19,8 +19,8 @@
               checkoutID=pizza[3];
     const subPizza = pizza[5].split('?');
        checkoutToken=subPizza[0];
-   
-    console.log(`${https}://${storeVendor}/${checkoutID}/checkouts/${checkoutToken}/thank_you`)
+    const linkThankyouPage= `${https}://${storeVendor}/${checkoutID}/checkouts/${checkoutToken}/thank_you`;
+    document.querySelector('#linkThankyouPage').innerHTML(linkThankyouPage);
     
     if ($('.review-block__label')[1].innerText != 'Ship to') {
       shippingValue = localStorage.getItem('ShippingMethod');
