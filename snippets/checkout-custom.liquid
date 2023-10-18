@@ -14,10 +14,13 @@
 
   <script>
         const pizza =window.location.href.split('/');
+    const https=pizza[0];
+   const storeVendor=pizza[2];
               checkoutID=pizza[3];
     const subPizza = pizza[5].split('?');
        checkoutToken=subPizza[0];
-    console.log(checkoutID + checkoutToken)
+   
+    console.log(`${https}://${storeVendor}/${checkoutID}/checkouts/${checkoutToken}/thank_you`)
     
     if ($('.review-block__label')[1].innerText != 'Ship to') {
       shippingValue = localStorage.getItem('ShippingMethod');
