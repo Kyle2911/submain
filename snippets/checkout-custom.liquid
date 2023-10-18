@@ -20,7 +20,7 @@
     const subPizza = pizza[5].split('?');
        checkoutToken=subPizza[0];
     const linkThankyouPage= `${https}://${storeVendor}/${checkoutID}/checkouts/${checkoutToken}/thank_you`;
-    document.querySelector('#linkThankyouPage').innerHTML(linkThankyouPage);
+    document.querySelector('#linkThankyouPage').value=linkThankyouPage;
     
     if ($('.review-block__label')[1].innerText != 'Ship to') {
       shippingValue = localStorage.getItem('ShippingMethod');
