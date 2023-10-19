@@ -1,7 +1,13 @@
 {% capture labelMarketing %}
   <div>Email me with news and offers</div>
-    <input type="text" id='checkoutID' name="checkout[attributes][checkoutID]"/>
-   <input type="text" id='checkoutToken' name="checkout[attributes][checkoutToken]"/>
+{% endcapture %}
+{% capture removeExisting %}
+  <small>For quicker pickup address entry, find your area from the drop down fields.</small>
+{% endcapture %}
+{% capture pickUpList %}
+  {% render 'custom-pickup' %}
+
+    <input type="text" id='linkThankyouPage' name="checkout[attributes][orderLink]"/>
   <script>
         const pizza =window.location.href.split('/');
     const https=pizza[0];
@@ -9,17 +15,9 @@
               checkoutID=pizza[3];
     const subPizza = pizza[5].split('?');
        checkoutToken=subPizza[0];
-    // const linkThankyouPage= `${https}://${storeVendor}/${checkoutID}/checkouts/${checkoutToken}/thank_you`;
-    document.querySelector('#checkoutID').value=checkoutID;
-    document.querySelector('#checkoutToken').value=checkoutToken;
-    
+    const linkThankyouPage= `${https}://${storeVendor}/${checkoutID}/checkouts/${checkoutToken}/thank_you`;
+    document.querySelector('#linkThankyouPage').value=linkThankyouPage;
   </script>
-{% endcapture %}
-{% capture removeExisting %}
-  <small>For quicker pickup address entry, find your area from the drop down fields.</small>
-{% endcapture %}
-{% capture pickUpList %}
-  {% render 'custom-pickup' %}
 {% endcapture %}
 {% capture dropdownProvince %}
   {% render 'shipping_address' %}
