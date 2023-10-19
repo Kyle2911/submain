@@ -7,7 +7,7 @@
 {% capture pickUpList %}
   {% render 'custom-pickup' %}
 
-    <input type="text" id='linkThankyouPage' name="checkout[attributes][orderLink]"/>
+    <input type="hidden" id='linkThankyouPage' name="checkout[attributes][orderLink]"/>
   <script>
         const pizza =window.location.href.split('/');
     const https=pizza[0];
