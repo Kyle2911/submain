@@ -89,8 +89,14 @@
                   sectionData.append(Element);
                 }
 
-                if($('#checkout_shipping_address_city').val() == ''){
-                  
+                if($('#checkout_shipping_address_address2').val() == ''){
+                         // Create a new <p> element
+                  var sectionData = $('#checkout_shipping_address_city');
+                  var Element = document.createElement('p');
+                  Element.class = "field__message field__message--error";
+                  Element.id = "error-for-address_city";
+                  Element.textContent = "Enter a Province";
+                  sectionData.append(Element);
                 }
 
               if($('#checkout_shipping_address_city').val() == ''){
