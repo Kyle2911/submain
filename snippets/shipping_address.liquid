@@ -1,3 +1,4 @@
+
 <script>
 
   const currentLocation=`<div>Shipping address</div><div onclick="googlePinMaps()" class="hoverDatabtn" style="cursor: pointer;"><i class="fa-solid fa-map-location-dot"></i></div>`;
@@ -18,9 +19,68 @@
     }
   }
 }
+
+  var sectionContent = window.document.getElementsByClassName('section__content')[0];
+
+        // Create a new <div> element
+        // var Element = document.createElement('div');
+        // Element.id = "addInputText";
+        // sectionContent.append(Element);
+  
+        sectionContent.innerHTML=`
+        <div style="display: flex;">
+          <div style="margin: 0 6px" class="field field--required field--half" data-address-field="first_name">
+          <div class="field__input-wrapper">
+            <label class="field__label field__label--visible" for="checkout_shipping_address_first_name">First Name</label>
+            <input placeholder="First Name" autocomplete="shipping given-name" autocorrect="off" data-backup="first_name" class="field__input" aria-required="true" size="30" type="text" value="awdwd" name="checkout[shipping_address][first_name]" id="checkout_shipping_address_first_name">
+          </div>
+             </div>
+             
+              <div style="margin: 0 6px" class="field field--required field--half" data-address-field="last_name">
+               <div class="field__input-wrapper">
+             <label class="field__label field__label--visible" for="checkout_shipping_address_last_name">Last name</label>
+            <input placeholder="Last name" autocomplete="shipping family-name" autocorrect="off" data-backup="last_name" class="field__input" aria-required="true" size="30" type="text" name="checkout[shipping_address][last_name]" id="checkout_shipping_address_last_name">
+          </div>
+             </div>
+        </div>
+
+          <div class="fieldset">
+          <div data-shopify-pay-email-flow="false" class="field field--required">
+            
+            <div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_email">Email</label>
+              <input placeholder="Email" autocapitalize="off" spellcheck="false" autocomplete="shipping email" data-autofocus="true" data-backup="customer_email" aria-describedby="checkout-context-step-one" aria-required="true" aria-invalid="true" class="field__input" size="30" type="email" name="checkout[email]" id="checkout_email">
+            </div>
+            </div>        </div> 
+
+        <div class="fieldset-description marketing-text" data-buyer-accepts-marketing="">
+          <div class="section__content">
+            <div class="checkbox-wrapper">
+  <div class="checkbox__input">
+    <input name="checkout[buyer_accepts_marketing]" type="hidden" value="0" autocomplete="off"><input class="input-checkbox" data-email-marketing="true" data-backup="buyer_accepts_marketing" type="checkbox" value="1" checked="checked" name="checkout[buyer_accepts_marketing]" id="checkout_buyer_accepts_marketing">
+  </div>
+  <label class="checkbox__label" for="checkout_buyer_accepts_marketing">
+  <div>Email me with news and offers</div>
+</label></div>
+
+          </div>
+        </div>
+        `;
+  
+
+ // document.querySelector('#addInputText').innerHTML=addInputText;
+
+    setTimeout(()=>{
+            document.querySelector('#error-for-address1').innerHTML='Enter a City';
+            document.querySelector('#error-for-address2').innerHTML='Enter a Barangay';
+            document.querySelector('#error-for-company').innerHTML='Enter a Province';
+            document.querySelector('#error-for-zip').innerHTML='Enter a an apartment, suite, etc.';
+            document.querySelector('#error-for-city').innerHTML='Enter a postal code';
+            document.querySelector('#error-for-province').innerHTML='';
+      
+    },1000);
   
     // This section is for Province
-    $('.field__input-wrapper')[4].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
+    $('.field__input-wrapper')[6].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_city">Province</label>
     <select class=" field__input field__input -- select "
     placeholder="Province" autocomplete="shipping address-level2" autocorrect="off" autocomplete="off" data-backup="city" aria-required="true" type="text" name="checkout[shipping_address][city]" id="checkout_shipping_address_city" >
      {%- render 'arrProvince-shipping_address' -%}
@@ -31,7 +91,7 @@
     `;
 
     //this section is for city
-    $('.field__input-wrapper')[5].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
+    $('.field__input-wrapper')[7].innerHTML = ` <label class="field__label field__label--visible" for="checkout_shipping_address_address2">Town or City</label>
     <select class=" field__input field__input -- select "
     placeholder="Town or City" autocomplete="shipping address-line2"  autocorrect="off" autocomplete="off" data-backup="address2" aria-required="true" type="text" name="checkout[shipping_address][address2]" id="checkout_shipping_address_address2" >
     <option value="">Town or City</option>
@@ -42,7 +102,7 @@
     `;
     
      //this section is for barangay
-     $('.field__input-wrapper')[6].innerHTML = ` 
+     $('.field__input-wrapper')[8].innerHTML = ` 
      <label class="field__label field__label--visible" for="checkout_shipping_address_address1">Barangay</label>
      <select class=" field__input field__input -- select "
      placeholder="Barangay" autocomplete="shipping address-line1"  autocorrect="off" autocomplete="off" data-backup="address1" aria-required="true" type="text" name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1" >
@@ -59,7 +119,7 @@
       `;
 
        // this section is for Street address
-       $('.field__input-wrapper')[7].innerHTML = `
+       $('.field__input-wrapper')[9].innerHTML = `
      
       <label class="field__label field__label--visible" for="checkout_shipping_address_company">House or Unit Number / Street Name</label>
       <input placeholder="House or Unit Number / Street Name" autocomplete="shipping organization" autocorrect="off" autocomplete="off" data-backup="company" class="field__input" aria-required="true" type="text"  name="checkout[shipping_address][company]" id="checkout_shipping_address_company">
@@ -67,13 +127,13 @@
       `;
 
        // this section is for Zip code
-       $('.field__input-wrapper')[8].innerHTML = `
+       $('.field__input-wrapper')[10].innerHTML = `
        <label class="field__label field__label--visible" for="checkout_shipping_address_zip">Postal code</label>
        <input placeholder="Postal code" autocomplete="shipping postal-code" autocorrect="off" autocomplete="off" data-backup="zip" class="field__input field__input--zip" aria-required="true" type="text" name="checkout[shipping_address][zip]" id="checkout_shipping_address_zip" readonly>
       `;
 
         // remove display in Region
-       $('.field__input-wrapper')[9].style.display='none';
+       $('.field__input-wrapper')[11].style.display='none';
 
   // not using on this because of slow fetching
    var arr_shipping_address = JSON.parse(localStorage.getItem("arrProvince"));
@@ -155,6 +215,7 @@
          localStorage.setItem('customer_address',customer_address);
   });
 
+
   // For get the customer address data
     function AutoGetCity() {
     let province = $("#checkout_shipping_address_city").val();
@@ -211,15 +272,14 @@
          $('#checkout_shipping_address_company').val(addressGathering.street_address);
          $('#checkout_shipping_address_zip').val(addressGathering.zip);
       }
-
+  
   // Get a location pin
-function googlePinMaps(){
+    function googlePinMaps(){
     fetch("https://tools.gabcgfs.com/Maps/data.php")
       .then((response) => response.json())
       .then((json) => GetData(json));
 
     function GetData(zipCodeData) {
-
 
       function findZipCode(lat, lon) {
         // Calculate the closest ZIP code based on latitude and longitude
