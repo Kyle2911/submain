@@ -78,15 +78,17 @@
           Element.textContent = "Enter a City";
           sectionData.append(Element);
             });
-  
-      setTimeout(()=>{
-        
-               document.querySelector('#error-for-province').remove();
+
+   document.querySelector('#error-for-province').remove();
               document.querySelector('#error-for-address1').remove();
               document.querySelector('#error-for-address2').remove();
               document.querySelector('#error-for-company').remove();
               document.querySelector('#error-for-zip').remove();
               document.querySelector('#error-for-city').remove();
+  
+      setTimeout(()=>{
+        
+              
         
                 if($('#checkout_shipping_address_city').val() == ''){
                          // Create a new <div> element
