@@ -82,7 +82,7 @@
       setTimeout(()=>{
                 if($('#checkout_shipping_address_city').val() == ''){
                          // Create a new <div> element
-                  var sectionData = $('#checkout_shipping_address_city');
+                  var sectionData = $('.field__input-wrapper')[6];
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
                   Element.id = "error-for-address_city";
