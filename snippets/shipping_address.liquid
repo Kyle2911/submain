@@ -120,8 +120,14 @@
                   sectionData.append(Element);
                 }
 
-            if($('#checkout_shipping_address_city').val() == ''){
-                  
+            if($('#checkout_shipping_address_zip').val() == ''){
+                            // Create a new <p> element
+                  var sectionData = $('#checkout_shipping_address_zip');
+                  var Element = document.createElement('p');
+                  Element.class = "field__message field__message--error";
+                  Element.id = "error-for-address_zip";
+                  Element.textContent = "Enter a postal code";
+                  sectionData.append(Element);
                 }
                document.querySelector('#error-for-province').innerHTML='';
               document.querySelector('#error-for-address1').innerHTML='Enter a City';
