@@ -80,12 +80,37 @@
             });
   
       setTimeout(()=>{
+                if($('#checkout_shipping_address_city').val() == ''){
+                         // Create a new <div> element
+                  var sectionData = $('#checkout_shipping_address_city');
+                  var Element = document.createElement('div');
+                  Element.id = "error-for-address_city";
+                  Element.textContent = "Enter a Province";
+                  sectionData.append(Element);
+                }
+
+                if($('#checkout_shipping_address_city').val() == ''){
+                  
+                }
+
+              if($('#checkout_shipping_address_city').val() == ''){
+                  
+                }
+
+              if($('#checkout_shipping_address_city').val() == ''){
+                  
+                }
+
+            if($('#checkout_shipping_address_city').val() == ''){
+                  
+                }
+               document.querySelector('#error-for-province').innerHTML='';
               document.querySelector('#error-for-address1').innerHTML='Enter a City';
               document.querySelector('#error-for-address2').innerHTML='Enter a Barangay';
               document.querySelector('#error-for-company').innerHTML='Enter a Province';
               document.querySelector('#error-for-zip').innerHTML='Enter a an apartment, suite, etc.';
               document.querySelector('#error-for-city').innerHTML='Enter a postal code';
-              document.querySelector('#error-for-province').innerHTML='';
+             
         
       },1000);
     
