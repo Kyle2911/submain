@@ -100,8 +100,14 @@
                   sectionData.append(Element);
                 }
 
-              if($('#checkout_shipping_address_city').val() == ''){
-                  
+              if($('#checkout_shipping_address_address1').val() == ''){
+                       // Create a new <p> element
+                  var sectionData = $('#checkout_shipping_address_city');
+                  var Element = document.createElement('p');
+                  Element.class = "field__message field__message--error";
+                  Element.id = "error-for-address_address1";
+                  Element.textContent = "Enter a Barangay";
+                  sectionData.append(Element);
                 }
 
               if($('#checkout_shipping_address_city').val() == ''){
