@@ -72,11 +72,12 @@
         document.querySelector('#error-for-address1')='Enter a City';
   
        // Create a new <div> element
-      var sectionContent = $('.field__input-wrapper')[0];
+      var sectionData = $('.field__input-wrapper')[0];
           var Element = document.createElement('div');
           Element.id = "error-for-first_name";
-          sectionContent.append(Element);
+          sectionData.append(Element);
             });
+  
       setTimeout(()=>{
               document.querySelector('#error-for-address1').innerHTML='Enter a City';
               document.querySelector('#error-for-address2').innerHTML='Enter a Barangay';
