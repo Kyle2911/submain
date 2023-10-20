@@ -122,7 +122,7 @@
 
             if($('#checkout_shipping_address_zip').val() == ''){
                             // Create a new <p> element
-                  var sectionData = $('#checkout_shipping_address_zip');
+                 var sectionData = $('.field__input-wrapper')[10];
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
                   Element.id = "error-for-address_zip";
