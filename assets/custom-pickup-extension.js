@@ -33,25 +33,25 @@
       if (deliveryDateStore == "Monday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 7);
+            baseDate.setDate(getBaseDate + 10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 6+7);
+            baseDate.setDate(getBaseDate + 6+10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 5+7);
+            baseDate.setDate(getBaseDate + 5+10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 4+7);
+            baseDate.setDate(getBaseDate + 4+10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 3+7);
+            baseDate.setDate(getBaseDate + 3+10);
             break;
           case "Saturday":
-            baseDate.setDate(getBaseDate + 2+7);
+            baseDate.setDate(getBaseDate + 2+10);
             break;
           case "Sunday":
-            baseDate.setDate(getBaseDate + 1+7);
+            baseDate.setDate(getBaseDate + 1+10);
             break;
 
           default:
@@ -60,25 +60,25 @@
       } else if (deliveryDateStore == "Tuesday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 1+7);
+            baseDate.setDate(getBaseDate + 1+10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 7);
+            baseDate.setDate(getBaseDate + 10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 6+7);
+            baseDate.setDate(getBaseDate + 6+10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 5+7);
+            baseDate.setDate(getBaseDate + 5+10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 4+7);
+            baseDate.setDate(getBaseDate + 4+10);
             break;
           case "Saturday":
-            baseDate.setDate(getBaseDate + 3+7);
+            baseDate.setDate(getBaseDate + 3+10);
             break;
           case "Sunday":
-            baseDate.setDate(getBaseDate + 2+7);
+            baseDate.setDate(getBaseDate + 2+10);
             break;
 
           default:
@@ -87,25 +87,25 @@
       } else if (deliveryDateStore == "Wednesday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 2 + 7);
+            baseDate.setDate(getBaseDate + 2 + 10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 1 + 7);
+            baseDate.setDate(getBaseDate + 1 + 10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 7);
+            baseDate.setDate(getBaseDate + 10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 6 + 7);
+            baseDate.setDate(getBaseDate + 6 + 10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 5 + 7);
+            baseDate.setDate(getBaseDate + 5 + 10);
             break;
           case "Saturday":
-            baseDate.setDate(getBaseDate + 4 + 7);
+            baseDate.setDate(getBaseDate + 4 + 10);
             break;
           case "Sunday":
-            baseDate.setDate(getBaseDate + 3 + 7);
+            baseDate.setDate(getBaseDate + 3 + 10);
             break;
 
           default:
@@ -114,25 +114,25 @@
       } else if (deliveryDateStore == "Thursday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 3 + 7);
+            baseDate.setDate(getBaseDate + 3 + 10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 2 + 7);
+            baseDate.setDate(getBaseDate + 2 + 10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 1 + 7);
+            baseDate.setDate(getBaseDate + 1 + 10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 7);
+            baseDate.setDate(getBaseDate + 10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 6 + 7);
+            baseDate.setDate(getBaseDate + 6 + 10);
             break;
           case "Saturday":
-            baseDate.setDate(getBaseDate + 5 + 7);
+            baseDate.setDate(getBaseDate + 5 + 10);
             break;
           case "Sunday":
-            baseDate.setDate(getBaseDate + 4 + 7);
+            baseDate.setDate(getBaseDate + 4 + 10);
             break;
 
           default:
@@ -141,25 +141,25 @@
       } else if (deliveryDateStore == "Friday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 4 + 7);
+            baseDate.setDate(getBaseDate + 4 + 10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 3 + 7);
+            baseDate.setDate(getBaseDate + 3 + 10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 2 + 7);
+            baseDate.setDate(getBaseDate + 2 + 10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 1 + 7);
+            baseDate.setDate(getBaseDate + 1 + 10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 7);
+            baseDate.setDate(getBaseDate + 10);
             break;
           case "Saturday":
-            baseDate.setDate(getBaseDate + 6 + 7);
+            baseDate.setDate(getBaseDate + 6 + 10);
             break;
           case "Sunday":
-            baseDate.setDate(getBaseDate + 5 + 7);
+            baseDate.setDate(getBaseDate + 5 + 10);
             break;
 
           default:
@@ -168,25 +168,25 @@
       } else if (deliveryDateStore == "Saturday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 5 + 7);
+            baseDate.setDate(getBaseDate + 5 + 10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 4 + 7);
+            baseDate.setDate(getBaseDate + 4 + 10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 3 + 7);
+            baseDate.setDate(getBaseDate + 3 + 10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 2 + 7);
+            baseDate.setDate(getBaseDate + 2 + 10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 1 + 7);
+            baseDate.setDate(getBaseDate + 1 + 10);
             break;
           case "Saturday":
-            baseDate.setDate(getBaseDate + 7);
+            baseDate.setDate(getBaseDate + 10);
             break;
           case "Sunday":
-            baseDate.setDate(getBaseDate + 6 + 7);
+            baseDate.setDate(getBaseDate + 6 + 10);
             break;
 
           default:
@@ -195,25 +195,25 @@
       } else if (deliveryDateStore == "Sunday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 6 + 7);
+            baseDate.setDate(getBaseDate + 6 + 10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 5 + 7);
+            baseDate.setDate(getBaseDate + 5 + 10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 4 + 7);
+            baseDate.setDate(getBaseDate + 4 + 10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 3 + 7);
+            baseDate.setDate(getBaseDate + 3 + 10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 2 + 7);
+            baseDate.setDate(getBaseDate + 2 + 10);
             break;
           case "Saturday":
-            baseDate.setDate(getBaseDate + 1 + 7);
+            baseDate.setDate(getBaseDate + 1 + 10);
             break;
           case "Sunday":
-            baseDate.setDate(getBaseDate + 7);
+            baseDate.setDate(getBaseDate + 10);
             break;
 
           default:
