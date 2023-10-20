@@ -80,6 +80,14 @@
             });
   
       setTimeout(()=>{
+        
+               document.querySelector('#error-for-province').remove();
+              document.querySelector('#error-for-address1').remove();
+              document.querySelector('#error-for-address2').remove();
+              document.querySelector('#error-for-company').remove();
+              document.querySelector('#error-for-zip').remove();
+              document.querySelector('#error-for-city').remove();
+        
                 if($('#checkout_shipping_address_city').val() == ''){
                          // Create a new <div> element
                   var sectionData = $('.field__input-wrapper')[6];
@@ -129,12 +137,6 @@
                   Element.textContent = "Enter a postal code";
                   sectionData.append(Element);
                 }
-               document.querySelector('#error-for-province').remove();
-              document.querySelector('#error-for-address1').remove();
-              document.querySelector('#error-for-address2').remove();
-              document.querySelector('#error-for-company').remove();
-              document.querySelector('#error-for-zip').remove();
-              document.querySelector('#error-for-city').remove();
              
         
       },2000);
