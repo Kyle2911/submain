@@ -83,7 +83,8 @@
                 if($('#checkout_shipping_address_city').val() == ''){
                          // Create a new <div> element
                   var sectionData = $('#checkout_shipping_address_city');
-                  var Element = document.createElement('div');
+                  var Element = document.createElement('p');
+                  Element.class = "field__message field__message--error";
                   Element.id = "error-for-address_city";
                   Element.textContent = "Enter a Province";
                   sectionData.append(Element);
@@ -94,8 +95,8 @@
                   var sectionData = $('#checkout_shipping_address_city');
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
-                  Element.id = "error-for-address_city";
-                  Element.textContent = "Enter a Province";
+                  Element.id = "error-for-address_address2";
+                  Element.textContent = "Enter a Barangay";
                   sectionData.append(Element);
                 }
 
