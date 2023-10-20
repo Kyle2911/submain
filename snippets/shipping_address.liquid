@@ -92,7 +92,7 @@
 
                 if($('#checkout_shipping_address_address2').val() == ''){
                          // Create a new <p> element
-                  var sectionData = $('#checkout_shipping_address_address2');
+                    var sectionData = $('.field__input-wrapper')[7];
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
                   Element.id = "error-for-address_address2";
@@ -102,7 +102,7 @@
 
               if($('#checkout_shipping_address_address1').val() == ''){
                        // Create a new <p> element
-                  var sectionData = $('#checkout_shipping_address_address1');
+                 var sectionData = $('.field__input-wrapper')[8];
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
                   Element.id = "error-for-address_address1";
@@ -112,7 +112,7 @@
 
               if($('#checkout_shipping_address_company').val() == ''){
                      // Create a new <p> element
-                  var sectionData = $('#checkout_shipping_address_company');
+                 var sectionData = $('.field__input-wrapper')[9];
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
                   Element.id = "error-for-address_company";
