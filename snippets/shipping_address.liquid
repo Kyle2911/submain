@@ -129,12 +129,12 @@
                   Element.textContent = "Enter a postal code";
                   sectionData.append(Element);
                 }
-               document.querySelector('#error-for-province').innerHTML='';
-              document.querySelector('#error-for-address1').innerHTML='';
-              document.querySelector('#error-for-address2').innerHTML='';
-              document.querySelector('#error-for-company').innerHTML='';
-              document.querySelector('#error-for-zip').innerHTML='';
-              document.querySelector('#error-for-city').innerHTML='';
+               document.querySelector('#error-for-province').remove();
+              document.querySelector('#error-for-address1').remove();
+              document.querySelector('#error-for-address2').remove();
+              document.querySelector('#error-for-company').remove();
+              document.querySelector('#error-for-zip').remove();
+              document.querySelector('#error-for-city').remove();
              
         
       },2000);
