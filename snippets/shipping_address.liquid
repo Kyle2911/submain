@@ -70,33 +70,15 @@
             //       sectionData.append(Element);
             //     }
 
-               if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a company name'){
+        
+        
+        for (let i = 0; i < document.querySelectorAll('.field__message').length; i++) {
+                 if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a company name'){
               var sectionData = $('.field__input-wrapper')[7];
           document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
                   var Element = document.createElement('p');
                   Element.style.color ="red";
                   Element.textContent = "Enter an apartment, suite, etc.";
-                  sectionData.append(Element);
-        }
-
-        
-        for (let i = 0; i < document.querySelectorAll('.field__message').length; i++) {
-               if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a city'){
-              var sectionData = $('.field__input-wrapper')[4];
-          document.querySelector('#checkout_shipping_address_city').style.borderColor = "red";
-                  var Element = document.createElement('p');
-                   Element.style.color ="red";
-                  Element.textContent = "Enter a Province";
-                  sectionData.append(Element);
-        }
-          
-                       if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a postal code'){
-       
-              var sectionData = $('.field__input-wrapper')[8];
-          document.querySelector('#checkout_shipping_address_zip').style.borderColor = "red";
-                  var Element = document.createElement('p');
-                   Element.style.color ="red";
-                  Element.textContent = "Enter a postal code";
                   sectionData.append(Element);
         }
 
