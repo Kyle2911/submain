@@ -1,8 +1,8 @@
 
   document.quertSelector('#showAllStores').addEventListener('click',()=>{
-document.getElementById("locationSearch").value='';
-document.getElementById("provinceSearch").value='';
-document.getElementById("citySearch").value='';
+        document.getElementById("locationSearch").value='';
+        document.getElementById("provinceSearch").value='';
+        document.getElementById("citySearch").value='';
         searchLocations("store name",document.getElementById("locationSearch").value.trim().toLowerCase());
   });
 
