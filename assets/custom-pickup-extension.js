@@ -1,6 +1,6 @@
  function getReadyPickUp(orderDate,deliveryWeekName){
 
-     
+     const intervalValue=10;
       const deliveryDateStore = deliveryWeekName;
       const baseDate =orderDate;
 
@@ -35,7 +35,7 @@
       if (deliveryDateStore == "Monday") {
         switch (day[getBaseWeek]) {
           case "Monday":
-            baseDate.setDate(getBaseDate + 10);
+            baseDate.setDate(getBaseDate + 7);
             break;
           case "Tuesday":
             baseDate.setDate(getBaseDate + 6 + 10);
