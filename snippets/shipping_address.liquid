@@ -61,7 +61,7 @@
             //     }
 
             if($('#checkout_shipping_address_city').val() != ''){
-              document.querySelector('#provinceID').style.display='none';
+              document.querySelector('#provinceIDError').style.display='none';
                   var sectionData = $('.field__input-wrapper')[4];
                     var Element = document.createElement('p');
                   Element.style.color ="red";
@@ -88,7 +88,7 @@
                   var sectionData = $('.field__input-wrapper')[5];
                   document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
                   var Element = document.createElement('p');
-                  Element.id ="provinceID";
+                  Element.id ="provinceIDError";
                   Element.style.color ="red";
                   Element.textContent = "Enter a Province";
                   sectionData.append(Element);
