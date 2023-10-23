@@ -310,8 +310,8 @@ function googlePinMaps(){
 
           }
         }
-        // customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":""}`;
-        //  localStorage.setItem('customer_address',customer_address);
+        customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":""}`;
+         localStorage.setItem('customer_address',customer_address);
          return [Province, City, Barangay, closestZipCode];
       }
 
