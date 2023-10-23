@@ -74,6 +74,12 @@
                   Element.textContent = "Enter a postal code";
                   sectionData.append(Element);
                 }
+
+        for (let i = 0; i < document.querySelectorAll('.field__message').length; i++) {
+        if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a company name'){
+            document.querySelectorAll('.field__message')[i].remove()
+        }
+        }
              
            
       },2000);
