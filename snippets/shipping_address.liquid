@@ -74,11 +74,11 @@
         if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a company name'){
             document.querySelectorAll('.field__message')[i].remove()
               var sectionData = $('.field__input-wrapper')[7];
+          document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
                   Element.id = "error-for-address_company";
                   Element.style.color ="red";
-                  Element.style.borderColor = "red";
                   Element.textContent = "Enter an apartment, suite, etc.";
                   sectionData.append(Element);
         }
