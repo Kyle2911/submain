@@ -3,8 +3,7 @@
 document.getElementById("locationSearch").value='';
 document.getElementById("provinceSearch").value='';
 document.getElementById("citySearch").value='';
-     const searchText = document.getElementById("locationSearch").value.trim().toLowerCase();
-        searchLocations("store name",searchText);
+        searchLocations("store name",document.getElementById("locationSearch").value.trim().toLowerCase());
   });
 
 
