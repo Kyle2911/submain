@@ -38,16 +38,16 @@
             baseDate.setDate(getBaseDate + 10);
             break;
           case "Tuesday":
-            baseDate.setDate(getBaseDate + 6 +10);
+            baseDate.setDate(getBaseDate + 6 + 10);
             break;
           case "Wednesday":
-            baseDate.setDate(getBaseDate + 5 +10);
+            baseDate.setDate(getBaseDate + 5 + 10);
             break;
           case "Thursday":
-            baseDate.setDate(getBaseDate + 4 +10);
+            baseDate.setDate(getBaseDate + 4 + 10);
             break;
           case "Friday":
-            baseDate.setDate(getBaseDate + 3 +10);
+            baseDate.setDate(getBaseDate + 3 + 10);
             break;
           case "Saturday":
             baseDate.setDate(getBaseDate + 2 +10);
