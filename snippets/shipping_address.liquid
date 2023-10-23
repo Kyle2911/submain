@@ -71,6 +71,17 @@
             //     }
 
         for (let i = 0; i < document.querySelectorAll('.field__message').length; i++) {
+               if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a city'){
+              document.querySelectorAll('.field__message')[i].remove()
+              var sectionData = $('.field__input-wrapper')[4];
+          document.querySelector('#checkout_shipping_address_city').style.borderColor = "red";
+                  var Element = document.createElement('p');
+                  Element.id = "error-for-address_city";
+                   Element.style.color ="red";
+                  Element.textContent = "Enter a Province";
+                  sectionData.append(Element);
+        }
+          
         if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a company name'){
             document.querySelectorAll('.field__message')[i].remove()
               var sectionData = $('.field__input-wrapper')[7];
@@ -82,16 +93,7 @@
                   sectionData.append(Element);
         }
 
-             if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a city'){
-              document.querySelectorAll('.field__message')[i].remove()
-              var sectionData = $('.field__input-wrapper')[4];
-          document.querySelector('#checkout_shipping_address_city').style.borderColor = "red";
-                  var Element = document.createElement('p');
-                  Element.id = "error-for-address_city";
-                   Element.style.color ="red";
-                  Element.textContent = "Enter a Province";
-                  sectionData.append(Element);
-        }
+        
 
                        if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a postal code'){
           document.querySelectorAll('.field__message')[i].remove()
