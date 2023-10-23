@@ -112,6 +112,17 @@
                   Element.textContent = "Enter an apartment, suite, etc.";
                   sectionData.append(Element);
         }
+
+                                  if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a city'){
+                  document.querySelectorAll('.field__message')[i].style.display='none';
+              var sectionData = $('.field__input-wrapper')[7];
+          document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
+                  var Element = document.createElement('p');
+                  Element.style.color ="red";
+                  Element.textContent = "Enter a Postal Code";
+                  sectionData.append(Element);
+        }
+          
         }
              
            
