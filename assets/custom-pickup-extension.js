@@ -4,12 +4,14 @@
       const deliveryDateStore = deliveryWeekName;
       const baseDate =orderDate;
       if(baseDate.getDay() < 0){
-        const getBaseWeek = baseDate.getDay();
+        const getBaseWeek = 6;
+         console.log(getBaseWeek)
       }else{
         const getBaseWeek = baseDate.getDay() - 1;
+         console.log(getBaseWeek)
       }
       
-   console.log(getBaseWeek)
+  
       const getBaseMonth = baseDate.getMonth();
       const getBaseYear = baseDate.getFullYear();
       const getBaseDate = baseDate.getDate();
