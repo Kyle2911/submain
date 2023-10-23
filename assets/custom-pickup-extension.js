@@ -5,6 +5,7 @@
       const baseDate =orderDate;
 
       const getBaseWeek = baseDate.getDay() - 1;
+   console.log(getBaseWeek)
       const getBaseMonth = baseDate.getMonth();
       const getBaseYear = baseDate.getFullYear();
       const getBaseDate = baseDate.getDate();
