@@ -1,4 +1,14 @@
-     // Get a total count on result
+
+  document.quertSelector('#showAllStores').addEventListener('click',()=>{
+document.getElementById("locationSearch").value='';
+document.getElementById("provinceSearch").value='';
+document.getElementById("citySearch").value='';
+     const searchText = searchInput.value.trim().toLowerCase();
+        searchLocations("store name",searchText);
+  });
+
+
+// Get a total count on result
     function getTotalResult(valueName){
          
       if(valueName === 'firstOutputTotal'){
