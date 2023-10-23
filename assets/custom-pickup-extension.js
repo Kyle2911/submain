@@ -3,7 +3,7 @@
      const intervalValue=10;
       const deliveryDateStore = deliveryWeekName;
       const baseDate =orderDate;
-      if(baseDate.getDay() == '-1'){
+      if(baseDate.getDay() < 0){
         const getBaseWeek = baseDate.getDay();
       }else{
         const getBaseWeek = baseDate.getDay() - 1;
