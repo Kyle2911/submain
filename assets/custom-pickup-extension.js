@@ -227,5 +227,5 @@
         }
       }
 
-     return   months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
+     return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
     }
