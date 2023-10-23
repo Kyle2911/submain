@@ -38,7 +38,7 @@
         "November",
         "December",
       ];
-
+console.log(day[getBaseWeek])
       if (deliveryDateStore == "Monday") {
         switch (day[getBaseWeek]) {
           case "Monday":
