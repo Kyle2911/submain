@@ -77,6 +77,7 @@
           document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
+                  Element.id = "error-for-address_company";
                   Element.style.color ="red";
                   Element.textContent = "Enter an apartment, suite, etc.";
                   sectionData.append(Element);
@@ -88,6 +89,7 @@
           document.querySelector('#checkout_shipping_address_city').style.borderColor = "red";
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
+                  Element.id = "error-for-address_city";
                    Element.style.color ="red";
                   Element.textContent = "Enter a Province";
                   sectionData.append(Element);
@@ -99,6 +101,7 @@
           document.querySelector('#checkout_shipping_address_zip').style.borderColor = "red";
                   var Element = document.createElement('p');
                   Element.class = "field__message field__message--error";
+                  Element.id = "error-for-address_zip";
                    Element.style.color ="red";
                   Element.textContent = "Enter a postal cod";
                   sectionData.append(Element);
