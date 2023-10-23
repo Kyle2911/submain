@@ -5,7 +5,7 @@
       const baseDate =orderDate;
    const conditionData = baseDate.getDay() - 1;
       if(conditionData == '-1'){
-        const getBaseWeek = 6;
+        const getBaseWeek = baseDate.getDay();
          console.log(getBaseWeek)
       }else{
         const getBaseWeek = baseDate.getDay() - 1;
