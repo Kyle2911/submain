@@ -5,10 +5,10 @@
       const baseDate =orderDate;
    const conditionData = baseDate.getDay() - 1;
       if(conditionData < 0){
-        const getBaseWeek = baseDate.getDay()+6;
+         getBaseWeek = baseDate.getDay() + 6;
          console.log(getBaseWeek)
       }else{
-        const getBaseWeek = baseDate.getDay() - 1;
+         getBaseWeek = baseDate.getDay() - 1;
          console.log(getBaseWeek)
       }
   
