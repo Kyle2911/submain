@@ -94,7 +94,7 @@
         }
 
                        if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a postal code'){
-           console.log( document.querySelectorAll('.field__message')[i])
+          document.querySelectorAll('.field__message')[i].remove()
               var sectionData = $('.field__input-wrapper')[8];
           document.querySelector('#checkout_shipping_address_zip').style.borderColor = "red";
                   var Element = document.createElement('p');
