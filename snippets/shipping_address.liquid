@@ -72,6 +72,7 @@
 
         for (let i = 0; i < document.querySelectorAll('.field__message').length; i++) {
                if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a city'){
+                  document.querySelector('#error-for-city').remove()
               document.querySelectorAll('.field__message')[i].remove()
               var sectionData = $('.field__input-wrapper')[4];
           document.querySelector('#checkout_shipping_address_city').style.borderColor = "red";
