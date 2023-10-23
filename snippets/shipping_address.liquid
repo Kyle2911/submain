@@ -72,8 +72,7 @@
 
         for (let i = 0; i < document.querySelectorAll('.field__message').length; i++) {
                if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a city'){
-                  document.querySelector('#error-for-city').remove()
-              document.querySelectorAll('.field__message')[i].remove()
+             
               var sectionData = $('.field__input-wrapper')[4];
           document.querySelector('#checkout_shipping_address_city').style.borderColor = "red";
                   var Element = document.createElement('p');
@@ -83,7 +82,7 @@
         }
           
         if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a company name'){
-            document.querySelectorAll('.field__message')[i].remove()
+          
               var sectionData = $('.field__input-wrapper')[7];
           document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
                   var Element = document.createElement('p');
@@ -95,7 +94,7 @@
         
 
                        if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a postal code'){
-          document.querySelector('#error-for-zip').remove()
+       
               var sectionData = $('.field__input-wrapper')[8];
           document.querySelector('#checkout_shipping_address_zip').style.borderColor = "red";
                   var Element = document.createElement('p');
