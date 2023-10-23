@@ -219,12 +219,13 @@
     }
     const zipCode = findValueForLocation(barangay);
     $("#checkout_shipping_address_zip").val(zipCode);
-  
-  });
-
+      
        const street_address = $('#checkout_shipping_address_company').val();
        customer_address= `{"province":"${$('#checkout_shipping_address_city').val()}","city":"${$('#checkout_shipping_address_address2').val()}","barangay":"${$('#checkout_shipping_address_address1').val()}","zip":"${$('#checkout_shipping_address_zip').val()}","street_address":"${street_address}"}`;
          localStorage.setItem('customer_address',customer_address);
+  });
+
+  
   
   // For get the customer address data
     function AutoGetCity() {
