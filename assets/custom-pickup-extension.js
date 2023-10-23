@@ -112,7 +112,6 @@
             break;
           case "Sunday":
             baseDate.setDate(getBaseDate + 3 + intervalValue);
-            console.log(getBaseDate + 3 + intervalValue)
             break;
 
           default:
