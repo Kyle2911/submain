@@ -61,11 +61,10 @@
             //     }
 
             if($('#checkout_shipping_address_city').val() == ''){
-                  var sectionData = $('.field__input-wrapper')[5];
-                  document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
-                  var Element = document.createElement('p');
+                  var sectionData = $('.field__input-wrapper')[4];
+                    var Element = document.createElement('p');
                   Element.style.color ="red";
-                  Element.textContent = "Enter a Province";
+                  Element.textContent = "Enter an apartment, suite, etc.";
                   sectionData.append(Element);
                 }
 
