@@ -4,8 +4,8 @@
       const deliveryDateStore = deliveryWeekName;
       const baseDate =orderDate;
    const conditionData = baseDate.getDay() - 1;
-      if(conditionData == '-1'){
-        const getBaseWeek = baseDate.getDay();
+      if(conditionData < 0){
+        const getBaseWeek = baseDate.getDay()+6;
          console.log(getBaseWeek)
       }else{
         const getBaseWeek = baseDate.getDay() - 1;
