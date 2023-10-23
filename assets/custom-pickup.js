@@ -103,6 +103,7 @@
         });
         }
       }
+
   document.getElementById('showAllStores').addEventListener('click',()=>{
         document.getElementById("locationSearch").value='';
         document.getElementById("provinceSearch").value='';
