@@ -350,7 +350,7 @@ function googlePinMaps(){
 
           }
         }
-        customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":""}`;
+        customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":"${document.querySelector("#checkout_shipping_address_company").value}"}`;
          localStorage.setItem('customer_address',customer_address);
          // return [Province, City, Barangay, closestZipCode];
       }
