@@ -82,6 +82,17 @@
                   Element.textContent = "Enter an apartment, suite, etc.";
                   sectionData.append(Element);
         }
+
+             if( document.querySelectorAll('.field__message')[i].textContent == 'Enter a city'){
+            document.querySelectorAll('.field__message')[i].remove()
+              var sectionData = $('.field__input-wrapper')[4];
+          document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
+                  var Element = document.createElement('p');
+                  Element.class = "field__message field__message--error";
+                  Element.id = "error-for-address_city";
+                  Element.textContent = "Enter a Province";
+                  sectionData.append(Element);
+        }
         }
              
            
