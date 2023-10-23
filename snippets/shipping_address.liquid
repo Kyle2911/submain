@@ -1,23 +1,23 @@
 <script>
 
-//   const currentLocation=`<div>Shipping address</div><div onclick="googlePinMaps()" class="hoverDatabtn" style="cursor: pointer;"><i class="fa-solid fa-map-location-dot"></i></div>`;
-//   window.find($('.dropdown-province .section__header .section__title').html(currentLocation));
-//         document.querySelector('.dropdown-province .section__header .section__title').style.display='flex';
-//       document.querySelector('.dropdown-province .section__header .section__title').style.justifyContent='space-between';
+  const currentLocation=`<div>Shipping address</div><div onclick="googlePinMaps()" class="hoverDatabtn" style="cursor: pointer;"><i class="fa-solid fa-map-location-dot"></i></div>`;
+  window.find($('.dropdown-province .section__header .section__title').html(currentLocation));
+        document.querySelector('.dropdown-province .section__header .section__title').style.display='flex';
+      document.querySelector('.dropdown-province .section__header .section__title').style.justifyContent='space-between';
   
-//       function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
-//   var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
+      function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
+  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
   
-//   for (var i = 0; i < selectElement.options.length; i++) {
-//     var option = selectElement.options[i];
-//     var dataValue = option.getAttribute(dataAttribute);
+  for (var i = 0; i < selectElement.options.length; i++) {
+    var option = selectElement.options[i];
+    var dataValue = option.getAttribute(dataAttribute);
     
-//     if (dataValue === valueToSelect) {
-//       option.selected = true;
-//       break; // Exit the loop once the option is found and selected
-//     }
-//   }
-// }
+    if (dataValue === valueToSelect) {
+      option.selected = true;
+      break; // Exit the loop once the option is found and selected
+    }
+  }
+}
 
      // document.querySelector('#addInputText').innerHTML=addInputText;
    // document.querySelector('#continue_button').addEventListener("click", function (e) {
@@ -325,79 +325,79 @@
       }
 
   // Get a location pin
-// function googlePinMaps(){
-//     fetch("https://tools.gabcgfs.com/Maps/data.php")
-//       .then((response) => response.json())
-//       .then((json) => GetData(json));
+function googlePinMaps(){
+    fetch("https://tools.gabcgfs.com/Maps/data.php")
+      .then((response) => response.json())
+      .then((json) => GetData(json));
 
-//     function GetData(zipCodeData) {
+    function GetData(zipCodeData) {
 
 
-//       function findZipCode(lat, lon) {
-//         // Calculate the closest ZIP code based on latitude and longitude
-//         let closestZipCode = null;
-//         // MAX_SAFE_INTEGER and it is 9007199254740991
-//         let closestDistance = Infinity;
+      function findZipCode(lat, lon) {
+        // Calculate the closest ZIP code based on latitude and longitude
+        let closestZipCode = null;
+        // MAX_SAFE_INTEGER and it is 9007199254740991
+        let closestDistance = Infinity;
 
-//         for (const entry of zipCodeData) {
-//           const distance = calculateDistance(lat, lon, entry.lat, entry.lon);
-//           if (distance < closestDistance) {
-//             closestDistance = distance;
-//             closestZipCode = entry.postalCode;
-//             Province = entry.province;
-//             City = entry.city;
-//             Barangay = entry.barangay;
+        for (const entry of zipCodeData) {
+          const distance = calculateDistance(lat, lon, entry.lat, entry.lon);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestZipCode = entry.postalCode;
+            Province = entry.province;
+            City = entry.city;
+            Barangay = entry.barangay;
 
-//           }
-//         }
-//         // customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":"${document.querySelector("#checkout_shipping_address_company").value}"}`;
-//          // localStorage.setItem('customer_address',customer_address);
-//          // return [Province, City, Barangay, closestZipCode];
-//       }
+          }
+        }
+        // customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":"${document.querySelector("#checkout_shipping_address_company").value}"}`;
+         // localStorage.setItem('customer_address',customer_address);
+         // return [Province, City, Barangay, closestZipCode];
+      }
 
-//       // Helper function to calculate distance between two points using Haversine formula
-//       function calculateDistance(lat1, lon1, lat2, lon2) {
-//         const radius = 6371; // Earth's radius in kilometers
-//         const dLat = degToRad(lat2 - lat1);
-//         const dLon = degToRad(lon2 - lon1);
+      // Helper function to calculate distance between two points using Haversine formula
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        const radius = 6371; // Earth's radius in kilometers
+        const dLat = degToRad(lat2 - lat1);
+        const dLon = degToRad(lon2 - lon1);
 
-//         const a =
-//           Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-//           Math.cos(degToRad(lat1)) * Math.cos(degToRad(lat2)) *
-//           Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(degToRad(lat1)) * Math.cos(degToRad(lat2)) *
+          Math.sin(dLon / 2) * Math.sin(dLon / 2);
 
-//         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-//         const distance = radius * c;
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const distance = radius * c;
 
-//         return distance;
-//       }
+        return distance;
+      }
 
-//       // Helper function to convert degrees to radians
-//       function degToRad(deg) {
-//         return deg * (Math.PI / 180);
-//       }
+      // Helper function to convert degrees to radians
+      function degToRad(deg) {
+        return deg * (Math.PI / 180);
+      }
 
-//       getLocation()
+      getLocation()
 
-//       function getLocation() {
-//         if (navigator.geolocation) {
-//           navigator.geolocation.getCurrentPosition(showPosition);
-//         } else {
-//           x.innerHTML = "Geolocation is not supported by this browser.";
-//         }
-//       }
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
 
-//       function showPosition(position) {
-//         // Example usage
-//         const latitude = position.coords.latitude;
-//         const longitude = position.coords.longitude;
-//         const zipCode = findZipCode(latitude, longitude);
-//         if(!zipCode){
-//           window.location.reload();
-//         }
-//         // console.log(`The nearest ZIP code is ${zipCode}`);
-//         // document.getElementById('address').innerHTML = zipCode;
-//       }
-//     }
-//   }
+      function showPosition(position) {
+        // Example usage
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const zipCode = findZipCode(latitude, longitude);
+        if(!zipCode){
+          window.location.reload();
+        }
+        // console.log(`The nearest ZIP code is ${zipCode}`);
+        // document.getElementById('address').innerHTML = zipCode;
+      }
+    }
+  }
 </script>
