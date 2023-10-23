@@ -263,7 +263,7 @@
     const zipCode = findValueForLocation(barangay);
     $("#checkout_shipping_address_zip").val(zipCode);
 
-       customer_address= `{"province":"${$('#checkout_shipping_address_city').val()}","city":"${$('#checkout_shipping_address_address2').val()}","barangay":"${$('#checkout_shipping_address_address1').val()}","zip":"${zipCode}","street_address":"${document.querySelector("#checkout_shipping_address_company").value}"}`;
+       customer_address= `{"province":"${$('#checkout_shipping_address_city').val()}","city":"${$('#checkout_shipping_address_address2').val()}","barangay":"${$('#checkout_shipping_address_address1').val()}","zip":"${zipCode}","street_address":"${$('#checkout_shipping_address_company').val()}"}`;
          localStorage.setItem('customer_address',customer_address);
   });
 
@@ -350,9 +350,9 @@ function googlePinMaps(){
 
           }
         }
-        // customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":"${document.querySelector("#checkout_shipping_address_company").value}"}`;
-         // localStorage.setItem('customer_address',customer_address);
-         // return [Province, City, Barangay, closestZipCode];
+        // customer_address= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${closestZipCode}","street_address":""}`;
+        //  localStorage.setItem('customer_address',customer_address);
+         return [Province, City, Barangay, closestZipCode];
       }
 
       // Helper function to calculate distance between two points using Haversine formula
