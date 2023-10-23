@@ -60,15 +60,14 @@
              
             //     }
 
-            // if($('#checkout_shipping_address_zip').val() == ''){
-            //                 // Create a new <p> element
-            //      var sectionData = $('.field__input-wrapper')[8];
-            //       var Element = document.createElement('p');
-            //       Element.class = "field__message field__message--error";
-            //       Element.id = "error-for-address_zip";
-            //       Element.textContent = "Enter a postal code";
-            //       sectionData.append(Element);
-            //     }
+            if($('#checkout_shipping_address_city').val() == ''){
+                  var sectionData = $('.field__input-wrapper')[5];
+                  document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
+                  var Element = document.createElement('p');
+                  Element.style.color ="red";
+                  Element.textContent = "Enter a Province";
+                  sectionData.append(Element);
+                }
 
         
         
