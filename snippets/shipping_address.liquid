@@ -72,6 +72,11 @@
                   Element.textContent = "Enter a Postal Code";
                   sectionData.append(Element);
         }
+
+               if( document.querySelectorAll('.field__message')[i].textContent == 'Select a region'){
+                  document.querySelectorAll('.field__message')[i].style.display='none';
+        }
+          
           
         }
                if($('#checkout_shipping_address_city').val() != ''){
