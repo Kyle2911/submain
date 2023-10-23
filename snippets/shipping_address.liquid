@@ -83,6 +83,15 @@
                   sectionData.append(Element);
         }
 
+                     if( document.querySelectorAll('.field__message')[i].textContent == 'Enter an address'){
+                  document.querySelectorAll('.field__message')[i].style.display='none';
+              var sectionData = $('.field__input-wrapper')[4];
+          document.querySelector('#checkout_shipping_address_company').style.borderColor = "red";
+                  var Element = document.createElement('p');
+                  Element.style.color ="red";
+                  Element.textContent = "Enter a City";
+                  sectionData.append(Element);
+        }
           
         }
              
