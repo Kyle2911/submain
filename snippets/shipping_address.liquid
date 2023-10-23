@@ -60,15 +60,7 @@
              
             //     }
 
-            if($('#checkout_shipping_address_city').val() != ''){
-              document.querySelector('#provinceIDError').style.display='none';
-                  var sectionData = $('.field__input-wrapper')[4];
-                    var Element = document.createElement('p');
-                  Element.style.color ="red";
-                  Element.textContent = "Enter an apartment, suite, etc.";
-                  sectionData.append(Element);
-                }
-
+     
         
         
         for (let i = 0; i < document.querySelectorAll('.field__message').length; i++) {
@@ -125,7 +117,15 @@
         }
           
         }
-             
+                    if($('#checkout_shipping_address_city').val() != ''){
+              document.querySelector('#provinceIDError').style.display='none';
+                  var sectionData = $('.field__input-wrapper')[4];
+                    var Element = document.createElement('p');
+                  Element.style.color ="red";
+                  Element.textContent = "Enter an apartment, suite, etc.";
+                  sectionData.append(Element);
+                }
+
            
         },1000);
 
