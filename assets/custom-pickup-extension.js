@@ -28,7 +28,7 @@ function getReadyPickUp(orderDate,area){
 
   const min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
     const max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
-  return min - 
+  return min - max;
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
