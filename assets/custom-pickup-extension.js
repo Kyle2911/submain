@@ -32,24 +32,35 @@ function getReadyPickUp(orderDate,area){
 // This computation is for the Start date
   
       min.setDate(getBaseDate + 5 + 1);
-      let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-
-      // This computation is for the end date
-      max.setDate(getBaseDate + 5 + 3);
-       
-     let conditionData = max.getDay() - 1;
+       let conditionData = min.getDay() - 1;
       if(conditionData < 0){
-         getBaseWeek = max.getDay() + 6;
+         getBaseWeek = min.getDay() + 6;
       }else{
          getBaseWeek = conditionData;
       }
      
       if(day[getBaseWeek] == 'Sunday'){
-        baseDate.setDate(getBaseDate +5+3+ 1)
+        min.setDate(getBaseDate +5+3+ 1)
       }
-      let end = months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear(); 
-      res = start + ' - ' + end;
-      return res;
+      
+      let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+
+      // This computation is for the end date
+     //  max.setDate(getBaseDate + 5 + 3);
+       
+     // let conditionData = max.getDay() - 1;
+     //  if(conditionData < 0){
+     //     getBaseWeek = max.getDay() + 6;
+     //  }else{
+     //     getBaseWeek = conditionData;
+     //  }
+     
+     //  if(day[getBaseWeek] == 'Sunday'){
+     //    baseDate.setDate(getBaseDate +5+3+ 1)
+     //  }
+     //  let end = months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear(); 
+     //  res = start + ' - ' + end;
+     //  return res;
     }
 
 }
