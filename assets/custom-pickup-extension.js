@@ -32,12 +32,13 @@ function getReadyPickUp(orderDate,area){
 
   
       min.setDate(getBaseDate + 4);
-      const conditionData = min.getDay() - 1;
+      let conditionData = min.getDay() - 1;
       if(conditionData < 0){
          getBaseWeek = min.getDay() + 6;
       }else{
          getBaseWeek = conditionData;
       }
+      console.log(day[getBaseWeek]);
       
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
      
