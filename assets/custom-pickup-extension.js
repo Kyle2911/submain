@@ -42,8 +42,9 @@ function getReadyPickUp(orderDate,area){
       }else{
          getBaseWeek = conditionData;
       }
+      
       if(day[getBaseWeek] == 'Sunday'){
-        max.setDate(getBaseDate + 12);
+        max.setDate(getBaseDate + 1);
       }
       
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
