@@ -36,6 +36,7 @@ function getReadyPickUp(orderDate,area){
 
       // This computation is for the end date
       max.setDate(getBaseDate + 12);
+      console.log(max.getDay())
      let conditionData = max.getDay() - 1;
       if(conditionData < 0){
          getBaseWeek = max.getDay() + 6;
