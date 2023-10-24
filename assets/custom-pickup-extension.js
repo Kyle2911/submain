@@ -27,7 +27,7 @@ function getReadyPickUp(orderDate,area){
       max.setDate(getBaseDate + 12);
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
          
-       return start + end;
+       return start + '-' + end;
     }
   
 }
