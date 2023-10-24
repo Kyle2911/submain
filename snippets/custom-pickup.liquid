@@ -241,7 +241,7 @@ $('.active-radio').click();
           const Latitude = mergedArray[i].Latitude;
           const Longitude = mergedArray[i].Longitude;
           const Area = mergedArray[i].Area;
-          const pickUpDate = getReadyPickUp(new Date("2023-10-23"),Area);
+          const pickUpDate = getReadyPickUp(new Date(),Area);
           const listaddress = `${mergedArray[i].Street.trim()}, ${mergedArray[i].City.trim()}, ${mergedArray[i].Country.trim()}`;
           html = `
           <div class="filterData" style="display: flex; margin-bottom: 12px;">
