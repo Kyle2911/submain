@@ -24,7 +24,7 @@ function getReadyPickUp(orderDate,area){
         // max = baseDate.setDate(getBaseDate + 15);
     }
   
-  return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
+  return months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear()
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
