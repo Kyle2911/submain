@@ -22,20 +22,22 @@ function getReadyPickUp(orderDate,area){
     if(area == 'NCR'){
        
       min.setDate(getBaseDate + 4);
+      let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+      console.log(start)
       max.setDate(getBaseDate + 12);
-    let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-   console.log(min.setDate(getBaseDate + 1))
-    let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+      let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
        
-    }else if(area == 'LUZON'){
-       min.setDate(getBaseDate + 8);
-       max.setDate(getBaseDate + 15);
-     //     min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-     // max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
     }
+    // else if(area == 'LUZON'){
+    //    min.setDate(getBaseDate + 8);
+    //    max.setDate(getBaseDate + 15);
+    //  //     min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+    //  // max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+    // }
+  
 
 
-  return start + " - " + end;
+  // return start + " - " + end;
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
