@@ -2,10 +2,10 @@ function getReadyPickUp(orderDate,area){
      baseDate =orderDate;
     if(area == 'NCR'){
         baseDate.setDate(getBaseDate + 4);
-        baseDate.setDate(getBaseDate + 12);
+        baseDate.setDate(getBaseDate + 8);
     }else if(area == 'LUZON'){
-        baseDate.setDate(getBaseDate + 4);
-        baseDate.setDate(getBaseDate + 4);
+        baseDate.setDate(getBaseDate + 8);
+        baseDate.setDate(getBaseDate + 12);
     }
   
   
