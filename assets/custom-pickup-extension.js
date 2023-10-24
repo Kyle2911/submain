@@ -51,9 +51,9 @@ function getReadyPickUp(orderDate,area){
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
 
       res = start + ' - ' + end;
-      
+      return res;
     }
-return res;
+
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
