@@ -32,11 +32,11 @@ function getReadyPickUp(orderDate,area){
 // This computation is for the Start date
   
       min.setDate(getBaseDate + 5);
-       let conditionData = min.getDay() - 1;
-      if(conditionData < 0){
+       let conditionDataMin = min.getDay() - 1;
+      if(conditionDataMin < 0){
          getBaseWeek = min.getDay() + 6;
       }else{
-         getBaseWeek = conditionData;
+         getBaseWeek = conditionDataMin;
       }
      // console.log(day[getBaseWeek])
       if(day[getBaseWeek] == 'Sunday'){
@@ -49,11 +49,11 @@ function getReadyPickUp(orderDate,area){
    
       // This computation is for the end date
        max.setDate(getBaseDate + 5 + 3);
-       let conditionData = max.getDay() - 1;
-      if(conditionData < 0){
+       let conditionDataMax = max.getDay() - 1;
+      if(conditionDataMax < 0){
          getBaseWeek = max.getDay() + 6;
       }else{
-         getBaseWeek = conditionData;
+         getBaseWeek = conditionDataMax;
       }
      // console.log(day[getBaseWeek])
       if(day[getBaseWeek] == 'Sunday'){
