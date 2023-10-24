@@ -1,8 +1,8 @@
 function getReadyPickUp(orderDate,area){
     let baseDate =orderDate;
  
-    let min =baseDate;
-     let max =baseDate;
+    let min =orderDate;
+     let max =orderDate;
    let getBaseDate = baseDate.getDate();
       const day = [
         "Monday",
