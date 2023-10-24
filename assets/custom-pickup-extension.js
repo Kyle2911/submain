@@ -53,7 +53,7 @@ function getReadyPickUp(orderDate,area){
       }else{
          getBaseWeek = conditionData;
       }
-  
+      console.log(day[getBaseWeek])
       if(day[getBaseWeek] == 'Sunday'){
         min.setDate(getBaseDate + 12 + 1);
       }
