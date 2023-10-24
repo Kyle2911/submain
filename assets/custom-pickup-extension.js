@@ -23,13 +23,13 @@ function getReadyPickUp(orderDate,area){
        
       min.setDate(getBaseDate + 4);
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-  
+      return start;
       max.setDate(getBaseDate + 12);
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
          
       // var res = start + " - " + end;
     }
-      return start;
+  
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
