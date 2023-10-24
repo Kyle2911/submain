@@ -28,6 +28,15 @@ function getReadyPickUp(orderDate,area){
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
          
        return start + ' - ' + end;
+    }else if(area == 'LUZON'){
+       
+      min.setDate(getBaseDate + 8);
+      let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+     
+      max.setDate(getBaseDate + 15);
+      let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+         
+       return start + ' - ' + end;
     }
   
 }
