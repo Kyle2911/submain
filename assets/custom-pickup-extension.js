@@ -1,72 +1,35 @@
-function getReadyPickUp(orderDate,area){
-    let baseDate =orderDate;
- 
-    let min =orderDate;
-     let max =orderDate;
-   let getBaseDate = baseDate.getDate();
-      const day = [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ]
-      const months = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ];
-  
-    if(area == 'NCR'){
-// This computation is for the Start date
-  
-      min.setDate(getBaseDate + 5);
-       let conditionDataMin = min.getDay() - 1;
-      if(conditionDataMin < 0){
-         getBaseWeek = min.getDay() + 6;
-      }else{
-         getBaseWeek = conditionDataMin;
-      }
-     // console.log(day[getBaseWeek])
-      if(day[getBaseWeek] == 'Sunday'){
-        min.setDate(getBaseDate + 5 + 1);
-      }else{
-         min.setDate(getBaseDate + 5);
-      }
-      
-      let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-   
-      // This computation is for the end date
+    function getReadyPickUp(orderDate, area) {
+  const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-      max.setDate(getBaseDate + 5 + 3);
-      let conditionDataMax = max.getDay() - 1;
-      if(conditionDataMax < 0){
-         getBaseWeekMax = max.getDay() + 6;
-      }else{
-         getBaseWeekMax = conditionDataMax;
-      }
-     // console.log(day[getBaseWeek])
-      if(day[getBaseWeekMax] == 'Sunday'){
-        max.setDate(getBaseDate + 5 + 3 + 1);
-      }else{
-         max.setDate(getBaseDate + 5 + 3);
-      }
-      
-       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
-      console.log(end)
-      }
+  const addDays = (date, days) => {
+    const result = new Date(date);
+    result.setDate(date.getDate() + days);
+    return result;
+  };
 
+  const formatDate = (date) => {
+    return months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+  };
+
+  if (area === "NCR") {
+    // Start date calculation
+    let startDate = addDays(orderDate, 5 + 1);
+    if (startDate.getDay() === 0) {
+      startDate = addDays(startDate, 1); // If it's Sunday, add one more day
+    }
+    const start = formatDate(startDate);
+
+    // End date calculation
+    let endDate = addDays(orderDate, 5 + 3);
+    if (endDate.getDay() === 0) {
+      endDate = addDays(endDate, 1); // If it's Sunday, add two more days
+    }
+    const end = formatDate(endDate);
+
+    console.log("Start Date:", start);
+    console.log("End Date:", end);
+  }
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
