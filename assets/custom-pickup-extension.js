@@ -32,17 +32,6 @@ function getReadyPickUp(orderDate,area){
 // This computation is for the Start date
   
       min.setDate(getBaseDate + 4);
-      // let conditionData = min.getDay() - 1;
-      // if(conditionData < 0){
-      //    getBaseWeek = min.getDay() + 6;
-      // }else{
-      //    getBaseWeek = conditionData;
-      // }
-
-      // if(day[getBaseWeek] == 'Sunday'){
-      //   min.setDate(getBaseDate + 4 + 1);
-      // }
-      
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
 
       // This computation is for the end date
