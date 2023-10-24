@@ -43,7 +43,7 @@
     // End date calculation
     let endDate = addDays(startDate, 3 - 1);
     if (endDate.getDay() === 0) {
-      endDate = addDays(endDate, 1); // If it's Sunday, add two more days
+      endDate = addDays(endDate, 1); // If it's Sunday, add one more day
     }
     const end = formatDate(endDate);
 
