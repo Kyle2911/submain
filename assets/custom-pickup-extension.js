@@ -1,6 +1,5 @@
 function getReadyPickUp(orderDate,area){
    baseDate =orderDate;
-     
    getBaseDate = baseDate.getDate();
       min =baseDate;
       max =baseDate;
