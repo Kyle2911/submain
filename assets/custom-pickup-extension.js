@@ -21,7 +21,7 @@ function getReadyPickUp(orderDate,area){
   
     if(area == 'NCR'){
        
-      startData = min.setDate(getBaseDate + 4);
+      min.setDate(getBaseDate + 4);
       max.setDate(getBaseDate + 12);
     start = months[startData.getMonth()] + " " + startData.getDate() + ", " + startData.getFullYear(); 
       console.log(start)
