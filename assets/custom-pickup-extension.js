@@ -1,5 +1,21 @@
 function getReadyPickUp(orderDate,area){
      baseDate =orderDate;
+  
+        const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+  
     if(area == 'NCR'){
         min = baseDate.setDate(getBaseDate + 4);
         max = baseDate.setDate(getBaseDate + 12);
