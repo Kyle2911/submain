@@ -4,7 +4,16 @@ function getReadyPickUp(orderDate,area){
     let min =baseDate;
      let max =baseDate;
    let getBaseDate = baseDate.getDate();
-        const months = [
+      const day = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ]
+      const months = [
         "Jan",
         "Feb",
         "Mar",
@@ -20,7 +29,7 @@ function getReadyPickUp(orderDate,area){
       ];
   
     if(area == 'NCR'){
-       
+    
       min.setDate(getBaseDate + 4);
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
      
