@@ -31,11 +31,11 @@ function getReadyPickUp(orderDate,area){
     if(area == 'NCR'){
 // This computation is for the Start date
   
-      min.setDate(getBaseDate + 4);
+      min.setDate(getBaseDate + 5 + 1);
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
 
       // This computation is for the end date
-      max.setDate(getBaseDate + 12);
+      max.setDate(getBaseDate + 5 + 3);
       
      let conditionData = max.getDay() - 1;
       if(conditionData < 0){
