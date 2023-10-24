@@ -1,4 +1,8 @@
- // function getReadyPickUp(orderDate,deliveryWeekName){
+function getReadyPickUp(orderDate,area){
+
+}
+
+// function getReadyPickUp(orderDate,deliveryWeekName){
 
  //      const intervalValue=10;
  //      const deliveryDateStore = deliveryWeekName;
