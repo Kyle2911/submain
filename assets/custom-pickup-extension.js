@@ -38,10 +38,12 @@ function getReadyPickUp(orderDate,area){
       }else{
          getBaseWeek = conditionData;
       }
-     console.log(day[getBaseWeek])
-      // if(day[getBaseWeek] == 'Sunday'){
-      //   min.setDate(getBaseDate + 1)
-      // }
+     // console.log(day[getBaseWeek])
+      if(day[getBaseWeek] == 'Sunday'){
+        min.setDate(getBaseDate + 5 + 1)
+      }else{
+         min.setDate(getBaseDate + 5);
+      }
       
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
       console.log(start)
