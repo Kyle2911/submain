@@ -63,6 +63,7 @@ function getReadyPickUp(orderDate,area){
       }
       
       let start = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+      console.log(start)
     }
 
 }
