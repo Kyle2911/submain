@@ -22,13 +22,16 @@ function getReadyPickUp(orderDate,area){
     if(area == 'NCR'){
        min.setDate(getBaseDate + 4);
        max.setDate(getBaseDate + 12);
+         min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+     max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
     }else if(area == 'LUZON'){
        min.setDate(getBaseDate + 8);
        max.setDate(getBaseDate + 15);
+         min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+     max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
     }
 
-   min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-     max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+
   return min + " - " + max;
 }
 
