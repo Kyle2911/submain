@@ -27,18 +27,9 @@ function getReadyPickUp(orderDate,area){
       max.setDate(getBaseDate + 12);
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
          
-        return start + " - " + end;
+      var res=start + " - " + end;
     }
-    // else if(area == 'LUZON'){
-    //    min.setDate(getBaseDate + 8);
-    //    max.setDate(getBaseDate + 15);
-    //  //     min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-    //  // max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
-    // }
-  
-
-
-
+  return res;
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
