@@ -54,11 +54,11 @@ function getReadyPickUp(orderDate,area){
     }else if(area == 'LUZON'){
 // This computation is for the Start date
   
-      min.setDate(getBaseDate + 5 + 1);
+      min.setDate(getBaseDate + 7 + 4);
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
 
       // This computation is for the end date
-      max.setDate(getBaseDate + 5 + 3);
+      max.setDate(getBaseDate + 7 + 5);
        
      let conditionData = max.getDay() - 1;
       if(conditionData < 0){
@@ -68,7 +68,7 @@ function getReadyPickUp(orderDate,area){
       }
      
       if(day[getBaseWeek] == 'Sunday'){
-        baseDate.setDate(getBaseDate +5+3+ 1)
+        baseDate.setDate(getBaseDate +7+5+ 1)
       }
        console.log(months[baseDate.getMonth()] + baseDate.getDate())
       let end = months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear(); 
