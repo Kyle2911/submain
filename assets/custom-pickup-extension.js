@@ -56,7 +56,7 @@ function getReadyPickUp(orderDate,area){
          getBaseWeek = conditionData;
       }
      // console.log(day[getBaseWeek])
-      if(day[getBaseWeek] == 'Sunday')
+      if(day[getBaseWeek] == 'Sunday'){
         max.setDate(getBaseDate + 5 + 3 + 1)
       }else{
          max.setDate(getBaseDate + 5 + 3);
