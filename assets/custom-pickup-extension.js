@@ -1,11 +1,11 @@
 function getReadyPickUp(orderDate,area){
      baseDate =orderDate;
     if(area == 'NCR'){
-        baseDate.setDate(getBaseDate + 4);
-        baseDate.setDate(getBaseDate + 12);
+        min = baseDate.setDate(getBaseDate + 4);
+        max = baseDate.setDate(getBaseDate + 12);
     }else if(area == 'LUZON'){
-        baseDate.setDate(getBaseDate + 8);
-        baseDate.setDate(getBaseDate + 15);
+        min = baseDate.setDate(getBaseDate + 8);
+        max = baseDate.setDate(getBaseDate + 15);
     }
   
   return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
