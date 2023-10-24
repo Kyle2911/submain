@@ -240,7 +240,8 @@ $('.active-radio').click();
           const Zipcode = mergedArray[i].Zipcode;
           const Latitude = mergedArray[i].Latitude;
           const Longitude = mergedArray[i].Longitude;
-          const pickUpDate = getReadyPickUp(new Date(),'Wednesday');
+          const Area = mergedArray[i].Area;
+          const pickUpDate = getReadyPickUp(new Date(),Area);
           const listaddress = `${mergedArray[i].Street.trim()}, ${mergedArray[i].City.trim()}, ${mergedArray[i].Country.trim()}`;
           html = `
           <div class="filterData" style="display: flex; margin-bottom: 12px;">
