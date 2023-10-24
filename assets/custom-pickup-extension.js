@@ -8,7 +8,6 @@ function getReadyPickUp(orderDate,area){
         baseDate.setDate(getBaseDate + 12);
     }
   
-  
   return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
 }
 
