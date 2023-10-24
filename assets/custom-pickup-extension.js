@@ -44,13 +44,19 @@ function getReadyPickUp(orderDate,area){
          getBaseWeek = conditionData;
       }
      console.log(day[getBaseWeek])
-      // if(day[getBaseWeek] == 'Sunday'){
-      //   max.setDate(getBaseDate + 1);
-      // }
-        console.log(months[max.getMonth()] + max.getDate())
+      if(day[getBaseWeek] == 'Sunday'){
+        max.setDate(getBaseDate + 1);
+         console.log(months[max.getMonth()] + max.getDate())
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
 
       res = start + ' - ' + end;
+      }else{
+         console.log(months[max.getMonth()] + max.getDate())
+      let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+
+      res = start + ' - ' + end;
+      }
+       
       return res;
     }
 
