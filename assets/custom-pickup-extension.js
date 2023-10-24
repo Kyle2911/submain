@@ -1,8 +1,8 @@
 function getReadyPickUp(orderDate,area){
-   baseDate =orderDate;
-   getBaseDate = baseDate.getDate();
-      min =baseDate;
-      max =baseDate;
+    let baseDate =orderDate;
+   let getBaseDate = baseDate.getDate();
+    let min =baseDate;
+     let max =baseDate;
         const months = [
         "January",
         "February",
@@ -22,7 +22,7 @@ function getReadyPickUp(orderDate,area){
        
       min.setDate(getBaseDate + 4);
       max.setDate(getBaseDate + 12);
-    start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+    let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
       console.log(start)
      // end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
     }else if(area == 'LUZON'){
