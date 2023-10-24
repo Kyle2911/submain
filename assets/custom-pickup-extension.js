@@ -27,6 +27,7 @@ function getReadyPickUp(orderDate,area){
       max.setDate(getBaseDate + 12);
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
            // console.log(end)
+        return start + " - " + end;
     }
     // else if(area == 'LUZON'){
     //    min.setDate(getBaseDate + 8);
@@ -37,7 +38,7 @@ function getReadyPickUp(orderDate,area){
   
 
 
-  return start + " - " + end;
+
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
