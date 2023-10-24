@@ -45,7 +45,7 @@ function getReadyPickUp(orderDate,area){
       }
      
       if(day[getBaseWeek] == 'Sunday'){
-      max.setDate(max.getDate()+1);
+      max.setDate(max.getDate() + 1);
       }
        console.log(months[max.getMonth()] + max.getDate())
       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
