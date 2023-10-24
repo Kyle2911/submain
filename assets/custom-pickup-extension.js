@@ -1,6 +1,6 @@
 function getReadyPickUp(orderDate,area){
      baseDate =orderDate;
-  
+  const getBaseDate = baseDate.getDate();
         const months = [
         "January",
         "February",
