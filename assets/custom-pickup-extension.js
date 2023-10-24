@@ -48,7 +48,7 @@ function getReadyPickUp(orderDate,area){
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
    
       // This computation is for the end date
-      function endDate(){
+
       max.setDate(getBaseDate + 5 + 3);
       let conditionDataMax = max.getDay() - 1;
       if(conditionDataMax < 0){
@@ -63,11 +63,8 @@ function getReadyPickUp(orderDate,area){
          max.setDate(getBaseDate + 5 + 3);
       }
       
-     return months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+       let end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
       }
-
-      console.log(endDate())
-    }
 
 }
 
