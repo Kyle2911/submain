@@ -24,6 +24,7 @@ function getReadyPickUp(orderDate,area){
      min.setDate(getBaseDate + 4);
       max.setDate(getBaseDate + 12);
     start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+      console.log(start)
      end = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
     }else if(area == 'LUZON'){
        min.setDate(getBaseDate + 8);
