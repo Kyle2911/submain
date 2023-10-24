@@ -31,7 +31,7 @@ function getReadyPickUp(orderDate,area){
     if(area == 'NCR'){
 // This computation is for the Start date
   
-      min.setDate(getBaseDate + 5 + 1);
+      min.setDate(getBaseDate + 5);
        let conditionData = min.getDay() - 1;
       if(conditionData < 0){
          getBaseWeek = min.getDay() + 6;
@@ -40,7 +40,7 @@ function getReadyPickUp(orderDate,area){
       }
      
       if(day[getBaseWeek] == 'Sunday'){
-        min.setDate(getBaseDate +5+3+ 1)
+        min.setDate(getBaseDate + 1)
       }
       
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
