@@ -1,6 +1,7 @@
 function getReadyPickUp(orderDate,area){
-    const baseDate =orderDate;
-    baseDate.setDate(getBaseDate + 6 + intervalValue);
+     baseDate =orderDate;
+    if()
+    baseDate.setDate(getBaseDate + 4);
   
   return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
 }
