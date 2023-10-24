@@ -1,6 +1,6 @@
 function getReadyPickUp(orderDate,area){
      baseDate =orderDate;
-    if()
+    if(area == 'NCR')
     baseDate.setDate(getBaseDate + 4);
   
   return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
