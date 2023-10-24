@@ -22,7 +22,8 @@ function getReadyPickUp(orderDate,area){
     if(area == 'NCR'){
        
      min.setDate(getBaseDate + 4) + " - " + max.setDate(getBaseDate + 12);
-         min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+         // min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+      console.log(min.getDate())
      // max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
     }else if(area == 'LUZON'){
        min.setDate(getBaseDate + 8);
