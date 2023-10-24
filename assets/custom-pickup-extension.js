@@ -2,7 +2,7 @@ function getReadyPickUp(orderDate,area){
    baseDate =orderDate;
     min =orderDate;
       max =orderDate;
-  const getBaseDate = baseDate.getDate();
+   getBaseDate = baseDate.getDate();
         const months = [
         "January",
         "February",
@@ -26,8 +26,8 @@ function getReadyPickUp(orderDate,area){
        max.setDate(getBaseDate + 15);
     }
 
-  const min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-    const max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
+   min = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
+     max = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
   return min - max;
 }
 
