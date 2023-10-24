@@ -14,33 +14,39 @@
 
   if (area === "NCR") {
     // Start date calculation
-    let startDate = addDays(orderDate, 5 + 1);
+    let startDate = addDays(orderDate, 5);
     if (startDate.getDay() === 0) {
-      startDate = addDays(startDate, 1); // If it's Sunday, add one more day
+      startDate = addDays(startDate, 1 + 1); // If it's Sunday, add one more day
+    }else{
+     startDate = addDays(startDate, 1);
     }
     const start = formatDate(startDate);
 
     // End date calculation
-    let endDate = addDays(orderDate, 5 + 3);
+    let endDate = addDays(startDate, 3 - 1);
     if (endDate.getDay() === 0) {
       endDate = addDays(endDate, 1); // If it's Sunday, add two more days
     }
     const end = formatDate(endDate);
-    return start + " - " + end;
+
+ return start + " - " + end;
   }else if(area === "LUZON") {
     // Start date calculation
-    let startDate = addDays(orderDate, 7 + 1);
+    let startDate = addDays(orderDate, 7);
     if (startDate.getDay() === 0) {
-      startDate = addDays(startDate, 1); // If it's Sunday, add one more day
+      startDate = addDays(startDate, 1 + 1); // If it's Sunday, add one more day
+    }else{
+     startDate = addDays(startDate, 1);
     }
     const start = formatDate(startDate);
 
     // End date calculation
-    let endDate = addDays(orderDate, 7 + 3);
+    let endDate = addDays(startDate, 3 - 1);
     if (endDate.getDay() === 0) {
       endDate = addDays(endDate, 1); // If it's Sunday, add two more days
     }
     const end = formatDate(endDate);
+
     return start + " - " + end;
   }
 }
