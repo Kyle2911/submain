@@ -52,12 +52,12 @@ function getReadyPickUp(orderDate,area){
       max.setDate(getBaseDate + 5 + 3);
       let conditionDataMax = max.getDay() - 1;
       if(conditionDataMax < 0){
-         getBaseWeek = max.getDay() + 6;
+         getBaseWeekMax = max.getDay() + 6;
       }else{
-         getBaseWeek = conditionDataMax;
+         getBaseWeekMax = conditionDataMax;
       }
      // console.log(day[getBaseWeek])
-      if(day[getBaseWeek] == 'Sunday'){
+      if(day[getBaseWeekMax] == 'Sunday'){
         max.setDate(getBaseDate + 5 + 3 + 1);
       }else{
          max.setDate(getBaseDate + 5 + 3);
