@@ -1,5 +1,8 @@
 function getReadyPickUp(orderDate,area){
-
+    const baseDate =orderDate;
+    baseDate.setDate(getBaseDate + 6 + intervalValue);
+  
+  return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
