@@ -46,23 +46,23 @@ function getReadyPickUp(orderDate,area){
       }
       
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-      console.log(start)
+   
       // This computation is for the end date
-     //  max.setDate(getBaseDate + 5 + 3);
-       
-     // let conditionData = max.getDay() - 1;
-     //  if(conditionData < 0){
-     //     getBaseWeek = max.getDay() + 6;
-     //  }else{
-     //     getBaseWeek = conditionData;
-     //  }
-     
-     //  if(day[getBaseWeek] == 'Sunday'){
-     //    baseDate.setDate(getBaseDate +5+3+ 1)
-     //  }
-     //  let end = months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear(); 
-     //  res = start + ' - ' + end;
-     //  return res;
+     max.setDate(getBaseDate + 7);
+       let conditionData = max.getDay() - 1;
+      if(conditionData < 0){
+         getBaseWeek = max.getDay() + 6;
+      }else{
+         getBaseWeek = conditionData;
+      }
+     // console.log(day[getBaseWeek])
+      if(day[getBaseWeek] == 'Sunday'){
+        max.setDate(getBaseDate + 7 + 1)
+      }else{
+         max.setDate(getBaseDate + 7);
+      }
+      
+      let start = months[max.getMonth()] + " " + max.getDate() + ", " + max.getFullYear(); 
     }
 
 }
