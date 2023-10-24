@@ -44,7 +44,7 @@ function getReadyPickUp(orderDate,area){
       }
       
       let start = months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear(); 
-
+      console.log(start)
       // This computation is for the end date
      //  max.setDate(getBaseDate + 5 + 3);
        
