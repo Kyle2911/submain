@@ -27,8 +27,7 @@
     }
     const end = formatDate(endDate);
 
-    console.log("Start Date:", start);
-    console.log("End Date:", end);
+    return start + " " + end;
   }
 }
 
