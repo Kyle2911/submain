@@ -27,16 +27,16 @@
     }
     const end = formatDate(endDate);
     return start + " - " + end;
-  }else  if (area === "LUZON") {
+  }else if(area === "LUZON") {
     // Start date calculation
-    let startDate = addDays(orderDate, 5 + 1);
+    let startDate = addDays(orderDate, 7 + 1);
     if (startDate.getDay() === 0) {
       startDate = addDays(startDate, 1); // If it's Sunday, add one more day
     }
     const start = formatDate(startDate);
 
     // End date calculation
-    let endDate = addDays(orderDate, 5 + 3);
+    let endDate = addDays(orderDate, 7 + 3);
     if (endDate.getDay() === 0) {
       endDate = addDays(endDate, 1); // If it's Sunday, add two more days
     }
