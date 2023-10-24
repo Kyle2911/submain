@@ -1,4 +1,5 @@
 function getReadyPickUp(orderDate,area){
+    min =orderDate;
      baseDate =orderDate;
   const getBaseDate = baseDate.getDate();
         const months = [
@@ -17,14 +18,14 @@ function getReadyPickUp(orderDate,area){
       ];
   
     if(area == 'NCR'){
-        min = baseDate.setDate(getBaseDate + 4);
+       min.setDate(getBaseDate + 4);
         // max = baseDate.setDate(getBaseDate + 12);
     }else if(area == 'LUZON'){
-        min = baseDate.setDate(getBaseDate + 8);
+       min.setDate(getBaseDate + 8);
         // max = baseDate.setDate(getBaseDate + 15);
     }
   
-  return months[min.getMonth()] + " " + min.getDate() + ", " + min.getFullYear()
+  return months[baseDate.getMonth()] + " " + baseDate.getDate() + ", " + baseDate.getFullYear()
 }
 
 // function getReadyPickUp(orderDate,deliveryWeekName){
