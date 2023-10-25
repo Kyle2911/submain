@@ -30,7 +30,8 @@
     const end = formatDate(endDate);
 
  return start + " - " + end;
-  }else{
+  }
+  if (area === "LUZON") {
     // Start date calculation
     let startDate = addDays(orderDate, 7);
     if (startDate.getDay() === 0) {
