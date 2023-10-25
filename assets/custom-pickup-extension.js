@@ -12,7 +12,7 @@
     return months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
   };
 
-  if (area === "NCR") {
+  if (area == "NCR") {
     // Start date calculation
     let startDate = addDays(orderDate, 5);
     if (startDate.getDay() === 0) {
