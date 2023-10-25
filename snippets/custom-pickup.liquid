@@ -243,9 +243,10 @@ $('.active-radio').click();
           const Area = mergedArray[i].Area;
            const OpeningHours = mergedArray[i].OpeningHours;
           const pickUpDate = getReadyPickUp(new Date(),Area);
+          const listaddress = `${mergedArray[i].Street.trim()}, ${mergedArray[i].City.trim()}, ${mergedArray[i].Country.trim()}`;
+          
              pizza=OpeningHours.split(' ');
            const OpeningTime=`${pizza[3]} - ${pizza[5]}`;
-          const listaddress = `${mergedArray[i].Street.trim()}, ${mergedArray[i].City.trim()}, ${mergedArray[i].Country.trim()}`;
           html = `
           <div class="filterData" style="display: flex; margin-bottom: 12px;">
 
@@ -270,10 +271,10 @@ $('.active-radio').click();
                
                 <div class="small-text" style="font-size: 14px; padding: 5px 0;">${mergedArray[i].Street.trim()}, <span class="city">${capitalizeEveryWord(City)}</span>, <span class="province">${capitalizeEveryWord(Province)}</span>, ${mergedArray[i].Country.trim()}</div>
                    <div class="small-text pickup-instructions show-on-mobile" style="margin: 5px 0;">
-                     <span style="font-size: 14px;">Open • Closes 10 PM</span>
+                     <span style="font-size: 14px;">${OpeningTime}</span>
                   </div>
                   <div class="small-text pickup-instructions hide-on-mobile" style="margin: 5px 0;">
-                    <span style="font-size: 14px;">Open • Closes 10 PM</span>
+                    <span style="font-size: 14px;">${OpeningTime}</span>
                   </div>
                     <span style="font-size: 14px;">In-store shopping • In-store pickup</span>
                 </div>
