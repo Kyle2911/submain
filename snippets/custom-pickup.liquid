@@ -92,6 +92,12 @@
 <script type="text/javascript" src="{{ 'custom-pickup-extension.js' | asset_url }}" defer="defer"></script>
 <script>
 
+  document.querySelectorAll('.section__header')[3].innerHTML =`<h2 class="section__title">
+      Store Locations
+    </h2>
+    <input type="text">
+    `;
+
   
     function capitalizeEveryWord(inputString) {
   // Split the input string into an array of words
