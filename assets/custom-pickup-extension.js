@@ -31,6 +31,7 @@
 
  return start + " - " + end;
   }
+      
   if (area === "LUZON") {
     // Start date calculation
     let startDate = addDays(orderDate, 7);
