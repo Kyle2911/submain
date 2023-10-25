@@ -41,7 +41,7 @@
     const start = formatDate(startDate);
 
     // End date calculation
-    let endDate = addDays(startDate, 4);
+    let endDate = addDays(startDate, 5);
     if (endDate.getDay() === 0) {
       endDate = addDays(endDate, 1); // If it's Sunday, add one more day
     }
