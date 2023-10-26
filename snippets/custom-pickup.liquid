@@ -95,7 +95,11 @@
   document.querySelectorAll('.section__header')[3].innerHTML =`<h2 class="section__title">
       Contact 
     </h2>
- 
+  <input type="text" name="checkout[billing_address][address1]">
+   <input type="text" name="checkout[billing_address][city]">
+    <input type="text" name="checkout[billing_address][province]">
+     <input type="text" name="checkout[billing_address][country]">
+      <input type="text" name="checkout[billing_address][zip]">
     <div class="field__input-wrapper" style="padding: 7px 0;"><label style="position: absolute; padding: 2px 12px;" for="checkout_billing_address_first_name">First Name</label>
       <input style="padding: 22px 0 10px 12px;" autocomplete="billing given-name" autocorrect="off" data-backup="first_name" class="field__input" aria-required="true" type="text" name="checkout[billing_address][first_name]" id="checkout_billing_address_first_name">
     </div>
