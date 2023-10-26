@@ -29,23 +29,6 @@
       $('.review-block__content')[1].innerHTML = shippingValue;
     }
 
-         const codLabelElement  =  document.querySelectorAll('.section__title');
-                      for (let i = 0; i < codLabelElement.length; i++) {
-                      
-                      // Check if the label element exists
-                         if(codLabelElement[i].textContent.trim() == "Billing address"){
-                          codLabelElement[i].innerHTML='Shipping address';
-                        }
-                      }
-
-        const codLabelElement  =  document.querySelectorAll('.section__text');
-                      for (let i = 0; i < codLabelElement.length; i++) {
-                      
-                      // Check if the label element exists
-                         if(codLabelElement[i].textContent.trim() == "Enter the address that matches your card or payment method."){
-                          codLabelElement[i].remove();
-                        }
-                      }
       
 
 
@@ -77,6 +60,23 @@
       document.querySelector('#checkout_billing_address_city').value=res.province;
       document.querySelector('#checkout_billing_address_phone').value=res.phone_number; 
 
+         const codLabelElement  =  document.querySelectorAll('.section__title');
+                      for (let i = 0; i < codLabelElement.length; i++) {
+                      
+                      // Check if the label element exists
+                         if(codLabelElement[i].textContent.trim() == "Billing address"){
+                          codLabelElement[i].innerHTML='Shipping address';
+                        }
+                      }
+
+        const codLabelElement  =  document.querySelectorAll('.section__text');
+                      for (let i = 0; i < codLabelElement.length; i++) {
+                      
+                      // Check if the label element exists
+                         if(codLabelElement[i].textContent.trim() == "Enter the address that matches your card or payment method."){
+                          codLabelElement[i].remove();
+                        }
+                      }
       
     }, 500)
   </script>
