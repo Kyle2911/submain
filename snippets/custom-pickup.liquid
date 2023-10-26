@@ -117,11 +117,11 @@
     `;
 
   setTimeout(()=>{
-    document.querySelector('#continue_button').disabled = false;
+    document.querySelector('#continue_button').disabled = true;
   },1000)
   
   function FillupContact(){
-    document.querySelector('#continue_button').disabled = true;
+    document.querySelector('#continue_button').disabled = false;
   }
 
   document.querySelector('#continue_button').addEventListener("click",()=>{
