@@ -31,7 +31,8 @@
 
     setTimeout(()=>{
       var res = JSON.parse(localStorage.getItem('ShippingAddress'))
-      res.province
+      
+      document.querySelector('#checkout_billing_address_city').value=res.province;
     }, 500)
   </script>
 {% endcapture %}
