@@ -28,6 +28,11 @@
       shippingValue = localStorage.getItem('ShippingMethod');
       $('.review-block__content')[1].innerHTML = shippingValue;
     }
+
+    setTimeout(()=>{
+      var res = JSON.parse(localStorage.getItem('ShippingAddress'))
+      res.province
+    }, 500)
   </script>
 {% endcapture %}
 
