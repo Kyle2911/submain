@@ -46,6 +46,12 @@
                           section__text[i].remove();
                         }
                       }
+        
+                  document.querySelector('#checkout_billing_address_company').readOnly = true;
+                  document.querySelector('#checkout_billing_address_address1').readOnly = true;
+                  document.querySelector('#checkout_billing_address_address2').readOnly = true;
+                  document.querySelector('#checkout_billing_address_zip').readOnly = true;
+                  document.querySelector('#checkout_billing_address_city').readOnly = true;
        },100);
  
       setTimeout(()=>{
@@ -75,11 +81,6 @@
                   selectOptionByDataAttributeValue('data-alternate-values', AutoRegionData);
                   document.querySelector('#checkout_billing_address_city').value=res.province;
                   document.querySelector('#checkout_billing_address_phone').value=res.phone_number; 
-                  document.querySelector('#checkout_billing_address_company').readOnly = true;
-                  document.querySelector('#checkout_billing_address_address1').readOnly = true;
-                  document.querySelector('#checkout_billing_address_address2').readOnly = true;
-                  document.querySelector('#checkout_billing_address_zip').readOnly = true;
-                  document.querySelector('#checkout_billing_address_city').readOnly = true;
         
       }, 500);
      }
