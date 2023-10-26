@@ -121,7 +121,7 @@
    let phone_number = document.querySelector('#phone_address').value;
 
      
-    setShippingaddress= `{"province":"${Province}","city":"${City}","barangay":"${City}","zip":"${Zipcode}","street_address":"${listaddress}","first_name":"${first_name}","last_name":"${last_name}","phone_number":"${phone_number}"}`;
+    setShippingaddress= `{"first_name":"${first_name}","last_name":"${last_name}","phone_number":"${phone_number}"}`;
     localStorage.setItem('ShippingAddress', setShippingaddress)
   
     function capitalizeEveryWord(inputString) {
