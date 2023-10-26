@@ -116,13 +116,6 @@
     </h2>
     `;
 
-  setTimeout(()=>{
-    document.querySelector('#continue_button').disabled = true;
-  },1000)
-  
-  function FillupContact(){
-    document.querySelector('#continue_button').disabled = false;
-  }
 
   document.querySelector('#continue_button').addEventListener("click",()=>{
      let first_name = document.querySelector('#first_name').value;
