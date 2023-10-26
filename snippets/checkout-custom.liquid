@@ -41,6 +41,15 @@
                           codLabelElement[i].innerHTML='Shipping address';
                         }
                       }
+
+        const codLabelElement  =  document.querySelectorAll('.section__text');
+                      for (let i = 0; i < codLabelElement.length; i++) {
+                      
+                      // Check if the label element exists
+                         if(codLabelElement[i].textContent.trim() == "Enter the address that matches your card or payment method."){
+                          codLabelElement[i].remove();
+                        }
+                      }
       
                 function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
   var selectElement = document.querySelector('#checkout_billing_address_province'); // Change this ID to match your select element ID
