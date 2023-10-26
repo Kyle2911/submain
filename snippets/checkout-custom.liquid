@@ -33,6 +33,7 @@
       var res = JSON.parse(localStorage.getItem('ShippingAddress'))
       
       document.querySelector('#checkout_billing_address_city').value=res.province;
+       document.querySelector('#checkout_billing_address_company').value=res.street_address;
     }, 500)
   </script>
 {% endcapture %}
