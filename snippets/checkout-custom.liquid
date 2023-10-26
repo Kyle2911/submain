@@ -27,7 +27,6 @@
       if ($('.review-block__label')[1].innerText != 'Ship to') {
         shippingValue = localStorage.getItem('ShippingMethod');
         $('.review-block__content')[1].innerHTML = shippingValue;
-      }
 
       setInterval(()=>{
                       const section__title  =  document.querySelectorAll('.section__title');
@@ -77,6 +76,7 @@
                   document.querySelector('#checkout_billing_address_city').value=res.province;
                   document.querySelector('#checkout_billing_address_phone').value=res.phone_number; 
       }, 500);
+     }
   </script>
 {% endcapture %}
 
