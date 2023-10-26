@@ -25,8 +25,10 @@
 {% capture ReviewDetailsBlock %}
   <script>
     if ($('.review-block__label')[1].innerText != 'Ship to') {
-      shippingValue = localStorage.getItem('ShippingMethod');
+     setTimeout(()=>{
+ shippingValue = localStorage.getItem('ShippingMethod');
       $('.review-block__content')[1].innerHTML = shippingValue;
+     },500)
     }
   </script>
 {% endcapture %}
