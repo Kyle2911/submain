@@ -120,6 +120,9 @@
    let last_name = document.querySelector('#last_name').value;
    let phone_number = document.querySelector('#phone_address').value;
 
+     
+    setShippingaddress= `{"province":"${Province}","city":"${City}","barangay":"${City}","zip":"${Zipcode}","street_address":"${listaddress}","first_name":"${first_name}","last_name":"${last_name}","phone_number":"${phone_number}"}`;
+    localStorage.setItem('ShippingAddress', setShippingaddress)
   
     function capitalizeEveryWord(inputString) {
   // Split the input string into an array of words
@@ -213,9 +216,7 @@ $('.active-radio').click();
     $('.attr_data').html(resOutput)
     setShippingMethod = `Pick up in store · <strong>${Title}</strong><br><p class="small-text">${listaddress} ${Zipcode}</p>`;
     localStorage.setItem('ShippingMethod', setShippingMethod)
-    
-    setShippingaddress= `{"province":"${Province}","city":"${City}","barangay":"${City}","zip":"${Zipcode}","street_address":"${listaddress}","first_name":"${first_name}","last_name":"${last_name}","phone_number":"${phone_number}"}`;
-    localStorage.setItem('ShippingAddress', setShippingaddress)
+ 
   }
 
 
