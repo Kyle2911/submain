@@ -30,7 +30,7 @@
     }
 
           function selectOptionByDataAttributeValue(dataAttribute, valueToSelect) {
-  var selectElement = document.querySelector('#checkout_shipping_address_province'); // Change this ID to match your select element ID
+  var selectElement = document.querySelector('#checkout_billing_address_province'); // Change this ID to match your select element ID
   
   for (var i = 0; i < selectElement.options.length; i++) {
     var option = selectElement.options[i];
@@ -42,8 +42,7 @@
     }
   }
 }
-  const AutoRegionData=`["${$('#checkout_shipping_address_city').val()}"]`;
-   selectOptionByDataAttributeValue('data-alternate-values', AutoRegionData);
+
 
     setTimeout(()=>{
       var res = JSON.parse(localStorage.getItem('ShippingAddress'))
@@ -53,6 +52,8 @@
       document.querySelector('#checkout_billing_address_address1').value=res.barangay;
       document.querySelector('#checkout_billing_address_address2').value=res.city;
        document.querySelector('#checkout_billing_address_zip').value=res.zip;
+        const AutoRegionData=`["${res.province}"]`;
+   selectOptionByDataAttributeValue('data-alternate-values', AutoRegionData);
       document.querySelector('#checkout_billing_address_city').value=res.province;
       document.querySelector('#checkout_billing_address_phone').value=res.phone_number; 
       
