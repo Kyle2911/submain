@@ -30,21 +30,21 @@
     }
 
     setInterval(()=>{
-              const codLabelElement  =  document.querySelectorAll('.section__title');
-                      for (let i = 0; i < codLabelElement.length; i++) {
+              const section__title  =  document.querySelectorAll('.section__title');
+                      for (let i = 0; i < section__title.length; i++) {
                       
                       // Check if the label element exists
-                         if(codLabelElement[i].textContent.trim() == "Billing address"){
-                          codLabelElement[i].innerHTML='Shipping address';
+                         if(section__title[i].textContent.trim() == "Billing address"){
+                          section__title[i].innerHTML='Shipping address';
                         }
                       }
 
-        const codLabelElement  =  document.querySelectorAll('.section__text');
-                      for (let i = 0; i < codLabelElement.length; i++) {
+        const section__text  =  document.querySelectorAll('.section__text');
+                      for (let i = 0; i < section__text.length; i++) {
                       
                       // Check if the label element exists
-                         if(codLabelElement[i].textContent.trim() == "Enter the address that matches your card or payment method."){
-                          codLabelElement[i].remove();
+                         if(section__text[i].textContent.trim() == "Enter the address that matches your card or payment method."){
+                          section__text[i].remove();
                         }
                       }
     },500)
