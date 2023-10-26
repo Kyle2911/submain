@@ -115,7 +115,11 @@
       Store Locations
     </h2>
     `;
-  document.querySelector('#continue_button').disabled = false;
+
+  setTimeout(()=>{
+    document.querySelector('#continue_button').disabled = false;
+  },1000)
+  
   function FillupContact(){
     document.querySelector('#continue_button').disabled = true;
   }
