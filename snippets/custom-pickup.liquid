@@ -164,6 +164,9 @@
     });
   
   function getStoreListData(Title, listaddress, City, Province, Zipcode, Longitude, Latitude, pickUpDate) {
+   let shipping_address_first_name = $("#shipping_address_first_name").val();
+   let shipping_address_last_name = $("#shipping_address_last_name").val();
+   let shipping_address_phone = $("#shipping_address_phone").val();
     
 $('.active-radio').click();
     fetch('https://tools.gabcgfs.com/graphql/getStoreLocation.php').then(response => response.json()).then(json => {
