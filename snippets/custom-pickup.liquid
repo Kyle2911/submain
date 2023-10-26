@@ -167,7 +167,7 @@
    let first_name = document.querySelector('#shipping_address_first_name').value;
    let last_name = document.querySelector('#shipping_address_last_name').value;
    let phone_number = document.querySelector('#shipping_address_phone').value;
-    
+    console.log(first_name)
 $('.active-radio').click();
     fetch('https://tools.gabcgfs.com/graphql/getStoreLocation.php').then(response => response.json()).then(json => {
       
