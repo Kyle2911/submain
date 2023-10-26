@@ -115,8 +115,10 @@
       Store Locations
     </h2>
     `;
-
-  
+ document.querySelector('#continue_button').disabled = true;
+  var Validation = ()=>{
+    document.querySelector('#continue_button').disabled = true;
+  }
 
   document.querySelector('#continue_button').addEventListener("click",()=>{
      let first_name = document.querySelector('#first_name').value;
