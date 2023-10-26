@@ -37,15 +37,15 @@
   var selectElement = document.querySelector('#checkout_billing_address_province'); // Change this ID to match your select element ID
   
   for (var i = 0; i < selectElement.options.length; i++) {
-    var option = selectElement.options[i];
-    var dataValue = option.getAttribute(dataAttribute);
-    
-    if (dataValue === valueToSelect) {
-      option.selected = true;
-      break; // Exit the loop once the option is found and selected
+        var option = selectElement.options[i];
+        var dataValue = option.getAttribute(dataAttribute);
+        
+        if (dataValue === valueToSelect) {
+          option.selected = true;
+          break; // Exit the loop once the option is found and selected
+        }
+      }
     }
-  }
-}
       
       var res = JSON.parse(localStorage.getItem('ShippingAddress'))
       document.querySelector('#checkout_billing_address_first_name').value=res.first_name;
