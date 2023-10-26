@@ -212,10 +212,10 @@ $('.active-radio').click();
     })
     resOutput = `
          <input type="text" value="${Title}" name="checkout[attributes][pickup_store_title]"/>
-          <input type="text" value="${listaddress}" name="checkout[attributes][pickup_store_street]"/>
-           <input type="text" value="${City}" name="checkout[attributes][pickup_store_city]"/>
-            <input type="text" value="${Province}" name="checkout[attributes][pickup_store_province]"/>
-             <input type="text" value="${Zipcode}" name="checkout[attributes][pickup_store_zip]"/>
+          <input type="text" value="${listaddress}" id="listaddress" name="checkout[attributes][pickup_store_street]"/>
+           <input type="text" value="${City}" id="City" name="checkout[attributes][pickup_store_city]"/>
+            <input type="text" value="${Province}" id="Province" name="checkout[attributes][pickup_store_province]"/>
+             <input type="text" value="${Zipcode}" id="Zipcode" name="checkout[attributes][pickup_store_zip]"/>
              <input type="text" value="{{ checkout.id }}" name="checkout[attributes][Checkout_#]"/>
               <input type="text" value="${Longitude}" name="checkout[attributes][Longitude]"/>
                <input type="text" value="${Latitude}" name="checkout[attributes][Latitude]"/>
