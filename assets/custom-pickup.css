@@ -3,7 +3,7 @@
   .searchInputText{
     border-bottom: 3px solid lightgray;
     width: -webkit-fill-available;
-    padding: 10px;
+    padding: 16px;
     font-size: 16px;
     font-weight: 500;
   }
