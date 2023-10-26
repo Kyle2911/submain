@@ -209,7 +209,7 @@ $('.active-radio').click();
     setShippingMethod = `Pick up in store · <strong>${Title}</strong><br><p class="small-text">${listaddress} ${Zipcode}</p>`;
     localStorage.setItem('ShippingMethod', setShippingMethod)
     
- setShippingaddress= `{"province":"${Province}","city":"${City}","barangay":"${Barangay}","zip":"${Zipcode}","street_address":""}`;
+    setShippingaddress= `{"province":"${Province}","city":"${City}","barangay":"${City}","zip":"${Zipcode}","street_address":"${listaddress}"}`;
     localStorage.setItem('ShippingAddress', setShippingaddress)
   }
 
