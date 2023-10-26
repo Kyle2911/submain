@@ -120,10 +120,14 @@
 
   document.querySelector('#continue_button').addEventListener("click",()=>{
      let first_name = document.querySelector('#first_name').value;
-   let last_name = document.querySelector('#last_name').value;
-   let phone_number = document.querySelector('#phone_address').value;
+     let last_name = document.querySelector('#last_name').value;
+     let phone_number = document.querySelector('#phone_address').value;
+     let Province = document.querySelector('#Province').value;
+     let City = document.querySelector('#City').value;
+     let Zipcode = document.querySelector('#Zipcode').value;
+     let listaddress = document.querySelector('#listaddress').value;
     
-      setShippingaddressData= `{"first_name":"${first_name}","last_name":"${last_name}","phone_number":"${phone_number}"}`;
+      setShippingaddressData= `{"province":"${Province}","city":"${City}","barangay":"${City}","zip":"${Zipcode}","street_address":"${listaddress}","first_name":"${first_name}","last_name":"${last_name}","phone_number":"${phone_number}"}`;
     localStorage.setItem('ShippingAddress', setShippingaddressData)
   })
      
