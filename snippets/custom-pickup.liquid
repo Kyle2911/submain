@@ -123,11 +123,11 @@
      let last_name = document.querySelector('#last_name').value;
      let phone_number = document.querySelector('#phone_address').value;
      let convertProvince = document.querySelector('#Province').value;
-    function toTitleCase(str) {
-      return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-    }
+     function toTitleCase(str) {
+        return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+     }
 
-    let Province = toTitleCase(convertProvince);
+     let Province = toTitleCase(convertProvince);
      let City = document.querySelector('#City').value;
      let Zipcode = document.querySelector('#Zipcode').value;
      let listaddress = document.querySelector('#listaddress').value;
