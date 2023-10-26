@@ -31,11 +31,14 @@
 
     setTimeout(()=>{
       var res = JSON.parse(localStorage.getItem('ShippingAddress'))
+      document.querySelector('#checkout_billing_address_first_name').value=res.first_name;
+      document.querySelector('#checkout_billing_address_last_name').value=res.last_name;
        document.querySelector('#checkout_billing_address_company').value=res.street_address;
       document.querySelector('#checkout_billing_address_address1').value=res.barangay;
       document.querySelector('#checkout_billing_address_address2').value=res.city;
        document.querySelector('#checkout_billing_address_zip').value=res.zip;
       document.querySelector('#checkout_billing_address_city').value=res.province;
+      document.querySelector('#checkout_billing_address_phone').value=res.phone_number; 
       
     }, 500)
   </script>
