@@ -102,15 +102,15 @@
       Contact 
     </h2>
  
-    <div class="field__input-wrapper" style="padding: 7px 0;"><label style="position: absolute; padding: 5px 12px;" for="first_name" id="placeHolder">First Name</label>
+    <div class="field__input-wrapper" style="padding: 7px 0;"><label style="position: absolute; padding: 5px 12px;" for="first_name" id="placeHolderfirst_name">First Name</label>
       <input placeholder="First Name" style="padding: 22px 0 10px 12px;" onkeyup="FillupContact()" autocomplete="shipping given-name" autocorrect="off" data-backup="first_name" class="field__input" aria-required="true" type="text" id="first_name">
     </div>
 
-    <div class="field__input-wrapper" style="padding: 7px 0;"><label style="position: absolute; padding: 5px 12px;" for="last_name" id="placeHolder">Last name</label>
+    <div class="field__input-wrapper" style="padding: 7px 0;"><label style="position: absolute; padding: 5px 12px;" for="last_name" id="placeHolderlast_name">Last name</label>
       <input placeholder="Last Name" style="padding: 22px 0 10px 12px;" onkeyup="FillupContact()" autocomplete="shipping family-name" autocorrect="off" data-backup="last_name" class="field__input" aria-required="true" type="text" id="last_name">
     </div>
 
-    <div class="field__input-wrapper field__input-wrapper--icon-right" style="padding: 7px 0 10px 0;"><label style="position: absolute; padding: 5px 12px;" for="phone_address" id="placeHolder">Phone (e.g. 639171234567)</label>
+    <div class="field__input-wrapper field__input-wrapper--icon-right" style="padding: 7px 0 10px 0;"><label style="position: absolute; padding: 5px 12px;" for="phone_address" id="placeHolderphone_address">Phone (e.g. 639171234567)</label>
         <input placeholder="Phone Number" style="padding: 22px 0 10px 12px;" onkeyup="FillupContact()" autocomplete="shipping tel" autocorrect="off" data-backup="phone" data-phone-formatter="true" data-placeholder-label-required="Phone" data-placeholder-label-optional="Phone (optional)" class="field__input field__input--numeric" aria-required="true" size="30" type="tel" id="phone_address">
         <div class="field__icon">
         <div data-tooltip="true" id="phone_tooltip" class="tooltip-container"><button type="button" class="tooltip-control" data-tooltip-control="true" aria-label="More information" aria-describedby="tooltip-for-phone" aria-controls="tooltip-for-phone" aria-pressed="false" placeholder="Phone (e.g. 639171234567)"><svg class="icon-svg icon-svg--color-adaptive-lighter icon-svg--size-16 icon-svg--block icon-svg--center" role="presentation" aria-hidden="true" focusable="false"> <use xlink:href="#question"></use> </svg></button><span class="tooltip" role="tooltip" id="tooltip-for-phone">Use country code + mobile number</span></div>
@@ -122,7 +122,10 @@
     </h2>
     `;
 
-
+setInterval(()=>{
+  (ducoment.getElementById('first_name').value != '' ? document.getElementById('placeHolderfirst_name').style.display='none':document.getElementById('placeHolderfirst_name').style.display='block')
+},100)
+  
   document.querySelector('#continue_button').addEventListener("click",()=>{
      let first_name = document.querySelector('#first_name').value;
      let last_name = document.querySelector('#last_name').value;
