@@ -28,13 +28,35 @@
         shippingValue = localStorage.getItem('ShippingMethod');
         $('.review-block__content')[1].innerHTML = shippingValue;
 
+        for (let i = 0; i < document.querySelectorAll('.field__label').length; i++) {
+             if(document.querySelectorAll('.field__label')[i].textContent == 'House or Unit Number / Street Name'){
+                document.querySelectorAll('.field__label')[i].style.color='lightgray';
+             }
+
+             if(document.querySelectorAll('.field__label')[i].textContent == 'Barangay'){
+                document.querySelectorAll('.field__label')[i].style.color='lightgray';
+             }
+
+             if(document.querySelectorAll('.field__label')[i].textContent == 'Town or City'){
+                document.querySelectorAll('.field__label')[i].style.color='lightgray';
+             }
+
+             if(document.querySelectorAll('.field__label')[i].textContent == 'Postal code'){
+                document.querySelectorAll('.field__label')[i].style.color='lightgray';
+             }
+
+             if(document.querySelectorAll('.field__label')[i].textContent == 'Province'){
+                document.querySelectorAll('.field__label')[i].style.color='lightgray';
+             }
+          }
+
       setInterval(()=>{
                       const section__title  =  document.querySelectorAll('.section__title');
                       for (let i = 0; i < section__title.length; i++) {
                       
                       // Check if the label element exists
                          if(section__title[i].textContent.trim() == "Billing address"){
-                          section__title[i].innerHTML='Order detail';
+                          section__title[i].innerHTML='Order Details';
                         }
                       }
 
@@ -52,7 +74,15 @@
                   document.querySelector('#checkout_billing_address_address2').readOnly = true;
                   document.querySelector('#checkout_billing_address_zip').readOnly = true;
                   document.querySelector('#checkout_billing_address_city').readOnly = true;
+                  document.querySelector('#checkout_billing_address_company').style.color = "lightgray";
+                  document.querySelector('#checkout_billing_address_address1').style.color = "lightgray";
+                  document.querySelector('#checkout_billing_address_address2').style.color = "lightgray";
+                  document.querySelector('#checkout_billing_address_zip').style.color = "lightgray";
+                  document.querySelector('#checkout_billing_address_city').style.color = "lightgray";
+ 
        },100);
+
+
  
       setTimeout(()=>{
   
@@ -83,6 +113,15 @@
                   document.querySelector('#checkout_billing_address_phone').value=res.phone_number; 
         
       }, 500);
+
+      setInterval(()=>{
+     let first_nameInfo = document.querySelector('#checkout_billing_address_first_name').value;
+     let last_nameInfo = document.querySelector('#checkout_billing_address_last_name').value;
+     let phone_numberInfo = document.querySelector('#checkout_billing_address_phone').value;
+    
+    setContact = `{"first_name":"${first_nameInfo}","last_name":"${last_nameInfo}","phone_number":"${phone_numberInfo}"}`;
+    localStorage.setItem('contactInfo', setContact);
+      },100);
      }
   </script>
 {% endcapture %}
