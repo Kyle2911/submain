@@ -97,19 +97,38 @@ color:#000;
       url = "https://tools.gabcgfs.com/address_finder_dev.php";
       province = [];
       province.push('<option value="" Selected>Province</option>');
-      jQuery.ajax({url: url, type: "GET", dataType: "jsonp", contentType: "application/json; charset=UTF-8"}).done(function(json) {
-        for (let i = 0; i < json.length; i++) {
-          const arrP = `<option value="${
-            json[i].PROVINCE
+  
+          province_arr = [];
+      fetch(
+        "https://omnistorelocations.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe"
+      )
+        .then((response) => response.json())
+        .then((jsonData) => {
+          jsonData.message.sort();
+          for (let i = 0; i < jsonData.message.length; i++) {
+            const element = jsonData.message[i];
+            const arrayOfObjects = {
+              Province: capitalizeEveryWord(element.Province)
+            };
+            province_arr.push(arrayOfObjects);
+          }
+
+          // Get distinct values based on the 'id' property
+          const distinctObjects = getDistinctValues(province_arr,'Province');
+       for (let i = 0; i < distinctObjects.length; i++) {
+        const element = distinctObjects[i];
+           console.log();
+           const arrP = `<option value="${
+            element.Province
           }">${
-            json[i].PROVINCE
+            element.Province
           }</option>`;
           province.push(arrP);
-        }
-  
-        $("#province").html(province.join(""));
+       }
+       console.log(province)
+       $("#province").html(province.join(""));
         localStorage.setItem("arrProvince", JSON.stringify({province}));
-      });
+        });
 
     }
 
