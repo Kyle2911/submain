@@ -96,6 +96,52 @@
 <script type="text/javascript" src="{{ 'custom-pickup.js' | asset_url }}" defer="defer"></script>
 <script type="text/javascript" src="{{ 'custom-pickup-extension.js' | asset_url }}" defer="defer"></script>
 <script>
+
+     // Function to get distinct values based on a property
+      function getDistinctValues(arr, property) {
+        const seen = new Set();
+        return arr.filter((obj) => {
+          const value = obj[property];
+          if (seen.has(value)) {
+            return false;
+          }
+          seen.add(value);
+          return true;
+        });
+      }
+
+      province_arr = [];
+      provinceSearchData = [];
+      fetch(
+        "https://omnistorelocations.goldenabc.com/storelocations/Shopify/Api/GetStoreLocations?brand=penshoppe"
+      )
+        .then((response) => response.json())
+        .then((jsonData) => {
+          jsonData.message.sort();
+          for (let i = 0; i < jsonData.message.length; i++) {
+            const element = jsonData.message[i];
+            const arrayOfObjects = {
+              Province: capitalizeEveryWord(element.Province)
+            };
+            province_arr.push(arrayOfObjects);
+          }
+
+          // Get distinct values based on the 'id' property
+          const distinctObjects = getDistinctValues(province_arr,'Province');
+       for (let i = 0; i < distinctObjects.length; i++) {
+        const element = distinctObjects[i];
+           console.log();
+           const arrP = `<option value="${
+            element.Province
+          }">${
+            element.Province
+          }</option>`;
+          provinceSearchData.push(arrP);
+       }
+          
+       $("#province").html(provinceSearchData.join(""));
+        localStorage.setItem("arrProvince", JSON.stringify({provinceSearchData}));
+        });
  
   document.querySelectorAll('.section__header')[3].innerHTML =`<h2 class="section__title">
       Contact 
