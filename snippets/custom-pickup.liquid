@@ -140,7 +140,7 @@
           }</option>`;
           provinceSearchData.push(arrP);
        }
-          provinceSearchData.sort()
+          provinceSearchData.sort();
        $("#provinceSearch").html(provinceSearchData.join(""));
         localStorage.setItem("arrProvince", JSON.stringify({provinceSearchData}));
         });
