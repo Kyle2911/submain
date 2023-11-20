@@ -46,6 +46,7 @@
   <small class="red cart-warning text-center" style="display: none;">{{ 'cart.general.soldier_warning_html' | t }}<span class="soldier-list"></span></small>
 
   {%- if cart.item_count > 0 -%}
+    <!-- novalidate -->
     <form action="{{ routes.cart_url }}" method="post" data-location="page" id="CartPageForm">
       <div class="cart__item cart__item--headers small--hide">
         <div class="cart__item--details">
@@ -151,11 +152,6 @@
             {%- endif -%}
             {%- endcomment -%}
 
-            <p class="cart-attribute__field">
-        <label for="customer-name"><font color="BLACK"><strong>Customer Name</strong></font></label> 
-  <input id="customer-name" type="text" name="attributes[Customer Name: ]" value="{{ cart.attributes["Customer Name"] }}">
-</p> 
-            
             <button type="submit" name="checkout" {% if settings.cart_terms_conditions_enable %} data-terms="CartPageAgree"{% endif %} class="btn cart__checkout cart__checkout--page" >
               {{ 'cart.general.checkout' | t }}
             </button>
