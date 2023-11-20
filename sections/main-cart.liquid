@@ -154,7 +154,7 @@
 
             <p class="cart-attribute__field">
         <label for="customer-name"><font color="BLACK"><strong>Customer Name</strong></font></label> 
-  <input id="customer-name" type="text" name="attributes[Customer Name: ]">
+  <input id="customer-name" type="text" name="attributes[Customer Name: ]" value="{{ cart.attributes["Customer Name"] }}">
 </p> 
             
             <button type="submit" name="checkout" {% if settings.cart_terms_conditions_enable %} data-terms="CartPageAgree"{% endif %} class="btn cart__checkout cart__checkout--page" >
