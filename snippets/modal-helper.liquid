@@ -17,10 +17,7 @@
                 <div class="modal-buttons-for-preorder" style="display: none;">
                     {%- if settings.preorder_enable -%}
                     {%- if settings.preorder_limited -%}
-                  	{%- if customer and customer.tags contains settings.preorder_limited_tag
-                  	<a href="#" class="btn display-items-preorder preorder-modal-buttons" onclick='displayItems("preorder")';>{{ 'cart.preorder.remove_preorder' | t }}</a>
-                    <a href="#" class="btn display-items-regular preorder-modal-buttons" onclick='displayItems("regular");'>{{ 'cart.preorder.remove_regular' | t }}</a>
-                  	{%- else -%}
+                  	{%- if customer and customer.tags contains settings.preorder_limited_tag -%}
                   	<a href="#" class="btn display-items-preorder preorder-modal-buttons" onclick='displayItems("preorder")';>{{ 'cart.preorder.remove_preorder' | t }}</a>
                   	{%- endif -%}
                     {%- else -%}
@@ -74,4 +71,18 @@ window.onload = function() {
     document.querySelector('body').classList.remove('modal-open');
   }
 }
-</script>
+</script>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- if customer and customer.tags contains settings.preorder_limited_tag\n
+    \                 \t<a href=\"#\" class=\"btn display-items-preorder preorder-modal-buttons\"
+    onclick='displayItems(\"preorder\")';>{{ 'cart.preorder.remove_preorder' | t }}</a>\n
+    \                   <a href=\"#\" class=\"btn display-items-regular preorder-modal-buttons\"
+    onclick='displayItems(\"regular\");'>{{ 'cart.preorder.remove_regular' | t }}</a>\n
+    \                 \t{%- else -%}"
+  to: "{%- if customer and customer.tags contains settings.preorder_limited_tag -%}"
+  position: 996..1072
+{%- endcomment -%}

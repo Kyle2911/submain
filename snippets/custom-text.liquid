@@ -4,9 +4,9 @@
     	assign colored = true
 		assign words = block.settings.custom_text | split: ' '
         
-        assign words[0] = '#198560'
-        assign words[1] = '#AF021E'
-        assign words[2] = '#EDBD0F'
+        assign renamed_variable_words_5b_0_5d_ = '#198560'
+        assign renamed_variable_words_5b_1_5d_ = '#AF021E'
+        assign renamed_variable_words_5b_2_5d_ = '#EDBD0F'
     endif
 -%}
 
@@ -22,4 +22,19 @@
     {{ block.settings.custom_text }}
     {%- endif -%}
   </div>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "        assign words[0] = '#198560'"
+  to: "        assign renamed_variable_words_5b_0_5d_ = '#198560'"
+  position: 155..213
+- from: "        assign words[1] = '#AF021E'"
+  to: "        assign renamed_variable_words_5b_1_5d_ = '#AF021E'"
+  position: 214..272
+- from: "        assign words[2] = '#EDBD0F'"
+  to: "        assign renamed_variable_words_5b_2_5d_ = '#EDBD0F'"
+  position: 273..331
+{%- endcomment -%}
